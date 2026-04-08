@@ -19,3 +19,6 @@ Thumbs.db
 # Our caches
 stats/data/cache/
 cache/
+
+# Ignore OBS output folder
+../stats/
