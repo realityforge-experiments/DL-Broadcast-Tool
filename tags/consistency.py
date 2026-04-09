@@ -2,89 +2,61 @@ import math
 
 def compute_consistency(matches):
     """
-    matches = list of dicts, each containing:
-        - kills
-        - deaths
-        - accuracy
-        - damage
-        - push_time (payload)
-        - captures
-        - counters
-        - mode
+    Compute consistency based on per-match performance stability.
+    Uses:
+      - KD per match
+      - Damage per match
+      - Accuracy per match
     """
 
-    # --- Not enough matches to compute variance ---
-    if len(matches) < 2:
+    if not matches:
         return 0.0, {
-            "per_match_perf": [],
-            "floor": 0.0,
-            "variance": 0.0,
-            "variance_adj": 0.0,
-            "variance_score": 0.0,
-            "avg_perf": 0.0,
-            "consistency_norm": 0.0
+            "match_count": 0,
+            "kd_std": 0.0,
+            "dmg_std": 0.0,
+            "acc_std": 0.0,
+            "consistency_norm": 0.0,
         }
 
-    per_match_perf_list = []
+    kds = []
+    dmgs = []
+    accs = []
 
     for m in matches:
+        kills = m["Kills"]
+        deaths = m["Deaths"]
+        damage = m["Damage"]
+        shots = m["Shots"]
+        shots_hit = m["ShotsHit"]
 
-        # --- Slayer percentile (per match) ---
-        kd = m["kills"] / max(1, m["deaths"])
-        slayer_pct = percentile_of_kd(kd)
+        kd = kills / max(1, deaths)
+        acc = shots_hit / shots if shots > 0 else 0.0
 
-        # --- Objective percentile (per match) ---
-        if m["mode"] == "payload":
-            obj_raw = m["push_time"]
-        elif m["mode"] == "domination":
-            obj_raw = m["captures"] + m["counters"]
-        else:
-            obj_raw = 0
+        kds.append(kd)
+        dmgs.append(damage)
+        accs.append(acc)
 
-        objective_pct = percentile_of_objective(obj_raw)
+    def std(values):
+        if len(values) <= 1:
+            return 0.0
+        mean = sum(values) / len(values)
+        var = sum((v - mean) ** 2 for v in values) / len(values)
+        return math.sqrt(var)
 
-        # --- Accuracy percentile (per match) ---
-        accuracy_pct = percentile_of_accuracy(m["accuracy"])
+    kd_std = std(kds)
+    dmg_std = std(dmgs)
+    acc_std = std(accs)
 
-        # --- Composite per-match performance ---
-        perf = (
-            slayer_pct * 0.40 +
-            objective_pct * 0.40 +
-            accuracy_pct * 0.20
-        )
+    # Lower variance = more consistent
+    # Normalize into a 0–1 score
+    raw = 1.0 / (1.0 + kd_std + dmg_std + acc_std)
 
-        per_match_perf_list.append(perf)
-
-    # --- Floor ---
-    floor_score = percentile(min(per_match_perf_list))
-
-    # --- Variance (normalized by match count) ---
-    raw_variance = variance(per_match_perf_list)
-    adj_variance = raw_variance * (1 + (1 / len(matches)))
-    variance_score = 1 / (1 + adj_variance)
-
-    # --- Average performance ---
-    avg_perf = sum(per_match_perf_list) / len(per_match_perf_list)
-
-    # --- Final Consistency ---
-    consistency_raw = (
-        floor_score * 0.40 +
-        variance_score * 0.40 +
-        avg_perf * 0.20
-    )
-
-    # --- Normalized consistency (already 0–1) ---
-    consistency_norm = round(consistency_raw, 4)
-
-    # --- Component block returned to DB builder ---
     components = {
-        "per_match_perf": per_match_perf_list,
-        "floor": floor_score,
-        "variance": raw_variance,
-        "variance_adj": adj_variance,
-        "variance_score": variance_score,
-        "avg_perf": avg_perf,
-        "consistency_norm": consistency_norm
+        "match_count": len(matches),
+        "kd_std": kd_std,
+        "dmg_std": dmg_std,
+        "acc_std": acc_std,
+        "consistency_norm": raw,
     }
 
-    return consistency_norm, components
+    return raw, components

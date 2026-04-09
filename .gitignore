@@ -1,24 +1,12 @@
-# Python
+# Runtime / generated data
+../stats/
+stats/
+players/
+obs_exports/
+*.txt
+
+# Python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.env
-.venv
-venv/
-env/
 
-# VSCode / IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Our caches
-stats/data/cache/
-cache/
-
-# Ignore OBS output folder
-../stats/
+*.db

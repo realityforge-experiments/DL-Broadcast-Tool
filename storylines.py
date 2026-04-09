@@ -1,5 +1,9 @@
 from rankings import load_career_db
-from tags.objective_domination import compute_dom_objective
+from tags.objective_domination import (
+    compute_dom_objective_for_career_player,
+    compute_dom_objective_for_match_player,
+    compute_dom_objective_team_scores
+)
 
 
 def matchup_storyline(teamA_players, teamB_players):
@@ -17,7 +21,7 @@ def matchup_storyline(teamA_players, teamB_players):
 
     def avg_obj_payload(players):
         return sum(
-            p.get("objective_payload_components", {}).get("push_time_norm", 0.0)
+            p.get("objective_payload_components", {}).get("payload_score_raw", 0.0)
             for p in players
         ) / max(1, len(players))
 
@@ -28,7 +32,12 @@ def matchup_storyline(teamA_players, teamB_players):
         ) / max(1, len(players))
 
     def avg_obj_dom(players):
-        return sum(compute_dom_objective(p) for p in players) / max(1, len(players))
+        return sum(
+            compute_dom_objective_for_career_player(
+                p.get("career_entry", {})
+            ).get("dom_score_raw", 0.0)
+            for p in players
+        ) / max(1, len(players))
         
     def avg_consistency(players):
         return sum(

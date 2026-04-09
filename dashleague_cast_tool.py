@@ -2,32 +2,62 @@ import os
 import json
 import math
 from collections import defaultdict
+
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
+
 import requests
 
+# --- Internal modules ---
 from data.career_db import build_career_database
 from rankings import top_players_by_tag
 from team_identity import generate_team_identity, compare_team_identity
 from storylines import matchup_storyline
-from tags.objective_domination import compute_dom_objective
+
+from tags.objective_domination import (
+    compute_dom_objective_for_career_player,
+    compute_dom_objective_for_match_player,
+    compute_dom_objective_team_scores,
+)
+
 from predictions.prediction_engine import generate_predictions
 
 from match_engine import (
-    rank_match_players_sharpshooter,
     rank_match_players_slayer,
     rank_match_players_objpl,
     rank_match_players_objdom,
+    rank_match_players_sharpshooter,
     rank_match_players_clutch,
     split_two_columns,
     compute_slayer_prediction,
 )
 
+# ---------------------------------------------------------
+#  PATHS + CONFIG
+# ---------------------------------------------------------
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
-PLAYERS_DIR = os.path.join(BASE_DIR, "players")
-OBS_EXPORT_DIR = os.path.join(BASE_DIR, "obs_exports")
+
+# Load config (or default)
+if os.path.exists(CONFIG_PATH):
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        config = json.load(f)
+else:
+    config = {}
+
+# Default output folder (outside repo)
+DEFAULT_OUTPUT_ROOT = os.path.abspath(os.path.join(BASE_DIR, "..", "stats"))
+
+# Allow override from config.json
+output_root = config.get("output_root", DEFAULT_OUTPUT_ROOT)
+
+# Build runtime directories
+STATS_DIR = output_root
+PLAYERS_DIR = os.path.join(STATS_DIR, "players")
+OBS_EXPORT_DIR = os.path.join(STATS_DIR, "obs_exports")
+
+os.makedirs(PLAYERS_DIR, exist_ok=True)
 os.makedirs(OBS_EXPORT_DIR, exist_ok=True)
 
 API_BASE = "https://dashleague.games/api/v1"
@@ -119,6 +149,13 @@ class DashLeagueGUI:
 
         self.rankings_button = ttk.Button(top_frame, text="Rankings", command=self.on_rankings)
         self.rankings_button.grid(row=0, column=5, padx=(0, 10))
+        
+        self.output_folder_button = ttk.Button(
+            top_frame,
+            text="Select Output Folder",
+            command=self.choose_output_folder
+        )
+        self.output_folder_button.grid(row=0, column=6, padx=(0, 10))
         
         self.map_var = tk.StringVar()
         self.map_var.set("Payload")  # default
@@ -213,11 +250,32 @@ class DashLeagueGUI:
             self.team_b_listbox.delete(0, tk.END)
             for p in team_players:
                 self.team_b_listbox.insert(tk.END, p.get("name", "Unknown"))
+                
+                
+    def normalize_player(p):
+        return {
+            "id": p.get("PlayerUUID"),
+            "name": p.get("PlayerGameName"),
+            "team": p.get("TeamUUID"),
+            "KD": p.get("KD", ""),
+            "kills": p.get("Kills", ""),
+            "deaths": p.get("Deaths", ""),
+            "headshots": p.get("Headshots", ""),
+            "accuracy": p.get("Accuracy", ""),
+            "PAY_PushTime": p.get("PAY_PushTime", ""),
+            "DOM_captures": p.get("DOM_Captures", ""),
+            "DOM_counters": p.get("DOM_Counters", ""),
+        }                
+                
+                
 
     def on_generate_slots(self):
         try:
             ensure_player_slots()
 
+            # -----------------------------
+            # 1. Collect selected players
+            # -----------------------------
             selected_a = [self.team_a_players[i] for i in self.team_a_listbox.curselection()]
             selected_b = [self.team_b_players[i] for i in self.team_b_listbox.curselection()]
 
@@ -226,34 +284,128 @@ class DashLeagueGUI:
             if not selected_b:
                 selected_b = self.team_b_players
 
-            all_players = sorted(selected_a, key=lambda x: x.get("name", "")) + \
-                          sorted(selected_b, key=lambda x: x.get("name", ""))
+            # Sort and combine
+            all_players = (
+                sorted(selected_a, key=lambda x: x.get("name", "")) +
+                sorted(selected_b, key=lambda x: x.get("name", ""))
+            )
 
+            # Limit to 10
             all_players = all_players[:10]
+
+            # -----------------------------
+            # 2. Normalize keys BEFORE attaching tags
+            # -----------------------------
+            for p in all_players:
+                # Normalize stat keys to match DB/tag expectations
+                p["CP_Captures"] = p.get("CP_captures", 0)
+                p["DOM_Captures"] = p.get("DOM_captures", 0)
+                p["DOM_Counters"] = p.get("DOM_counters", 0)
+
+            # Save match players
             self.current_match_players = all_players
 
+            # Debug
+            if self.current_match_players:
+                print("DEBUG MATCH PLAYER:", self.current_match_players[0])
+            else:
+                print("DEBUG MATCH PLAYER: EMPTY LIST")
+
+            # -----------------------------
+            # 3. Load career DB
+            # -----------------------------
             career_path = os.path.join(BASE_DIR, "career_stats.json")
             career_db = None
             if os.path.exists(career_path):
                 with open(career_path, "r", encoding="utf-8") as f:
                     career_db = json.load(f)
-                    
-                        # Attach tag components from career DB to match players
+
+            # -----------------------------
+            # 4. Attach tag components
+            # -----------------------------
             if career_db is not None:
                 for p in all_players:
-                    pid = p.get("id")
+                    pid = (
+                        p.get("id")
+                        or p.get("PlayerUUID")
+                        or p.get("uuid")
+                    )
+
                     if pid and pid in career_db["players"]:
                         pdata = career_db["players"][pid]
 
-                        # Attach all tag components
                         p["clutch_components"] = pdata.get("clutch_components", {})
                         p["consistency_components"] = pdata.get("consistency_components", {})
                         p["objective_payload_components"] = pdata.get("objective_payload_components", {})
                         p["objective_domination_components"] = pdata.get("objective_domination_components", {})
                         p["sharpshooter_components"] = pdata.get("sharpshooter_components", {})
                         p["slayer_score_raw"] = pdata.get("slayer_score_raw", 0.0)
-                            
-                    
+                        
+                        
+            # -----------------------------
+            # 4b. Compute match-based ObjDOM
+            # -----------------------------
+            from tags.objective_domination import compute_dom_objective_team_scores
+
+            team_entries = []
+            for p in all_players:
+                pid = (
+                    p.get("id")
+                    or p.get("PlayerUUID")
+                    or p.get("uuid")
+                )
+                if not pid:
+                    continue
+
+                entry = career_db["players"].get(pid, {})
+                team_entries.append((pid, entry, p))
+
+            # Compute match ObjDOM scores
+            dom_scores = compute_dom_objective_team_scores(team_entries)
+
+            # Attach to each player
+            for pid, entry, mp in team_entries:
+                score = dom_scores.get(pid, 0.0)
+                mp["objective_domination_components"] = {
+                    "dom_score_raw": score,
+                    "dom_score_display": f"{score:.2f}",
+                }    
+
+
+            # -----------------------------
+            # 4c. Compute match-based ObjPL
+            # -----------------------------
+            from tags.objective_payload import compute_payload_objective_team_scores
+
+            pl_team_entries = []
+            for p in all_players:
+                pid = (
+                    p.get("id")
+                    or p.get("PlayerUUID")
+                    or p.get("uuid")
+                )
+                if not pid:
+                    continue
+
+                entry = career_db["players"].get(pid, {}) if career_db else {}
+                pl_team_entries.append((pid, entry, p))
+
+            if pl_team_entries:
+                pl_scores = compute_payload_objective_team_scores(pl_team_entries)
+
+                for pid, entry, mp in pl_team_entries:
+                    score = pl_scores.get(pid, 0.0)
+                    mp["objective_payload_components"] = {
+                        "payload_score_raw": score,
+                        "payload_score_display": f"{score:.2f}",
+                    }
+
+
+                
+
+            # -----------------------------
+            # 5. Write OBS slot files
+            # -----------------------------
             for idx, p in enumerate(all_players):
                 slot_dir = os.path.join(PLAYERS_DIR, f"p{idx}")
                 os.makedirs(slot_dir, exist_ok=True)
@@ -267,24 +419,21 @@ class DashLeagueGUI:
                 write_text(os.path.join(slot_dir, "Headshots.txt"), p.get("headshots", ""))
                 write_text(os.path.join(slot_dir, "Accuracy.txt"), p.get("accuracy", ""))
                 write_text(os.path.join(slot_dir, "PushTime.txt"), p.get("PAY_PushTime", ""))
-                write_text(os.path.join(slot_dir, "Captures.txt"), p.get("DOM_captures", ""))
-                write_text(os.path.join(slot_dir, "Counters.txt"), p.get("DOM_counters", ""))
+                write_text(os.path.join(slot_dir, "Captures.txt"), p.get("DOM_Captures", ""))
+                write_text(os.path.join(slot_dir, "Counters.txt"), p.get("DOM_Counters", ""))
 
-                # Tag exports now come from real tag engines via rankings/career_db
-                if career_db is not None:
-                    pid = p.get("id")
-                    if pid and pid in career_db["players"]:
-                        player_entry = career_db["players"][pid]
-                        map_type = self.map_var.get()
-                        tags_text = self.generate_player_tags(player_entry, map_type)
-                        write_text(os.path.join(slot_dir, "Tags.txt"), tags_text)
+                # Tag exports (use enriched match player dict)
+                map_type = self.map_var.get()
+                tags_text = self.generate_player_tags(p, map_type)
+                write_text(os.path.join(slot_dir, "Tags.txt"), tags_text)
 
             self.set_status("Player slots generated.")
             messagebox.showinfo("Success", "Player slots generated into p0–p9.")
+
         except Exception as e:
             messagebox.showerror("Error", f"Failed to generate slots:\n{e}")
             self.set_status("Generate failed.")
-            
+
         self.export_all_obs_files()
 
     def on_build_career_db(self):
@@ -344,7 +493,7 @@ class DashLeagueGUI:
             text = f"""PLAYER SPOTLIGHT — {name}
 
 Slayer Tier: {slayer_strength}
-Payload Objective Specialist: {obj_pl:.2f} (if not None)
+Payload Objective Specialist: {obj_pl if obj_pl is not None else "N/A"}
 
 Career Stats:
 KD: {career['KD']:.2f}
@@ -474,23 +623,24 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
         if slayer_strength:
             tags_out.append(slayer_strength)
 
-        # Payload Objective Specialist
+        # Payload Objective Specialist (match-based)
         if map_type == "Payload":
-            obj_pl = player_entry.get("objective_payload_score")
-            if obj_pl is not None:
-                tags_out.append(f"ObjPL {obj_pl:.2f}")
+            pl_info = player_entry.get("objective_payload_components", {})
+            pl_score = pl_info.get("payload_score_raw", 0.0)
+            tags_out.append(f"ObjPL {pl_score:.2f}")
 
-        # Domination Specialist
+        # Domination Objective Specialist (match-based)
         if map_type == "Domination":
-            obj_dom = compute_dom_objective(player_entry)
-            tags_out.append(f"ObjDOM {obj_dom:.2f}")
+            dom_info = player_entry.get("objective_domination_components", {})
+            dom_score = dom_info.get("dom_score_raw", 0.0)
+            tags_out.append(f"ObjDOM {dom_score:.2f}")
 
         # Sharpshooter
         sharp = player_entry.get("sharpshooter_score")
         if sharp is not None:
             tags_out.append(f"Sharp {sharp:.2f}")
 
-        return ", ".join(tags_out)    
+        return ", ".join(tags_out)
         
         
 
@@ -523,7 +673,7 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
 
         # --- Export to OBS ---
         try:
-            with open("obs_exports/storyline.txt", "w", encoding="utf-8") as f:
+            with open(os.path.join(OBS_EXPORT_DIR, "storyline.txt"), "w", encoding="utf-8") as f:
                 f.write(full_story)
         except Exception as e:
             messagebox.showerror("File Error", f"Could not write storyline export:\n{e}")
@@ -786,7 +936,7 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
 
             full_story = storyline_text + "\n\nTEAM IDENTITY SUMMARY\n" + identity_text
 
-            write_text(os.path.join("obs_exports", "storyline.txt"), full_story)
+            write_text(os.path.join(OBS_EXPORT_DIR, "storyline.txt"), full_story)
         except Exception as e:
             print("Storyline export failed:", e)
 
@@ -818,6 +968,35 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
 
         print(f"OBS files updated for {map_type}")   
 
+
+    from tkinter import filedialog, messagebox
+
+    def refresh_output_dirs(self):
+        global STATS_DIR, PLAYERS_DIR, OBS_EXPORT_DIR
+        STATS_DIR = self.output_root
+        PLAYERS_DIR = os.path.join(STATS_DIR, "players")
+        OBS_EXPORT_DIR = os.path.join(STATS_DIR, "obs_exports")
+        os.makedirs(PLAYERS_DIR, exist_ok=True)
+        os.makedirs(OBS_EXPORT_DIR, exist_ok=True)
+
+    def choose_output_folder(self):
+        folder = filedialog.askdirectory(title="Select output folder for OBS + players")
+        if not folder:
+            return
+
+        self.output_root = os.path.abspath(folder)
+        config["output_root"] = self.output_root
+
+        self.refresh_output_dirs()
+
+        with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+            json.dump(config, f, indent=4)
+
+        messagebox.showinfo(
+            "Output Folder Set",
+            f"Output folder set to:\n{self.output_root}\n\n"
+            "Point OBS to this folder for players and exports."
+        )
 
 def main():
     root = tk.Tk()

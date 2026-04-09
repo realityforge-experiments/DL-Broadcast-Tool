@@ -5,7 +5,10 @@ import json
 import math
 
 from tags.objective_payload import compute_payload_objective_team_scores
-from tags.objective_domination import compute_dom_objective
+from tags.objective_domination import (
+    compute_dom_objective_for_match_player,
+    compute_dom_objective_team_scores,
+)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CAREER_DB_PATH = os.path.join(BASE_DIR, "career_stats.json")
@@ -44,7 +47,7 @@ def rank_match_players_slayer(match_players):
         ranked.append({
             "id": pid,
             "name": entry["name"],
-            "team": entry["team_history"][-1] if entry["team_history"] else p.get("team", "Unknown"),
+            "team": p.get("team", "Unknown"),
             "score_raw": score,
             "score_display": entry.get("slayer_score_display", f"{score:.2f}"),
         })
@@ -53,53 +56,82 @@ def rank_match_players_slayer(match_players):
     for i, r in enumerate(ranked, 1):
         r["rank"] = i
     return ranked
-    
-def rank_match_players_objdom(players):
+
+
+def rank_match_players_objdom(match_players):
     """
-    Rank players by Domination Objective Specialist score.
-    players = list of player_entry dicts for the current match.
+    Rank players by Domination Objective Specialist score (match-based).
+    Uses DOM_Captures and DOM_Counters from match player stats.
     """
 
-    ranked = []
-    for p in players:
-        score = compute_dom_objective(p)
-        ranked.append({
-            "name": p["name"],
-            "team": p["team"],
-            "score_raw": score,
-            "score_display": f"{score:.2f}",
-        })
-
-    # Sort high → low
-    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
-
-    # Assign global rank
-    for i, entry in enumerate(ranked, start=1):
-        entry["rank"] = i
-
-    return ranked    
-
-
-def rank_match_players_objpl(match_players):
-    """
-    match_players: list of dicts from stats API (current season),
-    each with at least: id, name, team
-    Returns: list of ranked players with ObjPL score
-    """
     db = load_career_db()
     if db is None:
         return []
 
-    # Build team entries for ObjPL engine
     team_entries = []
     for p in match_players:
-        pid = p.get("id")
+        pid = (
+            p.get("id")
+            or p.get("PlayerUUID")
+            or p.get("uuid")
+        )
+        if not pid:
+            continue
+
         entry = _get_player_entry(db, pid)
         if not entry:
             continue
-        if "objective_payload_components" not in entry:
+
+        team_entries.append((pid, entry, p))
+
+    if not team_entries:
+        return []
+
+    obj_scores = compute_dom_objective_team_scores(team_entries)
+
+    ranked = []
+    for pid, entry, mp in team_entries:
+        score = obj_scores.get(pid)
+        if score is None:
             continue
-        team_entries.append((pid, entry))
+
+        ranked.append({
+            "id": pid,
+            "name": entry["name"],
+            "team": mp.get("team", "Unknown"),
+            "score_raw": score,
+            "score_display": f"{score:.2f}",
+        })
+
+    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
+
+    for i, r in enumerate(ranked, 1):
+        r["rank"] = i
+
+    return ranked
+
+
+def rank_match_players_objpl(match_players):
+    db = load_career_db()
+    if db is None:
+        return []
+
+    team_entries = []
+    for p in match_players:
+        pid = (
+            p.get("id")
+            or p.get("PlayerUUID")
+            or p.get("uuid")
+        )
+        if not pid:
+            continue
+
+        entry = _get_player_entry(db, pid)
+        if not entry:
+            continue
+
+        # ObjPL is match-based; we still attach career entry for name/team history
+        team_entries.append((pid, entry, p))
 
     if not team_entries:
         return []
@@ -107,21 +139,24 @@ def rank_match_players_objpl(match_players):
     obj_scores = compute_payload_objective_team_scores(team_entries)
 
     ranked = []
-    for pid, entry in team_entries:
-        score = obj_scores.get(pid, 0.0)
-        if score <= 0:
+    for pid, entry, mp in team_entries:
+        score = obj_scores.get(pid)
+        if score is None:
             continue
+
         ranked.append({
             "id": pid,
             "name": entry["name"],
-            "team": entry["team_history"][-1] if entry["team_history"] else "Unknown",
+            "team": mp.get("team", "Unknown"),
             "score_raw": score,
             "score_display": f"{score:.2f}",
         })
 
     ranked.sort(key=lambda x: x["score_raw"], reverse=True)
+
     for i, r in enumerate(ranked, 1):
         r["rank"] = i
+
     return ranked
 
 
@@ -137,7 +172,6 @@ def split_two_columns(ranked_players, team_a_name, team_b_name):
         elif p["team"] == team_b_name:
             right.append(p)
         else:
-            # If team name mismatch, leave them out of columns
             pass
     return left, right
 
@@ -168,7 +202,8 @@ def compute_slayer_prediction(team_a_players, team_b_players):
         "teamA_win": round(pA * 100),
         "teamB_win": round(pB * 100),
     }
-    
+
+
 def rank_match_players_sharpshooter(match_players):
     db = load_career_db()
     if db is None:
@@ -189,7 +224,7 @@ def rank_match_players_sharpshooter(match_players):
         ranked.append({
             "id": pid,
             "name": entry["name"],
-            "team": entry["team_history"][-1] if entry["team_history"] else p.get("team", "Unknown"),
+            "team": p.get("team", "Unknown"),
             "score_raw": score,
             "score_display": sharp.get("score_display", f"{score:.2f}"),
         })
@@ -199,7 +234,8 @@ def rank_match_players_sharpshooter(match_players):
         r["rank"] = i
 
     return ranked
-    
+
+
 def rank_match_players_clutch(players):
     ranked = []
     for p in players:
@@ -217,4 +253,3 @@ def rank_match_players_clutch(players):
         r["rank"] = i
 
     return ranked
-    

@@ -1,8 +1,8 @@
 import math
-from tags.objective_domination import compute_dom_objective
+from tags.objective_domination import compute_dom_objective_for_career_player
 
 def logistic_win_chance(teamA_avg, teamB_avg, k=1.1):
-    """Generic logistic win chance for non-Slayer tags."""
+    """Generic logistic win chance for all tags."""
     if max(teamA_avg, teamB_avg) == 0:
         return 50, 50
 
@@ -14,19 +14,24 @@ def logistic_win_chance(teamA_avg, teamB_avg, k=1.1):
 
 
 def compute_tag_averages(teamA_players, teamB_players):
-    """Compute all tag averages for both teams."""
+    """Compute all tag averages for both teams using career identity scores."""
 
     def avg_slayer(players):
         return sum(p.get("slayer_score_raw", 0.0) for p in players) / max(1, len(players))
 
     def avg_objpl(players):
         return sum(
-            p.get("objective_payload_components", {}).get("push_time_norm", 0.0)
+            p.get("objective_payload_components", {}).get("payload_score_raw", 0.0)
             for p in players
         ) / max(1, len(players))
 
     def avg_objdom(players):
-        return sum(compute_dom_objective(p) for p in players) / max(1, len(players))
+        return sum(
+            compute_dom_objective_for_career_player(
+                p.get("career_entry", {})
+            ).get("dom_score_raw", 0.0)
+            for p in players
+        ) / max(1, len(players))
 
     def avg_sharp(players):
         return sum(
@@ -57,7 +62,7 @@ def compute_tag_averages(teamA_players, teamB_players):
 
 
 def generate_predictions(teamA_players, teamB_players):
-    """Full Option D prediction engine."""
+    """Full Option D prediction engine (modernized)."""
 
     team_a = teamA_players[0].get("team", "Team A")
     team_b = teamB_players[0].get("team", "Team B")
@@ -67,14 +72,8 @@ def generate_predictions(teamA_players, teamB_players):
 
     # --- Per-tag win chances ---
     per_tag = {}
-
     for tag, (a_avg, b_avg) in avgs.items():
-        if tag == "Slayer":
-            # Slayer uses its own prediction function
-            # Convert to simple logistic for consistency
-            per_tag[tag] = logistic_win_chance(a_avg, b_avg)
-        else:
-            per_tag[tag] = logistic_win_chance(a_avg, b_avg)
+        per_tag[tag] = logistic_win_chance(a_avg, b_avg)
 
     # --- Weighted overall prediction ---
     weights = {
