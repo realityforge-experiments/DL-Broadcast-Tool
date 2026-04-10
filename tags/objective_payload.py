@@ -1,37 +1,37 @@
-import math
+from tags.tag_framework import build_tag_output
 
 # ---------------------------------------------------------
-# 1. CAREER PAYLOAD OBJECTIVE SPECIALIST (MODERNIZED)
+# Payload Summary
 # ---------------------------------------------------------
 
-def compute_payload_objective_for_career_player(pdata, league_averages=None):
+def payload_summary(tier, pct):
+    if tier == "S":
+        return f"Elite Payload driver — top {100 - pct:.0f}% in push efficiency and presence."
+    if tier == "A":
+        return "Strong Payload contributor with reliable push presence."
+    if tier == "B":
+        return "Above-average Payload impact."
+    if tier == "C":
+        return "Below-average Payload contribution."
+    return "Minimal Payload presence or push impact."
+
+
+# ---------------------------------------------------------
+# Raw Payload Score (Career)
+# ---------------------------------------------------------
+
+def compute_payload_raw(pdata):
     """
-    Modernized career Payload Objective Specialist score.
-    Mirrors the structure of Domination's career tag.
-
+    Computes a normalized 0–1 Payload Objective Specialist score.
     Components:
-    - PresenceNorm: fraction of matches that were Payload
-    - PushNorm: average push time normalized to 300s soft cap
-    - PSINorm: damage-per-death survivability normalized
-
-    Final score:
-        0.40 * PushNorm
-      + 0.40 * PresenceNorm
-      + 0.20 * PSINorm
+        - PresenceNorm: fraction of matches that were Payload
+        - PushNorm: average push time normalized to 300s soft cap
+        - PSINorm: damage-per-death survivability normalized
     """
 
     matches = pdata.get("matches", [])
     if not matches:
-        return {
-            "payload_matches": 0,
-            "total_push_time": 0.0,
-            "avg_push_time": 0.0,
-            "presence_norm": 0.0,
-            "push_norm": 0.0,
-            "psi_norm": 0.0,
-            "payload_score_raw": 0.0,
-            "payload_score_display": "0.00",
-        }
+        return 0.0
 
     total_matches = len(matches)
     payload_matches = 0
@@ -51,108 +51,33 @@ def compute_payload_objective_for_career_player(pdata, league_averages=None):
             total_deaths += deaths
 
     if payload_matches == 0:
-        return {
-            "payload_matches": 0,
-            "total_push_time": 0.0,
-            "avg_push_time": 0.0,
-            "presence_norm": 0.0,
-            "push_norm": 0.0,
-            "psi_norm": 0.0,
-            "payload_score_raw": 0.0,
-            "payload_score_display": "0.00",
-        }
+        return 0.0
 
-    # --- PresenceNorm ---
+    # Presence
     presence_norm = payload_matches / total_matches
 
-    # --- PushNorm ---
+    # Push time
     avg_push = total_push / payload_matches
     push_norm = min(avg_push / 300.0, 1.0)
 
-    # --- PSINorm ---
+    # Survivability (PSI)
     psi_raw = total_damage / (total_deaths + 1)
     psi_norm = psi_raw / (psi_raw + 300.0)
 
-    # --- Final Score ---
-    raw = (0.40 * push_norm) + (0.40 * presence_norm) + (0.20 * psi_norm)
+    # Weighted final score
+    raw = (
+        0.40 * push_norm +
+        0.40 * presence_norm +
+        0.20 * psi_norm
+    )
 
-    return {
-        "payload_matches": payload_matches,
-        "total_push_time": total_push,
-        "avg_push_time": avg_push,
-        "presence_norm": presence_norm,
-        "push_norm": push_norm,
-        "psi_norm": psi_norm,
-        "payload_score_raw": raw,
-        "payload_score_display": f"{raw:.2f}",
-    }
+    return max(0.0, min(1.0, raw))
 
 
 # ---------------------------------------------------------
-# 2. MATCH-BASED PAYLOAD OBJECTIVE SPECIALIST (MODERNIZED)
+# Public API
 # ---------------------------------------------------------
 
-def compute_payload_objective_for_match_player(p):
-    """
-    Extract match-level Payload stats for a single player.
-    Normalized naming for consistency.
-    """
-
-    push = p.get("PAY_PushTime", 0) or 0
-    dmg = p.get("damage", p.get("Damage", 0)) or 0
-    deaths = p.get("deaths", p.get("Deaths", 0)) or 0
-
-    return {
-        "push_time": push,
-        "damage": dmg,
-        "deaths": deaths,
-    }
-
-
-# ---------------------------------------------------------
-# 3. TEAM SCORE CALCULATION (MATCH-BASED, MODERNIZED)
-# ---------------------------------------------------------
-
-def compute_payload_objective_team_scores(team_entries):
-    """
-    team_entries = list of (pid, career_entry, match_player)
-
-    Components:
-    - Presence: push_time / team_total_push
-    - PushNorm: push_time / 300s soft cap
-    - PSINorm: damage-per-death normalized
-
-    Final score:
-        0.40 * Presence
-      + 0.40 * PushNorm
-      + 0.20 * PSINorm
-    """
-
-    # Total team push time
-    team_push = sum(mp.get("PAY_PushTime", 0) or 0 for _, _, mp in team_entries)
-    if team_push <= 0:
-        team_push = 1  # avoid div-by-zero
-
-    scores = {}
-
-    for pid, entry, mp in team_entries:
-        push = mp.get("PAY_PushTime", 0) or 0
-        dmg = mp.get("damage", mp.get("Damage", 0)) or 0
-        deaths = mp.get("deaths", mp.get("Deaths", 0)) or 0
-
-        # --- Presence ---
-        presence = push / team_push
-
-        # --- PushNorm ---
-        push_norm = min(push / 300.0, 1.0)
-
-        # --- PSINorm ---
-        psi_raw = dmg / (deaths + 1)
-        psi_norm = psi_raw / (psi_raw + 300.0)
-
-        # --- Final Score ---
-        score = (0.40 * presence) + (0.40 * push_norm) + (0.20 * psi_norm)
-
-        scores[pid] = round(score, 4)
-
-    return scores
+def compute_payload_tag(pdata, league_averages, payload_distribution):
+    raw = compute_payload_raw(pdata)
+    return build_tag_output(raw, payload_distribution, payload_summary)

@@ -11,8 +11,10 @@ import requests
 # --- Internal modules ---
 from data.career_db import build_career_database
 from rankings import top_players_by_tag
-from team_identity import generate_team_identity, compare_team_identity
-from storylines import matchup_storyline
+from analysis.team_identity_v2 import generate_team_identity_block
+from analysis.storylines import generate_storyline, matchup_storyline
+from analysis.predictions_v2 import generate_prediction
+from analysis.obs_export_v2 import export_all_obs
 
 from tags.objective_domination import (
     compute_dom_objective_for_career_player,
@@ -68,7 +70,41 @@ def export_to_obs(filename, text):
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
     return path
+    
+# ---------------------------------------------------------
+# Team Identity Formatter (Standalone Helper)
+# ---------------------------------------------------------
 
+def format_team_identity(identity):
+    """
+    Converts the identity block dict into readable caster-friendly text.
+    """
+    lines = []
+
+    lines.append(f"Team Style: {identity.get('team_style', 'Unknown')}")
+    lines.append("")
+
+    lines.append("Strengths:")
+    for s in identity.get("strengths", []):
+        lines.append(f"  - {s}")
+
+    lines.append("")
+
+    lines.append("Weaknesses:")
+    for w in identity.get("weaknesses", []):
+        lines.append(f"  - {w}")
+
+    lines.append("")
+
+    lines.append("Tag Breakdown:")
+    for tag, data in identity.get("tags", {}).items():
+        lines.append(
+            f"  - {tag.replace('_', ' ').title()}: "
+            f"{data['tier']} Tier (avg {data['avg_pct']:.1f} percentile)"
+        )
+
+    return "\n".join(lines)    
+    
 
 def fetch_json(url):
     resp = requests.get(url, timeout=10)
@@ -321,7 +357,7 @@ class DashLeagueGUI:
                     career_db = json.load(f)
 
             # -----------------------------
-            # 4. Attach tag components
+            # 4. Attach modern career tags
             # -----------------------------
             if career_db is not None:
                 for p in all_players:
@@ -334,73 +370,13 @@ class DashLeagueGUI:
                     if pid and pid in career_db["players"]:
                         pdata = career_db["players"][pid]
 
-                        p["clutch_components"] = pdata.get("clutch_components", {})
-                        p["consistency_components"] = pdata.get("consistency_components", {})
-                        p["objective_payload_components"] = pdata.get("objective_payload_components", {})
-                        p["objective_domination_components"] = pdata.get("objective_domination_components", {})
-                        p["sharpshooter_components"] = pdata.get("sharpshooter_components", {})
-                        p["slayer_score_raw"] = pdata.get("slayer_score_raw", 0.0)
-                        
-                        
-            # -----------------------------
-            # 4b. Compute match-based ObjDOM
-            # -----------------------------
-            from tags.objective_domination import compute_dom_objective_team_scores
-
-            team_entries = []
-            for p in all_players:
-                pid = (
-                    p.get("id")
-                    or p.get("PlayerUUID")
-                    or p.get("uuid")
-                )
-                if not pid:
-                    continue
-
-                entry = career_db["players"].get(pid, {})
-                team_entries.append((pid, entry, p))
-
-            # Compute match ObjDOM scores
-            dom_scores = compute_dom_objective_team_scores(team_entries)
-
-            # Attach to each player
-            for pid, entry, mp in team_entries:
-                score = dom_scores.get(pid, 0.0)
-                mp["objective_domination_components"] = {
-                    "dom_score_raw": score,
-                    "dom_score_display": f"{score:.2f}",
-                }    
-
-
-            # -----------------------------
-            # 4c. Compute match-based ObjPL
-            # -----------------------------
-            from tags.objective_payload import compute_payload_objective_team_scores
-
-            pl_team_entries = []
-            for p in all_players:
-                pid = (
-                    p.get("id")
-                    or p.get("PlayerUUID")
-                    or p.get("uuid")
-                )
-                if not pid:
-                    continue
-
-                entry = career_db["players"].get(pid, {}) if career_db else {}
-                pl_team_entries.append((pid, entry, p))
-
-            if pl_team_entries:
-                pl_scores = compute_payload_objective_team_scores(pl_team_entries)
-
-                for pid, entry, mp in pl_team_entries:
-                    score = pl_scores.get(pid, 0.0)
-                    mp["objective_payload_components"] = {
-                        "payload_score_raw": score,
-                        "payload_score_display": f"{score:.2f}",
-                    }
-
-
+                        # Attach modern tags directly
+                        p["slayer"] = pdata.get("slayer", {})
+                        p["sharpshooter"] = pdata.get("sharpshooter", {})
+                        p["objective_payload"] = pdata.get("objective_payload", {})
+                        p["objective_domination"] = pdata.get("objective_domination", {})
+                        p["consistency"] = pdata.get("consistency", {})
+                        p["clutch"] = pdata.get("clutch", {})
                 
 
             # -----------------------------
@@ -439,14 +415,18 @@ class DashLeagueGUI:
     def on_build_career_db(self):
         try:
             self.set_status("Building career database...")
-            output_path = os.path.join(BASE_DIR, "career_stats.json")
+
+            # Modernized output path
+            output_path = os.path.join(BASE_DIR, "final_db.json")
+
             build_career_database(output_path)
+
             self.set_status("Career database built successfully.")
             messagebox.showinfo("Success", "Career database has been built.")
+
         except Exception as e:
             import traceback
             traceback.print_exc()
-            raise
             messagebox.showerror("Error", f"Failed to build career database:\n{e}")
             self.set_status("Career DB build failed.")
             
@@ -528,80 +508,22 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
             messagebox.showerror("Error", "Select a team first.")
             return
 
-        # Filter selected players for this team
         team_players = [p for p in self.current_match_players if p.get("team") == team]
 
         if len(team_players) == 0:
             messagebox.showerror("Error", "No players selected for this team.")
             return
 
-        # Use the identity engine with the selected players
-        identity = generate_team_identity(team_players)
+        identity_data = generate_team_identity_block(team_players, team)
+        identity_text = format_team_identity(identity_data)
 
-        if identity is None:
-            messagebox.showerror("Error", "Not enough data to generate team identity.")
-            return
-
-        strengths = []
-        weaknesses = []
-
-        # Slayer
-        if identity["slayer_score"] > 0.55:
-            strengths.append("Strong slaying presence")
-        elif identity["slayer_score"] < 0.45:
-            weaknesses.append("Below-average slaying power")
-
-        # Payload Objective
-        if identity["payload_score"] > 0.55:
-            strengths.append("Strong Payload objective focus")
-        elif identity["payload_score"] < 0.45:
-            weaknesses.append("Weak Payload objective presence")
-
-        # Consistency
-        if identity["consistency_score"] > 0.55:
-            strengths.append("Strong map-to-map consistency")
-        elif identity["consistency_score"] < 0.45:
-            weaknesses.append("Inconsistent map-to-map performance")
-
-        # Clutch
-        if identity["clutch_score"] > 0.55:
-            strengths.append("Performs well in clutch moments")
-        elif identity["clutch_score"] < 0.45:
-            weaknesses.append("Struggles in clutch situations")
-
-        # Sharpshooter
-        if identity["sharpshooter_score"] > 0.55:
-            strengths.append("Strong aim and headshot conversion")
-        elif identity["sharpshooter_score"] < 0.45:
-            weaknesses.append("Weak aim consistency")
-            
-        # Domination Objective
-        if identity["objdom_score"] > 0.55:
-            strengths.append("Strong Domination objective presence")
-        elif identity["objdom_score"] < 0.45:
-            weaknesses.append("Weak Domination objective presence") 
-
-         
-
-        # --- UI Window ---
         win = tk.Toplevel(self.root)
         win.title(f"Team Identity — {team}")
-        win.geometry("400x500")
+        win.geometry("500x600")
 
         output = tk.Text(win, wrap="word")
         output.pack(expand=True, fill="both", padx=10, pady=10)
-
-        text = f"TEAM IDENTITY — {team}\n\n"
-
-        text += "Strengths:\n"
-        for s in strengths:
-            text += f"- {s}\n"
-
-        text += "\nWeaknesses:\n"
-        for w in weaknesses:
-            text += f"- {w}\n"
-
-        output.insert(tk.END, text)
+        output.insert(tk.END, identity_text)
 
         def export():
             content = output.get("1.0", tk.END).strip()
@@ -649,54 +571,76 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
         team_b = self.team_b_var.get()
 
         if not team_a or not team_b:
-            messagebox.showerror("Error", "Select both teams first.")
+            messagebox.showerror("Error", "Select both Team A and Team B.")
             return
 
-        # --- Extract selected players for each team ---
-        teamA_players = [p for p in self.current_match_players if p.get("team") == team_a]
-        teamB_players = [p for p in self.current_match_players if p.get("team") == team_b]
+        # Extract players for each team
+        teamA_players = [self.stats_by_id[p["id"]] for p in self.current_match_players if p.get("team") == team_a]
+        teamB_players = [self.stats_by_id[p["id"]] for p in self.current_match_players if p.get("team") == team_b]
+        
+        #print("TEAM A SAMPLE:", teamA_players[0])
+        #print("TEAM B SAMPLE:", teamB_players[0])
 
-        if len(teamA_players) == 0 or len(teamB_players) == 0:
-            messagebox.showerror("Error", "No selected players for one or both teams.")
+        if not teamA_players or not teamB_players:
+            messagebox.showerror("Error", "No players selected for one or both teams.")
             return
 
-        # --- Generate storyline + identity summary using SELECTED PLAYERS ---
+        # -----------------------------------------
+        # 1. Generate storyline + identity block
+        # -----------------------------------------
         storyline_text = matchup_storyline(teamA_players, teamB_players)
-        identity_text = compare_team_identity(teamA_players, teamB_players)
+
+        # Team identity block (per team, using modern dict + formatter)
+        identity_data_a = generate_team_identity_block(teamA_players, team_a)
+        identity_text_a = format_team_identity(identity_data_a)
+
+        identity_data_b = generate_team_identity_block(teamB_players, team_b)
+        identity_text_b = format_team_identity(identity_data_b)
 
         full_story = (
             storyline_text
-            + "\n\n"
-            + "TEAM IDENTITY SUMMARY\n"
-            + identity_text
+            + "\n\nTEAM IDENTITY SUMMARY – " + team_a + "\n"
+            + identity_text_a
+            + "\n\nTEAM IDENTITY SUMMARY – " + team_b + "\n"
+            + identity_text_b
         )
 
-        # --- Export to OBS ---
-        try:
-            with open(os.path.join(OBS_EXPORT_DIR, "storyline.txt"), "w", encoding="utf-8") as f:
-                f.write(full_story)
-        except Exception as e:
-            messagebox.showerror("File Error", f"Could not write storyline export:\n{e}")
-
-        # --- Display in popup window ---
+        # -----------------------------------------
+        # 2. Popup window
+        # -----------------------------------------
         win = tk.Toplevel(self.root)
         win.title("Match Storyline")
-        win.geometry("500x600")
+        win.geometry("600x700")
 
         output = tk.Text(win, wrap="word")
         output.pack(expand=True, fill="both", padx=10, pady=10)
         output.insert(tk.END, full_story)
 
+        # -----------------------------------------
+        # 3. Export to OBS
+        # -----------------------------------------
         def export():
             content = output.get("1.0", tk.END).strip()
             if not content:
                 messagebox.showerror("Error", "No storyline text to export.")
                 return
-            path = export_to_obs("storyline.txt", content)
-            messagebox.showinfo("Exported", f"Storyline exported to:\n{path}")
+
+            teamA_name = self.team_a_var.get()
+            teamB_name = self.team_b_var.get()
+
+            export_all_obs(
+                OBS_EXPORT_DIR,
+                teamA_players,
+                teamB_players,
+                teamA_name,
+                teamB_name,
+            )
+
+            messagebox.showinfo("Exported", f"OBS files exported to:\n{OBS_EXPORT_DIR}")
 
         ttk.Button(win, text="Export to OBS", command=export).pack(pady=5)
-
+    
+    
     def on_rankings(self):
         if not self.current_match_players:
             messagebox.showerror("Error", "Generate player slots first.")
@@ -916,7 +860,6 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
         team_a = self.team_a_var.get()
         team_b = self.team_b_var.get()
 
-        # If teams or map not selected, skip silently
         if not map_type or not team_a or not team_b:
             return
 
@@ -924,27 +867,42 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
         teamA_players = [p for p in self.current_match_players if p.get("team") == team_a]
         teamB_players = [p for p in self.current_match_players if p.get("team") == team_b]
 
-        # If either team has no selected players, skip storyline/predictions
         if len(teamA_players) == 0 or len(teamB_players) == 0:
             print("OBS export skipped: no selected players for one or both teams.")
             return
 
+        # Define names for identity block
+        teamA_name = team_a
+        teamB_name = team_b
+
         # --- STORYLINE + TEAM IDENTITY ---
         try:
             storyline_text = matchup_storyline(teamA_players, teamB_players)
-            identity_text = compare_team_identity(teamA_players, teamB_players)
 
-            full_story = storyline_text + "\n\nTEAM IDENTITY SUMMARY\n" + identity_text
+            identity_data_a = generate_team_identity_block(teamA_players, teamA_name)
+            identity_data_b = generate_team_identity_block(teamB_players, teamB_name)
+
+            identity_text_a = format_team_identity(identity_data_a)
+            identity_text_b = format_team_identity(identity_data_b)
+
+            full_story = (
+                storyline_text
+                + f"\n\nTEAM IDENTITY SUMMARY — {teamA_name}\n"
+                + identity_text_a
+                + f"\n\nTEAM IDENTITY SUMMARY — {teamB_name}\n"
+                + identity_text_b
+            )
 
             write_text(os.path.join(OBS_EXPORT_DIR, "storyline.txt"), full_story)
+
         except Exception as e:
             print("Storyline export failed:", e)
 
-        # --- PREDICTIONS (composition-aware) ---
+        # --- PREDICTIONS ---
         try:
             if hasattr(self, "generate_predictions"):
                 predictions = self.generate_predictions(teamA_players, teamB_players)
-                write_text(os.path.join("obs_exports", "predictions.txt"), predictions)
+                write_text(os.path.join(OBS_EXPORT_DIR, "predictions.txt"), predictions)
         except Exception as e:
             print("Prediction export failed:", e)
 
@@ -963,13 +921,11 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
 
                         slot_path = os.path.join(PLAYERS_DIR, f"p{idx}", "Tags.txt")
                         write_text(slot_path, tags_text)
+
         except Exception as e:
             print("Tag export failed:", e)
 
-        print(f"OBS files updated for {map_type}")   
-
-
-    from tkinter import filedialog, messagebox
+        print(f"OBS files updated for {map_type}")
 
     def refresh_output_dirs(self):
         global STATS_DIR, PLAYERS_DIR, OBS_EXPORT_DIR
@@ -997,6 +953,97 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
             f"Output folder set to:\n{self.output_root}\n\n"
             "Point OBS to this folder for players and exports."
         )
+        
+        
+    def on_match_prediction(self):
+        team_a = self.team_a_var.get()
+        team_b = self.team_b_var.get()
+
+        if not team_a or not team_b:
+            messagebox.showerror("Error", "Select both Team A and Team B.")
+            return
+
+        teamA_players = [p for p in self.current_match_players if p.get("team") == team_a]
+        teamB_players = [p for p in self.current_match_players if p.get("team") == team_b]
+
+        if not teamA_players or not teamB_players:
+            messagebox.showerror("Error", "No players selected for one or both teams.")
+            return
+
+        prediction_text = generate_prediction(teamA_players, teamB_players, team_a, team_b)
+
+        win = tk.Toplevel(self.root)
+        win.title("Match Prediction")
+        win.geometry("600x600")
+
+        output = tk.Text(win, wrap="word")
+        output.pack(expand=True, fill="both", padx=10, pady=10)
+        output.insert(tk.END, prediction_text)
+
+        def export():
+            content = output.get("1.0", tk.END).strip()
+            if not content:
+                messagebox.showerror("Error", "No prediction text to export.")
+                return
+            path = export_to_obs("match_prediction.txt", content)
+            messagebox.showinfo("Exported", f"Prediction exported to:\n{path}")
+
+        ttk.Button(win, text="Export to OBS", command=export).pack(pady=5)
+        
+        
+    def on_export_obs_all(self):
+        team_a = self.team_a_var.get()
+        team_b = self.team_b_var.get()
+
+        if not team_a or not team_b:
+            messagebox.showerror("Error", "Select both Team A and Team B.")
+            return
+
+        teamA_players = [p for p in self.current_match_players if p.get("team") == team_a]
+        teamB_players = [p for p in self.current_match_players if p.get("team") == team_b]
+
+        if not teamA_players or not teamB_players:
+            messagebox.showerror("Error", "No players selected for one or both teams.")
+            return
+
+        output_folder = os.path.join(os.getcwd(), "obs_output")
+        export_all_obs(output_folder, teamA_players, teamB_players, team_a, team_b)
+        messagebox.showinfo("Exported", f"OBS files exported to:\n{output_folder}")    
+          
+
+    def format_team_identity(identity):
+        """
+        Converts the identity block dict into readable caster-friendly text.
+        """
+        lines = []
+
+        lines.append(f"Team Style: {identity.get('team_style', 'Unknown')}")
+        lines.append("")
+
+        lines.append("Strengths:")
+        for s in identity.get("strengths", []):
+            lines.append(f"  - {s}")
+
+        lines.append("")
+
+        lines.append("Weaknesses:")
+        for w in identity.get("weaknesses", []):
+            lines.append(f"  - {w}")
+
+        lines.append("")
+
+        lines.append("Tag Breakdown:")
+        for tag, data in identity.get("tags", {}).items():
+            lines.append(
+                f"  - {tag.title()}: {data['tier']} Tier "
+                f"(avg {data['avg_pct']:.1f} percentile)"
+            )
+
+        return "\n".join(lines)
+
+
+
+    
 
 def main():
     root = tk.Tk()

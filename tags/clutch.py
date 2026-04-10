@@ -1,65 +1,96 @@
+from tags.tag_framework import build_tag_output
 import math
 
-def compute_clutch(player_entry, league_averages=None):
+# ---------------------------------------------------------
+# Raw Clutch Score (Expanded, Meaningful Range)
+# ---------------------------------------------------------
+
+def compute_clutch_raw(player):
     """
-    Computes a normalized clutch score (0–1) based on:
-    - Pressure Efficiency (40%)
-    - Collapse Avoidance (40%)
-    - Conversion Rate (20%)
+    Computes a meaningful 0–1 clutch score with real separation.
+    Components:
+        - pressure efficiency (log-scaled)
+        - high-pressure accuracy (expanded)
+        - consistency (smoothed)
+        - clutch moment density (rare-event amplifier)
     """
 
-    career = player_entry.get("career", {})
-    maps = career.get("maps", 0)
-
-    if maps <= 0:
-        return 0.0
-
-    # -----------------------------
-    # PRESSURE EFFICIENCY (40%)
-    # -----------------------------
-    damage = career.get("damage", 0)
+    career = player.get("career", {})
+    dmg = career.get("damage", 0)
     deaths = career.get("deaths", 0)
-
-    pressure_eff = damage / (deaths + 1)
-
-    # Normalize pressure using log scale
-    # If league averages exist, use them; otherwise fallback to self-normalization
-    if league_averages and "pressure_eff" in league_averages:
-        denom = math.log(1 + league_averages["pressure_eff"])
-    else:
-        denom = math.log(1 + pressure_eff) if pressure_eff > 0 else 1
-
-    pressure_norm = math.log(1 + pressure_eff) / max(1e-6, denom)
-
-    # -----------------------------
-    # COLLAPSE AVOIDANCE (40%)
-    # -----------------------------
-    # Reuse consistency floor logic if available
-    consistency = player_entry.get("consistency_components", {})
-    floor_score = consistency.get("consistency_norm", 0.0)
-
-    collapse_avoid = floor_score  # already normalized 0–1
-
-    # -----------------------------
-    # CONVERSION RATE (20%)
-    # -----------------------------
     shots = career.get("shots", 0)
     shots_hit = career.get("shots_hit", 0)
     headshots = career.get("headshots", 0)
 
+    # -----------------------------------------
+    # 1. Pressure Efficiency (log-scaled)
+    # -----------------------------------------
+    pressure_eff = dmg / (deaths + 1)
+    pressure_norm = math.log1p(pressure_eff) / math.log1p(3000)
+
+    # -----------------------------------------
+    # 2. Consistency (smoothed)
+    # -----------------------------------------
+    consistency = player.get("consistency", {})
+    consistency_norm = consistency.get("raw", 0.0)
+    consistency_norm = max(0.1, consistency_norm)  # avoid collapse
+
+    # -----------------------------------------
+    # 3. Accuracy + Headshot Rate (expanded)
+    # -----------------------------------------
     accuracy = shots_hit / max(1, shots)
     headshot_rate = headshots / max(1, shots_hit)
 
-    # Normalize accuracy + headshot rate
-    conversion = (accuracy * 0.50) + (headshot_rate * 0.50)
+    acc_norm = min(1.0, accuracy / 0.25)          # 25% = elite
+    hs_norm = min(1.0, headshot_rate / 0.20)      # 20% = elite
 
-    # -----------------------------
-    # FINAL CLUTCH SCORE
-    # -----------------------------
-    clutch_raw = (
-        (pressure_norm * 0.40) +
-        (collapse_avoid * 0.40) +
-        (conversion * 0.20)
+    conversion = (acc_norm * 0.4) + (hs_norm * 0.6)
+
+    # -----------------------------------------
+    # 4. Clutch Moment Density (rare-event amplifier)
+    # -----------------------------------------
+    matches = player.get("matches", [])
+    clutch_events = 0
+
+    for m in matches:
+        # Count high-pressure events (kills in final minute, etc.)
+        # We don't have real clutch stats, so approximate:
+        if m.get("Kills", 0) >= 10:
+            clutch_events += 1
+
+    density = clutch_events / max(1, len(matches))
+    density_norm = min(1.0, density * 3.0)  # amplify rare events
+
+    # -----------------------------------------
+    # Final weighted score (expanded)
+    # -----------------------------------------
+    raw = (
+        pressure_norm * 0.35 +
+        consistency_norm * 0.25 +
+        conversion * 0.25 +
+        density_norm * 0.15
     )
 
-    return max(0.0, min(1.0, clutch_raw))
+    return max(0.05, min(1.0, raw))
+
+
+# ---------------------------------------------------------
+# Full Clutch Tag
+# ---------------------------------------------------------
+
+def compute_clutch(player, league_averages, clutch_distribution):
+
+    raw = compute_clutch_raw(player)
+
+    def summary_fn(tier, pct):
+        if tier == "S":
+            return "Elite closer in high-pressure moments."
+        if tier == "A":
+            return "Very strong under pressure."
+        if tier == "B":
+            return "Solid clutch performance."
+        if tier == "C":
+            return "Inconsistent in high-pressure moments."
+        return "Struggles to close out high-pressure situations."
+
+    return build_tag_output(raw, clutch_distribution, summary_fn)

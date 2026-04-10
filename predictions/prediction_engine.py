@@ -1,8 +1,36 @@
+# prediction_engine.py (Modernized)
+
 import math
-from tags.objective_domination import compute_dom_objective_for_career_player
+import os
+import json
+
+from analysis.team_identity_v2 import generate_team_identity_block
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CAREER_DB_PATH = os.path.join(BASE_DIR, "final_db.json")
+
+
+# ---------------------------------------------------------
+# Load DB
+# ---------------------------------------------------------
+
+def load_career_db():
+    if not os.path.exists(CAREER_DB_PATH):
+        return None
+    with open(CAREER_DB_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _get_player_entry(db, pid):
+    pid = str(pid)
+    return db["players"].get(pid)
+
+
+# ---------------------------------------------------------
+# Logistic Win Chance
+# ---------------------------------------------------------
 
 def logistic_win_chance(teamA_avg, teamB_avg, k=1.1):
-    """Generic logistic win chance for all tags."""
     if max(teamA_avg, teamB_avg) == 0:
         return 50, 50
 
@@ -13,57 +41,66 @@ def logistic_win_chance(teamA_avg, teamB_avg, k=1.1):
     return round(pA * 100), round(pB * 100)
 
 
+# ---------------------------------------------------------
+# Compute Tag Averages (Modern Tag System)
+# ---------------------------------------------------------
+
 def compute_tag_averages(teamA_players, teamB_players):
-    """Compute all tag averages for both teams using career identity scores."""
+    """
+    Compute team averages using modern tag raw scores.
+    Each player dict must contain:
+        - id
+        - team
+    """
 
-    def avg_slayer(players):
-        return sum(p.get("slayer_score_raw", 0.0) for p in players) / max(1, len(players))
+    db = load_career_db()
+    if db is None:
+        return {}
 
-    def avg_objpl(players):
-        return sum(
-            p.get("objective_payload_components", {}).get("payload_score_raw", 0.0)
-            for p in players
-        ) / max(1, len(players))
-
-    def avg_objdom(players):
-        return sum(
-            compute_dom_objective_for_career_player(
-                p.get("career_entry", {})
-            ).get("dom_score_raw", 0.0)
-            for p in players
-        ) / max(1, len(players))
-
-    def avg_sharp(players):
-        return sum(
-            p.get("sharpshooter_components", {}).get("accuracy_norm", 0.0)
-            for p in players
-        ) / max(1, len(players))
-
-    def avg_consistency(players):
-        return sum(
-            p.get("consistency_components", {}).get("consistency_norm", 0.0)
-            for p in players
-        ) / max(1, len(players))
-
-    def avg_clutch(players):
-        return sum(
-            p.get("clutch_components", {}).get("clutch_norm", 0.0)
-            for p in players
-        ) / max(1, len(players))
+    def avg_tag(players, tag_name):
+        vals = []
+        for p in players:
+            pid = p.get("id") or p.get("PlayerUUID") or p.get("uuid")
+            entry = _get_player_entry(db, pid)
+            if not entry:
+                continue
+            tag = entry.get(tag_name, {})
+            vals.append(tag.get("raw", 0.0))
+        return sum(vals) / max(1, len(vals))
 
     return {
-        "Slayer": (avg_slayer(teamA_players), avg_slayer(teamB_players)),
-        "ObjPL": (avg_objpl(teamA_players), avg_objpl(teamB_players)),
-        "ObjDOM": (avg_objdom(teamA_players), avg_objdom(teamB_players)),
-        "Sharpshooter": (avg_sharp(teamA_players), avg_sharp(teamB_players)),
-        "Consistency": (avg_consistency(teamA_players), avg_consistency(teamB_players)),
-        "Clutch": (avg_clutch(teamA_players), avg_clutch(teamB_players)),
+        "Slayer": (
+            avg_tag(teamA_players, "slayer"),
+            avg_tag(teamB_players, "slayer"),
+        ),
+        "ObjPL": (
+            avg_tag(teamA_players, "objective_payload"),
+            avg_tag(teamB_players, "objective_payload"),
+        ),
+        "ObjDOM": (
+            avg_tag(teamA_players, "objective_domination"),
+            avg_tag(teamB_players, "objective_domination"),
+        ),
+        "Sharpshooter": (
+            avg_tag(teamA_players, "sharpshooter"),
+            avg_tag(teamB_players, "sharpshooter"),
+        ),
+        "Consistency": (
+            avg_tag(teamA_players, "consistency"),
+            avg_tag(teamB_players, "consistency"),
+        ),
+        "Clutch": (
+            avg_tag(teamA_players, "clutch"),
+            avg_tag(teamB_players, "clutch"),
+        ),
     }
 
 
-def generate_predictions(teamA_players, teamB_players):
-    """Full Option D prediction engine (modernized)."""
+# ---------------------------------------------------------
+# Full Prediction Engine (Option D)
+# ---------------------------------------------------------
 
+def generate_predictions(teamA_players, teamB_players):
     team_a = teamA_players[0].get("team", "Team A")
     team_b = teamB_players[0].get("team", "Team B")
 
@@ -88,7 +125,6 @@ def generate_predictions(teamA_players, teamB_players):
     overall_A = sum(per_tag[tag][0] * w for tag, w in weights.items())
     overall_B = sum(per_tag[tag][1] * w for tag, w in weights.items())
 
-    # Normalize to 100%
     total = overall_A + overall_B
     if total > 0:
         overall_A = round((overall_A / total) * 100)
