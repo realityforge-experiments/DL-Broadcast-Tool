@@ -8,5 +8,10 @@ obs_exports/
 # Python cache
 __pycache__/
 *.pyc
-
+career_stats.json
+final_db.json
+data/*.db
 *.db
+
+career_stats.json
+final_db.json
