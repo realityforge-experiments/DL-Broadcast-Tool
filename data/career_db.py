@@ -80,14 +80,16 @@ def build_career_database(output_path):
                 "KD": KD,
                 "accuracy": accuracy,
                 "push_time": career_raw["PAY_PushTime"],
-                "captures": career_raw["DOM_captures"],
-                "counters": career_raw["DOM_counters"],
+                "DOM_Captures": int(career_raw["DOM_captures"]),
+                "DOM_Counters": int(career_raw["DOM_counters"]),
                 "maps": career_raw["maps"],
                 "damage": career_raw["damage"],
                 "shots": career_raw["shots"],
                 "shots_hit": career_raw["shots_hit"],
                 "headshots": career_raw["headshots"],
             },
+            "DOM_Captures": int(career_raw["DOM_captures"]),   # 👈 add this
+            "DOM_Counters": int(career_raw["DOM_counters"]),   # 👈 and this
             "derived": derived,
             "matches": matches,
         }
@@ -138,7 +140,7 @@ def build_career_database(output_path):
         )
 
         # Domination Objective Specialist
-        pdata["objective_domination"] = compute_dom_objective_for_career_player(
+        pdata["objective_domination_components"] = compute_dom_objective_for_career_player(
             pdata,
             league_averages,
             distributions["domination"]

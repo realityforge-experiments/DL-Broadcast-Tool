@@ -162,8 +162,26 @@ def rank_match_players_objpl(match_players):
 
 
 def rank_match_players_objdom(match_players):
-    return _add_score_fields(rank_match_players_by_tag(match_players, "objective_domination"))
+    ranked = []
 
+    for p in match_players:
+        comp = p.get("objective_domination_components", {})
+        raw = comp.get("raw", 0.0)
+
+        ranked.append({
+            "id": p.get("id"),
+            "name": p.get("name"),
+            "team": p.get("team"),
+            "score_raw": raw,
+            "score_display": f"{raw:.2f}",
+        })
+
+    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
+
+    for i, r in enumerate(ranked, 1):
+        r["rank"] = i
+
+    return ranked
 
 # ---------------------------------------------------------
 # Legacy Slayer Prediction Wrapper

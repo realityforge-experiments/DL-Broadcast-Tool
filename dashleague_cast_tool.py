@@ -167,12 +167,12 @@ class DashLeagueGUI:
 
         top_frame = ttk.Frame(main_frame)
         top_frame.grid(row=0, column=0, columnspan=2, sticky="ew", pady=(0, 10))
+        
+        self.build_db_button = ttk.Button(top_frame, text="Build Career Database", command=self.on_build_career_db)
+        self.build_db_button.grid(row=0, column=0, padx=(0, 10))
 
         self.sync_button = ttk.Button(top_frame, text="Sync Stats", command=self.on_sync_stats)
-        self.sync_button.grid(row=0, column=0, padx=(0, 10))
-
-        self.build_db_button = ttk.Button(top_frame, text="Build Career Database", command=self.on_build_career_db)
-        self.build_db_button.grid(row=0, column=1, padx=(0, 10))
+        self.sync_button.grid(row=0, column=1, padx=(0, 10))
 
         self.spotlight_button = ttk.Button(top_frame, text="Player Spotlight", command=self.on_player_spotlight)
         self.spotlight_button.grid(row=0, column=2, padx=(0, 10))
@@ -374,10 +374,35 @@ class DashLeagueGUI:
                         p["slayer"] = pdata.get("slayer", {})
                         p["sharpshooter"] = pdata.get("sharpshooter", {})
                         p["objective_payload"] = pdata.get("objective_payload", {})
-                        p["objective_domination"] = pdata.get("objective_domination", {})
+
+                        # DO NOT overwrite match-based DomObj
+                        if "objective_domination_components" not in p:
+                            p["objective_domination_components"] = pdata.get(
+                                "objective_domination_components",
+                                {}
+                            )
+
                         p["consistency"] = pdata.get("consistency", {})
                         p["clutch"] = pdata.get("clutch", {})
                 
+
+            # -----------------------------
+            # 4.5 Always attach match-based Domination Objective
+            # -----------------------------
+            for p in all_players:
+                dom = compute_dom_objective_for_match_player(p)
+                caps = dom.get("captures", 0)
+                counters = dom.get("counters", 0)
+
+                # Simple scoring model
+                dom_score = caps * 0.4 + counters * 0.6
+
+                p["objective_domination_components"] = {
+                    "raw": dom_score,
+                    "captures": caps,
+                    "counters": counters,
+                }
+
 
             # -----------------------------
             # 5. Write OBS slot files
@@ -398,11 +423,6 @@ class DashLeagueGUI:
                 write_text(os.path.join(slot_dir, "Captures.txt"), p.get("DOM_Captures", ""))
                 write_text(os.path.join(slot_dir, "Counters.txt"), p.get("DOM_Counters", ""))
 
-                # Tag exports (use enriched match player dict)
-                map_type = self.map_var.get()
-                tags_text = self.generate_player_tags(p, map_type)
-                write_text(os.path.join(slot_dir, "Tags.txt"), tags_text)
-
             self.set_status("Player slots generated.")
             messagebox.showinfo("Success", "Player slots generated into p0–p9.")
 
@@ -416,8 +436,8 @@ class DashLeagueGUI:
         try:
             self.set_status("Building career database...")
 
-            # Modernized output path
-            output_path = os.path.join(BASE_DIR, "final_db.json")
+            # Use the same file the rest of the tool reads
+            output_path = os.path.join(BASE_DIR, "career_stats.json")
 
             build_career_database(output_path)
 
@@ -429,8 +449,8 @@ class DashLeagueGUI:
             traceback.print_exc()
             messagebox.showerror("Error", f"Failed to build career database:\n{e}")
             self.set_status("Career DB build failed.")
-            
-            
+                
+                
     def on_player_spotlight(self):
         career_path = os.path.join(BASE_DIR, "career_stats.json")
         if not os.path.exists(career_path):
@@ -472,21 +492,21 @@ class DashLeagueGUI:
 
             text = f"""PLAYER SPOTLIGHT — {name}
 
-Slayer Tier: {slayer_strength}
-Payload Objective Specialist: {obj_pl if obj_pl is not None else "N/A"}
+    Slayer Tier: {slayer_strength}
+    Payload Objective Specialist: {obj_pl if obj_pl is not None else "N/A"}
 
-Career Stats:
-KD: {career['KD']:.2f}
-Accuracy: {career['accuracy']:.2f}
-Kills: {career['kills']}
-Deaths: {career['deaths']}
-Maps Played: {career['maps']}
+    Career Stats:
+    KD: {career['KD']:.2f}
+    Accuracy: {career['accuracy']:.2f}
+    Kills: {career['kills']}
+    Deaths: {career['deaths']}
+    Maps Played: {career['maps']}
 
-Derived Metrics:
-Kills/Map: {derived.get('kills_per_map', 0):.2f}
-Deaths/Map: {derived.get('deaths_per_map', 0):.2f}
-PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
-"""
+    Derived Metrics:
+    Kills/Map: {derived.get('kills_per_map', 0):.2f}
+    Deaths/Map: {derived.get('deaths_per_map', 0):.2f}
+    PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
+    """
 
             output.delete("1.0", tk.END)
             output.insert(tk.END, text)
@@ -540,9 +560,10 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
     def generate_player_tags(self, player_entry, map_type):
         tags_out = []
 
-        # Slayer
-        slayer_strength = player_entry.get("slayer_strength")
-        if slayer_strength:
+        # Slayer (career)
+        slayer = player_entry.get("slayer", {})
+        slayer_strength = slayer.get("strength") or player_entry.get("slayer_strength")
+        if isinstance(slayer_strength, str):
             tags_out.append(slayer_strength)
 
         # Payload Objective Specialist (match-based)
@@ -554,13 +575,15 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
         # Domination Objective Specialist (match-based)
         if map_type == "Domination":
             dom_info = player_entry.get("objective_domination_components", {})
-            dom_score = dom_info.get("dom_score_raw", 0.0)
+            dom_score = dom_info.get("raw", 0.0)
             tags_out.append(f"ObjDOM {dom_score:.2f}")
 
-        # Sharpshooter
-        sharp = player_entry.get("sharpshooter_score")
-        if sharp is not None:
+        # Sharpshooter (career)
+        sharp = player_entry.get("sharpshooter", {}).get("score") or player_entry.get("sharpshooter_score")
+        if isinstance(sharp, (int, float)):
             tags_out.append(f"Sharp {sharp:.2f}")
+
+        print("DEBUG DOM:", player_entry.get("objective_domination_components"))
 
         return ", ".join(tags_out)
         
@@ -648,7 +671,7 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
 
         win = tk.Toplevel(self.root)
         win.title("Rankings")
-        win.geometry("500x600")
+        win.geometry("800x600")
 
         tags = [
             "Slayer",
@@ -906,21 +929,14 @@ PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
         except Exception as e:
             print("Prediction export failed:", e)
 
-        # --- PLAYER TAG EXPORTS ---
+         # --- PLAYER TAG EXPORTS ---
         try:
-            career_path = os.path.join(BASE_DIR, "career_stats.json")
-            if os.path.exists(career_path):
-                with open(career_path, "r", encoding="utf-8") as f:
-                    career_db = json.load(f)
+            for idx, p in enumerate(self.current_match_players):
+                # p IS the enriched match player object
+                tags_text = self.generate_player_tags(p, map_type)
 
-                for idx, p in enumerate(self.current_match_players):
-                    pid = p.get("id")
-                    if pid and pid in career_db["players"]:
-                        player_entry = career_db["players"][pid]
-                        tags_text = self.generate_player_tags(player_entry, map_type)
-
-                        slot_path = os.path.join(PLAYERS_DIR, f"p{idx}", "Tags.txt")
-                        write_text(slot_path, tags_text)
+                slot_path = os.path.join(PLAYERS_DIR, f"p{idx}", "Tags.txt")
+                write_text(slot_path, tags_text)
 
         except Exception as e:
             print("Tag export failed:", e)
