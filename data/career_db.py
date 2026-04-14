@@ -7,7 +7,7 @@ from tags.slayer import compute_slayer_for_career_player
 from tags.objective_payload import compute_payload_tag
 from tags.objective_domination import compute_dom_objective_for_career_player
 from tags.sharpshooter import compute_sharpshooter_for_career_player
-from tags.consistency import compute_consistency, compute_consistency_tag
+from tags.consistency import build_consistency_tag
 from tags.clutch import compute_clutch, compute_clutch_raw
 
 from data.league_metrics import compute_league_metrics, compute_league_clutch_metrics
@@ -146,13 +146,111 @@ def build_career_database(output_path):
             distributions["domination"]
         )
 
-        # Consistency
+        # ---------------------------------------------------------
+        # Consistency (Hybrid Career Tag - New System)
+        # ---------------------------------------------------------
+
         matches = pdata["matches"]
-        consistency_raw, components = compute_consistency(matches)
-        pdata["consistency"] = compute_consistency_tag(
-            components,
-            distributions["consistency"]
+        maps_played = pdata["career"].get("maps", 0)
+
+        # ---------------------------------------------------------
+        # Extract per-match performance components
+        # ---------------------------------------------------------
+        # NOTE:
+        # If you later add per-match slayer/objective/accuracy scores,
+        # this block will automatically support them.
+        # For now, we compute a simple per-match performance score
+        # using the same formula as the legacy system.
+        # ---------------------------------------------------------
+
+        per_match_scores = []
+        for m in matches:
+            # Slayer-like component
+            dmg = m.get("Damage", 0)
+            kills = m.get("Kills", 0)
+            deaths = m.get("Deaths", 0)
+            kd = kills / deaths if deaths > 0 else kills
+
+            slayer_component = (
+                (dmg / 10000) * 0.40 +
+                (kills / 30) * 0.40 +
+                (kd / 5) * 0.20
+            )
+
+            # Objective-like component
+            push = m.get("PAY_PushTime", 0)
+            caps = m.get("DOM_Captures", 0)
+            counters = m.get("DOM_Counters", 0)
+
+            objective_component = (
+                (push / 300) * 0.40 +
+                (caps / 20) * 0.30 +
+                (counters / 20) * 0.30
+            )
+
+            # Accuracy-like component
+            shots = m.get("Shots", 0)
+            shots_hit = m.get("ShotsHit", 0)
+            accuracy = (shots_hit / shots) if shots > 0 else 0.0
+
+            accuracy_component = accuracy * 0.20
+
+            # Final per-match performance score
+            perf = slayer_component + objective_component + accuracy_component
+            per_match_scores.append(perf)
+
+        # ---------------------------------------------------------
+        # Compute floor, stability, average
+        # ---------------------------------------------------------
+        if per_match_scores:
+            floor_value = min(per_match_scores)
+            avg_value = sum(per_match_scores) / len(per_match_scores)
+
+            # Variance adjusted for match count
+            mean = avg_value
+            variance = sum((x - mean) ** 2 for x in per_match_scores) / len(per_match_scores)
+            adjusted_variance = variance * (1 + 1 / max(1, len(per_match_scores)))
+            stability_value = 1 / (1 + adjusted_variance)
+        else:
+            floor_value = 0.0
+            avg_value = 0.0
+            stability_value = 0.0
+
+        # ---------------------------------------------------------
+        # Build hybrid consistency tag
+        # ---------------------------------------------------------
+        consistency_result = build_consistency_tag(
+            floor_current=floor_value,
+            floor_career=floor_value,      # career = all matches
+            floor_league=league_averages.get("consistency_floor", 0.0),
+
+            stability_current=stability_value,
+            stability_career=stability_value,
+            stability_league=league_averages.get("consistency_stability", 0.0),
+
+            average_current=avg_value,
+            average_career=avg_value,
+            average_league=league_averages.get("consistency_average", 0.0),
+
+            matches_played_current=maps_played,
+            percentile=None
         )
+
+        # ---------------------------------------------------------
+        # Store in DB (GUI + Rankings + Spotlight compatible)
+        # ---------------------------------------------------------
+        pdata["consistency"] = {
+            "raw": consistency_result.normalized_score,
+            "pct": consistency_result.percentile,
+            "tier": consistency_result.tier,
+            "summary": consistency_result.summary_short,
+            "components": {
+                "floor": consistency_result.components.floor,
+                "stability": consistency_result.components.stability,
+                "average": consistency_result.components.average_performance,
+            },
+            "extras": consistency_result.extras,
+        }
 
         # Clutch (FINAL TAG)
         pdata["clutch"] = compute_clutch(

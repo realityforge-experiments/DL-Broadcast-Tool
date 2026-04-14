@@ -32,7 +32,7 @@ def summarize_team_tags(team_players):
             continue
 
         summary[tag] = {
-            "avg_pct": sum(pcts) / len(pcts),
+            "avg_pct": sum(p for p in pcts if isinstance(p, (int, float))) / max(1, len([p for p in pcts if isinstance(p, (int, float))])),
             "top_tier": max(tiers, key=lambda t: "SABCD".index(t)),
             "count_S": tiers.count("S"),
             "count_A": tiers.count("A"),

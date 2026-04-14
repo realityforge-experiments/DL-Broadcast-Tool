@@ -56,3 +56,66 @@ def build_tag_output(raw_score, distribution, summary_fn):
         "tier": tier,
         "summary": summary
     }
+    
+    
+# ============================================================
+# CONSISTENCY TAG ADAPTER
+# ------------------------------------------------------------
+# Adapts the new ConsistencyResult object into the legacy
+# tag_framework format expected by the UI + rankings.
+# ============================================================
+
+from tags.consistency import build_consistency_tag
+
+def compute_consistency_tag(player_stats, distribution):
+    """
+    Adapter layer:
+    - Extracts needed stats from player_stats
+    - Calls the new Consistency tag builder
+    - Returns raw score + summary_fn for tag_framework
+    """
+
+    # -----------------------------------------
+    # Extract stats (0–1 normalized values)
+    # -----------------------------------------
+    floor_current = player_stats.get("floor_current")
+    floor_career = player_stats.get("floor_career")
+    floor_league = player_stats.get("floor_league")
+
+    stability_current = player_stats.get("stability_current")
+    stability_career = player_stats.get("stability_career")
+    stability_league = player_stats.get("stability_league")
+
+    average_current = player_stats.get("average_current")
+    average_career = player_stats.get("average_career")
+    average_league = player_stats.get("average_league")
+
+    matches_played = player_stats.get("matches_played_current", 0)
+
+    # -----------------------------------------
+    # Build full ConsistencyResult object
+    # -----------------------------------------
+    result = build_consistency_tag(
+        floor_current=floor_current,
+        floor_career=floor_career,
+        floor_league=floor_league,
+        stability_current=stability_current,
+        stability_career=stability_career,
+        stability_league=stability_league,
+        average_current=average_current,
+        average_career=average_career,
+        average_league=average_league,
+        matches_played_current=matches_played,
+        percentile=None  # tag_framework will compute this
+    )
+
+    # -----------------------------------------
+    # Summary function for tag_framework
+    # -----------------------------------------
+    def summary_fn(tier, pct):
+        return result.summary_short
+
+    # -----------------------------------------
+    # Return raw score + summary_fn
+    # -----------------------------------------
+    return result.normalized_score, summary_fn

@@ -3,7 +3,6 @@ import math
 from tags.slayer import compute_slayer_raw
 from tags.sharpshooter import compute_sharpshooter_raw
 from tags.objective_payload import compute_payload_raw
-from tags.consistency import compute_consistency_raw
 from tags.objective_domination import compute_dom_raw
 
 
@@ -100,11 +99,6 @@ def compute_league_metrics(all_players):
 
         # Payload
         dist["payload"].append(compute_payload_raw(p))
-
-        # Consistency (with smoothing)
-        raw_cons = compute_consistency_raw(matches)
-        raw_cons = max(raw_cons, 0.05)
-        dist["consistency"].append(raw_cons)
 
         # Domination
         dist["domination"].append(compute_dom_raw(p))

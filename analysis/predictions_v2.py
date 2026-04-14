@@ -76,6 +76,25 @@ def generate_prediction(teamA_players, teamB_players, teamA_name="Team A", teamB
     lines.append(f"  {teamA_name}: {', '.join(A_weak) if A_weak else 'No major weaknesses'}")
     lines.append(f"  {teamB_name}: {', '.join(B_weak) if B_weak else 'No major weaknesses'}\n")
 
+    # -----------------------------------------
+    # 6. Consistency comparison (new)
+    # -----------------------------------------
+    A_cons = A["consistency"]["avg_pct"]
+    B_cons = B["consistency"]["avg_pct"]
+
+    if abs(A_cons - B_cons) < 5:
+        cons_line = "Both teams show similar consistency across the season."
+    elif A_cons > B_cons:
+        cons_line = f"{teamA_name} have been the more stable team, with stronger match-to-match consistency."
+    else:
+        cons_line = f"{teamB_name} have been the more stable team, with stronger match-to-match consistency."
+
+    lines.append("\nConsistency Check:")
+    lines.append(f"  {cons_line}\n")
+
+    # -----------------------------------------
+    # 7. Final prediction line
+    # -----------------------------------------
     lines.append("Prediction:")
     lines.append(f"  {favorite}")
 

@@ -182,6 +182,24 @@ def rank_match_players_objdom(match_players):
         r["rank"] = i
 
     return ranked
+    
+    
+def rank_match_players_consistency_career(match_players):
+    """
+    Wraps rank_match_players_by_tag('consistency') so the output matches
+    the expected structure for the rankings UI.
+    """
+    ranked = rank_match_players_by_tag(match_players, "consistency")
+    out = []
+    for i, p in enumerate(ranked, 1):
+        out.append({
+            "rank": i,
+            "name": p["name"],
+            "team": p.get("team", "Unknown"),
+            "score_raw": p["raw"],
+            "score_display": f"{p['raw']:.2f}",
+        })
+    return out
 
 # ---------------------------------------------------------
 # Legacy Slayer Prediction Wrapper

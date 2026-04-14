@@ -32,6 +32,7 @@ from match_engine import (
     rank_match_players_clutch,
     split_two_columns,
     compute_slayer_prediction,
+    rank_match_players_consistency_career,
 )
 
 # ---------------------------------------------------------
@@ -288,7 +289,7 @@ class DashLeagueGUI:
                 self.team_b_listbox.insert(tk.END, p.get("name", "Unknown"))
                 
                 
-    def normalize_player(p):
+    def normalize_player(self, p):
         return {
             "id": p.get("PlayerUUID"),
             "name": p.get("PlayerGameName"),
@@ -490,27 +491,40 @@ class DashLeagueGUI:
             obj_pl = player.get("objective_payload_score")
             slayer_strength = player.get("slayer_strength", "Unknown")
 
+            consistency = player.get("consistency", {})
+            cons_tier = consistency.get("tier", "N/A")
+            cons_pct = consistency.get("pct")
+            cons_summary = consistency.get("summary", "No consistency data available.")
+
+            if isinstance(cons_pct, (int, float)):
+                cons_line = f"{cons_tier} Tier ({cons_pct:.1f} percentile)"
+            else:
+                cons_line = f"{cons_tier} Tier"
+
             text = f"""PLAYER SPOTLIGHT — {name}
 
-    Slayer Tier: {slayer_strength}
-    Payload Objective Specialist: {obj_pl if obj_pl is not None else "N/A"}
+Slayer Tier: {slayer_strength}
+Consistency: {cons_line}
+Payload Objective Specialist: {obj_pl if obj_pl is not None else "N/A"}
 
-    Career Stats:
-    KD: {career['KD']:.2f}
-    Accuracy: {career['accuracy']:.2f}
-    Kills: {career['kills']}
-    Deaths: {career['deaths']}
-    Maps Played: {career['maps']}
+Career Stats:
+KD: {career['KD']:.2f}
+Accuracy: {career['accuracy']:.2f}
+Kills: {career['kills']}
+Deaths: {career['deaths']}
+Maps Played: {career['maps']}
 
-    Derived Metrics:
-    Kills/Map: {derived.get('kills_per_map', 0):.2f}
-    Deaths/Map: {derived.get('deaths_per_map', 0):.2f}
-    PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
-    """
+Derived Metrics:
+Kills/Map: {derived.get('kills_per_map', 0):.2f}
+Deaths/Map: {derived.get('deaths_per_map', 0):.2f}
+PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
+
+Consistency Summary:
+{cons_summary}
+"""
 
             output.delete("1.0", tk.END)
             output.insert(tk.END, text)
-
         def export():
             content = output.get("1.0", tk.END).strip()
             if not content:
@@ -560,33 +574,47 @@ class DashLeagueGUI:
     def generate_player_tags(self, player_entry, map_type):
         tags_out = []
 
+        # ---------------------------------------------------------
         # Slayer (career)
+        # ---------------------------------------------------------
         slayer = player_entry.get("slayer", {})
         slayer_strength = slayer.get("strength") or player_entry.get("slayer_strength")
         if isinstance(slayer_strength, str):
             tags_out.append(slayer_strength)
 
+        # ---------------------------------------------------------
+        # Consistency (career - hybrid system)
+        # ---------------------------------------------------------
+        consistency = player_entry.get("consistency", {})
+        if isinstance(consistency, dict):
+            score = consistency.get("raw")
+            if isinstance(score, (int, float)):
+                tags_out.append(f"Cons {score:.2f}")
+
+        # ---------------------------------------------------------
         # Payload Objective Specialist (match-based)
+        # ---------------------------------------------------------
         if map_type == "Payload":
             pl_info = player_entry.get("objective_payload_components", {})
             pl_score = pl_info.get("payload_score_raw", 0.0)
             tags_out.append(f"ObjPL {pl_score:.2f}")
 
+        # ---------------------------------------------------------
         # Domination Objective Specialist (match-based)
+        # ---------------------------------------------------------
         if map_type == "Domination":
             dom_info = player_entry.get("objective_domination_components", {})
             dom_score = dom_info.get("raw", 0.0)
             tags_out.append(f"ObjDOM {dom_score:.2f}")
 
+        # ---------------------------------------------------------
         # Sharpshooter (career)
+        # ---------------------------------------------------------
         sharp = player_entry.get("sharpshooter", {}).get("score") or player_entry.get("sharpshooter_score")
         if isinstance(sharp, (int, float)):
             tags_out.append(f"Sharp {sharp:.2f}")
 
-        print("DEBUG DOM:", player_entry.get("objective_domination_components"))
-
         return ", ".join(tags_out)
-        
         
 
     def on_match_storyline(self):
@@ -709,9 +737,13 @@ class DashLeagueGUI:
 
             elif tag == "Domination Objective Specialist":
                 ranked = rank_match_players_objdom(self.current_match_players)
-                
+                 
             elif tag == "Clutch":
-                ranked = rank_match_players_clutch(self.current_match_players)               
+                ranked = rank_match_players_clutch(self.current_match_players)         
+
+            elif tag == "Consistency":
+                ranked = rank_match_players_consistency_career(self.current_match_players)
+                
 
             else:  # Sharpshooter
                 ranked = rank_match_players_sharpshooter(self.current_match_players)
@@ -841,13 +873,13 @@ class DashLeagueGUI:
                 text += "Counters are weighted more heavily because they prevent enemy scoring.\n"
                 
             elif tag == "Consistency":
-                text += "\nConsistency Formula:\n"
+                text += "\nConsistency Formula (Hybrid Career Tag):\n"
                 text += "Consistency = (Floor × 0.40) + (Stability × 0.40) + (Average Performance × 0.20)\n"
                 text += "Where:\n"
-                text += "- Per-Match Performance = (Slayer × 0.40) + (Objective × 0.40) + (Accuracy × 0.20)\n"
-                text += "- Floor = the player's lowest per-match performance score\n"
+                text += "- Floor = lowest per-match performance score\n"
                 text += "- Stability = 1 / (1 + Adjusted Variance)\n"
                 text += "- Adjusted Variance = Variance × (1 + 1 / Match Count)\n"
+                text += "- Average Performance = mean per-match performance score\n"
                 
             elif tag == "Clutch":
                 text += "\nClutch Formula:\n"
@@ -1025,41 +1057,7 @@ class DashLeagueGUI:
         output_folder = os.path.join(os.getcwd(), "obs_output")
         export_all_obs(output_folder, teamA_players, teamB_players, team_a, team_b)
         messagebox.showinfo("Exported", f"OBS files exported to:\n{output_folder}")    
-          
-
-    def format_team_identity(identity):
-        """
-        Converts the identity block dict into readable caster-friendly text.
-        """
-        lines = []
-
-        lines.append(f"Team Style: {identity.get('team_style', 'Unknown')}")
-        lines.append("")
-
-        lines.append("Strengths:")
-        for s in identity.get("strengths", []):
-            lines.append(f"  - {s}")
-
-        lines.append("")
-
-        lines.append("Weaknesses:")
-        for w in identity.get("weaknesses", []):
-            lines.append(f"  - {w}")
-
-        lines.append("")
-
-        lines.append("Tag Breakdown:")
-        for tag, data in identity.get("tags", {}).items():
-            lines.append(
-                f"  - {tag.title()}: {data['tier']} Tier "
-                f"(avg {data['avg_pct']:.1f} percentile)"
-            )
-
-        return "\n".join(lines)
-
-
-
-    
+         
 
 def main():
     root = tk.Tk()

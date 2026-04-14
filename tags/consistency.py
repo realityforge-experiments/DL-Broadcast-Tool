@@ -1,83 +1,122 @@
-import math
-from tags.tag_framework import build_tag_output
+# ============================================================
+# CONSISTENCY TAG
+# ------------------------------------------------------------
+# Template tag for the entire system.
+# Uses:
+#   - fallback logic
+#   - early-season blending
+#   - normalization
+#   - tier mapping
+#   - summary generation
+#   - spotlight extras
+# ============================================================
 
-# ---------------------------------------------------------
-# Raw Consistency Score (Robust)
-# ---------------------------------------------------------
-
-def compute_consistency_raw(matches):
-    """
-    Computes a normalized 0–1 consistency score based on
-    match-to-match stability in KD, damage, and accuracy.
-    """
-
-    if not matches:
-        return 0.05  # minimum floor
-
-    perf = []
-
-    for m in matches:
-        kills = m.get("Kills", 0)
-        deaths = m.get("Deaths", 0)
-        damage = m.get("Damage", 0)
-        shots = m.get("Shots", 0)
-        shots_hit = m.get("ShotsHit", 0)
-
-        kd = kills / max(1, deaths)
-        acc = shots_hit / shots if shots > 0 else 0.0
-
-        # Normalize components into comparable ranges
-        kd_norm = min(kd / 5.0, 1.0)          # KD 0–5
-        dmg_norm = min(damage / 3000.0, 1.0)  # Damage 0–3000
-        acc_norm = acc                        # Already 0–1
-
-        # Composite performance score per match
-        perf_score = (0.4 * kd_norm) + (0.4 * dmg_norm) + (0.2 * acc_norm)
-        perf.append(perf_score)
-
-    # Variance of performance
-    if len(perf) <= 1:
-        return 0.25  # floor for single-match players
-
-    mean = sum(perf) / len(perf)
-    var = sum((p - mean) ** 2 for p in perf) / len(perf)
-    std = math.sqrt(var)
-
-    # Smoothing
-    std = max(std, 0.05)
-
-    # Convert std into consistency score
-    raw = 1.0 / (1.0 + std)
-
-    # Soft clamp
-    return max(0.05, min(raw, 1.0))
+from dataclasses import dataclass
+from utils.fallback import get_stat_with_fallback, blend_early_season
+from utils.tiers import map_score_to_tier
+from utils.summaries import build_consistency_summaries
 
 
-# ---------------------------------------------------------
-# Summary
-# ---------------------------------------------------------
+# ------------------------------------------------------------
+# Data structures
+# ------------------------------------------------------------
 
-def consistency_summary(tier, pct):
-    if tier == "S":
-        return f"Ultra-stable performer — top {100 - pct:.0f}% in match-to-match consistency."
-    if tier == "A":
-        return "Very consistent across matches."
-    if tier == "B":
-        return "Above-average consistency."
-    if tier == "C":
-        return "Inconsistent performance."
-    return "Highly volatile match-to-match output."
+@dataclass
+class ConsistencyComponents:
+    floor: float
+    stability: float
+    average_performance: float
 
 
-# ---------------------------------------------------------
-# Public API
-# ---------------------------------------------------------
+@dataclass
+class ConsistencyResult:
+    raw_score: float
+    normalized_score: float
+    percentile: float | None
+    tier: str
+    components: ConsistencyComponents
+    summary_short: str
+    summary_long: str
+    storyline_hook: str
+    identity_signal: str
+    extras: dict
 
-def compute_consistency(matches):
-    raw = compute_consistency_raw(matches)
-    return raw, {"consistency_norm": raw}
+
+# ------------------------------------------------------------
+# Core formula (your original formula)
+# ------------------------------------------------------------
+
+def compute_consistency_score(components: ConsistencyComponents) -> float:
+    return (
+        components.floor * 0.40 +
+        components.stability * 0.40 +
+        components.average_performance * 0.20
+    )
 
 
-def compute_consistency_tag(components, consistency_distribution):
-    raw = components.get("consistency_norm", 0.0)
-    return build_tag_output(raw, consistency_distribution, consistency_summary)
+# ------------------------------------------------------------
+# Main builder
+# ------------------------------------------------------------
+
+def build_consistency_tag(
+    *,
+    floor_current,
+    floor_career,
+    floor_league,
+    stability_current,
+    stability_career,
+    stability_league,
+    average_current,
+    average_career,
+    average_league,
+    matches_played_current,
+    percentile=None
+) -> ConsistencyResult:
+
+    # --- FALLBACK ---
+    floor_raw = get_stat_with_fallback(floor_current, floor_career, floor_league)
+    stability_raw = get_stat_with_fallback(stability_current, stability_career, stability_league)
+    average_raw = get_stat_with_fallback(average_current, average_career, average_league)
+
+    # --- EARLY SEASON BLENDING ---
+    floor_value = blend_early_season(floor_raw, floor_career or floor_raw, matches_played_current)
+    stability_value = blend_early_season(stability_raw, stability_career or stability_raw, matches_played_current)
+    average_value = blend_early_season(average_raw, average_career or average_raw, matches_played_current)
+
+    # --- COMPONENTS ---
+    components = ConsistencyComponents(
+        floor=floor_value,
+        stability=stability_value,
+        average_performance=average_value
+    )
+
+    # --- SCORE ---
+    raw_score = compute_consistency_score(components)
+    normalized_score = max(0.0, min(1.0, raw_score))
+
+    # --- TIER + SUMMARIES ---
+    tier = map_score_to_tier(normalized_score)
+    summary_short, summary_long, storyline, identity = build_consistency_summaries(
+        normalized_score, components, tier
+    )
+
+    # --- EXTRAS (Spotlight) ---
+    extras = {
+        "floor_value": floor_value,
+        "stability_value": stability_value,
+        "average_value": average_value,
+        "matches_played_current": matches_played_current,
+    }
+
+    return ConsistencyResult(
+        raw_score=raw_score,
+        normalized_score=normalized_score,
+        percentile=percentile,
+        tier=tier,
+        components=components,
+        summary_short=summary_short,
+        summary_long=summary_long,
+        storyline_hook=storyline,
+        identity_signal=identity,
+        extras=extras
+    )
