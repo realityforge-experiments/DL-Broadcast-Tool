@@ -1,23 +1,16 @@
+
+
 from analysis.team_identity_v2 import summarize_team_tags, classify_team_style
+from utils.safe_tag import safe_pct, safe_avg, safe_tier
 
 
 def compute_team_power_score(summary):
-    """
-    Converts team tag percentiles into a single weighted power score.
-    Weights reflect real match impact:
-        Slayer:        30%
-        Objective:     25%
-        Consistency:   20%
-        Clutch:        15%
-        Sharpshooter:  10%
-    """
-
     return (
-        summary["slayer"]["avg_pct"] * 0.30 +
-        summary["objective_payload"]["avg_pct"] * 0.25 +
-        summary["consistency"]["avg_pct"] * 0.20 +
-        summary["clutch"]["avg_pct"] * 0.15 +
-        summary["sharpshooter"]["avg_pct"] * 0.10
+        safe_pct(summary["slayer"]["avg_pct"]) * 0.30 +
+        safe_pct(summary["objective_payload"]["avg_pct"]) * 0.25 +
+        safe_pct(summary["consistency"]["avg_pct"]) * 0.20 +
+        safe_pct(summary["clutch"]["avg_pct"]) * 0.15 +
+        safe_pct(summary["sharpshooter"]["avg_pct"]) * 0.10
     )
 
 

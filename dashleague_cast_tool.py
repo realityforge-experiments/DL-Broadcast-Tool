@@ -33,6 +33,7 @@ from match_engine import (
     split_two_columns,
     compute_slayer_prediction,
     rank_match_players_consistency_career,
+    rank_match_players_support_specialist,
 )
 
 # ---------------------------------------------------------
@@ -377,14 +378,14 @@ class DashLeagueGUI:
                         p["objective_payload"] = pdata.get("objective_payload", {})
 
                         # DO NOT overwrite match-based DomObj
-                        if "objective_domination_components" not in p:
-                            p["objective_domination_components"] = pdata.get(
-                                "objective_domination_components",
-                                {}
-                            )
+                        if "objective_domination" not in p:
+                            p["objective_domination"] = pdata.get("objective_domination", {})
 
                         p["consistency"] = pdata.get("consistency", {})
                         p["clutch"] = pdata.get("clutch", {})
+
+                        # Support Specialist
+                        p["support_specialist"] = pdata.get("support_specialist", {})
                 
 
             # -----------------------------
@@ -592,6 +593,15 @@ Consistency Summary:
                 tags_out.append(f"Cons {score:.2f}")
 
         # ---------------------------------------------------------
+        # Support Specialist (career)
+        # ---------------------------------------------------------
+        support = player_entry.get("support_specialist", {})
+        if isinstance(support, dict):
+            score = support.get("raw")
+            if isinstance(score, (int, float)):
+                tags_out.append(f"Supp {score:.2f}")
+
+        # ---------------------------------------------------------
         # Payload Objective Specialist (match-based)
         # ---------------------------------------------------------
         if map_type == "Payload":
@@ -708,6 +718,7 @@ Consistency Summary:
             "Domination Objective Specialist",
             "Consistency",
             "Clutch",
+            "Support Specialist",
         ]
 
         ttk.Label(win, text="Select Tag:").pack(anchor="w", padx=10, pady=5)
@@ -744,7 +755,9 @@ Consistency Summary:
             elif tag == "Consistency":
                 ranked = rank_match_players_consistency_career(self.current_match_players)
                 
-
+            elif tag == "Support Specialist":
+                ranked = rank_match_players_support_specialist(self.current_match_players)    
+ 
             else:  # Sharpshooter
                 ranked = rank_match_players_sharpshooter(self.current_match_players)
 

@@ -107,3 +107,39 @@ def rank_match_players_clutch(players):
         r["rank"] = i
 
     return ranked
+    
+    
+def rank_match_players_support_specialist(players):
+    """
+    Ranks players by Support Specialist (career tag).
+    Uses the already-computed tag stored in each player's data.
+    """
+
+    ranked = []
+
+    for p in players:
+        tag = p.get("support_specialist", {})
+        raw = tag.get("raw")
+
+        # Skip players with no data
+        if raw is None:
+            continue
+
+        ranked.append({
+            "name": p.get("name", "Unknown"),
+            "team": p.get("team", ""),
+            "raw": raw,
+            "pct": tag.get("pct", 0.0),
+            "tier": tag.get("tier", "D"),
+            "summary": tag.get("summary", ""),
+            "score_display": f"{raw:.2f}",
+        })
+
+    # Sort descending by raw score
+    ranked.sort(key=lambda x: x["raw"], reverse=True)
+
+    # Assign ranks
+    for i, entry in enumerate(ranked, start=1):
+        entry["rank"] = i
+
+    return ranked

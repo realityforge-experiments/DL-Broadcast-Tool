@@ -10,6 +10,8 @@ __all__ = ["matchup_storyline", "generate_storyline"]
 # Team Tag Aggregation
 # ---------------------------------------------------------
 
+from utils.safe_tag import safe_pct, safe_tier, safe_avg
+
 def summarize_team_tags(team_players):
     """
     Aggregates tag tiers + percentiles for a team.
@@ -32,23 +34,11 @@ def summarize_team_tags(team_players):
 
         for p in team_players:
             tag_data = p.get(tag, {})
-            pcts.append(tag_data.get("pct", 0))
-            tiers.append(tag_data.get("tier", "D"))
-
-        if not pcts:
-            summary[tag] = {
-                "avg_pct": 0,
-                "top_tier": "D",
-                "count_S": 0,
-                "count_A": 0,
-                "count_B": 0,
-                "count_C": 0,
-                "count_D": 0,
-            }
-            continue
+            pcts.append(safe_pct(tag_data.get("pct")))
+            tiers.append(safe_tier(tag_data.get("tier")))
 
         summary[tag] = {
-            "avg_pct": sum(p for p in pcts if isinstance(p, (int, float))) / max(1, len([p for p in pcts if isinstance(p, (int, float))])),
+            "avg_pct": safe_avg(pcts),
             "top_tier": max(tiers, key=lambda t: "SABCD".index(t)),
             "count_S": tiers.count("S"),
             "count_A": tiers.count("A"),

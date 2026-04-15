@@ -9,8 +9,10 @@ from tags.objective_domination import compute_dom_objective_for_career_player
 from tags.sharpshooter import compute_sharpshooter_for_career_player
 from tags.consistency import build_consistency_tag
 from tags.clutch import compute_clutch, compute_clutch_raw
+from tags.support_specialist import build_support_specialist_tag
 
 from data.league_metrics import compute_league_metrics, compute_league_clutch_metrics
+
 
 
 def build_career_database(output_path):
@@ -101,6 +103,66 @@ def build_career_database(output_path):
 
     for pdata in all_players:
         pdata["clutch_raw"] = compute_clutch_raw(pdata)
+        
+    # ---------------------------------------------------------
+    # NORMALIZE CAREER STAT KEYS BEFORE LEAGUE METRICS
+    # ---------------------------------------------------------
+    for pid, pdata in final_db["players"].items():
+        career = pdata.get("career", {})
+
+        career["push_time"] = (
+            career.get("push_time")
+            or career.get("PAY_PushTime")
+            or pdata.get("PAY_PushTime")
+            or 0
+        )
+
+        career["captures"] = (
+            career.get("captures")
+            or career.get("DOM_Captures")
+            or pdata.get("DOM_Captures")
+            or 0
+        )
+
+        career["counters"] = (
+            career.get("counters")
+            or career.get("DOM_Counters")
+            or pdata.get("DOM_Counters")
+            or 0
+        )
+
+        career["damage"] = (
+            career.get("damage")
+            or career.get("Damage")
+            or pdata.get("Damage")
+            or 0
+        )
+
+        career["kills"] = (
+            career.get("kills")
+            or career.get("Kills")
+            or pdata.get("Kills")
+            or 0
+        )
+
+        career["deaths"] = (
+            career.get("deaths")
+            or career.get("Deaths")
+            or pdata.get("Deaths")
+            or 0
+        )
+
+        career["maps"] = (
+            career.get("maps")
+            or pdata.get("maps")
+            or pdata.get("career", {}).get("maps")
+            or 1
+        )
+
+        pdata["career"] = career    
+            
+            
+            
 
     # ---------------------------------------------------------
     # 4. Compute league metrics for ALL TAGS
@@ -112,7 +174,22 @@ def build_career_database(output_path):
     league_averages.update(clutch_averages)
 
     final_db["league_averages"] = league_averages
+    
+    
+    from tags.support_specialist import compute_support_specialist  # at top of file if not already
 
+    # ---------------------------------------------------------
+    # 4.5 Build Support Specialist distribution
+    # ---------------------------------------------------------
+    support_distribution = []
+    for pid, pdata in final_db["players"].items():
+        raw_support = compute_support_specialist(pdata, league_averages)
+        support_distribution.append(raw_support)
+
+        # Write back normalized career block
+        pdata["career"] = career
+
+    
     # ---------------------------------------------------------
     # 5. Compute all tags using distributions
     # ---------------------------------------------------------
@@ -140,10 +217,43 @@ def build_career_database(output_path):
         )
 
         # Domination Objective Specialist
-        pdata["objective_domination_components"] = compute_dom_objective_for_career_player(
+        pdata["objective_domination"] = compute_dom_objective_for_career_player(
             pdata,
             league_averages,
             distributions["domination"]
+        )
+
+        # Consistency (legacy adapter)
+        consistency_result = build_consistency_tag(
+            floor_current=pdata.get("floor_current"),
+            floor_career=pdata.get("floor_career"),
+            floor_league=league_averages.get("consistency_floor", 0.0),
+            stability_current=pdata.get("stability_current"),
+            stability_career=pdata.get("stability_career"),
+            stability_league=league_averages.get("consistency_stability", 0.0),
+            average_current=pdata.get("average_current"),
+            average_career=pdata.get("average_career"),
+            average_league=league_averages.get("consistency_average", 0.0),
+            matches_played_current=pdata["career"].get("maps", 0),
+            percentile=None
+        )
+        pdata["consistency"] = {
+            "raw": consistency_result.normalized_score,
+            "summary": consistency_result.summary_short
+        }
+
+        # Clutch
+        pdata["clutch"] = compute_clutch(
+            pdata,
+            league_averages,
+            clutch_distribution
+        )
+
+        # Support Specialist
+        pdata["support_specialist"] = build_support_specialist_tag(
+            pdata,
+            league_averages,
+            support_distribution
         )
 
         # ---------------------------------------------------------

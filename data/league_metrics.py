@@ -30,6 +30,8 @@ def compute_league_metrics(all_players):
         "push_time": [],
         "headshot_rate": [],
         "pressure_eff": [],
+        "deaths": [],
+        "dom_actions": [],
     }
 
     # -----------------------------------------
@@ -41,10 +43,11 @@ def compute_league_metrics(all_players):
         "payload": [],
         "consistency": [],
         "domination": [],
+        "support_specialist": [],
     }
 
     # -----------------------------------------
-    # Build league averages
+    # Build league averages (PER-MAP NORMALIZED)
     # -----------------------------------------
     for p in all_players:
         c = p.get("career", {})
@@ -52,13 +55,17 @@ def compute_league_metrics(all_players):
         if maps <= 0:
             continue
 
-        kills = c.get("kills", 0)
-        deaths = c.get("deaths", 0)
-        damage = c.get("damage", 0)
+        # Per-map normalization
+        kills = c.get("kills", 0) / maps
+        deaths = c.get("deaths", 0) / maps
+        damage = c.get("damage", 0) / maps
+        push = c.get("push_time", 0) / maps
+        captures = c.get("captures", c.get("DOM_Captures", 0)) / maps
+        counters = c.get("counters", c.get("DOM_Counters", 0)) / maps
+
         shots = c.get("shots", 0)
         shots_hit = c.get("shots_hit", 0)
         headshots = c.get("headshots", 0)
-        push = c.get("push_time", 0)
 
         KD = kills / deaths if deaths > 0 else kills
         accuracy = shots_hit / shots if shots > 0 else 0
@@ -71,6 +78,8 @@ def compute_league_metrics(all_players):
         acc["push_time"].append(push)
         acc["headshot_rate"].append(headshot_rate)
         acc["pressure_eff"].append(pressure_eff)
+        acc["deaths"].append(deaths)
+        acc["dom_actions"].append(captures + counters)
 
     # -----------------------------------------
     # Compute league averages
@@ -102,6 +111,12 @@ def compute_league_metrics(all_players):
 
         # Domination
         dist["domination"].append(compute_dom_raw(p))
+        
+        from tags.support_specialist import compute_support_specialist
+
+        dist["support_specialist"].append(
+            compute_support_specialist(p, league_averages)
+        )
 
     # -----------------------------------------
     # Sort distributions

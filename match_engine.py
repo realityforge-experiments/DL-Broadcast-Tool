@@ -232,3 +232,38 @@ def compute_slayer_prediction(team_a_players, team_b_players):
         "teamA_win": round(pA * 100),
         "teamB_win": round(pB * 100),
     }
+    
+    
+def rank_match_players_support_specialist(players):
+    """
+    Ranks players by Support Specialist (career tag) using percentile.
+    """
+
+    ranked = []
+
+    for p in players:
+        tag = p.get("support_specialist", {})
+
+        # Use percentile as the ranking basis
+        pct = tag.get("pct")
+        if pct is None:
+            continue
+
+        ranked.append({
+            "name": p.get("name", "Unknown"),
+            "team": p.get("team", ""),
+            "pct": pct,
+            "tier": tag.get("tier", "D"),
+            "summary": tag.get("summary", ""),
+            "score_raw": pct,                  # used for team totals
+            "score_display": f"{pct:.1f}",     # what you see in the table
+        })
+
+    # Sort descending by percentile
+    ranked.sort(key=lambda x: x["pct"], reverse=True)
+
+    # Assign ranks
+    for i, entry in enumerate(ranked, start=1):
+        entry["rank"] = i
+
+    return ranked

@@ -5,6 +5,12 @@ from analysis.team_identity_v2 import format_team_identity, generate_team_identi
 from analysis.storylines import generate_storyline
 from analysis.predictions_v2 import generate_prediction
 
+import re
+
+def safe_filename(name):
+    # Remove all illegal Windows filename characters
+    return re.sub(r'[\\/:*?"<>|]', '', name)
+
 
 def export_obs_player_summaries(output_folder, team_players):
     """
@@ -15,7 +21,7 @@ def export_obs_player_summaries(output_folder, team_players):
 
     for p in team_players:
         name = p.get("name", "Unknown")
-        safe_name = name.replace(" ", "_")
+        safe_name = safe_filename(name)
 
         path = os.path.join(output_folder, f"{safe_name}_summary.txt")
         with open(path, "w", encoding="utf-8") as f:
@@ -29,7 +35,8 @@ def export_obs_team_identity(output_folder, team_players, team_name):
 
     os.makedirs(output_folder, exist_ok=True)
 
-    path = os.path.join(output_folder, f"{team_name}_identity.txt")
+    safe_team = safe_filename(team_name)
+    path = os.path.join(output_folder, f"{safe_team}_identity.txt")
     with open(path, "w", encoding="utf-8") as f:
         identity_data = generate_team_identity_block(team_players, team_name)
         identity_text = format_team_identity(identity_data)
