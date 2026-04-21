@@ -7,7 +7,6 @@ def build_player_summary(player):
         - Sharpshooter
         - Consistency
         - Clutch
-        - Support Specialist
     """
 
     def safe_pct(value):
@@ -26,7 +25,6 @@ def build_player_summary(player):
     sharp = player.get("sharpshooter", {})
     consistency = player.get("consistency", {})
     clutch = player.get("clutch", {})
-    support = player.get("support_specialist", {})
 
     lines = []
     lines.append(f"{name}\n")
@@ -50,9 +48,9 @@ def build_player_summary(player):
     # Clutch
     lines.append(f"\nClutch: {safe_tier(clutch.get('tier'))} ({safe_pct(clutch.get('pct')):.1f}%)")
     lines.append(f"  {clutch.get('summary', '')}")
-
-    # Support Specialist
-    lines.append(f"\nSupport Specialist: {safe_tier(support.get('tier'))} ({safe_pct(support.get('pct')):.1f}%)")
-    lines.append(f"  {support.get('summary', '')}")
+    
+    # Breaker
+    lines.append(f"\nBreaker: {safe_tier(breaker.get('tier'))} ({safe_pct(breaker.get('pct')):.1f}%)")
+    lines.append(f"  {breaker.get('summary', '')}")
 
     return "\n".join(lines)

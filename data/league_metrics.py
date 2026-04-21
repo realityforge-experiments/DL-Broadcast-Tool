@@ -43,7 +43,8 @@ def compute_league_metrics(all_players):
         "payload": [],
         "consistency": [],
         "domination": [],
-        "support_specialist": [],
+        "anchor": [],
+        "breaker": [],
     }
 
     # -----------------------------------------
@@ -88,6 +89,9 @@ def compute_league_metrics(all_players):
         key: (sum(values) / max(1, len(values)))
         for key, values in acc.items()
     }
+    
+    # Alias for clarity: deaths is already per-map
+    league_averages["deaths_per_map"] = league_averages.get("deaths", 0.0)
 
     # Minimum smoothing to avoid divide-by-zero explosions
     league_averages["accuracy"] = max(league_averages["accuracy"], 0.05)
@@ -112,11 +116,16 @@ def compute_league_metrics(all_players):
         # Domination
         dist["domination"].append(compute_dom_raw(p))
         
-        from tags.support_specialist import compute_support_specialist
+        from tags.anchor import compute_anchor_raw
 
-        dist["support_specialist"].append(
-            compute_support_specialist(p, league_averages)
+        # Consistency raw score for distribution building
+        # (You already compute consistency later, but for distributions we only need the raw normalized score)
+        consistency_norm = p.get("consistency", {}).get("raw", 0.5)
+
+        dist["anchor"].append(
+            compute_anchor_raw(p, league_averages, consistency_norm)
         )
+        
 
     # -----------------------------------------
     # Sort distributions

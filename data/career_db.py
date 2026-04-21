@@ -9,15 +9,18 @@ from tags.objective_domination import compute_dom_objective_for_career_player
 from tags.sharpshooter import compute_sharpshooter_for_career_player
 from tags.consistency import build_consistency_tag
 from tags.clutch import compute_clutch, compute_clutch_raw
-from tags.support_specialist import build_support_specialist_tag
+from tags.anchor import compute_anchor_for_career_player
+from tags.breaker import compute_breaker_raw
 
 from data.league_metrics import compute_league_metrics, compute_league_clutch_metrics
+from data.tag_framework import percentile_rank, tier_from_percentile
 
+    
 
 
 def build_career_database(output_path):
     
-    print("USING DB:", db_access.DB_PATH)
+    #print("USING DB:", db_access.DB_PATH)
 
 
     # ---------------------------------------------------------
@@ -29,6 +32,13 @@ def build_career_database(output_path):
         LEFT JOIN players p ON p.PlayerUUID = s.PlayerUUID;
     """)
 
+    # ---------------------------------------------------------
+    # Load Player Identity Registry (PIR)
+    # ---------------------------------------------------------
+    from analysis.player_identity_registry import PlayerIdentityRegistry
+    pir = PlayerIdentityRegistry()
+
+
     if not player_rows:
         print("No players found in local DB.")
         return False
@@ -39,12 +49,20 @@ def build_career_database(output_path):
     # 2. Build per-player career stats from local DB
     # ---------------------------------------------------------
     for row in player_rows:
-        pid = row["PlayerUUID"]
+        raw_uuid = str(row["PlayerUUID"])
         name = row["PlayerGameName"] or "Unknown"
 
-        matches = db_access.get_player_match_history(pid)
+        # Resolve canonical identity
+        canonical_id = pir.resolve(raw_uuid)
+        pir.add_name(canonical_id, name)
+
+        # Use RAW UUID for DB queries
+        matches = db_access.get_player_match_history(raw_uuid)
         if not matches:
             continue
+
+        # Use CANONICAL ID as the key in the career DB
+        pid = canonical_id
             
         #print("DEBUG MATCH ROW FOR", pid, ":", matches[0])
         #break
@@ -175,19 +193,21 @@ def build_career_database(output_path):
 
     final_db["league_averages"] = league_averages
     
-    
-    from tags.support_specialist import compute_support_specialist  # at top of file if not already
+        
+        
+    # ---------------------------------------------------------
+    # 4.6 Build Breaker distribution
+    # ---------------------------------------------------------
 
-    # ---------------------------------------------------------
-    # 4.5 Build Support Specialist distribution
-    # ---------------------------------------------------------
-    support_distribution = []
+
+    breaker_distribution = []
     for pid, pdata in final_db["players"].items():
-        raw_support = compute_support_specialist(pdata, league_averages)
-        support_distribution.append(raw_support)
+        career = pdata["career"]
+        damage_per_map = career["damage"] / max(1, career["maps"])
+        kills_per_map = career["kills"] / max(1, career["maps"])
 
-        # Write back normalized career block
-        pdata["career"] = career
+        raw_breaker = compute_breaker_raw(damage_per_map, kills_per_map)
+        breaker_distribution.append(raw_breaker)    
 
     
     # ---------------------------------------------------------
@@ -241,6 +261,15 @@ def build_career_database(output_path):
             "raw": consistency_result.normalized_score,
             "summary": consistency_result.summary_short
         }
+        
+        # Anchor
+        consistency_norm = pdata["consistency"]["raw"]  # normalized 0–1 score
+        pdata["anchor"] = compute_anchor_for_career_player(
+            pdata,
+            league_averages,
+            distributions["anchor"],
+            consistency_norm
+)
 
         # Clutch
         pdata["clutch"] = compute_clutch(
@@ -248,13 +277,24 @@ def build_career_database(output_path):
             league_averages,
             clutch_distribution
         )
+        
+        # Breaker
+        career = pdata["career"]
+        damage_per_map = career["damage"] / max(1, career["maps"])
+        kills_per_map = career["kills"] / max(1, career["maps"])
 
-        # Support Specialist
-        pdata["support_specialist"] = build_support_specialist_tag(
-            pdata,
-            league_averages,
-            support_distribution
-        )
+        raw_breaker = compute_breaker_raw(damage_per_map, kills_per_map)
+
+        # Percentile + tier
+        pct = percentile_rank(raw_breaker, breaker_distribution)
+        tier = tier_from_percentile(pct)
+
+        pdata["breaker"] = {
+            "raw": raw_breaker,
+            "pct": pct,
+            "tier": tier,
+            "summary": f"Offensive disruptor ({tier} Tier, {pct:.1f} percentile)"
+        }
 
         # ---------------------------------------------------------
         # Consistency (Hybrid Career Tag - New System)

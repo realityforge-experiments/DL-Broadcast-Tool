@@ -24,6 +24,8 @@ def summarize_team_tags(team_players):
         "sharpshooter",
         "consistency",
         "clutch",
+        "anchor",
+        "breaker",
     ]
 
     summary = {}
@@ -68,6 +70,8 @@ def compare_team_strengths(teamA, teamB, team_a_name, team_b_name):
         "sharpshooter": "Sharpshooter (Accuracy)",
         "consistency": "Consistency (Stability)",
         "clutch": "Clutch (High-Pressure Performance)",
+        "anchor": "Anchor (Defensive Stability)",
+        "breaker": "Breaker (Offensive Disruption)",
     }
 
     for tag, label in tags.items():
@@ -75,7 +79,19 @@ def compare_team_strengths(teamA, teamB, team_a_name, team_b_name):
         b = teamB[tag]["avg_pct"]
 
         diff = a - b
-
+        
+        
+        # Custom storyline for Anchor
+        if tag == "anchor":
+            if abs(diff) < 5:
+                storyline.append("Both teams are evenly matched in defensive stability.")
+            elif diff > 0:
+                storyline.append(f"{team_a_name} have stronger defensive stability, surviving longer and preventing collapses.")
+            else:
+                storyline.append(f"{team_b_name} have stronger defensive stability, giving them an edge in long fights.")
+            continue 
+            
+        # Generic storyline for all other tags
         if abs(diff) < 5:
             storyline.append(f"Both teams are evenly matched in {label}.")
         elif diff > 0:

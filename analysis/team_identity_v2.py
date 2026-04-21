@@ -1,9 +1,16 @@
-
 from utils.safe_tag import safe_pct, safe_tier, safe_avg
 
+# Caster‑friendly display names
+DISPLAY_NAMES = {
+    "slayer": "Slayer",
+    "objective_payload": "Payload Specialist",
+    "sharpshooter": "Sharpshooter",
+    "consistency": "Consistency",
+    "clutch": "Clutch",
+    "anchor": "Anchor Specialist",
+    "breaker": "Breaker",
+}
 
-
-from utils.safe_tag import safe_pct, safe_tier, safe_avg
 
 def summarize_team_tags(team_players):
     """
@@ -14,7 +21,9 @@ def summarize_team_tags(team_players):
         - tier counts
     """
 
-    tags = ["slayer", "objective_payload", "sharpshooter", "consistency", "clutch"]
+    tags = ["slayer", "objective_payload", "sharpshooter",
+            "consistency", "clutch", "anchor", "breaker"]
+
     summary = {}
 
     for tag in tags:
@@ -24,10 +33,10 @@ def summarize_team_tags(team_players):
         for p in team_players:
             tag_data = p.get(tag, {})
             pcts.append(safe_pct(tag_data.get("pct")))
-            tiers.append(safe_tier(tag_data.get("tier")))
+            tiers.append(safe_tier(tag_data.get("tier")))  # guaranteed valid tier
 
         summary[tag] = {
-            "avg_pct": safe_avg(pcts),
+            "avg_pct": safe_avg(pcts),  # guaranteed numeric
             "top_tier": max(tiers, key=lambda t: "SABCD".index(t)),
             "count_S": tiers.count("S"),
             "count_A": tiers.count("A"),
@@ -49,8 +58,9 @@ def classify_team_style(summary):
     sharpshooter = summary["sharpshooter"]["avg_pct"]
     consistency = summary["consistency"]["avg_pct"]
     clutch = summary["clutch"]["avg_pct"]
+    anchor = summary["anchor"]["avg_pct"]
 
-    # Identify primary style
+    # Primary style selection
     primary = max(
         {
             "Slayer-heavy": slayer,
@@ -58,11 +68,12 @@ def classify_team_style(summary):
             "Precision/Sharpshooter": sharpshooter,
             "Stable/Consistent": consistency,
             "High-pressure/Clutch": clutch,
+            "Anchor/Support": anchor,
         }.items(),
         key=lambda x: x[1]
     )[0]
 
-    # Identify weaknesses
+    # Weakness detection
     weaknesses = []
     if slayer < 40:
         weaknesses.append("low elimination pressure")
@@ -74,6 +85,8 @@ def classify_team_style(summary):
         weaknesses.append("inconsistent match-to-match output")
     if clutch < 40:
         weaknesses.append("poor high-pressure performance")
+    if anchor < 40:
+        weaknesses.append("weak defensive backbone / low anchor stability")
 
     return primary, weaknesses
 
@@ -87,15 +100,16 @@ def generate_team_identity_block(team_players, team_name="Team"):
     summary = summarize_team_tags(team_players)
     primary_style, weaknesses = classify_team_style(summary)
 
-    # Build strengths list
+    # Strengths list
     strengths = []
     for tag, data in summary.items():
         if data["avg_pct"] >= 60:
+            display = DISPLAY_NAMES.get(tag, tag.replace("_", " ").title())
             strengths.append(
-                f"Strong {tag.replace('_', ' ').title()} ({data['top_tier']} Tier)"
+                f"Strong {display} ({data['top_tier']} Tier)"
             )
 
-    # Build tag breakdown
+    # Tag breakdown
     tag_block = {}
     for tag, data in summary.items():
         tag_block[tag] = {
@@ -103,7 +117,6 @@ def generate_team_identity_block(team_players, team_name="Team"):
             "tier": data["top_tier"],
         }
 
-    # Return a dict (NOT a string)
     return {
         "team_name": team_name,
         "team_style": primary_style,
@@ -111,7 +124,8 @@ def generate_team_identity_block(team_players, team_name="Team"):
         "weaknesses": weaknesses,
         "tags": tag_block,
     }
-    
+
+
 def format_team_identity(identity_data):
     """
     Converts the identity block dict into a readable text block.
@@ -125,30 +139,30 @@ def format_team_identity(identity_data):
     lines.append("")
 
     # Strengths
+    lines.append("Strengths:")
     if identity_data["strengths"]:
-        lines.append("Strengths:")
         for s in identity_data["strengths"]:
             lines.append(f"  - {s}")
     else:
-        lines.append("Strengths:")
         lines.append("  - None identified")
 
     lines.append("")
 
     # Weaknesses
+    lines.append("Weaknesses:")
     if identity_data["weaknesses"]:
-        lines.append("Weaknesses:")
         for w in identity_data["weaknesses"]:
             lines.append(f"  - {w}")
     else:
-        lines.append("Weaknesses:")
         lines.append("  - None identified")
 
     lines.append("")
     lines.append("Tag Breakdown:")
 
     for tag, data in identity_data["tags"].items():
-        tag_name = tag.replace("_", " ").title()
-        lines.append(f"  - {tag_name}: {data['tier']} Tier (avg {data['avg_pct']:.1f} percentile)")
+        name = DISPLAY_NAMES.get(tag, tag.replace("_", " ").title())
+        lines.append(
+            f"  - {name}: {data['tier']} Tier (avg {data['avg_pct']:.1f} percentile)"
+        )
 
     return "\n".join(lines)

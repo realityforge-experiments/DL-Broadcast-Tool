@@ -22,6 +22,20 @@ def load_career_db():
 def _get_player_entry(db, pid):
     pid = str(pid)
     return db["players"].get(pid)
+    
+
+def attach_career_tags_to_match_player(match_player, career_entry):
+    """
+    Injects career tag blocks into a match_player object so that
+    storylines, predictions, and UI panels can access:
+        - consistency
+        - anchor
+        - clutch
+        - breaker
+    """
+    for tag in ("consistency", "anchor", "clutch", "breaker"):
+        if tag in career_entry:
+            match_player[tag] = career_entry[tag]
 
 
 # ---------------------------------------------------------
@@ -47,6 +61,8 @@ def rank_match_players_by_tag(match_players, tag_name):
         entry = _get_player_entry(db, pid)
         if not entry:
             continue
+            
+        attach_career_tags_to_match_player(p, entry)    
 
         tag = entry.get(tag_name, {})
         pct = tag.get("pct", 0)
@@ -234,36 +250,3 @@ def compute_slayer_prediction(team_a_players, team_b_players):
     }
     
     
-def rank_match_players_support_specialist(players):
-    """
-    Ranks players by Support Specialist (career tag) using percentile.
-    """
-
-    ranked = []
-
-    for p in players:
-        tag = p.get("support_specialist", {})
-
-        # Use percentile as the ranking basis
-        pct = tag.get("pct")
-        if pct is None:
-            continue
-
-        ranked.append({
-            "name": p.get("name", "Unknown"),
-            "team": p.get("team", ""),
-            "pct": pct,
-            "tier": tag.get("tier", "D"),
-            "summary": tag.get("summary", ""),
-            "score_raw": pct,                  # used for team totals
-            "score_display": f"{pct:.1f}",     # what you see in the table
-        })
-
-    # Sort descending by percentile
-    ranked.sort(key=lambda x: x["pct"], reverse=True)
-
-    # Assign ranks
-    for i, entry in enumerate(ranked, start=1):
-        entry["rank"] = i
-
-    return ranked

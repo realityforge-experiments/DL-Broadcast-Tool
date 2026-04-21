@@ -109,37 +109,32 @@ def rank_match_players_clutch(players):
     return ranked
     
     
-def rank_match_players_support_specialist(players):
-    """
-    Ranks players by Support Specialist (career tag).
-    Uses the already-computed tag stored in each player's data.
-    """
+    
+# ---------------------------------------------------------
+# Generic Match Tag Ranking (Modern Tag System)
+# ---------------------------------------------------------
 
+def rank_match_players_by_tag(players, tag_name):
     ranked = []
 
     for p in players:
-        tag = p.get("support_specialist", {})
-        raw = tag.get("raw")
+        tag = p.get(tag_name, {})
 
-        # Skip players with no data
-        if raw is None:
-            continue
+        # Modern tags store raw score under "raw"
+        score = 0.0
+        if isinstance(tag, dict):
+            score = tag.get("raw", 0.0)
 
         ranked.append({
             "name": p.get("name", "Unknown"),
             "team": p.get("team", ""),
-            "raw": raw,
-            "pct": tag.get("pct", 0.0),
-            "tier": tag.get("tier", "D"),
-            "summary": tag.get("summary", ""),
-            "score_display": f"{raw:.2f}",
+            "score_raw": score,
+            "score_display": f"{score:.2f}",
         })
 
-    # Sort descending by raw score
-    ranked.sort(key=lambda x: x["raw"], reverse=True)
+    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
 
-    # Assign ranks
-    for i, entry in enumerate(ranked, start=1):
-        entry["rank"] = i
+    for i, r in enumerate(ranked, start=1):
+        r["rank"] = i
 
-    return ranked
+    return ranked    
