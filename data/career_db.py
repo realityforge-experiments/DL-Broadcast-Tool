@@ -262,6 +262,30 @@ def build_career_database(output_path):
             "summary": consistency_result.summary_short
         }
         
+        # ---------------------------------------------------------
+        # Consistency Percentile + Tier (NEW)
+        # ---------------------------------------------------------
+        raw_cons = pdata["consistency"]["raw"]
+
+        # Build distribution if missing
+        if "consistency" not in distributions:
+            distributions["consistency"] = [
+                p["consistency"]["raw"]
+                for p in all_players
+                if "consistency" in p and isinstance(p["consistency"], dict)
+            ]
+
+        # Percentile lookup
+        pct = percentile_rank(raw_cons, distributions["consistency"])
+        tier = tier_from_percentile(pct)
+
+        pdata["consistency"]["pct"] = pct
+        pdata["consistency"]["tier"] = tier
+        pdata["consistency"]["summary"] = (
+            f"{tier} Tier Consistency ({pct:.1f} percentile)"
+        )
+        
+        
         # Anchor
         consistency_norm = pdata["consistency"]["raw"]  # normalized 0–1 score
         pdata["anchor"] = compute_anchor_for_career_player(

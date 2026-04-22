@@ -112,29 +112,35 @@ def rank_match_players_clutch(players):
     
 # ---------------------------------------------------------
 # Generic Match Tag Ranking (Modern Tag System)
-# ---------------------------------------------------------
-
-def rank_match_players_by_tag(players, tag_name):
-    ranked = []
+# ---------------------------------------------------------    
+    
+def rank_match_players_by_tag(players, tag):
+    rows = []
 
     for p in players:
-        tag = p.get(tag_name, {})
+        tag_data = p.get(tag) or {}   # <‑‑‑ FIX HERE
+        raw = tag_data.get("raw", 0)
 
-        # Modern tags store raw score under "raw"
-        score = 0.0
-        if isinstance(tag, dict):
-            score = tag.get("raw", 0.0)
-
-        ranked.append({
+        rows.append({
             "name": p.get("name", "Unknown"),
             "team": p.get("team", ""),
-            "score_raw": score,
-            "score_display": f"{score:.2f}",
+            "score_raw": raw,
+            "score_display": f"{raw:.2f}",
         })
 
-    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
+    rows.sort(key=lambda x: x["score_raw"], reverse=True)
 
-    for i, r in enumerate(ranked, start=1):
+    for i, r in enumerate(rows, start=1):
         r["rank"] = i
 
-    return ranked    
+    return rows
+    
+    
+def split_two_columns(ranked, team_a, team_b):
+    """
+    ranked: list of rows returned by rank_match_players_* functions.
+    Returns two lists: left (team_a) and right (team_b).
+    """
+    left = [r for r in ranked if r.get("team") == team_a]
+    right = [r for r in ranked if r.get("team") == team_b]
+    return left, right    

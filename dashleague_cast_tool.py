@@ -8,34 +8,51 @@ from tkinter import ttk, messagebox, filedialog
 
 import requests
 
-# --- Internal modules ---
+# ---------------------------------------------------------
+# Internal modules — clean, correct, no duplicates
+# ---------------------------------------------------------
+
+# Career DB builder
 from data.career_db import build_career_database
-from rankings import top_players_by_tag
+
+# Career rankings (used for global leaderboards)
+from rankings import (
+    top_players_by_tag,
+    split_two_columns,
+    rank_match_players_by_tag,
+)
+
+# Team identity + storyline + predictions
 from analysis.team_identity_v2 import generate_team_identity_block
 from analysis.storylines import generate_storyline, matchup_storyline
 from analysis.predictions_v2 import generate_prediction
+
+
+# OBS export
 from analysis.obs_export_v2 import export_all_obs
 
+# Domination objective (match + career)
 from tags.objective_domination import (
     compute_dom_objective_for_career_player,
     compute_dom_objective_for_match_player,
     compute_dom_objective_team_scores,
 )
 
+# Prediction engine (legacy but still used)
 from predictions.prediction_engine import generate_predictions
 
+# Match-based tag engines
 from match_engine import (
     rank_match_players_slayer,
     rank_match_players_objpl,
     rank_match_players_objdom,
     rank_match_players_sharpshooter,
     rank_match_players_clutch,
-    split_two_columns,
     compute_slayer_prediction,
     rank_match_players_consistency_career,
-    rank_match_players_by_tag,
-    _add_score_fields,
 )
+
+from data.tag_framework import percentile_rank, tier_from_percentile
 
 # ---------------------------------------------------------
 #  PATHS + CONFIG
@@ -76,6 +93,29 @@ def export_to_obs(filename, text):
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
     return path
+    
+    
+# ---------------------------------------------------------
+# Breaker (match-based)
+# ---------------------------------------------------------
+
+def compute_breaker_for_match_player(p):
+    kills = p.get("kills", 0) or 0
+    damage = p.get("damage", 0) or 0
+    dom_counters = p.get("DOM_Counters", 0) or 0
+    dom_caps = p.get("DOM_Captures", 0) or 0
+    cp_caps = p.get("CP_Captures", 0) or 0
+
+    raw = (
+        dom_counters * 1.0 +
+        dom_caps * 0.6 +
+        cp_caps * 0.4 +
+        kills * 0.05 +
+        damage / 20000.0
+    )
+
+    return max(raw, 0.0)
+    
     
 # ---------------------------------------------------------
 # Team Identity Formatter (Standalone Helper)
@@ -165,6 +205,9 @@ class DashLeagueGUI:
     def _build_ui(self):
         main_frame = ttk.Frame(self.root, padding=10)
         main_frame.grid(row=0, column=0, sticky="nsew")
+        
+        self.team_a_var = tk.StringVar()
+        self.team_b_var = tk.StringVar()
 
         self.root.columnconfigure(0, weight=1)
         self.root.rowconfigure(0, weight=1)
@@ -258,6 +301,10 @@ class DashLeagueGUI:
             data = fetch_json(url)
             stats = data.get("data", [])
             
+            print("DEBUG: Checking raw API teams...")
+            for p in stats:
+                print("TEAM FIELD:", repr(p.get("team")))
+            
             # ---------------------------------------------------------
             # Load PIR + Career DB
             # ---------------------------------------------------------
@@ -275,33 +322,54 @@ class DashLeagueGUI:
 
             for p in stats:
                 raw_id = p["id"]
-
-                # Always resolve canonical FIRST
                 canonical = pir.resolve(raw_id)
-                p["canonical_id"] = canonical
 
-                # Attach career tags if available
+                # Start with API stats
+                merged = dict(p)
+
+                # 🔥 Normalize team field BEFORE anything else
+                team = merged.get("team")
+                if team is None:
+                    merged["team"] = ""
+                else:
+                    merged["team"] = str(team).strip()
+
+                # Attach canonical ID
+                merged["canonical_id"] = canonical
+
+                # Attach career tags
                 pdata = career_db["players"].get(canonical)
                 if pdata:
-                    p["slayer"] = pdata.get("slayer", {})
-                    p["sharpshooter"] = pdata.get("sharpshooter", {})
-                    p["objective_payload"] = pdata.get("objective_payload", {})
-                    p["objective_domination"] = pdata.get("objective_domination", {})
-                    p["consistency"] = pdata.get("consistency", {})
-                    p["clutch"] = pdata.get("clutch", {})
-                    p["anchor"] = pdata.get("anchor", {})
-                    p["breaker"] = pdata.get("breaker", {})
+                    merged["slayer"] = pdata.get("slayer", {})
+                    merged["sharpshooter"] = pdata.get("sharpshooter", {})
+                    merged["objective_payload"] = pdata.get("objective_payload", {})
+                    merged["objective_domination"] = pdata.get("objective_domination", {})
+                    merged["consistency"] = pdata.get("consistency", {})
+                    merged["clutch"] = pdata.get("clutch", {})
+                    merged["anchor"] = pdata.get("anchor", {})
+                    merged["breaker"] = pdata.get("breaker", {})
 
-                # Store under canonical ID
-                new_stats_by_id[canonical] = p
+                new_stats_by_id[canonical] = merged
 
+            # 🔥 Now safe to assign
             self.stats_by_id = new_stats_by_id
+
+            # 🔥 Now safe to inspect teams
+            teams_in_api = sorted({p["team"] for p in new_stats_by_id.values()})
+            print("TEAMS IN API:", teams_in_api)
             
             self.set_status("Stats synced.")
             messagebox.showinfo("Success", f"Synced {len(stats)} player stats.")
         except Exception as e:
             messagebox.showerror("Error", f"Failed to sync stats:\n{e}")
             self.set_status("Sync failed.")
+            
+        # Re-trigger team selection so listboxes repopulate
+        if self.team_a_var.get():
+            self.on_team_select("A")
+        if self.team_b_var.get():
+            self.on_team_select("B")    
+
     
     def enforce_rolling_five(self, event, side):
         listbox = self.team_a_listbox if side == "A" else self.team_b_listbox
@@ -319,37 +387,45 @@ class DashLeagueGUI:
             
     def on_team_select(self, side):
         team_name = self.team_a_var.get() if side == "A" else self.team_b_var.get()
-        team_players = [
-            p for p in self.stats_by_id.values()
-            if p.get("team") == team_name
-        ]
+        print("TEAM SELECT FIRED:", side, "team_name=", team_name)
 
+        # Debug: show how many players match this team
+        matching = []
+        for p in self.stats_by_id.values():
+            if p.get("team") == team_name or p.get("TeamUUID") == team_name:
+                matching.append(p)
+
+        print(f"DEBUG: Found {len(matching)} players for team {team_name}")
+        for p in matching:
+            print("   PLAYER:", p.get("name"), "| TEAM:", p.get("team"))
+
+        # Now assign to UI
         if side == "A":
-            self.team_a_players = team_players
+            self.team_a_players = matching
             self.team_a_listbox.delete(0, tk.END)
-            for p in team_players:
+            for p in matching:
                 self.team_a_listbox.insert(tk.END, p.get("name", "Unknown"))
         else:
-            self.team_b_players = team_players
+            self.team_b_players = matching
             self.team_b_listbox.delete(0, tk.END)
-            for p in team_players:
+            for p in matching:
                 self.team_b_listbox.insert(tk.END, p.get("name", "Unknown"))
                 
                 
     def normalize_player(self, p):
         return {
-            "id": p.get("PlayerUUID"),
-            "name": p.get("PlayerGameName"),
-            "team": p.get("TeamUUID"),
-            "KD": p.get("KD", ""),
-            "kills": p.get("Kills", ""),
-            "deaths": p.get("Deaths", ""),
-            "headshots": p.get("Headshots", ""),
-            "accuracy": p.get("Accuracy", ""),
-            "PAY_PushTime": p.get("PAY_PushTime", ""),
-            "DOM_captures": p.get("DOM_Captures", ""),
-            "DOM_counters": p.get("DOM_Counters", ""),
-        }                
+            "id": p.get("id"),
+            "name": p.get("name"),
+            "team": p.get("team"),
+            "KD": p.get("KD", 0),
+            "kills": p.get("kills", 0),
+            "deaths": p.get("deaths", 0),
+            "headshots": p.get("headshots", 0),
+            "accuracy": p.get("accuracy", 0),
+            "PAY_PushTime": p.get("PAY_PushTime", 0),
+            "DOM_captures": p.get("DOM_captures", 0),
+            "DOM_counters": p.get("DOM_counters", 0),
+        }             
                 
                 
 
@@ -357,9 +433,9 @@ class DashLeagueGUI:
         try:
             ensure_player_slots()
 
-            # -----------------------------
+            # ---------------------------------------------------------
             # 1. Collect selected players
-            # -----------------------------
+            # ---------------------------------------------------------
             selected_a = [self.team_a_players[i] for i in self.team_a_listbox.curselection()]
             selected_b = [self.team_b_players[i] for i in self.team_b_listbox.curselection()]
 
@@ -368,99 +444,121 @@ class DashLeagueGUI:
             if not selected_b:
                 selected_b = self.team_b_players
 
-            # Sort and combine
-            all_players = (
-                sorted(selected_a, key=lambda x: x.get("name", "")) +
-                sorted(selected_b, key=lambda x: x.get("name", ""))
-            )
+            # Limit to 5 per team
+            selected_a = selected_a[:5]
+            selected_b = selected_b[:5]
+            all_players = selected_a + selected_b
 
-            # Limit to 10
-            all_players = all_players[:10]
-
-            # -----------------------------
-            # 2. Normalize keys BEFORE attaching tags
-            # -----------------------------
+            # ---------------------------------------------------------
+            # 2. Normalize stat keys BEFORE attaching tags
+            # ---------------------------------------------------------
             for p in all_players:
-                # Normalize stat keys to match DB/tag expectations
                 p["CP_Captures"] = p.get("CP_captures", 0)
                 p["DOM_Captures"] = p.get("DOM_captures", 0)
                 p["DOM_Counters"] = p.get("DOM_counters", 0)
 
-            # Save match players
-            self.current_match_players = all_players
-
-            # Debug
-            if self.current_match_players:
-                print("DEBUG MATCH PLAYER:", self.current_match_players[0])
-                print("DEBUG PLAYER KEYS:", list(self.current_match_players[0].keys()))
-            else:
-                print("DEBUG MATCH PLAYER: EMPTY LIST")
-
-            # -----------------------------
-            # 3. Load career DB
-            # -----------------------------
-            career_path = os.path.join(BASE_DIR, "career_stats.json")
-            career_db = None
-            if os.path.exists(career_path):
-                with open(career_path, "r", encoding="utf-8") as f:
-                    career_db = json.load(f)
-
-
             # ---------------------------------------------------------
-            # Resolve canonical IDs for all match players
+            # 3. Resolve canonical IDs AND normalize player ID
             # ---------------------------------------------------------
             from analysis.player_identity_registry import PlayerIdentityRegistry
             pir = PlayerIdentityRegistry()
 
             for p in all_players:
+                # Resolve canonical ID first
                 raw_uuid = (
                     p.get("id")
                     or p.get("PlayerUUID")
                     or p.get("uuid")
                 )
                 if raw_uuid:
-                    canonical = pir.resolve(raw_uuid)
-                    p["canonical_id"] = canonical
+                    p["canonical_id"] = pir.resolve(raw_uuid)
 
+                # Normalize ID (AFTER canonical resolution)
+                pid = (
+                    p.get("id")
+                    or p.get("PlayerUUID")
+                    or p.get("uuid")
+                    or p.get("canonical_id")
+                    or p.get("name")
+                )
+                p["id"] = pid
 
-            # -----------------------------
-            # 4. Attach modern career tags
-            # -----------------------------
+            # ---------------------------------------------------------
+            # 4. Compute match-based Breaker
+            # ---------------------------------------------------------
+            for p in all_players:
+                breaker_raw = compute_breaker_for_match_player(p)
+                p["breaker"] = {"raw": breaker_raw}
+
+            # ---------------------------------------------------------
+            # 5. Load career DB
+            # ---------------------------------------------------------
+            career_db = None
+            career_path = os.path.join(BASE_DIR, "career_stats.json")
+            if os.path.exists(career_path):
+                with open(career_path, "r", encoding="utf-8") as f:
+                    career_db = json.load(f)
+
+            # ---------------------------------------------------------
+            # 6. Compute match-based Consistency (raw only)
+            # ---------------------------------------------------------
+            consistency_rows = rank_match_players_consistency_career(all_players)
+            consistency_map = {row["id"]: row["score_raw"] for row in consistency_rows}
+
+            for p in all_players:
+                raw = consistency_map.get(p["id"], 0.0)
+                p["consistency"] = {"raw": raw}
+
+            # ---------------------------------------------------------
+            # 7. Build match-based consistency distribution
+            # ---------------------------------------------------------
+            consistency_distribution = [p["consistency"]["raw"] for p in all_players]
+
+            # ---------------------------------------------------------
+            # 8. Compute percentile + tier for match-based Consistency
+            # ---------------------------------------------------------
+            from data.tag_framework import percentile_rank, tier_from_percentile
+
+            for p in all_players:
+                raw = p["consistency"]["raw"]
+                pct = percentile_rank(raw, consistency_distribution)
+                tier = tier_from_percentile(pct)
+
+                p["consistency"]["pct"] = pct
+                p["consistency"]["tier"] = tier
+                p["consistency"]["summary"] = f"{tier} Tier ({pct:.1f} percentile)"
+
+            # ---------------------------------------------------------
+            # 9. Attach career tags (DO NOT overwrite match consistency)
+            # ---------------------------------------------------------
             if career_db is not None:
                 for p in all_players:
-                    canonical = p.get("canonical_id")
-                    if not canonical:
+                    cid = p.get("canonical_id")
+                    if not cid:
                         continue
 
-                    pdata = career_db["players"].get(canonical)
+                    pdata = career_db["players"].get(cid)
                     if not pdata:
                         continue
 
-                    # Core tags
                     p["slayer"] = pdata.get("slayer", {})
                     p["sharpshooter"] = pdata.get("sharpshooter", {})
                     p["objective_payload"] = pdata.get("objective_payload", {})
+                    p["clutch"] = pdata.get("clutch", {})
+                    p["anchor"] = pdata.get("anchor", {})
+                    p["breaker_career"] = pdata.get("breaker", {})
 
                     # Do NOT overwrite match-based DomObj
                     if "objective_domination" not in p:
                         p["objective_domination"] = pdata.get("objective_domination", {})
 
-                    # Career-based tags
-                    p["consistency"] = pdata.get("consistency", {})
-                    p["clutch"] = pdata.get("clutch", {})
-                    p["anchor"] = pdata.get("anchor", {})
-                    p["breaker"] = pdata.get("breaker", {})
-                
-
-            # -----------------------------
-            # 4.5 Always attach match-based Domination Objective
-            # -----------------------------
+            # ---------------------------------------------------------
+            # 10. Compute match-based Domination Objective
+            # ---------------------------------------------------------
             for p in all_players:
                 dom = compute_dom_objective_for_match_player(p)
                 caps = dom.get("captures", 0)
                 counters = dom.get("counters", 0)
-
-                # Simple scoring model
                 dom_score = caps * 0.4 + counters * 0.6
 
                 p["objective_domination_components"] = {
@@ -469,10 +567,38 @@ class DashLeagueGUI:
                     "counters": counters,
                 }
 
+            # ---------------------------------------------------------
+            # 11. Merge enriched tag data into raw match players
+            # ---------------------------------------------------------
+            for p in all_players:
+                cid = p.get("canonical_id")
+                if not cid:
+                    continue
 
-            # -----------------------------
-            # 5. Write OBS slot files
-            # -----------------------------
+                enriched = self.stats_by_id.get(cid)
+                if not enriched:
+                    continue
+
+                for key in (
+                    "slayer",
+                    "sharpshooter",
+                    "objective_payload",
+                    "objective_domination",
+                    "clutch",
+                    "anchor",
+                    "breaker",
+                ):
+                    if key in enriched:
+                        p[key] = enriched[key]
+
+            # ---------------------------------------------------------
+            # 12. Update current_match_players
+            # ---------------------------------------------------------
+            self.current_match_players = all_players
+
+            # ---------------------------------------------------------
+            # 13. Write OBS slot files
+            # ---------------------------------------------------------
             for idx, p in enumerate(all_players):
                 slot_dir = os.path.join(PLAYERS_DIR, f"p{idx}")
                 os.makedirs(slot_dir, exist_ok=True)
@@ -485,38 +611,15 @@ class DashLeagueGUI:
                 write_text(os.path.join(slot_dir, "Deaths.txt"), p.get("deaths", ""))
                 write_text(os.path.join(slot_dir, "Headshots.txt"), p.get("headshots", ""))
                 write_text(os.path.join(slot_dir, "Accuracy.txt"), p.get("accuracy", ""))
+
                 write_text(os.path.join(slot_dir, "PushTime.txt"), p.get("PAY_PushTime", ""))
                 write_text(os.path.join(slot_dir, "Captures.txt"), p.get("DOM_Captures", ""))
                 write_text(os.path.join(slot_dir, "Counters.txt"), p.get("DOM_Counters", ""))
 
-
-            # -----------------------------
-            # 6. Export Rookie Leaderboard
-            # -----------------------------
-            from analysis.rookie_leaderboard import compute_rookie_leaderboard
-
-            rookies = compute_rookie_leaderboard(career_db, tag="slayer")  # default tag
-
-            rookie_dir = os.path.join(SCREENS_DIR, "rookies")
-            os.makedirs(rookie_dir, exist_ok=True)
-
-            # Full table
-            table_lines = []
-            for i, r in enumerate(rookies):
-                table_lines.append(
-                    f"{i+1}. {r['name']} — {r['tag_tier']} Tier ({r['tag_pct']:.1f}%) "
-                    f"KD {r['kd']:.2f} — {r['kills']} Kills — {r['score']} Score"
-                )
-            write_text(os.path.join(rookie_dir, "table.txt"), "\n".join(table_lines))
-
-            # Individual rows
-            for i, r in enumerate(rookies):
-                row = (
-                    f"{i+1}. {r['name']} — {r['tag_tier']} Tier ({r['tag_pct']:.1f}%)\n"
-                    f"KD {r['kd']:.2f} — {r['kills']} Kills — {r['score']} Score"
-                )
-                write_text(os.path.join(rookie_dir, f"p{i}.txt"), row)
-
+                # Consistency
+                write_text(os.path.join(slot_dir, "ConsistencyRaw.txt"), p["consistency"]["raw"])
+                write_text(os.path.join(slot_dir, "ConsistencyPct.txt"), p["consistency"]["pct"])
+                write_text(os.path.join(slot_dir, "ConsistencyTier.txt"), p["consistency"]["tier"])
 
             self.set_status("Player slots generated.")
             messagebox.showinfo("Success", "Player slots generated into p0–p9.")
@@ -665,7 +768,7 @@ Consistency Summary:
             messagebox.showinfo("Exported", f"Team identity exported to:\n{path}")
 
         ttk.Button(win, text="Export to OBS", command=export).pack(pady=5)
-        
+  
         
     def generate_player_tags(self, player_entry, map_type):
         tags_out = []
@@ -721,9 +824,25 @@ Consistency Summary:
             messagebox.showerror("Error", "Select both Team A and Team B.")
             return
 
-        # Extract players for each team
-        teamA_players = [self.stats_by_id[p["canonical_id"]] for p in self.current_match_players]
-        teamB_players = [self.stats_by_id[p["canonical_id"]] for p in self.current_match_players]
+        # ---------------------------------------------------------
+        # Extract players for each team (correct filtering)
+        # ---------------------------------------------------------
+        teamA_players = []
+        teamB_players = []
+
+        for p in self.current_match_players:
+            cid = p.get("canonical_id")
+            if not cid:
+                continue
+
+            enriched = self.stats_by_id.get(cid)
+            if not enriched:
+                continue
+
+            if enriched.get("team") == team_a:
+                teamA_players.append(enriched)
+            elif enriched.get("team") == team_b:
+                teamB_players.append(enriched)
         
         #print("TEAM A SAMPLE:", teamA_players[0])
         #print("TEAM B SAMPLE:", teamB_players[0])
@@ -806,6 +925,7 @@ Consistency Summary:
             "Clutch",
             "Anchor",
             "Breaker",
+            "Rookie",
         ]
 
         ttk.Label(win, text="Select Tag:").pack(anchor="w", padx=10, pady=5)
@@ -840,20 +960,20 @@ Consistency Summary:
                 ranked = rank_match_players_objdom(self.current_match_players)
 
             elif tag == "Consistency":
-                ranked = rank_match_players_consistency_career(self.current_match_players)
+                ranked = rank_match_players_by_tag(self.current_match_players, "consistency")
 
             elif tag == "Clutch":
                 ranked = rank_match_players_clutch(self.current_match_players)
 
             elif tag == "Anchor":
-                ranked = _add_score_fields(
-                    rank_match_players_by_tag(self.current_match_players, "anchor")
-                )
+                ranked = rank_match_players_by_tag(self.current_match_players, "anchor")
 
             elif tag == "Breaker":
-                ranked = _add_score_fields(
-                    rank_match_players_by_tag(self.current_match_players, "breaker")
-                )
+                ranked = rank_match_players_by_tag(self.current_match_players, "breaker")
+                
+            elif tag == "Rookie":
+                ranked = compute_rookie_leaderboard(career_db, tag="slayer")
+                # convert rookie rows to the same format as other rankings    
 
             else:
                 messagebox.showerror("Error", f"Unknown tag: {tag}")
@@ -879,11 +999,22 @@ Consistency Summary:
 
                 if i < len(left):
                     lp = left[i]
-                    left_str = f"{lp['rank']:>2}. {lp['name']:<16} {lp['score_display']:>6}"
+                    #print("DEBUG LP ROW:", lp)  # <--- add this
+                    pct = lp.get("pct")
+                    if pct is not None:
+                        pct_str = f"{pct:.0f}%"
+                        left_str = f"{lp['rank']:>2}. {lp['name']:<16} {lp['score_display']:>6} ({pct_str})"
+                    else:
+                        left_str = f"{lp['rank']:>2}. {lp['name']:<16} {lp['score_display']:>6}"
 
                 if i < len(right):
                     rp = right[i]
-                    right_str = f"{rp['rank']:>2}. {rp['name']:<16} {rp['score_display']:>6}"
+                    pct = rp.get("pct")
+                    if pct is not None:
+                        pct_str = f"{pct:.0f}%"
+                        right_str = f"{rp['rank']:>2}. {rp['name']:<16} {rp['score_display']:>6} ({pct_str})"
+                    else:
+                        right_str = f"{rp['rank']:>2}. {rp['name']:<16} {rp['score_display']:>6}"
 
                 text += f"{left_str:<24}{right_str}\n"
 
@@ -1016,6 +1147,8 @@ Consistency Summary:
                 text += "- DamageNorm = Damage per map normalized against league average\n"
                 text += "- KillsNorm = Kills per map normalized against league average\n"
                 text += "Breaker measures disruptive offensive pressure through high damage output and aggressive fragging.\n"
+                
+                
                 
 
             output.delete("1.0", tk.END)
