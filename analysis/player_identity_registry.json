@@ -869,7 +869,10 @@
       ],
       "names": [
         "Kali"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_2": {
       "uuids": [
@@ -877,7 +880,10 @@
       ],
       "names": [
         "Outsider"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_3": {
       "uuids": [
@@ -885,7 +891,10 @@
       ],
       "names": [
         "Lateralus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_4": {
       "uuids": [
@@ -893,7 +902,10 @@
       ],
       "names": [
         "LilBit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_5": {
       "uuids": [
@@ -901,7 +913,10 @@
       ],
       "names": [
         "Laggy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_6": {
       "uuids": [
@@ -909,7 +924,10 @@
       ],
       "names": [
         "gambit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_7": {
       "uuids": [
@@ -917,7 +935,10 @@
       ],
       "names": [
         "Heis"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_8": {
       "uuids": [
@@ -925,7 +946,10 @@
       ],
       "names": [
         "angryparsnip"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_9": {
       "uuids": [
@@ -933,7 +957,10 @@
       ],
       "names": [
         "Mavrodi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_10": {
       "uuids": [
@@ -941,7 +968,10 @@
       ],
       "names": [
         "DuBoss"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_11": {
       "uuids": [
@@ -949,7 +979,10 @@
       ],
       "names": [
         "monkey"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_12": {
       "uuids": [
@@ -957,7 +990,10 @@
       ],
       "names": [
         "Zed"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_13": {
       "uuids": [
@@ -965,7 +1001,10 @@
       ],
       "names": [
         "Ach1lles"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_14": {
       "uuids": [
@@ -973,7 +1012,10 @@
       ],
       "names": [
         "T-Fairy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_15": {
       "uuids": [
@@ -981,7 +1023,10 @@
       ],
       "names": [
         "Skimoes"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_16": {
       "uuids": [
@@ -989,7 +1034,10 @@
       ],
       "names": [
         "Koala"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_17": {
       "uuids": [
@@ -997,7 +1045,10 @@
       ],
       "names": [
         "OEIL.DE.VR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_18": {
       "uuids": [
@@ -1005,7 +1056,10 @@
       ],
       "names": [
         "Soy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_19": {
       "uuids": [
@@ -1013,7 +1067,10 @@
       ],
       "names": [
         "Pilou"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_20": {
       "uuids": [
@@ -1021,7 +1078,10 @@
       ],
       "names": [
         "Bentama"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_21": {
       "uuids": [
@@ -1029,7 +1089,10 @@
       ],
       "names": [
         "Olivier"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_22": {
       "uuids": [
@@ -1037,7 +1100,10 @@
       ],
       "names": [
         "GastonlaGaffe"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_23": {
       "uuids": [
@@ -1045,7 +1111,10 @@
       ],
       "names": [
         "QuessX"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_24": {
       "uuids": [
@@ -1053,7 +1122,10 @@
       ],
       "names": [
         "tsar lewin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_25": {
       "uuids": [
@@ -1061,7 +1133,10 @@
       ],
       "names": [
         "abrackers"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_26": {
       "uuids": [
@@ -1069,7 +1144,10 @@
       ],
       "names": [
         "Mega"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_27": {
       "uuids": [
@@ -1077,7 +1155,10 @@
       ],
       "names": [
         "MC1125"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_28": {
       "uuids": [
@@ -1085,7 +1166,10 @@
       ],
       "names": [
         "Semp"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_29": {
       "uuids": [
@@ -1093,7 +1177,10 @@
       ],
       "names": [
         "NOeCORY"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_30": {
       "uuids": [
@@ -1101,7 +1188,10 @@
       ],
       "names": [
         "QDruid"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_31": {
       "uuids": [
@@ -1109,7 +1199,10 @@
       ],
       "names": [
         "BigBadBrad"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_32": {
       "uuids": [
@@ -1117,7 +1210,10 @@
       ],
       "names": [
         "PureBlood"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_33": {
       "uuids": [
@@ -1125,7 +1221,10 @@
       ],
       "names": [
         "Hello"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_34": {
       "uuids": [
@@ -1133,7 +1232,10 @@
       ],
       "names": [
         "StonedBread"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_35": {
       "uuids": [
@@ -1141,7 +1243,10 @@
       ],
       "names": [
         "OliverEvans HH"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_36": {
       "uuids": [
@@ -1149,7 +1254,10 @@
       ],
       "names": [
         "MrSoap"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_37": {
       "uuids": [
@@ -1157,7 +1265,10 @@
       ],
       "names": [
         "Mr V"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_38": {
       "uuids": [
@@ -1165,7 +1276,10 @@
       ],
       "names": [
         "DarkGhost"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_39": {
       "uuids": [
@@ -1173,7 +1287,10 @@
       ],
       "names": [
         "Nitro"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_40": {
       "uuids": [
@@ -1181,7 +1298,10 @@
       ],
       "names": [
         "me"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_41": {
       "uuids": [
@@ -1189,7 +1309,10 @@
       ],
       "names": [
         "TGSML"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_42": {
       "uuids": [
@@ -1197,7 +1320,10 @@
       ],
       "names": [
         "ahi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_43": {
       "uuids": [
@@ -1205,7 +1331,10 @@
       ],
       "names": [
         "GadgetManTK"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_44": {
       "uuids": [
@@ -1213,7 +1342,10 @@
       ],
       "names": [
         "Nugget"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_45": {
       "uuids": [
@@ -1221,7 +1353,10 @@
       ],
       "names": [
         "Rembrandt"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_46": {
       "uuids": [
@@ -1229,7 +1364,10 @@
       ],
       "names": [
         "Universal"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_47": {
       "uuids": [
@@ -1237,7 +1375,10 @@
       ],
       "names": [
         "Jedi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_48": {
       "uuids": [
@@ -1245,7 +1386,10 @@
       ],
       "names": [
         "CrashZone"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_49": {
       "uuids": [
@@ -1253,7 +1397,10 @@
       ],
       "names": [
         "Rapscallion"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_50": {
       "uuids": [
@@ -1261,7 +1408,10 @@
       ],
       "names": [
         "Huayra"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_51": {
       "uuids": [
@@ -1269,7 +1419,10 @@
       ],
       "names": [
         "Caseus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_52": {
       "uuids": [
@@ -1277,7 +1430,10 @@
       ],
       "names": [
         "TotalmaxouT"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_53": {
       "uuids": [
@@ -1285,7 +1441,10 @@
       ],
       "names": [
         "Mando"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_54": {
       "uuids": [
@@ -1293,7 +1452,10 @@
       ],
       "names": [
         "Yeetkid"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_55": {
       "uuids": [
@@ -1301,7 +1463,10 @@
       ],
       "names": [
         "D6"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_56": {
       "uuids": [
@@ -1309,7 +1474,10 @@
       ],
       "names": [
         "Venom"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_57": {
       "uuids": [
@@ -1317,7 +1485,10 @@
       ],
       "names": [
         "Nova"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_58": {
       "uuids": [
@@ -1325,7 +1496,10 @@
       ],
       "names": [
         "Scrat Bandit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_59": {
       "uuids": [
@@ -1333,7 +1507,10 @@
       ],
       "names": [
         "Mario?"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_60": {
       "uuids": [
@@ -1341,7 +1518,10 @@
       ],
       "names": [
         "Mango"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_61": {
       "uuids": [
@@ -1349,7 +1529,10 @@
       ],
       "names": [
         "Benji"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_62": {
       "uuids": [
@@ -1357,7 +1540,10 @@
       ],
       "names": [
         "STUN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_63": {
       "uuids": [
@@ -1365,7 +1551,10 @@
       ],
       "names": [
         "destroyer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_64": {
       "uuids": [
@@ -1373,7 +1562,10 @@
       ],
       "names": [
         "Highlite27"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_65": {
       "uuids": [
@@ -1381,7 +1573,10 @@
       ],
       "names": [
         "vanta"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_66": {
       "uuids": [
@@ -1389,7 +1584,10 @@
       ],
       "names": [
         "MTL"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_67": {
       "uuids": [
@@ -1397,7 +1595,10 @@
       ],
       "names": [
         "KingQuiko"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_68": {
       "uuids": [
@@ -1405,7 +1606,10 @@
       ],
       "names": [
         "Owl"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_69": {
       "uuids": [
@@ -1413,7 +1617,10 @@
       ],
       "names": [
         "Wildc@"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_70": {
       "uuids": [
@@ -1421,7 +1628,10 @@
       ],
       "names": [
         "D!TZ"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_71": {
       "uuids": [
@@ -1429,7 +1639,10 @@
       ],
       "names": [
         "Whoopsie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_72": {
       "uuids": [
@@ -1437,7 +1650,10 @@
       ],
       "names": [
         "BrickersReality"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_73": {
       "uuids": [
@@ -1445,7 +1661,10 @@
       ],
       "names": [
         "Coltin000"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_74": {
       "uuids": [
@@ -1453,7 +1672,10 @@
       ],
       "names": [
         "Engine837"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_75": {
       "uuids": [
@@ -1461,7 +1683,10 @@
       ],
       "names": [
         "ex626"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_76": {
       "uuids": [
@@ -1469,7 +1694,10 @@
       ],
       "names": [
         "Gem"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_77": {
       "uuids": [
@@ -1477,7 +1705,10 @@
       ],
       "names": [
         "Aries"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_78": {
       "uuids": [
@@ -1485,7 +1716,10 @@
       ],
       "names": [
         "firehorse"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_79": {
       "uuids": [
@@ -1493,7 +1727,10 @@
       ],
       "names": [
         "Nogl"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_80": {
       "uuids": [
@@ -1501,7 +1738,10 @@
       ],
       "names": [
         "Bleach"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_81": {
       "uuids": [
@@ -1509,7 +1749,10 @@
       ],
       "names": [
         "Spaghetti"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_82": {
       "uuids": [
@@ -1517,7 +1760,10 @@
       ],
       "names": [
         "quadd.io"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_83": {
       "uuids": [
@@ -1525,7 +1771,10 @@
       ],
       "names": [
         "Horcrex"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_84": {
       "uuids": [
@@ -1533,7 +1782,10 @@
       ],
       "names": [
         "G0N0"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_85": {
       "uuids": [
@@ -1541,7 +1793,10 @@
       ],
       "names": [
         "Toga280"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_86": {
       "uuids": [
@@ -1549,7 +1804,10 @@
       ],
       "names": [
         "Seingalt"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_87": {
       "uuids": [
@@ -1557,7 +1815,10 @@
       ],
       "names": [
         "Shen Rao"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_88": {
       "uuids": [
@@ -1565,7 +1826,10 @@
       ],
       "names": [
         "Lilfeeze"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_89": {
       "uuids": [
@@ -1573,7 +1837,10 @@
       ],
       "names": [
         "Dandadan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_90": {
       "uuids": [
@@ -1581,7 +1848,10 @@
       ],
       "names": [
         "Stubz"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_91": {
       "uuids": [
@@ -1589,7 +1859,10 @@
       ],
       "names": [
         "Tomcat"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_92": {
       "uuids": [
@@ -1597,7 +1870,10 @@
       ],
       "names": [
         "Alchemist"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_93": {
       "uuids": [
@@ -1605,7 +1881,10 @@
       ],
       "names": [
         "ZazOo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_94": {
       "uuids": [
@@ -1613,7 +1892,10 @@
       ],
       "names": [
         "Stjokira"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_95": {
       "uuids": [
@@ -1621,7 +1903,10 @@
       ],
       "names": [
         "Pandaroo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_96": {
       "uuids": [
@@ -1629,7 +1914,10 @@
       ],
       "names": [
         "Mindfill"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_97": {
       "uuids": [
@@ -1637,7 +1925,10 @@
       ],
       "names": [
         "Dogs Armpits"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_98": {
       "uuids": [
@@ -1645,7 +1936,10 @@
       ],
       "names": [
         "Devil"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_99": {
       "uuids": [
@@ -1653,7 +1947,10 @@
       ],
       "names": [
         "EagleFang"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_100": {
       "uuids": [
@@ -1661,7 +1958,10 @@
       ],
       "names": [
         "tost"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_101": {
       "uuids": [
@@ -1669,7 +1969,10 @@
       ],
       "names": [
         "Leon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_102": {
       "uuids": [
@@ -1677,7 +1980,10 @@
       ],
       "names": [
         "Skeebo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_103": {
       "uuids": [
@@ -1685,7 +1991,10 @@
       ],
       "names": [
         "AdoptionPapers"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_104": {
       "uuids": [
@@ -1693,7 +2002,10 @@
       ],
       "names": [
         "Wolf"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_105": {
       "uuids": [
@@ -1701,7 +2013,10 @@
       ],
       "names": [
         "OddLeviathan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_106": {
       "uuids": [
@@ -1709,7 +2024,10 @@
       ],
       "names": [
         "Lumi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_107": {
       "uuids": [
@@ -1717,7 +2035,10 @@
       ],
       "names": [
         "Gamersmash"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_108": {
       "uuids": [
@@ -1725,7 +2046,10 @@
       ],
       "names": [
         "Flippy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_109": {
       "uuids": [
@@ -1733,7 +2057,10 @@
       ],
       "names": [
         "1upCrit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_110": {
       "uuids": [
@@ -1741,7 +2068,10 @@
       ],
       "names": [
         "SMAWDD"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_111": {
       "uuids": [
@@ -1749,7 +2079,10 @@
       ],
       "names": [
         "Frozengalaxy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_112": {
       "uuids": [
@@ -1757,7 +2090,10 @@
       ],
       "names": [
         "Calverick"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_113": {
       "uuids": [
@@ -1765,7 +2101,10 @@
       ],
       "names": [
         "Styledev"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_114": {
       "uuids": [
@@ -1773,7 +2112,10 @@
       ],
       "names": [
         "milkygoose"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_115": {
       "uuids": [
@@ -1781,7 +2123,10 @@
       ],
       "names": [
         "Nummies"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_116": {
       "uuids": [
@@ -1789,7 +2134,10 @@
       ],
       "names": [
         "geo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_117": {
       "uuids": [
@@ -1797,7 +2145,10 @@
       ],
       "names": [
         "Ai126"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_118": {
       "uuids": [
@@ -1805,7 +2156,10 @@
       ],
       "names": [
         "Moist"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_119": {
       "uuids": [
@@ -1813,7 +2167,10 @@
       ],
       "names": [
         "Gummybear"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_120": {
       "uuids": [
@@ -1821,7 +2178,10 @@
       ],
       "names": [
         "Medisinal"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_121": {
       "uuids": [
@@ -1829,7 +2189,10 @@
       ],
       "names": [
         "Stator"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_122": {
       "uuids": [
@@ -1837,7 +2200,10 @@
       ],
       "names": [
         "Woahhhh06"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_123": {
       "uuids": [
@@ -1845,7 +2211,10 @@
       ],
       "names": [
         "Hectix"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_124": {
       "uuids": [
@@ -1853,7 +2222,10 @@
       ],
       "names": [
         "GlitchedRobot"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_125": {
       "uuids": [
@@ -1861,7 +2233,10 @@
       ],
       "names": [
         "HOUND"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_126": {
       "uuids": [
@@ -1869,7 +2244,10 @@
       ],
       "names": [
         "Rob"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_127": {
       "uuids": [
@@ -1877,7 +2255,10 @@
       ],
       "names": [
         "Henry"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_128": {
       "uuids": [
@@ -1885,7 +2266,10 @@
       ],
       "names": [
         "SNooK"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_129": {
       "uuids": [
@@ -1893,7 +2277,10 @@
       ],
       "names": [
         "Lucas"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_130": {
       "uuids": [
@@ -1901,7 +2288,10 @@
       ],
       "names": [
         "Mystikal"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_131": {
       "uuids": [
@@ -1909,7 +2299,10 @@
       ],
       "names": [
         "BENN10"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_132": {
       "uuids": [
@@ -1917,7 +2310,10 @@
       ],
       "names": [
         "MaddKlever"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_133": {
       "uuids": [
@@ -1925,7 +2321,10 @@
       ],
       "names": [
         "jughead"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_134": {
       "uuids": [
@@ -1933,7 +2332,10 @@
       ],
       "names": [
         "Arctic"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_135": {
       "uuids": [
@@ -1941,7 +2343,10 @@
       ],
       "names": [
         "Dane Agathon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_136": {
       "uuids": [
@@ -1949,7 +2354,10 @@
       ],
       "names": [
         "Hodge"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_137": {
       "uuids": [
@@ -1957,7 +2365,10 @@
       ],
       "names": [
         "Exarch"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_138": {
       "uuids": [
@@ -1965,7 +2376,10 @@
       ],
       "names": [
         "Holdeez"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_139": {
       "uuids": [
@@ -1973,7 +2387,10 @@
       ],
       "names": [
         "alexis2m"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_140": {
       "uuids": [
@@ -1981,7 +2398,10 @@
       ],
       "names": [
         "Leo BDN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_141": {
       "uuids": [
@@ -1989,7 +2409,10 @@
       ],
       "names": [
         "DgtBlob"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_142": {
       "uuids": [
@@ -1997,7 +2420,10 @@
       ],
       "names": [
         "Taxi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_143": {
       "uuids": [
@@ -2005,7 +2431,10 @@
       ],
       "names": [
         "Marini"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_144": {
       "uuids": [
@@ -2013,7 +2442,10 @@
       ],
       "names": [
         "Tlaloc"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_145": {
       "uuids": [
@@ -2021,7 +2453,10 @@
       ],
       "names": [
         "DexterXx"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_146": {
       "uuids": [
@@ -2029,7 +2464,10 @@
       ],
       "names": [
         "lioncat"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_147": {
       "uuids": [
@@ -2037,7 +2475,10 @@
       ],
       "names": [
         "ok"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_148": {
       "uuids": [
@@ -2045,7 +2486,10 @@
       ],
       "names": [
         "gatsby"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_149": {
       "uuids": [
@@ -2053,7 +2497,10 @@
       ],
       "names": [
         "Tattarattat"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_150": {
       "uuids": [
@@ -2061,7 +2508,10 @@
       ],
       "names": [
         "Despair"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_151": {
       "uuids": [
@@ -2069,7 +2519,10 @@
       ],
       "names": [
         "Tred"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_152": {
       "uuids": [
@@ -2077,7 +2530,10 @@
       ],
       "names": [
         "FutureChain"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_153": {
       "uuids": [
@@ -2085,7 +2541,10 @@
       ],
       "names": [
         ".com"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_154": {
       "uuids": [
@@ -2093,7 +2552,10 @@
       ],
       "names": [
         "Korbsie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_155": {
       "uuids": [
@@ -2101,7 +2563,10 @@
       ],
       "names": [
         "Butter"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_156": {
       "uuids": [
@@ -2109,7 +2574,10 @@
       ],
       "names": [
         "J.Wretch"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_157": {
       "uuids": [
@@ -2117,7 +2585,10 @@
       ],
       "names": [
         "Swervo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_158": {
       "uuids": [
@@ -2125,7 +2596,10 @@
       ],
       "names": [
         "GarbageMan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_159": {
       "uuids": [
@@ -2133,7 +2607,10 @@
       ],
       "names": [
         "F2P"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_160": {
       "uuids": [
@@ -2141,7 +2618,10 @@
       ],
       "names": [
         "dolphi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_161": {
       "uuids": [
@@ -2149,7 +2629,10 @@
       ],
       "names": [
         "greefer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_162": {
       "uuids": [
@@ -2157,7 +2640,10 @@
       ],
       "names": [
         "Epoch"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_163": {
       "uuids": [
@@ -2165,7 +2651,10 @@
       ],
       "names": [
         "UFO Grendizer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_164": {
       "uuids": [
@@ -2173,7 +2662,10 @@
       ],
       "names": [
         "c2"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_165": {
       "uuids": [
@@ -2181,7 +2673,10 @@
       ],
       "names": [
         "ace"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_166": {
       "uuids": [
@@ -2189,7 +2684,10 @@
       ],
       "names": [
         "drewy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_167": {
       "uuids": [
@@ -2197,7 +2695,10 @@
       ],
       "names": [
         "Gen0cyde"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_168": {
       "uuids": [
@@ -2205,7 +2706,10 @@
       ],
       "names": [
         "Person"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_169": {
       "uuids": [
@@ -2213,7 +2717,10 @@
       ],
       "names": [
         "Shingeki"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_170": {
       "uuids": [
@@ -2221,7 +2728,10 @@
       ],
       "names": [
         "Hibilbo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_171": {
       "uuids": [
@@ -2229,7 +2739,10 @@
       ],
       "names": [
         "TK"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_172": {
       "uuids": [
@@ -2237,7 +2750,10 @@
       ],
       "names": [
         "Bueller"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_173": {
       "uuids": [
@@ -2245,7 +2761,10 @@
       ],
       "names": [
         "Kanda"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_174": {
       "uuids": [
@@ -2253,7 +2772,10 @@
       ],
       "names": [
         "Lazarus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_175": {
       "uuids": [
@@ -2261,7 +2783,10 @@
       ],
       "names": [
         "4th"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_176": {
       "uuids": [
@@ -2269,7 +2794,10 @@
       ],
       "names": [
         "Laser"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_177": {
       "uuids": [
@@ -2277,7 +2805,10 @@
       ],
       "names": [
         "Fathead"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_178": {
       "uuids": [
@@ -2285,7 +2816,10 @@
       ],
       "names": [
         "Sapphire"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_179": {
       "uuids": [
@@ -2293,7 +2827,10 @@
       ],
       "names": [
         "(%)"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_180": {
       "uuids": [
@@ -2301,7 +2838,10 @@
       ],
       "names": [
         "Bart"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_181": {
       "uuids": [
@@ -2309,7 +2849,10 @@
       ],
       "names": [
         "Stone"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_182": {
       "uuids": [
@@ -2317,7 +2860,10 @@
       ],
       "names": [
         "Taser"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_183": {
       "uuids": [
@@ -2325,7 +2871,10 @@
       ],
       "names": [
         "1time"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_184": {
       "uuids": [
@@ -2333,7 +2882,10 @@
       ],
       "names": [
         "doofus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_185": {
       "uuids": [
@@ -2341,7 +2893,10 @@
       ],
       "names": [
         "ImJustBetter"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_186": {
       "uuids": [
@@ -2349,7 +2904,10 @@
       ],
       "names": [
         "Midknight"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_187": {
       "uuids": [
@@ -2357,7 +2915,10 @@
       ],
       "names": [
         "Persona"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_188": {
       "uuids": [
@@ -2365,7 +2926,10 @@
       ],
       "names": [
         "Titan1315"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_189": {
       "uuids": [
@@ -2373,7 +2937,10 @@
       ],
       "names": [
         "tim9009"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_190": {
       "uuids": [
@@ -2381,7 +2948,10 @@
       ],
       "names": [
         "Juevi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_191": {
       "uuids": [
@@ -2389,7 +2959,10 @@
       ],
       "names": [
         "Emzion"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_192": {
       "uuids": [
@@ -2397,7 +2970,10 @@
       ],
       "names": [
         "RaspiBox"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_193": {
       "uuids": [
@@ -2405,7 +2981,10 @@
       ],
       "names": [
         "vani"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_194": {
       "uuids": [
@@ -2413,7 +2992,10 @@
       ],
       "names": [
         "Smax"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_195": {
       "uuids": [
@@ -2421,7 +3003,10 @@
       ],
       "names": [
         "Scoops"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_196": {
       "uuids": [
@@ -2429,7 +3014,10 @@
       ],
       "names": [
         "Cogswatch"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_197": {
       "uuids": [
@@ -2437,7 +3025,10 @@
       ],
       "names": [
         "Notgollum"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_198": {
       "uuids": [
@@ -2445,7 +3036,10 @@
       ],
       "names": [
         "Willow"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_199": {
       "uuids": [
@@ -2453,7 +3047,10 @@
       ],
       "names": [
         "Art3mis_13"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_200": {
       "uuids": [
@@ -2461,7 +3058,10 @@
       ],
       "names": [
         "Arrowhead235"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_201": {
       "uuids": [
@@ -2469,7 +3069,10 @@
       ],
       "names": [
         "Shrike"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_202": {
       "uuids": [
@@ -2477,7 +3080,10 @@
       ],
       "names": [
         "ichigo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_203": {
       "uuids": [
@@ -2485,7 +3091,10 @@
       ],
       "names": [
         "LordGrimm"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_204": {
       "uuids": [
@@ -2493,7 +3102,10 @@
       ],
       "names": [
         "Basep"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_205": {
       "uuids": [
@@ -2501,7 +3113,10 @@
       ],
       "names": [
         "bob bob"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_206": {
       "uuids": [
@@ -2509,7 +3124,10 @@
       ],
       "names": [
         "emulk"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_207": {
       "uuids": [
@@ -2517,7 +3135,10 @@
       ],
       "names": [
         "ThunderDog"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_208": {
       "uuids": [
@@ -2525,7 +3146,10 @@
       ],
       "names": [
         "Rock "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_209": {
       "uuids": [
@@ -2533,7 +3157,10 @@
       ],
       "names": [
         "Time"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_210": {
       "uuids": [
@@ -2541,7 +3168,10 @@
       ],
       "names": [
         "IaiaT"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_211": {
       "uuids": [
@@ -2549,7 +3179,10 @@
       ],
       "names": [
         "rosalinda2790"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_212": {
       "uuids": [
@@ -2557,7 +3190,10 @@
       ],
       "names": [
         "BXnative"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_213": {
       "uuids": [
@@ -2565,7 +3201,10 @@
       ],
       "names": [
         "Marisol"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_214": {
       "uuids": [
@@ -2573,7 +3212,10 @@
       ],
       "names": [
         "Linus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_215": {
       "uuids": [
@@ -2581,7 +3223,10 @@
       ],
       "names": [
         "GeleArthur"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_216": {
       "uuids": [
@@ -2589,7 +3234,10 @@
       ],
       "names": [
         "Moocow"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_217": {
       "uuids": [
@@ -2597,7 +3245,10 @@
       ],
       "names": [
         "CT"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_218": {
       "uuids": [
@@ -2605,7 +3256,10 @@
       ],
       "names": [
         "EmDubs"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_219": {
       "uuids": [
@@ -2613,7 +3267,10 @@
       ],
       "names": [
         "Biblecrusader"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_220": {
       "uuids": [
@@ -2621,7 +3278,10 @@
       ],
       "names": [
         "amospalla"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_221": {
       "uuids": [
@@ -2629,7 +3289,10 @@
       ],
       "names": [
         "Hdi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_222": {
       "uuids": [
@@ -2637,7 +3300,10 @@
       ],
       "names": [
         "Classicscout"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_223": {
       "uuids": [
@@ -2645,7 +3311,10 @@
       ],
       "names": [
         "Kastle"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_224": {
       "uuids": [
@@ -2653,7 +3322,10 @@
       ],
       "names": [
         "Fractor"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_225": {
       "uuids": [
@@ -2661,7 +3333,10 @@
       ],
       "names": [
         "DN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_226": {
       "uuids": [
@@ -2669,7 +3344,10 @@
       ],
       "names": [
         "Animal Rights"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_227": {
       "uuids": [
@@ -2677,7 +3355,10 @@
       ],
       "names": [
         "K9"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_228": {
       "uuids": [
@@ -2685,7 +3366,10 @@
       ],
       "names": [
         "Nope"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_229": {
       "uuids": [
@@ -2693,7 +3377,10 @@
       ],
       "names": [
         "Nabius 9V"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_230": {
       "uuids": [
@@ -2701,7 +3388,10 @@
       ],
       "names": [
         "Stream"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_231": {
       "uuids": [
@@ -2709,7 +3399,10 @@
       ],
       "names": [
         "MEKr"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_232": {
       "uuids": [
@@ -2717,7 +3410,10 @@
       ],
       "names": [
         "Richard Burns"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 1
     },
     "player_233": {
       "uuids": [
@@ -2725,7 +3421,10 @@
       ],
       "names": [
         "Shangin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_234": {
       "uuids": [
@@ -2733,7 +3432,10 @@
       ],
       "names": [
         "Proeis"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_235": {
       "uuids": [
@@ -2741,7 +3443,10 @@
       ],
       "names": [
         "Field"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_236": {
       "uuids": [
@@ -2749,7 +3454,10 @@
       ],
       "names": [
         "Maksym"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_237": {
       "uuids": [
@@ -2757,7 +3465,10 @@
       ],
       "names": [
         "HERO"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_238": {
       "uuids": [
@@ -2765,7 +3476,10 @@
       ],
       "names": [
         "damageu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 1,
+      "last_season": 10
     },
     "player_239": {
       "uuids": [
@@ -2773,7 +3487,10 @@
       ],
       "names": [
         "Moo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_240": {
       "uuids": [
@@ -2781,7 +3498,10 @@
       ],
       "names": [
         "Satis"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_241": {
       "uuids": [
@@ -2789,7 +3509,10 @@
       ],
       "names": [
         "Bu11D0g"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_242": {
       "uuids": [
@@ -2797,7 +3520,10 @@
       ],
       "names": [
         "Papi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_243": {
       "uuids": [
@@ -2805,7 +3531,10 @@
       ],
       "names": [
         "Dragon VR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_244": {
       "uuids": [
@@ -2813,7 +3542,10 @@
       ],
       "names": [
         "BLANK1T"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_245": {
       "uuids": [
@@ -2821,7 +3553,10 @@
       ],
       "names": [
         "plobber"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_246": {
       "uuids": [
@@ -2829,7 +3564,10 @@
       ],
       "names": [
         "xenon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_247": {
       "uuids": [
@@ -2837,7 +3575,10 @@
       ],
       "names": [
         "Kasuo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_248": {
       "uuids": [
@@ -2845,7 +3586,10 @@
       ],
       "names": [
         "rafiki"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_249": {
       "uuids": [
@@ -2853,7 +3597,10 @@
       ],
       "names": [
         "Yaya0z"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_250": {
       "uuids": [
@@ -2861,7 +3608,10 @@
       ],
       "names": [
         "LuckyCharms"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_251": {
       "uuids": [
@@ -2869,7 +3619,10 @@
       ],
       "names": [
         "SpSu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_252": {
       "uuids": [
@@ -2877,7 +3630,10 @@
       ],
       "names": [
         "Redux"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_253": {
       "uuids": [
@@ -2885,7 +3641,10 @@
       ],
       "names": [
         "birdFever"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_254": {
       "uuids": [
@@ -2893,7 +3652,10 @@
       ],
       "names": [
         "money"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_255": {
       "uuids": [
@@ -2901,7 +3663,10 @@
       ],
       "names": [
         "VALOR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_256": {
       "uuids": [
@@ -2909,7 +3674,10 @@
       ],
       "names": [
         "StormicalBLAST"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_257": {
       "uuids": [
@@ -2917,7 +3685,10 @@
       ],
       "names": [
         "Dje-unit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_258": {
       "uuids": [
@@ -2925,7 +3696,10 @@
       ],
       "names": [
         "SatanSlayer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_259": {
       "uuids": [
@@ -2933,7 +3707,10 @@
       ],
       "names": [
         "Shpharky"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_260": {
       "uuids": [
@@ -2941,7 +3718,10 @@
       ],
       "names": [
         "Space"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_261": {
       "uuids": [
@@ -2949,7 +3729,10 @@
       ],
       "names": [
         "BiccBoiJ"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_262": {
       "uuids": [
@@ -2957,7 +3740,10 @@
       ],
       "names": [
         "Bruh"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_263": {
       "uuids": [
@@ -2965,7 +3751,10 @@
       ],
       "names": [
         "Death Dealer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_264": {
       "uuids": [
@@ -2973,7 +3762,10 @@
       ],
       "names": [
         "LeoPhoto"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_265": {
       "uuids": [
@@ -2981,7 +3773,10 @@
       ],
       "names": [
         "M@j2ix"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_266": {
       "uuids": [
@@ -2989,7 +3784,10 @@
       ],
       "names": [
         "towelie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_267": {
       "uuids": [
@@ -2997,7 +3795,10 @@
       ],
       "names": [
         "TheBoiRoy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_268": {
       "uuids": [
@@ -3005,7 +3806,10 @@
       ],
       "names": [
         "Neill mac"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_269": {
       "uuids": [
@@ -3013,7 +3817,10 @@
       ],
       "names": [
         "Santy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_270": {
       "uuids": [
@@ -3021,7 +3828,10 @@
       ],
       "names": [
         "Gold"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_271": {
       "uuids": [
@@ -3029,7 +3839,10 @@
       ],
       "names": [
         "f3g4t0"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_272": {
       "uuids": [
@@ -3037,7 +3850,10 @@
       ],
       "names": [
         "LightBrightSun"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_273": {
       "uuids": [
@@ -3045,7 +3861,10 @@
       ],
       "names": [
         "Michael.SPEEN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_274": {
       "uuids": [
@@ -3053,7 +3872,10 @@
       ],
       "names": [
         "ttomatoking"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_275": {
       "uuids": [
@@ -3061,7 +3883,10 @@
       ],
       "names": [
         "realityforge"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_276": {
       "uuids": [
@@ -3069,7 +3894,10 @@
       ],
       "names": [
         "sirvoid"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_277": {
       "uuids": [
@@ -3077,7 +3905,10 @@
       ],
       "names": [
         "Atomic"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_278": {
       "uuids": [
@@ -3085,7 +3916,10 @@
       ],
       "names": [
         "Boidoi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_279": {
       "uuids": [
@@ -3093,7 +3927,10 @@
       ],
       "names": [
         "Goblin 9V"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_280": {
       "uuids": [
@@ -3101,7 +3938,10 @@
       ],
       "names": [
         "teaminsane"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_281": {
       "uuids": [
@@ -3109,7 +3949,10 @@
       ],
       "names": [
         "Fade"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_282": {
       "uuids": [
@@ -3117,7 +3960,10 @@
       ],
       "names": [
         "Dinoboy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_283": {
       "uuids": [
@@ -3125,7 +3971,10 @@
       ],
       "names": [
         "AXiON"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_284": {
       "uuids": [
@@ -3133,7 +3982,10 @@
       ],
       "names": [
         "thehodown"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_285": {
       "uuids": [
@@ -3141,7 +3993,10 @@
       ],
       "names": [
         "A Trash Can"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_286": {
       "uuids": [
@@ -3149,7 +4004,10 @@
       ],
       "names": [
         "visi0nX"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_287": {
       "uuids": [
@@ -3157,7 +4015,10 @@
       ],
       "names": [
         "Sage"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_288": {
       "uuids": [
@@ -3165,7 +4026,10 @@
       ],
       "names": [
         "Atreyu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_289": {
       "uuids": [
@@ -3173,7 +4037,10 @@
       ],
       "names": [
         "Muely"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_290": {
       "uuids": [
@@ -3181,7 +4048,10 @@
       ],
       "names": [
         "Higaruma"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_291": {
       "uuids": [
@@ -3189,7 +4059,10 @@
       ],
       "names": [
         "Rusty"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_292": {
       "uuids": [
@@ -3197,7 +4070,10 @@
       ],
       "names": [
         "SlimeQuacker"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_293": {
       "uuids": [
@@ -3205,7 +4081,10 @@
       ],
       "names": [
         "Birky"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_294": {
       "uuids": [
@@ -3213,7 +4092,10 @@
       ],
       "names": [
         "TAK"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_295": {
       "uuids": [
@@ -3221,7 +4103,10 @@
       ],
       "names": [
         "gtf"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 10
     },
     "player_296": {
       "uuids": [
@@ -3229,7 +4114,10 @@
       ],
       "names": [
         "Rub"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_297": {
       "uuids": [
@@ -3237,7 +4125,10 @@
       ],
       "names": [
         "Nano"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_298": {
       "uuids": [
@@ -3245,7 +4136,10 @@
       ],
       "names": [
         "DanSaa"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 2,
+      "last_season": 2
     },
     "player_299": {
       "uuids": [
@@ -3253,7 +4147,10 @@
       ],
       "names": [
         "D-Puppy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_300": {
       "uuids": [
@@ -3261,7 +4158,10 @@
       ],
       "names": [
         "McMuffinator"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_301": {
       "uuids": [
@@ -3269,7 +4169,10 @@
       ],
       "names": [
         "coolandgoodname"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_302": {
       "uuids": [
@@ -3277,7 +4180,10 @@
       ],
       "names": [
         "M. Ski"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_303": {
       "uuids": [
@@ -3285,7 +4191,10 @@
       ],
       "names": [
         "Noble"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 10
     },
     "player_304": {
       "uuids": [
@@ -3293,7 +4202,10 @@
       ],
       "names": [
         "Ropsten"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_305": {
       "uuids": [
@@ -3301,7 +4213,10 @@
       ],
       "names": [
         "CrusaderVR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_306": {
       "uuids": [
@@ -3309,7 +4224,10 @@
       ],
       "names": [
         "Moderation"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_307": {
       "uuids": [
@@ -3317,7 +4235,10 @@
       ],
       "names": [
         "DarkMoonRDF"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 10
     },
     "player_308": {
       "uuids": [
@@ -3325,7 +4246,10 @@
       ],
       "names": [
         "Reko"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 10
     },
     "player_309": {
       "uuids": [
@@ -3333,7 +4257,10 @@
       ],
       "names": [
         "Makers"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_310": {
       "uuids": [
@@ -3341,7 +4268,10 @@
       ],
       "names": [
         "Pietro"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_311": {
       "uuids": [
@@ -3349,7 +4279,10 @@
       ],
       "names": [
         "vert"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_312": {
       "uuids": [
@@ -3357,7 +4290,10 @@
       ],
       "names": [
         "Evil Pancake"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_313": {
       "uuids": [
@@ -3365,7 +4301,10 @@
       ],
       "names": [
         "Takito"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_314": {
       "uuids": [
@@ -3373,7 +4312,10 @@
       ],
       "names": [
         "MoodyGuy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_315": {
       "uuids": [
@@ -3381,7 +4323,10 @@
       ],
       "names": [
         "bleep"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_316": {
       "uuids": [
@@ -3389,7 +4334,10 @@
       ],
       "names": [
         "Justin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_317": {
       "uuids": [
@@ -3397,7 +4345,10 @@
       ],
       "names": [
         "scutch74"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_318": {
       "uuids": [
@@ -3405,7 +4356,10 @@
       ],
       "names": [
         "StarMaiden"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_319": {
       "uuids": [
@@ -3413,7 +4367,10 @@
       ],
       "names": [
         "Blueberry"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_320": {
       "uuids": [
@@ -3421,7 +4378,10 @@
       ],
       "names": [
         "Blix"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_321": {
       "uuids": [
@@ -3429,7 +4389,10 @@
       ],
       "names": [
         "MattMoatMoot"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_322": {
       "uuids": [
@@ -3437,7 +4400,10 @@
       ],
       "names": [
         "Darth"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_323": {
       "uuids": [
@@ -3445,7 +4411,10 @@
       ],
       "names": [
         "iska"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_324": {
       "uuids": [
@@ -3453,7 +4422,10 @@
       ],
       "names": [
         "360Tr1ckSh0t"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_325": {
       "uuids": [
@@ -3461,7 +4433,10 @@
       ],
       "names": [
         "usasaki"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_326": {
       "uuids": [
@@ -3469,7 +4444,10 @@
       ],
       "names": [
         "DiaperRash"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_327": {
       "uuids": [
@@ -3477,7 +4455,10 @@
       ],
       "names": [
         "Black Widow"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_328": {
       "uuids": [
@@ -3485,7 +4466,10 @@
       ],
       "names": [
         "WhaleWithCake"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_329": {
       "uuids": [
@@ -3493,7 +4477,10 @@
       ],
       "names": [
         "Okle"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_330": {
       "uuids": [
@@ -3501,7 +4488,10 @@
       ],
       "names": [
         "Smeghead"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_331": {
       "uuids": [
@@ -3509,7 +4499,10 @@
       ],
       "names": [
         "JoJosBread"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 3,
+      "last_season": 3
     },
     "player_332": {
       "uuids": [
@@ -3517,7 +4510,10 @@
       ],
       "names": [
         "s0cr4t1c"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_333": {
       "uuids": [
@@ -3525,7 +4521,10 @@
       ],
       "names": [
         "RipnTear"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 10
     },
     "player_334": {
       "uuids": [
@@ -3533,7 +4532,10 @@
       ],
       "names": [
         "Push"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_335": {
       "uuids": [
@@ -3541,7 +4543,10 @@
       ],
       "names": [
         "Mr. popular"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_336": {
       "uuids": [
@@ -3549,7 +4554,10 @@
       ],
       "names": [
         "DadGamr"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_337": {
       "uuids": [
@@ -3557,7 +4565,10 @@
       ],
       "names": [
         "Blotink"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_338": {
       "uuids": [
@@ -3565,7 +4576,10 @@
       ],
       "names": [
         "Some nerd"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_339": {
       "uuids": [
@@ -3573,7 +4587,10 @@
       ],
       "names": [
         "Himitsu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_340": {
       "uuids": [
@@ -3581,7 +4598,10 @@
       ],
       "names": [
         "Karatestar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_341": {
       "uuids": [
@@ -3589,7 +4609,10 @@
       ],
       "names": [
         "Evie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_342": {
       "uuids": [
@@ -3597,7 +4620,10 @@
       ],
       "names": [
         "Quokka"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 10
     },
     "player_343": {
       "uuids": [
@@ -3605,7 +4631,10 @@
       ],
       "names": [
         "TxHookem"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_344": {
       "uuids": [
@@ -3613,7 +4642,10 @@
       ],
       "names": [
         "Donuts"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_345": {
       "uuids": [
@@ -3621,7 +4653,10 @@
       ],
       "names": [
         "Zio"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 4,
+      "last_season": 4
     },
     "player_346": {
       "uuids": [
@@ -3629,7 +4664,10 @@
       ],
       "names": [
         "MrT"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 5,
+      "last_season": 5
     },
     "player_347": {
       "uuids": [
@@ -3637,7 +4675,10 @@
       ],
       "names": [
         "Daniel tiger"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 5,
+      "last_season": 5
     },
     "player_348": {
       "uuids": [
@@ -3645,7 +4686,10 @@
       ],
       "names": [
         "Semma"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 5,
+      "last_season": 5
     },
     "player_349": {
       "uuids": [
@@ -3653,7 +4697,10 @@
       ],
       "names": [
         "Tom"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 5,
+      "last_season": 5
     },
     "player_350": {
       "uuids": [
@@ -3661,7 +4708,10 @@
       ],
       "names": [
         "Bonzai"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 6,
+      "last_season": 6
     },
     "player_351": {
       "uuids": [
@@ -3669,7 +4719,10 @@
       ],
       "names": [
         "Pbear"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 6,
+      "last_season": 6
     },
     "player_352": {
       "uuids": [
@@ -3677,7 +4730,10 @@
       ],
       "names": [
         "cream"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 6,
+      "last_season": 6
     },
     "player_353": {
       "uuids": [
@@ -3685,7 +4741,10 @@
       ],
       "names": [
         "JaimeLannister"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 6,
+      "last_season": 6
     },
     "player_354": {
       "uuids": [
@@ -3693,7 +4752,10 @@
       ],
       "names": [
         "Mango"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 6,
+      "last_season": 6
     },
     "player_355": {
       "uuids": [
@@ -3701,7 +4763,10 @@
       ],
       "names": [
         "servo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_356": {
       "uuids": [
@@ -3709,7 +4774,10 @@
       ],
       "names": [
         "Nemo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_357": {
       "uuids": [
@@ -3717,7 +4785,10 @@
       ],
       "names": [
         "The General"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_358": {
       "uuids": [
@@ -3725,7 +4796,10 @@
       ],
       "names": [
         "HepticVR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_359": {
       "uuids": [
@@ -3733,7 +4807,10 @@
       ],
       "names": [
         "BraveSirRobin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_360": {
       "uuids": [
@@ -3741,7 +4818,10 @@
       ],
       "names": [
         "Rocky-James"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_361": {
       "uuids": [
@@ -3749,7 +4829,10 @@
       ],
       "names": [
         "Piratebadger"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_362": {
       "uuids": [
@@ -3757,7 +4840,10 @@
       ],
       "names": [
         "Vanguard"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_363": {
       "uuids": [
@@ -3765,7 +4851,10 @@
       ],
       "names": [
         "Emperor Kars"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_364": {
       "uuids": [
@@ -3773,7 +4862,10 @@
       ],
       "names": [
         "the.suit.maker"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_365": {
       "uuids": [
@@ -3781,7 +4873,10 @@
       ],
       "names": [
         "CON"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_366": {
       "uuids": [
@@ -3789,7 +4884,10 @@
       ],
       "names": [
         "Dr. Guy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_367": {
       "uuids": [
@@ -3797,7 +4895,10 @@
       ],
       "names": [
         "Bee"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_368": {
       "uuids": [
@@ -3805,7 +4906,10 @@
       ],
       "names": [
         "Armegedion"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_369": {
       "uuids": [
@@ -3813,7 +4917,10 @@
       ],
       "names": [
         "Neodvd"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_370": {
       "uuids": [
@@ -3821,7 +4928,10 @@
       ],
       "names": [
         "Maiden"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_371": {
       "uuids": [
@@ -3829,7 +4939,10 @@
       ],
       "names": [
         "Shout"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_372": {
       "uuids": [
@@ -3837,7 +4950,10 @@
       ],
       "names": [
         "IV"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_373": {
       "uuids": [
@@ -3845,7 +4961,10 @@
       ],
       "names": [
         "Dashhole"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_374": {
       "uuids": [
@@ -3853,7 +4972,10 @@
       ],
       "names": [
         "Consuela"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_375": {
       "uuids": [
@@ -3861,7 +4983,10 @@
       ],
       "names": [
         "Mayonnaise"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_376": {
       "uuids": [
@@ -3869,7 +4994,10 @@
       ],
       "names": [
         "Brontosaurus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_377": {
       "uuids": [
@@ -3877,7 +5005,10 @@
       ],
       "names": [
         "SageBirdie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_378": {
       "uuids": [
@@ -3885,7 +5016,10 @@
       ],
       "names": [
         "Snak th dragon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_379": {
       "uuids": [
@@ -3893,7 +5027,10 @@
       ],
       "names": [
         "Alex"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_380": {
       "uuids": [
@@ -3901,7 +5038,10 @@
       ],
       "names": [
         "Ridgeway"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_381": {
       "uuids": [
@@ -3909,7 +5049,10 @@
       ],
       "names": [
         "Iconic"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_382": {
       "uuids": [
@@ -3917,7 +5060,10 @@
       ],
       "names": [
         "yourmom"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_383": {
       "uuids": [
@@ -3925,7 +5071,10 @@
       ],
       "names": [
         "ManWithAPerm"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_384": {
       "uuids": [
@@ -3933,7 +5082,10 @@
       ],
       "names": [
         "snarples"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_385": {
       "uuids": [
@@ -3941,7 +5093,10 @@
       ],
       "names": [
         "wanderer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_386": {
       "uuids": [
@@ -3949,7 +5104,10 @@
       ],
       "names": [
         "xJakeWolf"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_387": {
       "uuids": [
@@ -3957,7 +5115,10 @@
       ],
       "names": [
         "Bill-Lumbergh"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_388": {
       "uuids": [
@@ -3965,7 +5126,10 @@
       ],
       "names": [
         "TAN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_389": {
       "uuids": [
@@ -3973,7 +5137,10 @@
       ],
       "names": [
         "LCJ"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_390": {
       "uuids": [
@@ -3981,7 +5148,10 @@
       ],
       "names": [
         "oreo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_391": {
       "uuids": [
@@ -3989,7 +5159,10 @@
       ],
       "names": [
         "chanelle"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_392": {
       "uuids": [
@@ -3997,7 +5170,10 @@
       ],
       "names": [
         "Dazlah"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_393": {
       "uuids": [
@@ -4005,7 +5181,10 @@
       ],
       "names": [
         "Dr. Fart"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_394": {
       "uuids": [
@@ -4013,7 +5192,10 @@
       ],
       "names": [
         "Rage"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_395": {
       "uuids": [
@@ -4021,7 +5203,10 @@
       ],
       "names": [
         "TopStar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_396": {
       "uuids": [
@@ -4029,7 +5214,10 @@
       ],
       "names": [
         "flyin fish"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_397": {
       "uuids": [
@@ -4037,7 +5225,10 @@
       ],
       "names": [
         "Bandit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_398": {
       "uuids": [
@@ -4045,7 +5236,10 @@
       ],
       "names": [
         "Traukuu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_399": {
       "uuids": [
@@ -4053,7 +5247,10 @@
       ],
       "names": [
         "BotMuncher"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_400": {
       "uuids": [
@@ -4061,7 +5258,10 @@
       ],
       "names": [
         "AngieDash"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_401": {
       "uuids": [
@@ -4069,7 +5269,10 @@
       ],
       "names": [
         "Tropical"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_402": {
       "uuids": [
@@ -4077,7 +5280,10 @@
       ],
       "names": [
         "ExplosivePoet"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_403": {
       "uuids": [
@@ -4085,7 +5291,10 @@
       ],
       "names": [
         "PixelWitch"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_404": {
       "uuids": [
@@ -4093,7 +5302,10 @@
       ],
       "names": [
         "hugthug"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_405": {
       "uuids": [
@@ -4101,7 +5313,10 @@
       ],
       "names": [
         "GlazeDino"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 7
     },
     "player_406": {
       "uuids": [
@@ -4109,7 +5324,10 @@
       ],
       "names": [
         "vewn"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 7,
+      "last_season": 10
     },
     "player_407": {
       "uuids": [
@@ -4117,7 +5335,10 @@
       ],
       "names": [
         "Maverick"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_408": {
       "uuids": [
@@ -4125,7 +5346,10 @@
       ],
       "names": [
         "wateregg"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_409": {
       "uuids": [
@@ -4133,7 +5357,10 @@
       ],
       "names": [
         "w0ps"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_410": {
       "uuids": [
@@ -4141,7 +5368,10 @@
       ],
       "names": [
         "Paladin Thor"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 10
     },
     "player_411": {
       "uuids": [
@@ -4149,7 +5379,10 @@
       ],
       "names": [
         "naz"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_412": {
       "uuids": [
@@ -4157,7 +5390,10 @@
       ],
       "names": [
         "Peppyhare"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_413": {
       "uuids": [
@@ -4165,7 +5401,10 @@
       ],
       "names": [
         "Mr.Bye!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_414": {
       "uuids": [
@@ -4173,7 +5412,10 @@
       ],
       "names": [
         "Ratdog"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_415": {
       "uuids": [
@@ -4181,7 +5423,10 @@
       ],
       "names": [
         "ROOK"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_416": {
       "uuids": [
@@ -4189,7 +5434,10 @@
       ],
       "names": [
         "Demon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_417": {
       "uuids": [
@@ -4197,7 +5445,10 @@
       ],
       "names": [
         "oogie boogie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 10
     },
     "player_418": {
       "uuids": [
@@ -4205,7 +5456,10 @@
       ],
       "names": [
         "CARLOS"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 8,
+      "last_season": 8
     },
     "player_419": {
       "uuids": [
@@ -4213,7 +5467,10 @@
       ],
       "names": [
         "razmataz"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_420": {
       "uuids": [
@@ -4221,7 +5478,10 @@
       ],
       "names": [
         "Davidmason9V"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_421": {
       "uuids": [
@@ -4229,7 +5489,10 @@
       ],
       "names": [
         "D999"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 10
     },
     "player_422": {
       "uuids": [
@@ -4237,7 +5500,10 @@
       ],
       "names": [
         "Gexxxxxxxxxxxx"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_423": {
       "uuids": [
@@ -4245,7 +5511,10 @@
       ],
       "names": [
         "Ded"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_424": {
       "uuids": [
@@ -4253,7 +5522,10 @@
       ],
       "names": [
         "mr pump"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 10
     },
     "player_425": {
       "uuids": [
@@ -4261,7 +5533,10 @@
       ],
       "names": [
         "dirtyBeatNik"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_426": {
       "uuids": [
@@ -4269,7 +5544,10 @@
       ],
       "names": [
         "Twistie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_427": {
       "uuids": [
@@ -4277,7 +5555,10 @@
       ],
       "names": [
         "Timofey"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_428": {
       "uuids": [
@@ -4285,7 +5566,10 @@
       ],
       "names": [
         "Plat"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_429": {
       "uuids": [
@@ -4293,7 +5577,10 @@
       ],
       "names": [
         "Bord"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_430": {
       "uuids": [
@@ -4301,7 +5588,10 @@
       ],
       "names": [
         "MutedMonster-"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 9,
+      "last_season": 9
     },
     "player_431": {
       "uuids": [
@@ -4309,7 +5599,10 @@
       ],
       "names": [
         "spoons"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 10,
+      "last_season": 10
     },
     "player_432": {
       "uuids": [
@@ -4317,7 +5610,10 @@
       ],
       "names": [
         "Neveo31"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 10,
+      "last_season": 10
     },
     "player_433": {
       "uuids": [
@@ -4325,7 +5621,10 @@
       ],
       "names": [
         "airwolf"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 10,
+      "last_season": 10
     },
     "player_434": {
       "uuids": [
@@ -4333,7 +5632,10 @@
       ],
       "names": [
         "Ranzy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
     },
     "player_435": {
       "uuids": [
@@ -4341,7 +5643,10 @@
       ],
       "names": [
         "Trevette"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
     },
     "player_436": {
       "uuids": [
@@ -4349,7 +5654,10 @@
       ],
       "names": [
         "Toxix"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 12,
+      "last_season": 12
     },
     "player_437": {
       "uuids": [
@@ -4357,7 +5665,10 @@
       ],
       "names": [
         "MiniTackle07"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 12,
+      "last_season": 12
     },
     "player_438": {
       "uuids": [
@@ -4365,7 +5676,10 @@
       ],
       "names": [
         "Jeffy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 12,
+      "last_season": 12
     },
     "player_439": {
       "uuids": [
@@ -4373,7 +5687,10 @@
       ],
       "names": [
         "Fork2plug"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 12,
+      "last_season": 12
     },
     "player_440": {
       "uuids": [
@@ -4381,7 +5698,10 @@
       ],
       "names": [
         "carrot"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 10
     },
     "player_441": {
       "uuids": [
@@ -4389,7 +5709,10 @@
       ],
       "names": [
         "Slasher"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_442": {
       "uuids": [
@@ -4397,7 +5720,10 @@
       ],
       "names": [
         "Count Ducky"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_443": {
       "uuids": [
@@ -4405,7 +5731,10 @@
       ],
       "names": [
         "Void"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_444": {
       "uuids": [
@@ -4413,7 +5742,10 @@
       ],
       "names": [
         "counterindigo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_445": {
       "uuids": [
@@ -4421,7 +5753,10 @@
       ],
       "names": [
         "McLovin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_446": {
       "uuids": [
@@ -4429,7 +5764,10 @@
       ],
       "names": [
         "Wreckthor"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_447": {
       "uuids": [
@@ -4437,7 +5775,10 @@
       ],
       "names": [
         "LobsterMaster"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 10
     },
     "player_448": {
       "uuids": [
@@ -4445,7 +5786,10 @@
       ],
       "names": [
         "Pop Off"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_449": {
       "uuids": [
@@ -4453,7 +5797,10 @@
       ],
       "names": [
         "GoldBabyJesus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_450": {
       "uuids": [
@@ -4461,7 +5808,10 @@
       ],
       "names": [
         "CagedBirdie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_451": {
       "uuids": [
@@ -4469,7 +5819,10 @@
       ],
       "names": [
         "bobdidly"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_452": {
       "uuids": [
@@ -4477,7 +5830,10 @@
       ],
       "names": [
         "Pup"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_453": {
       "uuids": [
@@ -4485,7 +5841,10 @@
       ],
       "names": [
         "RaptorRyan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_454": {
       "uuids": [
@@ -4493,7 +5852,10 @@
       ],
       "names": [
         "anonomous"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 10
     },
     "player_455": {
       "uuids": [
@@ -4501,7 +5863,10 @@
       ],
       "names": [
         "Xyota"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 10
     },
     "player_456": {
       "uuids": [
@@ -4509,7 +5874,10 @@
       ],
       "names": [
         "Cherry"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_457": {
       "uuids": [
@@ -4517,7 +5885,10 @@
       ],
       "names": [
         "Spaced_Out"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_458": {
       "uuids": [
@@ -4525,7 +5896,10 @@
       ],
       "names": [
         "Bigboiiii"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_459": {
       "uuids": [
@@ -4533,7 +5907,10 @@
       ],
       "names": [
         "ElDeaffy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 10
     },
     "player_460": {
       "uuids": [
@@ -4541,7 +5918,10 @@
       ],
       "names": [
         "Mel"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_461": {
       "uuids": [
@@ -4549,7 +5929,10 @@
       ],
       "names": [
         "Drag0n"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_462": {
       "uuids": [
@@ -4557,7 +5940,10 @@
       ],
       "names": [
         "Richard09dada"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_463": {
       "uuids": [
@@ -4565,7 +5951,10 @@
       ],
       "names": [
         "DERPinic"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_464": {
       "uuids": [
@@ -4573,7 +5962,10 @@
       ],
       "names": [
         "Lizy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_465": {
       "uuids": [
@@ -4581,7 +5973,10 @@
       ],
       "names": [
         "Post-it note"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_466": {
       "uuids": [
@@ -4589,7 +5984,10 @@
       ],
       "names": [
         "xplodingminion"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_467": {
       "uuids": [
@@ -4597,7 +5995,10 @@
       ],
       "names": [
         "MaxDefense"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_468": {
       "uuids": [
@@ -4605,7 +6006,10 @@
       ],
       "names": [
         "Clover"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_469": {
       "uuids": [
@@ -4613,7 +6017,10 @@
       ],
       "names": [
         "PYri"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_470": {
       "uuids": [
@@ -4621,7 +6028,10 @@
       ],
       "names": [
         "Pjottos"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_471": {
       "uuids": [
@@ -4629,7 +6039,10 @@
       ],
       "names": [
         "Worship"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_472": {
       "uuids": [
@@ -4637,7 +6050,10 @@
       ],
       "names": [
         "Flash"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_473": {
       "uuids": [
@@ -4645,7 +6061,10 @@
       ],
       "names": [
         "fearlessjayjay"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_474": {
       "uuids": [
@@ -4653,7 +6072,10 @@
       ],
       "names": [
         "Kingpenguin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_475": {
       "uuids": [
@@ -4661,7 +6083,10 @@
       ],
       "names": [
         "JustDrums"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_476": {
       "uuids": [
@@ -4669,7 +6094,10 @@
       ],
       "names": [
         "Eminem"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_477": {
       "uuids": [
@@ -4677,7 +6105,10 @@
       ],
       "names": [
         "Joneas Jostar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 10
     },
     "player_478": {
       "uuids": [
@@ -4685,7 +6116,10 @@
       ],
       "names": [
         "Vesper"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_479": {
       "uuids": [
@@ -4693,7 +6127,10 @@
       ],
       "names": [
         "Kronos"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_480": {
       "uuids": [
@@ -4701,7 +6138,10 @@
       ],
       "names": [
         "Arty"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_481": {
       "uuids": [
@@ -4709,7 +6149,10 @@
       ],
       "names": [
         "GraveDigger"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 13,
+      "last_season": 13
     },
     "player_482": {
       "uuids": [
@@ -4717,7 +6160,10 @@
       ],
       "names": [
         "Wick"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 10
     },
     "player_483": {
       "uuids": [
@@ -4725,7 +6171,10 @@
       ],
       "names": [
         "1MM0RTAL"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_484": {
       "uuids": [
@@ -4733,7 +6182,10 @@
       ],
       "names": [
         "Grim!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 10
     },
     "player_485": {
       "uuids": [
@@ -4741,7 +6193,10 @@
       ],
       "names": [
         "TooOldForThis"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_486": {
       "uuids": [
@@ -4749,7 +6204,10 @@
       ],
       "names": [
         "MrLlama"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_487": {
       "uuids": [
@@ -4757,7 +6215,10 @@
       ],
       "names": [
         "Rihards"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_488": {
       "uuids": [
@@ -4765,7 +6226,10 @@
       ],
       "names": [
         "quantumui"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_489": {
       "uuids": [
@@ -4773,7 +6237,10 @@
       ],
       "names": [
         "Blister22"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 10
     },
     "player_490": {
       "uuids": [
@@ -4781,7 +6248,10 @@
       ],
       "names": [
         "Dusksol"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_491": {
       "uuids": [
@@ -4789,7 +6259,10 @@
       ],
       "names": [
         "Clairvoyance"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 10
     },
     "player_492": {
       "uuids": [
@@ -4797,7 +6270,10 @@
       ],
       "names": [
         "Jason Bourne"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_493": {
       "uuids": [
@@ -4805,7 +6281,10 @@
       ],
       "names": [
         "JohnWilksBoothNickle_Monster"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 10
     },
     "player_494": {
       "uuids": [
@@ -4813,7 +6292,10 @@
       ],
       "names": [
         "OSLO"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_495": {
       "uuids": [
@@ -4821,7 +6303,10 @@
       ],
       "names": [
         "cult"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 14,
+      "last_season": 14
     },
     "player_496": {
       "uuids": [
@@ -4829,7 +6314,10 @@
       ],
       "names": [
         "PhantomFlow"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 15,
+      "last_season": 15
     },
     "player_497": {
       "uuids": [
@@ -4837,7 +6325,10 @@
       ],
       "names": [
         "Seabass"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 15,
+      "last_season": 15
     },
     "player_498": {
       "uuids": [
@@ -4845,7 +6336,10 @@
       ],
       "names": [
         "Speed"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 15,
+      "last_season": 10
     },
     "player_499": {
       "uuids": [
@@ -4853,7 +6347,10 @@
       ],
       "names": [
         "boring"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 15,
+      "last_season": 15
     },
     "player_500": {
       "uuids": [
@@ -4861,7 +6358,10 @@
       ],
       "names": [
         "Humbles"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 15,
+      "last_season": 10
     },
     "player_501": {
       "uuids": [
@@ -4869,7 +6369,10 @@
       ],
       "names": [
         "Lelu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 15,
+      "last_season": 15
     },
     "player_502": {
       "uuids": [
@@ -4877,7 +6380,10 @@
       ],
       "names": [
         "AssassinKing"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_503": {
       "uuids": [
@@ -4885,7 +6391,10 @@
       ],
       "names": [
         "AjaxWater"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_504": {
       "uuids": [
@@ -4893,7 +6402,10 @@
       ],
       "names": [
         "BDN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_505": {
       "uuids": [
@@ -4901,7 +6413,10 @@
       ],
       "names": [
         "ScottWhite"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_506": {
       "uuids": [
@@ -4909,7 +6424,10 @@
       ],
       "names": [
         "Tenacious Dave"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 10
     },
     "player_507": {
       "uuids": [
@@ -4917,7 +6435,10 @@
       ],
       "names": [
         "Dr.Mello"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_508": {
       "uuids": [
@@ -4925,7 +6446,10 @@
       ],
       "names": [
         "Sugar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 10
     },
     "player_509": {
       "uuids": [
@@ -4933,7 +6457,10 @@
       ],
       "names": [
         "Kyron"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 10
     },
     "player_510": {
       "uuids": [
@@ -4941,7 +6468,10 @@
       ],
       "names": [
         "doll"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_511": {
       "uuids": [
@@ -4949,7 +6479,10 @@
       ],
       "names": [
         "Eventide"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 16,
+      "last_season": 16
     },
     "player_512": {
       "uuids": [
@@ -4957,7 +6490,10 @@
       ],
       "names": [
         "Sharkhead"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 17,
+      "last_season": 17
     },
     "player_513": {
       "uuids": [
@@ -4965,7 +6501,10 @@
       ],
       "names": [
         "Umbre"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 18,
+      "last_season": 18
     },
     "player_514": {
       "uuids": [
@@ -4973,7 +6512,10 @@
       ],
       "names": [
         "17"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_515": {
       "uuids": [
@@ -4981,7 +6523,10 @@
       ],
       "names": [
         "Crusher"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_516": {
       "uuids": [
@@ -4989,7 +6534,10 @@
       ],
       "names": [
         "Z!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_517": {
       "uuids": [
@@ -4997,7 +6545,10 @@
       ],
       "names": [
         "aspy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_518": {
       "uuids": [
@@ -5005,7 +6556,10 @@
       ],
       "names": [
         "DABOYS! "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_519": {
       "uuids": [
@@ -5013,7 +6567,10 @@
       ],
       "names": [
         "SmolQuadd"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_520": {
       "uuids": [
@@ -5021,7 +6578,10 @@
       ],
       "names": [
         "Greedy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_521": {
       "uuids": [
@@ -5029,7 +6589,10 @@
       ],
       "names": [
         "Itz Rokit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_522": {
       "uuids": [
@@ -5037,7 +6600,10 @@
       ],
       "names": [
         "Shadow"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_523": {
       "uuids": [
@@ -5045,7 +6611,10 @@
       ],
       "names": [
         "M5"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_524": {
       "uuids": [
@@ -5053,7 +6622,10 @@
       ],
       "names": [
         "Sunless"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_525": {
       "uuids": [
@@ -5061,7 +6633,10 @@
       ],
       "names": [
         "QuikDrawMcGraw"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_526": {
       "uuids": [
@@ -5069,7 +6644,10 @@
       ],
       "names": [
         "2Goose2Furious"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_527": {
       "uuids": [
@@ -5077,7 +6655,10 @@
       ],
       "names": [
         "xZOMBIE MANx"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_528": {
       "uuids": [
@@ -5085,7 +6666,10 @@
       ],
       "names": [
         "WhiteWolf"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_529": {
       "uuids": [
@@ -5093,7 +6677,10 @@
       ],
       "names": [
         "CaptainCooks"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_530": {
       "uuids": [
@@ -5101,7 +6688,10 @@
       ],
       "names": [
         "meep"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_531": {
       "uuids": [
@@ -5109,7 +6699,10 @@
       ],
       "names": [
         "Hamburglar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_532": {
       "uuids": [
@@ -5117,7 +6710,10 @@
       ],
       "names": [
         "Tyfood"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_533": {
       "uuids": [
@@ -5125,7 +6721,10 @@
       ],
       "names": [
         "SirFries"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_534": {
       "uuids": [
@@ -5133,7 +6732,10 @@
       ],
       "names": [
         "Krovember"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_535": {
       "uuids": [
@@ -5141,7 +6743,10 @@
       ],
       "names": [
         "Calamity"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_536": {
       "uuids": [
@@ -5149,7 +6754,10 @@
       ],
       "names": [
         "Little Killer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_537": {
       "uuids": [
@@ -5157,7 +6765,10 @@
       ],
       "names": [
         "Spud"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_538": {
       "uuids": [
@@ -5165,7 +6776,10 @@
       ],
       "names": [
         "Not_juce"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_539": {
       "uuids": [
@@ -5173,7 +6787,10 @@
       ],
       "names": [
         "Hog Rider673"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_540": {
       "uuids": [
@@ -5181,7 +6798,10 @@
       ],
       "names": [
         "Panda????"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_541": {
       "uuids": [
@@ -5189,7 +6809,10 @@
       ],
       "names": [
         "ThatGuy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_542": {
       "uuids": [
@@ -5197,7 +6820,10 @@
       ],
       "names": [
         "ukmatty"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_543": {
       "uuids": [
@@ -5205,7 +6831,10 @@
       ],
       "names": [
         "Thomas Shelby"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_544": {
       "uuids": [
@@ -5213,7 +6842,10 @@
       ],
       "names": [
         "Drevni"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_545": {
       "uuids": [
@@ -5221,7 +6853,10 @@
       ],
       "names": [
         "Romeo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_546": {
       "uuids": [
@@ -5229,7 +6864,10 @@
       ],
       "names": [
         "Degradation"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_547": {
       "uuids": [
@@ -5237,7 +6875,10 @@
       ],
       "names": [
         "warnurse"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 10
     },
     "player_548": {
       "uuids": [
@@ -5245,7 +6886,10 @@
       ],
       "names": [
         "TheGhost"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_549": {
       "uuids": [
@@ -5253,7 +6897,10 @@
       ],
       "names": [
         "Curvy Pirate"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 19,
+      "last_season": 19
     },
     "player_550": {
       "uuids": [
@@ -5261,7 +6908,10 @@
       ],
       "names": [
         "BoogaHD"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_551": {
       "uuids": [
@@ -5269,7 +6919,10 @@
       ],
       "names": [
         "Aiko"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_552": {
       "uuids": [
@@ -5277,7 +6930,10 @@
       ],
       "names": [
         "AJLBlackGhoul"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_553": {
       "uuids": [
@@ -5285,7 +6941,10 @@
       ],
       "names": [
         "Aluno"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 10
     },
     "player_554": {
       "uuids": [
@@ -5293,7 +6952,10 @@
       ],
       "names": [
         "KasumaCH"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_555": {
       "uuids": [
@@ -5301,7 +6963,10 @@
       ],
       "names": [
         "Wic Flair"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_556": {
       "uuids": [
@@ -5309,7 +6974,10 @@
       ],
       "names": [
         "zLastSaint"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_557": {
       "uuids": [
@@ -5317,7 +6985,10 @@
       ],
       "names": [
         "WreckedShark"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_558": {
       "uuids": [
@@ -5325,7 +6996,10 @@
       ],
       "names": [
         "BBL_Huddy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_559": {
       "uuids": [
@@ -5333,7 +7007,10 @@
       ],
       "names": [
         "Texedile"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_560": {
       "uuids": [
@@ -5341,7 +7018,10 @@
       ],
       "names": [
         "lali Ali"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 10
     },
     "player_561": {
       "uuids": [
@@ -5349,7 +7029,10 @@
       ],
       "names": [
         "TOP DOG"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_562": {
       "uuids": [
@@ -5357,7 +7040,10 @@
       ],
       "names": [
         "UNSTOPPABLE"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 20,
+      "last_season": 20
     },
     "player_563": {
       "uuids": [
@@ -5365,7 +7051,10 @@
       ],
       "names": [
         "Mig"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 21,
+      "last_season": 10
     },
     "player_564": {
       "uuids": [
@@ -5373,7 +7062,10 @@
       ],
       "names": [
         "Dr.dre"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 21,
+      "last_season": 21
     },
     "player_565": {
       "uuids": [
@@ -5381,7 +7073,10 @@
       ],
       "names": [
         "Octorilla"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 22,
+      "last_season": 22
     },
     "player_566": {
       "uuids": [
@@ -5389,7 +7084,10 @@
       ],
       "names": [
         "KBOMB"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 22,
+      "last_season": 10
     },
     "player_567": {
       "uuids": [
@@ -5397,7 +7095,10 @@
       ],
       "names": [
         "bread"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 22,
+      "last_season": 22
     },
     "player_568": {
       "uuids": [
@@ -5405,7 +7106,10 @@
       ],
       "names": [
         "Knockout"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 22,
+      "last_season": 22
     },
     "player_569": {
       "uuids": [
@@ -5413,7 +7117,10 @@
       ],
       "names": [
         "Ecureuil"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 23,
+      "last_season": 10
     },
     "player_570": {
       "uuids": [
@@ -5421,7 +7128,10 @@
       ],
       "names": [
         "Napalm"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 24,
+      "last_season": 24
     },
     "player_571": {
       "uuids": [
@@ -5429,7 +7139,10 @@
       ],
       "names": [
         "8aron"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 25,
+      "last_season": 10
     },
     "player_572": {
       "uuids": [
@@ -5437,7 +7150,10 @@
       ],
       "names": [
         "Rawhawd"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_573": {
       "uuids": [
@@ -5445,7 +7161,10 @@
       ],
       "names": [
         "olesbrothers"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_574": {
       "uuids": [
@@ -5453,7 +7172,10 @@
       ],
       "names": [
         "Scar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_575": {
       "uuids": [
@@ -5461,7 +7183,10 @@
       ],
       "names": [
         "Robod0m"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_576": {
       "uuids": [
@@ -5469,7 +7194,10 @@
       ],
       "names": [
         "Whopper"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_577": {
       "uuids": [
@@ -5477,7 +7205,10 @@
       ],
       "names": [
         "Ultrafunky"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_578": {
       "uuids": [
@@ -5485,7 +7216,10 @@
       ],
       "names": [
         "VR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_579": {
       "uuids": [
@@ -5493,7 +7227,10 @@
       ],
       "names": [
         "So French"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_580": {
       "uuids": [
@@ -5501,7 +7238,10 @@
       ],
       "names": [
         "Ghost rider"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_581": {
       "uuids": [
@@ -5509,7 +7249,10 @@
       ],
       "names": [
         "Toshiro"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_582": {
       "uuids": [
@@ -5517,7 +7260,10 @@
       ],
       "names": [
         "Lazy boy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_583": {
       "uuids": [
@@ -5525,7 +7271,10 @@
       ],
       "names": [
         "DIABLO"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_584": {
       "uuids": [
@@ -5533,7 +7282,10 @@
       ],
       "names": [
         "Escanor96"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_585": {
       "uuids": [
@@ -5541,7 +7293,10 @@
       ],
       "names": [
         "HDZ"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_586": {
       "uuids": [
@@ -5549,7 +7304,10 @@
       ],
       "names": [
         "Captaine Plasma"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_587": {
       "uuids": [
@@ -5557,7 +7315,10 @@
       ],
       "names": [
         "Angot"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_588": {
       "uuids": [
@@ -5565,7 +7326,10 @@
       ],
       "names": [
         "Iwilli"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_589": {
       "uuids": [
@@ -5573,7 +7337,10 @@
       ],
       "names": [
         "Luis antrax"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_590": {
       "uuids": [
@@ -5581,7 +7348,10 @@
       ],
       "names": [
         "ATX PHOENIX ANTRAX "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_591": {
       "uuids": [
@@ -5589,7 +7359,10 @@
       ],
       "names": [
         "Tevon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_592": {
       "uuids": [
@@ -5597,7 +7370,10 @@
       ],
       "names": [
         "PAPI"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_593": {
       "uuids": [
@@ -5605,7 +7381,10 @@
       ],
       "names": [
         "Gog"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_594": {
       "uuids": [
@@ -5613,7 +7392,10 @@
       ],
       "names": [
         "DARKO"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_595": {
       "uuids": [
@@ -5621,7 +7403,10 @@
       ],
       "names": [
         "JMR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_596": {
       "uuids": [
@@ -5629,7 +7414,10 @@
       ],
       "names": [
         "Tokyo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_597": {
       "uuids": [
@@ -5637,7 +7425,10 @@
       ],
       "names": [
         "TONY RedGrave"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_598": {
       "uuids": [
@@ -5645,7 +7436,10 @@
       ],
       "names": [
         "Sneaki"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_599": {
       "uuids": [
@@ -5653,7 +7447,10 @@
       ],
       "names": [
         "Jake"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_600": {
       "uuids": [
@@ -5661,7 +7458,10 @@
       ],
       "names": [
         "AFN_Sosa"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_601": {
       "uuids": [
@@ -5669,7 +7469,10 @@
       ],
       "names": [
         "PixelDasher"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_602": {
       "uuids": [
@@ -5677,7 +7480,10 @@
       ],
       "names": [
         "Peanutt"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_603": {
       "uuids": [
@@ -5685,7 +7491,10 @@
       ],
       "names": [
         "Peppa Steppa"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_604": {
       "uuids": [
@@ -5693,7 +7502,10 @@
       ],
       "names": [
         "Uzumaki"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_605": {
       "uuids": [
@@ -5701,7 +7513,10 @@
       ],
       "names": [
         "Fe4Rless"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_606": {
       "uuids": [
@@ -5709,7 +7524,10 @@
       ],
       "names": [
         "Giggles"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_607": {
       "uuids": [
@@ -5717,7 +7535,10 @@
       ],
       "names": [
         "Kossine"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_608": {
       "uuids": [
@@ -5725,7 +7546,10 @@
       ],
       "names": [
         "Jetski"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_609": {
       "uuids": [
@@ -5733,7 +7557,10 @@
       ],
       "names": [
         "Solar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 10
     },
     "player_610": {
       "uuids": [
@@ -5741,7 +7568,10 @@
       ],
       "names": [
         "Pizza"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 26,
+      "last_season": 26
     },
     "player_611": {
       "uuids": [
@@ -5749,7 +7579,10 @@
       ],
       "names": [
         "Reborn"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 10
     },
     "player_612": {
       "uuids": [
@@ -5757,7 +7590,10 @@
       ],
       "names": [
         "firefox"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 27
     },
     "player_613": {
       "uuids": [
@@ -5765,7 +7601,10 @@
       ],
       "names": [
         "RaederGator"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 10
     },
     "player_614": {
       "uuids": [
@@ -5773,7 +7612,10 @@
       ],
       "names": [
         "buns_bunni"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 10
     },
     "player_615": {
       "uuids": [
@@ -5781,7 +7623,10 @@
       ],
       "names": [
         "Java"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 10
     },
     "player_616": {
       "uuids": [
@@ -5789,7 +7634,10 @@
       ],
       "names": [
         "Hydrox"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 27
     },
     "player_617": {
       "uuids": [
@@ -5797,7 +7645,10 @@
       ],
       "names": [
         "Huqo.suave"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 10
     },
     "player_618": {
       "uuids": [
@@ -5805,7 +7656,10 @@
       ],
       "names": [
         "Lullaby"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 27,
+      "last_season": 10
     },
     "player_619": {
       "uuids": [
@@ -5813,7 +7667,10 @@
       ],
       "names": [
         "Gremlin3529"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 10
     },
     "player_620": {
       "uuids": [
@@ -5821,7 +7678,10 @@
       ],
       "names": [
         "Smarties"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_621": {
       "uuids": [
@@ -5829,7 +7689,10 @@
       ],
       "names": [
         "Kawub"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_622": {
       "uuids": [
@@ -5837,7 +7700,10 @@
       ],
       "names": [
         "REQCHERReacher"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_623": {
       "uuids": [
@@ -5845,7 +7711,10 @@
       ],
       "names": [
         "Goofball"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_624": {
       "uuids": [
@@ -5853,7 +7722,10 @@
       ],
       "names": [
         "Mirage"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_625": {
       "uuids": [
@@ -5861,7 +7733,10 @@
       ],
       "names": [
         "Inept"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_626": {
       "uuids": [
@@ -5869,7 +7744,10 @@
       ],
       "names": [
         "Lunar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 10
     },
     "player_627": {
       "uuids": [
@@ -5877,7 +7755,10 @@
       ],
       "names": [
         "Toxin"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 10
     },
     "player_628": {
       "uuids": [
@@ -5885,7 +7766,10 @@
       ],
       "names": [
         "Nightmare"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_629": {
       "uuids": [
@@ -5893,7 +7777,10 @@
       ],
       "names": [
         "TheChad666"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 28,
+      "last_season": 28
     },
     "player_630": {
       "uuids": [
@@ -5901,7 +7788,10 @@
       ],
       "names": [
         "albertodd30"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 29,
+      "last_season": 10
     },
     "player_631": {
       "uuids": [
@@ -5909,7 +7799,10 @@
       ],
       "names": [
         "Zooinyou"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 29,
+      "last_season": 10
     },
     "player_632": {
       "uuids": [
@@ -5917,7 +7810,10 @@
       ],
       "names": [
         "freejayden"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 29,
+      "last_season": 29
     },
     "player_633": {
       "uuids": [
@@ -5925,7 +7821,10 @@
       ],
       "names": [
         "DoughnutZ."
-      ]
+      ],
+      "team_history": [],
+      "first_season": 29,
+      "last_season": 29
     },
     "player_634": {
       "uuids": [
@@ -5933,7 +7832,10 @@
       ],
       "names": [
         "Vinco_king"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 30,
+      "last_season": 30
     },
     "player_635": {
       "uuids": [
@@ -5941,7 +7843,10 @@
       ],
       "names": [
         "StarMothPNG"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_636": {
       "uuids": [
@@ -5949,7 +7854,10 @@
       ],
       "names": [
         "Zipf"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_637": {
       "uuids": [
@@ -5957,7 +7865,10 @@
       ],
       "names": [
         "Arcane!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_638": {
       "uuids": [
@@ -5965,7 +7876,10 @@
       ],
       "names": [
         "yuri9o1 "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_639": {
       "uuids": [
@@ -5973,7 +7887,10 @@
       ],
       "names": [
         "_project.x_"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_640": {
       "uuids": [
@@ -5981,7 +7898,10 @@
       ],
       "names": [
         "King.R"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_641": {
       "uuids": [
@@ -5989,7 +7909,10 @@
       ],
       "names": [
         "god dream"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_642": {
       "uuids": [
@@ -5997,7 +7920,10 @@
       ],
       "names": [
         "awa"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_643": {
       "uuids": [
@@ -6005,7 +7931,10 @@
       ],
       "names": [
         "123yooo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_644": {
       "uuids": [
@@ -6013,7 +7942,10 @@
       ],
       "names": [
         "tyyy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_645": {
       "uuids": [
@@ -6021,7 +7953,10 @@
       ],
       "names": [
         "101"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_646": {
       "uuids": [
@@ -6029,7 +7964,10 @@
       ],
       "names": [
         "Vega"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_647": {
       "uuids": [
@@ -6037,7 +7975,10 @@
       ],
       "names": [
         "kalebe123"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_648": {
       "uuids": [
@@ -6045,7 +7986,10 @@
       ],
       "names": [
         "seasons"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_649": {
       "uuids": [
@@ -6053,7 +7997,10 @@
       ],
       "names": [
         "kaha"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_650": {
       "uuids": [
@@ -6061,7 +8008,10 @@
       ],
       "names": [
         "bobtheduck"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_651": {
       "uuids": [
@@ -6069,7 +8019,10 @@
       ],
       "names": [
         "echo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_652": {
       "uuids": [
@@ -6077,7 +8030,10 @@
       ],
       "names": [
         "BANANA"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 33,
+      "last_season": 10
     },
     "player_653": {
       "uuids": [
@@ -6085,7 +8041,10 @@
       ],
       "names": [
         "Ivan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_654": {
       "uuids": [
@@ -6093,7 +8052,10 @@
       ],
       "names": [
         "RayanVr_FR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_655": {
       "uuids": [
@@ -6101,7 +8063,10 @@
       ],
       "names": [
         "OG Bebe Worm"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_656": {
       "uuids": [
@@ -6109,7 +8074,10 @@
       ],
       "names": [
         "Dougi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_657": {
       "uuids": [
@@ -6117,7 +8085,10 @@
       ],
       "names": [
         "(ded)Dave"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_658": {
       "uuids": [
@@ -6125,7 +8096,10 @@
       ],
       "names": [
         "NorthX"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_659": {
       "uuids": [
@@ -6133,7 +8107,10 @@
       ],
       "names": [
         "trixy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_660": {
       "uuids": [
@@ -6141,7 +8118,10 @@
       ],
       "names": [
         "Sixty9"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_661": {
       "uuids": [
@@ -6149,7 +8129,10 @@
       ],
       "names": [
         "Blolbfish"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_662": {
       "uuids": [
@@ -6157,7 +8140,10 @@
       ],
       "names": [
         "Alphafemale88"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 32
     },
     "player_663": {
       "uuids": [
@@ -6165,7 +8151,10 @@
       ],
       "names": [
         "Luketimusprime"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 33,
+      "last_season": 10
     },
     "player_664": {
       "uuids": [
@@ -6173,7 +8162,10 @@
       ],
       "names": [
         "Radiation "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 33,
+      "last_season": 10
     },
     "player_665": {
       "uuids": [
@@ -6181,7 +8173,10 @@
       ],
       "names": [
         "Fireplace"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 32,
+      "last_season": 10
     },
     "player_666": {
       "uuids": [
@@ -6189,7 +8184,10 @@
       ],
       "names": [
         "Darkstar"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 33,
+      "last_season": 10
     },
     "player_667": {
       "uuids": [
@@ -6197,7 +8195,10 @@
       ],
       "names": [
         "Prometheus"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 33,
+      "last_season": 10
     },
     "player_668": {
       "uuids": [
@@ -6205,7 +8206,10 @@
       ],
       "names": [
         "Eggo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 34,
+      "last_season": 34
     },
     "player_669": {
       "uuids": [
@@ -6213,7 +8217,10 @@
       ],
       "names": [
         "iceillusion"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_670": {
       "uuids": [
@@ -6221,7 +8228,10 @@
       ],
       "names": [
         "GVR"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 10
     },
     "player_671": {
       "uuids": [
@@ -6229,7 +8239,10 @@
       ],
       "names": [
         "Hi.troj5"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_672": {
       "uuids": [
@@ -6237,7 +8250,10 @@
       ],
       "names": [
         "FLASH-DEMON"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_673": {
       "uuids": [
@@ -6245,7 +8261,10 @@
       ],
       "names": [
         "Gravix"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_674": {
       "uuids": [
@@ -6253,7 +8272,10 @@
       ],
       "names": [
         "@-TACK!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_675": {
       "uuids": [
@@ -6261,7 +8283,10 @@
       ],
       "names": [
         "immuneImmune"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_676": {
       "uuids": [
@@ -6269,7 +8294,10 @@
       ],
       "names": [
         "THE-REL"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 10
     },
     "player_677": {
       "uuids": [
@@ -6277,7 +8305,10 @@
       ],
       "names": [
         "Buttertoes1234"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_678": {
       "uuids": [
@@ -6285,7 +8316,10 @@
       ],
       "names": [
         "SavitarXI"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 10
     },
     "player_679": {
       "uuids": [
@@ -6293,7 +8327,10 @@
       ],
       "names": [
         "Poseidon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 10
     },
     "player_680": {
       "uuids": [
@@ -6301,7 +8338,10 @@
       ],
       "names": [
         "Gladiator"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 10
     },
     "player_681": {
       "uuids": [
@@ -6309,7 +8349,10 @@
       ],
       "names": [
         "rukn"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 35
     },
     "player_682": {
       "uuids": [
@@ -6317,7 +8360,10 @@
       ],
       "names": [
         "K0d14c"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 35,
+      "last_season": 10
     },
     "player_683": {
       "uuids": [
@@ -6325,7 +8371,10 @@
       ],
       "names": [
         "snoopy4music"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 36,
+      "last_season": 36
     },
     "player_684": {
       "uuids": [
@@ -6333,7 +8382,10 @@
       ],
       "names": [
         "SilentKiller_09"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 36,
+      "last_season": 10
     },
     "player_685": {
       "uuids": [
@@ -6341,7 +8393,10 @@
       ],
       "names": [
         "ROADRUNNER"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 36,
+      "last_season": 10
     },
     "player_686": {
       "uuids": [
@@ -6349,7 +8404,10 @@
       ],
       "names": [
         "KLONASARUAS"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 36,
+      "last_season": 36
     },
     "player_687": {
       "uuids": [
@@ -6357,7 +8415,10 @@
       ],
       "names": [
         "Mono espacial"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 36,
+      "last_season": 36
     },
     "player_688": {
       "uuids": [
@@ -6365,7 +8426,10 @@
       ],
       "names": [
         "Chrome Heart"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 36,
+      "last_season": 10
     },
     "player_689": {
       "uuids": [
@@ -6373,7 +8437,10 @@
       ],
       "names": [
         "pythyu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_690": {
       "uuids": [
@@ -6381,7 +8448,10 @@
       ],
       "names": [
         "Blitzer"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_691": {
       "uuids": [
@@ -6389,7 +8459,10 @@
       ],
       "names": [
         "Raven"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_692": {
       "uuids": [
@@ -6397,7 +8470,10 @@
       ],
       "names": [
         "Vleerbeer420"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_693": {
       "uuids": [
@@ -6405,7 +8481,10 @@
       ],
       "names": [
         "pika"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_694": {
       "uuids": [
@@ -6413,7 +8492,10 @@
       ],
       "names": [
         "USIChe.S.ehCUSIhe.S.ehCEHCEHCSISU"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_695": {
       "uuids": [
@@ -6421,7 +8503,10 @@
       ],
       "names": [
         "Grizzly"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_696": {
       "uuids": [
@@ -6429,7 +8514,10 @@
       ],
       "names": [
         "BlueSlime2101"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_697": {
       "uuids": [
@@ -6437,7 +8525,10 @@
       ],
       "names": [
         "UltraViolet"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_698": {
       "uuids": [
@@ -6445,7 +8536,10 @@
       ],
       "names": [
         "LittleOwl"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_699": {
       "uuids": [
@@ -6453,7 +8547,10 @@
       ],
       "names": [
         "Baba yaga"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_700": {
       "uuids": [
@@ -6461,7 +8558,10 @@
       ],
       "names": [
         "Drift"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_701": {
       "uuids": [
@@ -6469,7 +8569,10 @@
       ],
       "names": [
         "ZELDA"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_702": {
       "uuids": [
@@ -6477,7 +8580,10 @@
       ],
       "names": [
         "Ares"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_703": {
       "uuids": [
@@ -6485,7 +8591,10 @@
       ],
       "names": [
         "nobird"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_704": {
       "uuids": [
@@ -6493,7 +8602,10 @@
       ],
       "names": [
         "Fish"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_705": {
       "uuids": [
@@ -6501,7 +8613,10 @@
       ],
       "names": [
         "Da Man"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_706": {
       "uuids": [
@@ -6509,7 +8624,10 @@
       ],
       "names": [
         "Snuffed"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_707": {
       "uuids": [
@@ -6517,7 +8635,10 @@
       ],
       "names": [
         "112"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_708": {
       "uuids": [
@@ -6525,7 +8646,10 @@
       ],
       "names": [
         " Johnny"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_709": {
       "uuids": [
@@ -6533,7 +8657,10 @@
       ],
       "names": [
         "Rkoti"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_710": {
       "uuids": [
@@ -6541,7 +8668,10 @@
       ],
       "names": [
         "Alex KIEV"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_711": {
       "uuids": [
@@ -6549,7 +8679,10 @@
       ],
       "names": [
         "StormFox"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_712": {
       "uuids": [
@@ -6557,7 +8690,10 @@
       ],
       "names": [
         "Kit"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_713": {
       "uuids": [
@@ -6565,7 +8701,10 @@
       ],
       "names": [
         "titi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_714": {
       "uuids": [
@@ -6573,7 +8712,10 @@
       ],
       "names": [
         "Eremat "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_715": {
       "uuids": [
@@ -6581,7 +8723,10 @@
       ],
       "names": [
         " COBRA BG StyL3!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_716": {
       "uuids": [
@@ -6589,7 +8734,10 @@
       ],
       "names": [
         "Chaminous"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_717": {
       "uuids": [
@@ -6597,7 +8745,10 @@
       ],
       "names": [
         "Solgamon"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_718": {
       "uuids": [
@@ -6605,7 +8756,10 @@
       ],
       "names": [
         "!PIKATHUNDER!"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_719": {
       "uuids": [
@@ -6613,7 +8767,10 @@
       ],
       "names": [
         "Omarzinho"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_720": {
       "uuids": [
@@ -6621,7 +8778,10 @@
       ],
       "names": [
         "HACKERMAN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_721": {
       "uuids": [
@@ -6629,7 +8789,10 @@
       ],
       "names": [
         "Riddler??"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_722": {
       "uuids": [
@@ -6637,7 +8800,10 @@
       ],
       "names": [
         "SubHuman"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_723": {
       "uuids": [
@@ -6645,7 +8811,10 @@
       ],
       "names": [
         "Smashinghard"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_724": {
       "uuids": [
@@ -6653,7 +8822,10 @@
       ],
       "names": [
         "Badger"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_725": {
       "uuids": [
@@ -6661,7 +8833,10 @@
       ],
       "names": [
         "Sewbex iiwii"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_726": {
       "uuids": [
@@ -6669,7 +8844,10 @@
       ],
       "names": [
         "GER\u2026zero"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_727": {
       "uuids": [
@@ -6677,7 +8855,10 @@
       ],
       "names": [
         "SoulBound"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_728": {
       "uuids": [
@@ -6685,7 +8866,10 @@
       ],
       "names": [
         "Camperlife27"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_729": {
       "uuids": [
@@ -6693,7 +8877,10 @@
       ],
       "names": [
         "Yoshii"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_730": {
       "uuids": [
@@ -6701,7 +8888,10 @@
       ],
       "names": [
         "Lainey"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_731": {
       "uuids": [
@@ -6709,7 +8899,10 @@
       ],
       "names": [
         "Skitzmix-"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_732": {
       "uuids": [
@@ -6717,7 +8910,10 @@
       ],
       "names": [
         "Mata usi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_733": {
       "uuids": [
@@ -6725,7 +8921,10 @@
       ],
       "names": [
         "Debt-Collector"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_734": {
       "uuids": [
@@ -6733,7 +8932,10 @@
       ],
       "names": [
         "CrazyXII"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_735": {
       "uuids": [
@@ -6741,7 +8943,10 @@
       ],
       "names": [
         "TheLetter_S"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_736": {
       "uuids": [
@@ -6749,7 +8954,10 @@
       ],
       "names": [
         "Ripper"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_737": {
       "uuids": [
@@ -6757,7 +8965,10 @@
       ],
       "names": [
         "DOM?"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_738": {
       "uuids": [
@@ -6765,7 +8976,10 @@
       ],
       "names": [
         "Aaron.I.Am"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_739": {
       "uuids": [
@@ -6773,7 +8987,10 @@
       ],
       "names": [
         "Alt-f4"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_740": {
       "uuids": [
@@ -6781,7 +8998,10 @@
       ],
       "names": [
         "Leo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_741": {
       "uuids": [
@@ -6789,7 +9009,10 @@
       ],
       "names": [
         "Rusty"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_742": {
       "uuids": [
@@ -6797,7 +9020,10 @@
       ],
       "names": [
         "bababou3"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_743": {
       "uuids": [
@@ -6805,7 +9031,10 @@
       ],
       "names": [
         "XyLo"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_744": {
       "uuids": [
@@ -6813,7 +9042,10 @@
       ],
       "names": [
         "firefoxdust "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_745": {
       "uuids": [
@@ -6821,7 +9053,10 @@
       ],
       "names": [
         "Frank The 3rd"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_746": {
       "uuids": [
@@ -6829,7 +9064,10 @@
       ],
       "names": [
         "Addh95"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_747": {
       "uuids": [
@@ -6837,7 +9075,10 @@
       ],
       "names": [
         "Nala"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_748": {
       "uuids": [
@@ -6845,7 +9086,10 @@
       ],
       "names": [
         "stolas"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_749": {
       "uuids": [
@@ -6853,7 +9097,10 @@
       ],
       "names": [
         "summer.fun"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_750": {
       "uuids": [
@@ -6861,7 +9108,10 @@
       ],
       "names": [
         "YERI"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_751": {
       "uuids": [
@@ -6869,7 +9119,10 @@
       ],
       "names": [
         "Exborboss"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_752": {
       "uuids": [
@@ -6877,7 +9130,10 @@
       ],
       "names": [
         "The Doctor"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_753": {
       "uuids": [
@@ -6885,7 +9141,10 @@
       ],
       "names": [
         "FireStorm "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 10
     },
     "player_754": {
       "uuids": [
@@ -6893,7 +9152,10 @@
       ],
       "names": [
         "EMRD signpost"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 48,
+      "last_season": 48
     },
     "player_755": {
       "uuids": [
@@ -6901,7 +9163,10 @@
       ],
       "names": [
         "Croissant "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_756": {
       "uuids": [
@@ -6909,7 +9174,10 @@
       ],
       "names": [
         "Ceo Of Yeet"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_757": {
       "uuids": [
@@ -6917,7 +9185,10 @@
       ],
       "names": [
         "DreDarkroom "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_758": {
       "uuids": [
@@ -6925,7 +9196,10 @@
       ],
       "names": [
         "SchwarzeKater"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_759": {
       "uuids": [
@@ -6933,7 +9207,10 @@
       ],
       "names": [
         "Joey_Ripchord"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_760": {
       "uuids": [
@@ -6941,7 +9218,10 @@
       ],
       "names": [
         "OVERKILL"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_761": {
       "uuids": [
@@ -6949,7 +9229,10 @@
       ],
       "names": [
         "Ganja75"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_762": {
       "uuids": [
@@ -6957,7 +9240,10 @@
       ],
       "names": [
         "Rtx_BOZz"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_763": {
       "uuids": [
@@ -6965,7 +9251,10 @@
       ],
       "names": [
         "billy.paul*_*"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_764": {
       "uuids": [
@@ -6973,7 +9262,10 @@
       ],
       "names": [
         "Richie_Rebel"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_765": {
       "uuids": [
@@ -6981,7 +9273,10 @@
       ],
       "names": [
         "Link"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_766": {
       "uuids": [
@@ -6989,7 +9284,10 @@
       ],
       "names": [
         "Asya "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_767": {
       "uuids": [
@@ -6997,7 +9295,10 @@
       ],
       "names": [
         "da-san-man1"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_768": {
       "uuids": [
@@ -7005,7 +9306,10 @@
       ],
       "names": [
         "Quendi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_769": {
       "uuids": [
@@ -7013,7 +9317,10 @@
       ],
       "names": [
         "Malicore"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 49
     },
     "player_770": {
       "uuids": [
@@ -7021,7 +9328,10 @@
       ],
       "names": [
         "DragonPrincess"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 49,
+      "last_season": 10
     },
     "player_771": {
       "uuids": [
@@ -7029,7 +9339,10 @@
       ],
       "names": [
         "Fluffy Bastard"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 10
     },
     "player_772": {
       "uuids": [
@@ -7037,7 +9350,10 @@
       ],
       "names": [
         "Ridders1561"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 10
     },
     "player_773": {
       "uuids": [
@@ -7045,7 +9361,10 @@
       ],
       "names": [
         "Revolver "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 10
     },
     "player_774": {
       "uuids": [
@@ -7053,7 +9372,10 @@
       ],
       "names": [
         "Little wolfie"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_775": {
       "uuids": [
@@ -7061,7 +9383,10 @@
       ],
       "names": [
         "CheddARbob"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_776": {
       "uuids": [
@@ -7069,7 +9394,10 @@
       ],
       "names": [
         "Boltyboi56"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_777": {
       "uuids": [
@@ -7077,7 +9405,10 @@
       ],
       "names": [
         "Willie Soke"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_778": {
       "uuids": [
@@ -7085,7 +9416,10 @@
       ],
       "names": [
         "EQUALIZER"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_779": {
       "uuids": [
@@ -7093,7 +9427,10 @@
       ],
       "names": [
         "Sniper"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_780": {
       "uuids": [
@@ -7101,7 +9438,10 @@
       ],
       "names": [
         "moka jr"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_781": {
       "uuids": [
@@ -7109,7 +9449,10 @@
       ],
       "names": [
         "Johnnyboi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 50,
+      "last_season": 50
     },
     "player_782": {
       "uuids": [
@@ -7117,7 +9460,10 @@
       ],
       "names": [
         "Shinobi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_783": {
       "uuids": [
@@ -7125,7 +9471,10 @@
       ],
       "names": [
         "BOOGAstarBoogastarBoogastarthemarksbrothers3@gmail.com"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_784": {
       "uuids": [
@@ -7133,7 +9482,10 @@
       ],
       "names": [
         "8aron"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_785": {
       "uuids": [
@@ -7141,7 +9493,10 @@
       ],
       "names": [
         "Zy."
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_786": {
       "uuids": [
@@ -7149,7 +9504,10 @@
       ],
       "names": [
         "GODDirito"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 10
     },
     "player_787": {
       "uuids": [
@@ -7157,7 +9515,10 @@
       ],
       "names": [
         "The Egyptian King"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_788": {
       "uuids": [
@@ -7165,7 +9526,10 @@
       ],
       "names": [
         "grm48"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 10
     },
     "player_789": {
       "uuids": [
@@ -7173,7 +9537,10 @@
       ],
       "names": [
         "121"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_790": {
       "uuids": [
@@ -7181,7 +9548,10 @@
       ],
       "names": [
         "TardeR0N"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 10
     },
     "player_791": {
       "uuids": [
@@ -7189,7 +9559,10 @@
       ],
       "names": [
         "TR0LL"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 51,
+      "last_season": 51
     },
     "player_792": {
       "uuids": [
@@ -7197,7 +9570,10 @@
       ],
       "names": [
         "TeTurtleMan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 52,
+      "last_season": 10
     },
     "player_793": {
       "uuids": [
@@ -7205,7 +9581,10 @@
       ],
       "names": [
         "Spider"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 53,
+      "last_season": 53
     },
     "player_794": {
       "uuids": [
@@ -7213,7 +9592,10 @@
       ],
       "names": [
         "Alex GEN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 53,
+      "last_season": 53
     },
     "player_795": {
       "uuids": [
@@ -7221,7 +9603,10 @@
       ],
       "names": [
         "Joonyboi"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 53,
+      "last_season": 53
     },
     "player_796": {
       "uuids": [
@@ -7229,7 +9614,10 @@
       ],
       "names": [
         "Cake"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 53,
+      "last_season": 10
     },
     "player_797": {
       "uuids": [
@@ -7237,7 +9625,10 @@
       ],
       "names": [
         "Candycane_420"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 54,
+      "last_season": 54
     },
     "player_798": {
       "uuids": [
@@ -7245,7 +9636,10 @@
       ],
       "names": [
         "pylhoff"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_799": {
       "uuids": [
@@ -7253,7 +9647,10 @@
       ],
       "names": [
         "Red3109"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_800": {
       "uuids": [
@@ -7261,7 +9658,10 @@
       ],
       "names": [
         "Delusional"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_801": {
       "uuids": [
@@ -7269,7 +9669,10 @@
       ],
       "names": [
         "postdashshadow"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_802": {
       "uuids": [
@@ -7277,7 +9680,10 @@
       ],
       "names": [
         "Golden Drgn"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_803": {
       "uuids": [
@@ -7285,7 +9691,10 @@
       ],
       "names": [
         "ICE TEA "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_804": {
       "uuids": [
@@ -7293,7 +9702,10 @@
       ],
       "names": [
         "robot-ebobot"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_805": {
       "uuids": [
@@ -7301,7 +9713,10 @@
       ],
       "names": [
         "Russian King"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_806": {
       "uuids": [
@@ -7309,7 +9724,10 @@
       ],
       "names": [
         "Fantik"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_807": {
       "uuids": [
@@ -7317,7 +9735,10 @@
       ],
       "names": [
         "GODZILA"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_808": {
       "uuids": [
@@ -7325,7 +9746,10 @@
       ],
       "names": [
         "Dark Angel"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_809": {
       "uuids": [
@@ -7333,7 +9757,10 @@
       ],
       "names": [
         "| @L!3N R3@P3R |"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_810": {
       "uuids": [
@@ -7341,7 +9768,10 @@
       ],
       "names": [
         "HATE"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_811": {
       "uuids": [
@@ -7349,7 +9779,10 @@
       ],
       "names": [
         "RIP"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_812": {
       "uuids": [
@@ -7357,7 +9790,10 @@
       ],
       "names": [
         "Outcast"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_813": {
       "uuids": [
@@ -7365,7 +9801,10 @@
       ],
       "names": [
         "PURPLE PANDA"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_814": {
       "uuids": [
@@ -7373,7 +9812,10 @@
       ],
       "names": [
         "Fire_Spirit123"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_815": {
       "uuids": [
@@ -7381,7 +9823,10 @@
       ],
       "names": [
         "098"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_816": {
       "uuids": [
@@ -7389,7 +9834,10 @@
       ],
       "names": [
         "Toast"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_817": {
       "uuids": [
@@ -7397,7 +9845,10 @@
       ],
       "names": [
         "Zenith"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_818": {
       "uuids": [
@@ -7405,7 +9856,10 @@
       ],
       "names": [
         "Mazzoner"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_819": {
       "uuids": [
@@ -7413,7 +9867,10 @@
       ],
       "names": [
         "forestfolk87"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_820": {
       "uuids": [
@@ -7421,7 +9878,10 @@
       ],
       "names": [
         "Fantik"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_821": {
       "uuids": [
@@ -7429,7 +9889,10 @@
       ],
       "names": [
         "Apocalypse"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_822": {
       "uuids": [
@@ -7437,7 +9900,10 @@
       ],
       "names": [
         "DIEHARD "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_823": {
       "uuids": [
@@ -7445,7 +9911,10 @@
       ],
       "names": [
         "Jaker"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_824": {
       "uuids": [
@@ -7453,7 +9922,10 @@
       ],
       "names": [
         "Schwendel"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_825": {
       "uuids": [
@@ -7461,7 +9933,10 @@
       ],
       "names": [
         "FOXYSAMURAI93"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_826": {
       "uuids": [
@@ -7469,7 +9944,10 @@
       ],
       "names": [
         "(**)reSonance"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_827": {
       "uuids": [
@@ -7477,7 +9955,10 @@
       ],
       "names": [
         "Aleisha"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_828": {
       "uuids": [
@@ -7485,7 +9966,10 @@
       ],
       "names": [
         "Legoman021"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_829": {
       "uuids": [
@@ -7493,7 +9977,10 @@
       ],
       "names": [
         "Venyum jbVenyum jbVenyum"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_830": {
       "uuids": [
@@ -7501,7 +9988,10 @@
       ],
       "names": [
         "RIP"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_831": {
       "uuids": [
@@ -7509,7 +9999,10 @@
       ],
       "names": [
         "Madalyn "
-      ]
+      ],
+      "team_history": [],
+      "first_season": 59,
+      "last_season": 10
     },
     "player_832": {
       "uuids": [
@@ -7517,7 +10010,10 @@
       ],
       "names": [
         "Gray Cardinal"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_833": {
       "uuids": [
@@ -7525,7 +10021,10 @@
       ],
       "names": [
         "huhuhu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_834": {
       "uuids": [
@@ -7533,7 +10032,10 @@
       ],
       "names": [
         "Jetski"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_835": {
       "uuids": [
@@ -7541,7 +10043,10 @@
       ],
       "names": [
         "Waterboy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_836": {
       "uuids": [
@@ -7549,7 +10054,10 @@
       ],
       "names": [
         "SOUL"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_837": {
       "uuids": [
@@ -7557,7 +10065,10 @@
       ],
       "names": [
         "Brotherboy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_838": {
       "uuids": [
@@ -7565,7 +10076,10 @@
       ],
       "names": [
         "Sir Moldy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_839": {
       "uuids": [
@@ -7573,7 +10087,10 @@
       ],
       "names": [
         "GarbageMan"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_840": {
       "uuids": [
@@ -7581,7 +10098,10 @@
       ],
       "names": [
         "MILESDECKER"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_841": {
       "uuids": [
@@ -7589,7 +10109,10 @@
       ],
       "names": [
         "rediska"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_842": {
       "uuids": [
@@ -7597,7 +10120,10 @@
       ],
       "names": [
         "pika"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 60,
+      "last_season": 10
     },
     "player_843": {
       "uuids": [
@@ -7605,7 +10131,10 @@
       ],
       "names": [
         "Stranger1430"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_844": {
       "uuids": [
@@ -7613,7 +10142,10 @@
       ],
       "names": [
         "retsiniSIM WATCHING U"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_845": {
       "uuids": [
@@ -7621,7 +10153,10 @@
       ],
       "names": [
         "ShannyPerfecta"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_846": {
       "uuids": [
@@ -7629,7 +10164,10 @@
       ],
       "names": [
         "Phoenix"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_847": {
       "uuids": [
@@ -7637,7 +10175,10 @@
       ],
       "names": [
         "Damir"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_848": {
       "uuids": [
@@ -7645,7 +10186,10 @@
       ],
       "names": [
         "STUN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_849": {
       "uuids": [
@@ -7653,7 +10197,10 @@
       ],
       "names": [
         "kingc_1234"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 61,
+      "last_season": 10
     },
     "player_850": {
       "uuids": [
@@ -7661,7 +10208,10 @@
       ],
       "names": [
         "Candyyy"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_851": {
       "uuids": [
@@ -7669,7 +10219,10 @@
       ],
       "names": [
         "Hades"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_852": {
       "uuids": [
@@ -7677,7 +10230,10 @@
       ],
       "names": [
         "given"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_853": {
       "uuids": [
@@ -7685,7 +10241,10 @@
       ],
       "names": [
         "Shameless"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_854": {
       "uuids": [
@@ -7693,7 +10252,10 @@
       ],
       "names": [
         "GRIZZLY"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_855": {
       "uuids": [
@@ -7701,7 +10263,10 @@
       ],
       "names": [
         "CRAZY TOILET OG67"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_856": {
       "uuids": [
@@ -7709,7 +10274,10 @@
       ],
       "names": [
         "Lelu"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_857": {
       "uuids": [
@@ -7717,7 +10285,10 @@
       ],
       "names": [
         "STUN"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 62,
+      "last_season": 10
     },
     "player_858": {
       "uuids": [
@@ -7725,7 +10296,10 @@
       ],
       "names": [
         "Flash"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 63,
+      "last_season": 10
     },
     "player_859": {
       "uuids": [
@@ -7733,7 +10307,10 @@
       ],
       "names": [
         "gladiator"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 63,
+      "last_season": 10
     },
     "player_860": {
       "uuids": [
@@ -7741,7 +10318,10 @@
       ],
       "names": [
         "Ignite '-'"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 64,
+      "last_season": 10
     },
     "player_861": {
       "uuids": [
@@ -7749,7 +10329,10 @@
       ],
       "names": [
         "Graston"
-      ]
+      ],
+      "team_history": [],
+      "first_season": 65,
+      "last_season": 65
     }
   }
 }

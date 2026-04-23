@@ -58,7 +58,7 @@ def top_players_by_tag(tag_name, limit=20):
 
 
 # ---------------------------------------------------------
-# Match-Based Consistency Ranking (Still Used in UI)
+# Match-Based Consistency Ranking (Modernized)
 # ---------------------------------------------------------
 
 def rank_match_players_consistency(players):
@@ -66,13 +66,17 @@ def rank_match_players_consistency(players):
 
     for p in players:
         tag = p.get("consistency", {})
-        score = tag.get("raw", 0.0)
+        raw = tag.get("raw", 0.0)
+        pct = tag.get("pct", None)
+        tier = tag.get("tier", None)
 
         ranked.append({
             "name": p.get("name", "Unknown"),
             "team": p.get("team", ""),
-            "score_raw": score,
-            "score_display": f"{score:.2f}",
+            "score_raw": raw,
+            "score_display": f"{raw:.2f}",
+            "pct": pct,
+            "tier": tier,
         })
 
     ranked.sort(key=lambda x: x["score_raw"], reverse=True)
@@ -84,7 +88,7 @@ def rank_match_players_consistency(players):
 
 
 # ---------------------------------------------------------
-# Match-Based Clutch Ranking (Still Used in UI)
+# Match-Based Clutch Ranking (Modernized)
 # ---------------------------------------------------------
 
 def rank_match_players_clutch(players):
@@ -92,13 +96,17 @@ def rank_match_players_clutch(players):
 
     for p in players:
         tag = p.get("clutch", {})
-        score = tag.get("raw", 0.0)
+        raw = tag.get("raw", 0.0)
+        pct = tag.get("pct", None)
+        tier = tag.get("tier", None)
 
         ranked.append({
             "name": p.get("name", "Unknown"),
             "team": p.get("team", ""),
-            "score_raw": score,
-            "score_display": f"{score:.2f}",
+            "score_raw": raw,
+            "score_display": f"{raw:.2f}",
+            "pct": pct,
+            "tier": tier,
         })
 
     ranked.sort(key=lambda x: x["score_raw"], reverse=True)
@@ -107,25 +115,28 @@ def rank_match_players_clutch(players):
         r["rank"] = i
 
     return ranked
-    
-    
-    
+
+
 # ---------------------------------------------------------
 # Generic Match Tag Ranking (Modern Tag System)
-# ---------------------------------------------------------    
-    
+# ---------------------------------------------------------
+
 def rank_match_players_by_tag(players, tag):
     rows = []
 
     for p in players:
-        tag_data = p.get(tag) or {}   # <‑‑‑ FIX HERE
-        raw = tag_data.get("raw", 0)
+        tag_data = p.get(tag) or {}
+        raw = tag_data.get("raw", 0.0)
+        pct = tag_data.get("pct", None)
+        tier = tag_data.get("tier", None)
 
         rows.append({
             "name": p.get("name", "Unknown"),
             "team": p.get("team", ""),
             "score_raw": raw,
             "score_display": f"{raw:.2f}",
+            "pct": pct,
+            "tier": tier,
         })
 
     rows.sort(key=lambda x: x["score_raw"], reverse=True)
@@ -134,13 +145,13 @@ def rank_match_players_by_tag(players, tag):
         r["rank"] = i
 
     return rows
-    
-    
+
+
+# ---------------------------------------------------------
+# Split into two columns for UI
+# ---------------------------------------------------------
+
 def split_two_columns(ranked, team_a, team_b):
-    """
-    ranked: list of rows returned by rank_match_players_* functions.
-    Returns two lists: left (team_a) and right (team_b).
-    """
     left = [r for r in ranked if r.get("team") == team_a]
     right = [r for r in ranked if r.get("team") == team_b]
-    return left, right    
+    return left, right

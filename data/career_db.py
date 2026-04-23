@@ -52,14 +52,17 @@ def build_career_database(output_path):
         raw_uuid = str(row["PlayerUUID"])
         name = row["PlayerGameName"] or "Unknown"
 
-        # Resolve canonical identity
-        canonical_id = pir.resolve(raw_uuid)
-        pir.add_name(canonical_id, name)
-
-        # Use RAW UUID for DB queries
+        # Get this player's full match history
         matches = db_access.get_player_match_history(raw_uuid)
         if not matches:
             continue
+
+        # Infer "season" from earliest CycleID (or whatever you treat as season)
+        first_cycle = min(m.get("CycleID", 0) for m in matches) or 0
+
+        # Resolve canonical identity AND stamp first_season
+        canonical_id = pir.resolve(raw_uuid, season=first_cycle)
+        pir.add_name(canonical_id, name)
 
         # Use CANONICAL ID as the key in the career DB
         pid = canonical_id
@@ -215,131 +218,50 @@ def build_career_database(output_path):
     # ---------------------------------------------------------
     for pid, pdata in final_db["players"].items():
 
+        # -----------------------------------------------------
         # Slayer
+        # -----------------------------------------------------
         pdata["slayer"] = compute_slayer_for_career_player(
             pdata,
             league_averages,
             distributions["slayer"]
         )
 
+        # -----------------------------------------------------
         # Sharpshooter
+        # -----------------------------------------------------
         pdata["sharpshooter"] = compute_sharpshooter_for_career_player(
             pdata["career"],
             league_averages,
             distributions["sharpshooter"]
         )
 
+        # -----------------------------------------------------
         # Payload Objective Specialist
+        # -----------------------------------------------------
         pdata["objective_payload"] = compute_payload_tag(
             pdata,
             league_averages,
             distributions["payload"]
         )
 
+        # -----------------------------------------------------
         # Domination Objective Specialist
+        # -----------------------------------------------------
         pdata["objective_domination"] = compute_dom_objective_for_career_player(
             pdata,
             league_averages,
             distributions["domination"]
         )
 
-        # Consistency (legacy adapter)
-        consistency_result = build_consistency_tag(
-            floor_current=pdata.get("floor_current"),
-            floor_career=pdata.get("floor_career"),
-            floor_league=league_averages.get("consistency_floor", 0.0),
-            stability_current=pdata.get("stability_current"),
-            stability_career=pdata.get("stability_career"),
-            stability_league=league_averages.get("consistency_stability", 0.0),
-            average_current=pdata.get("average_current"),
-            average_career=pdata.get("average_career"),
-            average_league=league_averages.get("consistency_average", 0.0),
-            matches_played_current=pdata["career"].get("maps", 0),
-            percentile=None
-        )
-        pdata["consistency"] = {
-            "raw": consistency_result.normalized_score,
-            "summary": consistency_result.summary_short
-        }
-        
-        # ---------------------------------------------------------
-        # Consistency Percentile + Tier (NEW)
-        # ---------------------------------------------------------
-        raw_cons = pdata["consistency"]["raw"]
-
-        # Build distribution if missing
-        if "consistency" not in distributions:
-            distributions["consistency"] = [
-                p["consistency"]["raw"]
-                for p in all_players
-                if "consistency" in p and isinstance(p["consistency"], dict)
-            ]
-
-        # Percentile lookup
-        pct = percentile_rank(raw_cons, distributions["consistency"])
-        tier = tier_from_percentile(pct)
-
-        pdata["consistency"]["pct"] = pct
-        pdata["consistency"]["tier"] = tier
-        pdata["consistency"]["summary"] = (
-            f"{tier} Tier Consistency ({pct:.1f} percentile)"
-        )
-        
-        
-        # Anchor
-        consistency_norm = pdata["consistency"]["raw"]  # normalized 0–1 score
-        pdata["anchor"] = compute_anchor_for_career_player(
-            pdata,
-            league_averages,
-            distributions["anchor"],
-            consistency_norm
-)
-
-        # Clutch
-        pdata["clutch"] = compute_clutch(
-            pdata,
-            league_averages,
-            clutch_distribution
-        )
-        
-        # Breaker
-        career = pdata["career"]
-        damage_per_map = career["damage"] / max(1, career["maps"])
-        kills_per_map = career["kills"] / max(1, career["maps"])
-
-        raw_breaker = compute_breaker_raw(damage_per_map, kills_per_map)
-
-        # Percentile + tier
-        pct = percentile_rank(raw_breaker, breaker_distribution)
-        tier = tier_from_percentile(pct)
-
-        pdata["breaker"] = {
-            "raw": raw_breaker,
-            "pct": pct,
-            "tier": tier,
-            "summary": f"Offensive disruptor ({tier} Tier, {pct:.1f} percentile)"
-        }
-
         # ---------------------------------------------------------
         # Consistency (Hybrid Career Tag - New System)
         # ---------------------------------------------------------
-
         matches = pdata["matches"]
         maps_played = pdata["career"].get("maps", 0)
 
-        # ---------------------------------------------------------
-        # Extract per-match performance components
-        # ---------------------------------------------------------
-        # NOTE:
-        # If you later add per-match slayer/objective/accuracy scores,
-        # this block will automatically support them.
-        # For now, we compute a simple per-match performance score
-        # using the same formula as the legacy system.
-        # ---------------------------------------------------------
-
         per_match_scores = []
         for m in matches:
-            # Slayer-like component
             dmg = m.get("Damage", 0)
             kills = m.get("Kills", 0)
             deaths = m.get("Deaths", 0)
@@ -351,7 +273,6 @@ def build_career_database(output_path):
                 (kd / 5) * 0.20
             )
 
-            # Objective-like component
             push = m.get("PAY_PushTime", 0)
             caps = m.get("DOM_Captures", 0)
             counters = m.get("DOM_Counters", 0)
@@ -362,25 +283,18 @@ def build_career_database(output_path):
                 (counters / 20) * 0.30
             )
 
-            # Accuracy-like component
             shots = m.get("Shots", 0)
             shots_hit = m.get("ShotsHit", 0)
             accuracy = (shots_hit / shots) if shots > 0 else 0.0
-
             accuracy_component = accuracy * 0.20
 
-            # Final per-match performance score
             perf = slayer_component + objective_component + accuracy_component
             per_match_scores.append(perf)
 
-        # ---------------------------------------------------------
-        # Compute floor, stability, average
-        # ---------------------------------------------------------
         if per_match_scores:
             floor_value = min(per_match_scores)
             avg_value = sum(per_match_scores) / len(per_match_scores)
 
-            # Variance adjusted for match count
             mean = avg_value
             variance = sum((x - mean) ** 2 for x in per_match_scores) / len(per_match_scores)
             adjusted_variance = variance * (1 + 1 / max(1, len(per_match_scores)))
@@ -390,12 +304,9 @@ def build_career_database(output_path):
             avg_value = 0.0
             stability_value = 0.0
 
-        # ---------------------------------------------------------
-        # Build hybrid consistency tag
-        # ---------------------------------------------------------
         consistency_result = build_consistency_tag(
             floor_current=floor_value,
-            floor_career=floor_value,      # career = all matches
+            floor_career=floor_value,
             floor_league=league_averages.get("consistency_floor", 0.0),
 
             stability_current=stability_value,
@@ -410,12 +321,9 @@ def build_career_database(output_path):
             percentile=None
         )
 
-        # ---------------------------------------------------------
-        # Store in DB (GUI + Rankings + Spotlight compatible)
-        # ---------------------------------------------------------
         pdata["consistency"] = {
             "raw": consistency_result.normalized_score,
-            "pct": consistency_result.percentile,
+            "pct": None,
             "tier": consistency_result.tier,
             "summary": consistency_result.summary_short,
             "components": {
@@ -425,13 +333,62 @@ def build_career_database(output_path):
             },
             "extras": consistency_result.extras,
         }
+        
+        # ---------------------------------------------------------
+        # Career Consistency Percentile + Tier (NEW)
+        # ---------------------------------------------------------
+        raw_cons = pdata["consistency"]["raw"]
+        cons_dist = distributions.get("consistency", [])
 
-        # Clutch (FINAL TAG)
+        pct = percentile_rank(raw_cons, cons_dist)
+        tier = tier_from_percentile(pct)
+
+        pdata["consistency"]["pct"] = pct
+        pdata["consistency"]["tier"] = tier
+        pdata["consistency"]["summary"] = (
+            f"{tier} Tier Consistency ({pct:.1f} percentile)"
+        )
+
+        # ---------------------------------------------------------
+        # Anchor (requires consistency)
+        # ---------------------------------------------------------
+        consistency_norm = pdata["consistency"]["raw"]
+        pdata["anchor"] = compute_anchor_for_career_player(
+            pdata,
+            league_averages,
+            distributions["anchor"],
+            consistency_norm
+        )
+
+        # ---------------------------------------------------------
+        # Clutch
+        # ---------------------------------------------------------
         pdata["clutch"] = compute_clutch(
             pdata,
             league_averages,
             clutch_distribution
         )
+
+        # ---------------------------------------------------------
+        # Breaker
+        # ---------------------------------------------------------
+        career = pdata["career"]
+        damage_per_map = career["damage"] / max(1, career["maps"])
+        kills_per_map = career["kills"] / max(1, career["maps"])
+
+        raw_breaker = compute_breaker_raw(damage_per_map, kills_per_map)
+        pct = percentile_rank(raw_breaker, breaker_distribution)
+        tier = tier_from_percentile(pct)
+
+        pdata["breaker"] = {
+            "raw": raw_breaker,
+            "pct": pct,
+            "tier": tier,
+            "summary": f"Offensive disruptor ({tier} Tier, {pct:.1f} percentile)"
+        }
+        
+    # Save PIR with first_season stamped for all canonical IDs
+    pir.save()    
 
     # ---------------------------------------------------------
     # 6. Save DB

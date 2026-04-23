@@ -39,9 +39,15 @@ def summarize_team_tags(team_players):
             pcts.append(safe_pct(tag_data.get("pct")))
             tiers.append(safe_tier(tag_data.get("tier")))
 
+        # -----------------------------
+        # FIX: safe top-tier calculation
+        # -----------------------------
+        valid_tiers = [t for t in tiers if t in "SABCD"]
+        top_tier = max(valid_tiers, key=lambda t: "SABCD".index(t)) if valid_tiers else "-"
+
         summary[tag] = {
             "avg_pct": safe_avg(pcts),
-            "top_tier": max(tiers, key=lambda t: "SABCD".index(t)),
+            "top_tier": top_tier,
             "count_S": tiers.count("S"),
             "count_A": tiers.count("A"),
             "count_B": tiers.count("B"),

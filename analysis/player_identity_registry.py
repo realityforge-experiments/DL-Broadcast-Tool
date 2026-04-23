@@ -3,52 +3,91 @@ import os
 
 PIR_PATH = os.path.join(os.path.dirname(__file__), "player_identity_registry.json")
 
+
 class PlayerIdentityRegistry:
     def __init__(self):
         if os.path.exists(PIR_PATH):
             with open(PIR_PATH, "r", encoding="utf-8") as f:
                 self.data = json.load(f)
         else:
-            self.data = {"uuid_to_canonical": {}, "canonical": {}}
+            self.data = {
+                "uuid_to_canonical": {},
+                "canonical": {}
+            }
 
     def save(self):
         with open(PIR_PATH, "w", encoding="utf-8") as f:
             json.dump(self.data, f, indent=2)
 
-    def resolve(self, uuid):
-        """Return canonical ID for a UUID, or create one."""
+    # ---------------------------------------------------------
+    # Resolve UUID → canonical ID (and create if needed)
+    # ---------------------------------------------------------
+    def resolve(self, uuid, season=None):
         uuid = str(uuid)
+
+        # Known UUID
         if uuid in self.data["uuid_to_canonical"]:
-            return self.data["uuid_to_canonical"][uuid]
+            cid = self.data["uuid_to_canonical"][uuid]
+            entry = self.data["canonical"][cid]
+            if season is not None:
+                entry["last_season"] = season
+            return cid
 
-        # Create new canonical ID
-        canonical = f"player_{len(self.data['canonical'])+1}"
-        self.data["uuid_to_canonical"][uuid] = canonical
-        self.data["canonical"][canonical] = {"uuids": [uuid], "names": []}
+        # New UUID → new canonical ID
+        cid = f"player_{len(self.data['canonical']) + 1}"
+        self.data["uuid_to_canonical"][uuid] = cid
+        self.data["canonical"][cid] = {
+            "uuids": [uuid],
+            "names": [],
+            "team_history": [],
+            "first_season": season,
+            "last_season": season,
+        }
         self.save()
-        return canonical
+        return cid
 
-    def add_name(self, canonical, name):
-        entry = self.data["canonical"].setdefault(canonical, {"uuids": [], "names": []})
-        if name not in entry["names"]:
+    # ---------------------------------------------------------
+    # Track name changes
+    # ---------------------------------------------------------
+    def update_name(self, canonical_id, name):
+        entry = self.data["canonical"].get(canonical_id)
+        if not entry:
+            return
+
+        if name and name not in entry["names"]:
             entry["names"].append(name)
             self.save()
 
-    def merge(self, uuid_a, uuid_b):
-        """Merge two UUIDs into one canonical identity."""
-        ca = self.resolve(uuid_a)
-        cb = self.resolve(uuid_b)
-        if ca == cb:
-            return ca
+    # ---------------------------------------------------------
+    # Track team history
+    # ---------------------------------------------------------
+    def update_team(self, canonical_id, team):
+        entry = self.data["canonical"].get(canonical_id)
+        if not entry:
+            return
 
-        # Merge cb into ca
-        self.data["canonical"][ca]["uuids"].extend(self.data["canonical"][cb]["uuids"])
-        self.data["canonical"][ca]["names"].extend(self.data["canonical"][cb]["names"])
+        if team and (not entry["team_history"] or entry["team_history"][-1] != team):
+            entry["team_history"].append(team)
+            self.save()
+            
+    # ---------------------------------------------------------
+    # Backwards compatibility: old method name
+    # ---------------------------------------------------------
+    def add_name(self, canonical_id, name):
+        """Legacy alias for update_name()."""
+        self.update_name(canonical_id, name)
 
-        # Update uuid_to_canonical
-        for u in self.data["canonical"][cb]["uuids"]:
-            self.data["uuid_to_canonical"][u] = ca
+    def add_team(self, canonical_id, team):
+        """Legacy alias for update_team()."""
+        self.update_team(canonical_id, team)        
+            
+            
 
-        del self.data["canonical"][cb]
-        self.save()
-        return ca
+    # ---------------------------------------------------------
+    # Rookie detection
+    # ---------------------------------------------------------
+    def get_first_season(self, canonical_id):
+        entry = self.data["canonical"].get(canonical_id)
+        if not entry:
+            return None
+        return entry.get("first_season")

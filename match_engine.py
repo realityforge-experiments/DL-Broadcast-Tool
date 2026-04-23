@@ -210,6 +210,7 @@ def rank_match_players_consistency_career(match_players):
     for i, p in enumerate(ranked, 1):
         out.append({
             "rank": i,
+            "id": p["id"],
             "name": p["name"],
             "team": p.get("team", "Unknown"),
             "score_raw": p["raw"],
