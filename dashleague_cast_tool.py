@@ -335,6 +335,21 @@ class DashLeagueGUI:
 
                 # Resolve canonical + stamp seasons
                 canonical = pir.resolve(raw_id, season=self.current_season)
+                
+                canonical = pir.resolve(raw_id, season=self.current_season)
+                
+                # Update Registry and History with clean names
+                clean_name = p.get("name")
+                clean_team = (p.get("team") or "").strip()
+                
+                pir.update_name(canonical, clean_name)
+                if clean_team:
+                    pir.update_team(canonical, clean_team)
+
+                # Ensure career_stats has this history
+                if canonical in players_db:
+                    players_db[canonical]["team_history"] = pir.data["canonical"][canonical]["team_history"]
+                
                 if not canonical:
                     continue
 
@@ -377,7 +392,12 @@ class DashLeagueGUI:
                         "breaker": {},
                     }
 
-                pdata = players_db.get(canonical, {})
+                pdata = players_db.setdefault(canonical, {})
+                pdata["seasons_played"] = merged["seasons_played"]
+                
+                print("DEBUG: seasons fields:")
+                #for p in stats:
+                #   print(p.get("name"), "seasons:", p.get("seasons"), "seasons_played:", p.get("seasons_played"))
                 
                 
                 # Store basic stats into career DB so rookies have real data
@@ -401,7 +421,7 @@ class DashLeagueGUI:
                 #if merged.get("seasons_played"):
                 #    pdata["seasons_played"] = merged["seasons_played"]
                     
-                pdata["seasons_played"] = merged.get("seasons_played")
+                #pdata["seasons_played"] = merged.get("seasons_played")
 
                 # Attach career tags
                 for tag in (
@@ -558,21 +578,12 @@ class DashLeagueGUI:
             for p in all_players:
                 ms = p.get("match_stats", {})
 
-                # CP
-                p["CP_Captures"] = (
-                    p.get("CP_Captures")
-                    or p.get("CP_captures")
-                    or ms.get("CP_Captures")
-                    or ms.get("CP_captures")
-                    or 0
-                )
-
                 # DOM
                 p["DOM_Captures"] = (
-                    p.get("DOM_Captures")
-                    or p.get("DOM_captures")
-                    or ms.get("DOM_Captures")
-                    or ms.get("DOM_captures")
+                    p.get("DOM_Captures") 
+                    or p.get("DOM_captures") 
+                    or ms.get("DOM_Captures") 
+                    or ms.get("DOM_captures") 
                     or 0
                 )
 
@@ -782,88 +793,82 @@ class DashLeagueGUI:
                 
                 
     def on_player_spotlight(self):
-        career_path = os.path.join(BASE_DIR, "career_stats.json")
-        if not os.path.exists(career_path):
-            messagebox.showerror("Error", "Build career database first.")
+        # 1. Check if players are actually selected for a match
+        if not self.current_match_players:
+            messagebox.showerror("Error", "Please select teams and click 'Generate Player Slots' first.")
             return
 
+        # 2. Get names ONLY from the 10 players in the current match
+        names = [p["name"] for p in self.current_match_players]
+        names.sort()
+
+        # Load the career DB once so the 'show' function can pull match history for trends
+        career_path = os.path.join(BASE_DIR, "career_stats.json")
         with open(career_path, "r", encoding="utf-8") as f:
             db = json.load(f)
 
-        names = [p["name"] for p in db["players"].values()]
-        names.sort()
-
         win = tk.Toplevel(self.root)
-        win.title("Player Spotlight")
-        win.geometry("400x500")
+        win.title("Match Player Spotlight")
+        win.geometry("450x550")
 
-        ttk.Label(win, text="Select Player:").pack(anchor="w", padx=10, pady=5)
+        ttk.Label(win, text="Select a Player from this Match:").pack(anchor="w", padx=10, pady=5)
         combo = ttk.Combobox(win, values=names, state="readonly")
         combo.pack(fill="x", padx=10)
 
-        output = tk.Text(win, wrap="word")
+        output = tk.Text(win, wrap="word", font=("Courier", 10))
         output.pack(expand=True, fill="both", padx=10, pady=10)
 
         def show():
-            name = combo.get()
-            if not name:
+            selected_name = combo.get()
+            if not selected_name:
                 return
 
-            player = next((p for p in db["players"].values() if p["name"] == name), None)
-            if not player:
+            # Find the match player object (this has the current team/side info)
+            match_p = next((p for p in self.current_match_players if p["name"] == selected_name), None)
+            
+            # Find the full career object (this has the history/matches for the graphics engine)
+            cid = match_p.get("canonical")
+            player_data = db["players"].get(cid)
+
+            if not player_data:
                 output.delete("1.0", tk.END)
-                output.insert(tk.END, "Player not found in career DB.")
+                output.insert(tk.END, "Error: Player data not found in career database.")
                 return
 
-            career = player["career"]
-            derived = player.get("derived", {})
-            obj_pl = player.get("objective_payload_score")
-            slayer_strength = player.get("slayer_strength", "Unknown")
+            # Determine Team Side for Colors
+            # If the player is in the Team B listbox, they are 'Red'
+            side = "Blue"
+            team_b_names = [self.team_b_listbox.get(i) for i in range(self.team_b_listbox.size())]
+            if selected_name in team_b_names:
+                side = "Red"
 
-            consistency = player.get("consistency", {})
-            cons_tier = consistency.get("tier", "N/A")
-            cons_pct = consistency.get("pct")
-            cons_summary = consistency.get("summary", "No consistency data available.")
+            # 3. Trigger the 4K Graphic
+            from utils.graphics_engine import generate_player_card
+            try:
+                img_path = generate_player_card(player_data, team_side=side)
+                self.set_status(f"Generated 4K Spotlight: {selected_name}")
+            except Exception as e:
+                print(f"Graphics Error: {e}")
 
-            if isinstance(cons_pct, (int, float)):
-                cons_line = f"{cons_tier} Tier ({cons_pct:.1f} percentile)"
-            else:
-                cons_line = f"{cons_tier} Tier"
-
-            text = f"""PLAYER SPOTLIGHT — {name}
-
-Slayer Tier: {slayer_strength}
-Consistency: {cons_line}
-Payload Objective Specialist: {obj_pl if obj_pl is not None else "N/A"}
-
-Career Stats:
-KD: {career['KD']:.2f}
-Accuracy: {career['accuracy']:.2f}
-Kills: {career['kills']}
-Deaths: {career['deaths']}
-Maps Played: {career['maps']}
-
-Derived Metrics:
-Kills/Map: {derived.get('kills_per_map', 0):.2f}
-Deaths/Map: {derived.get('deaths_per_map', 0):.2f}
-PushTime/Season: {derived.get('push_time_per_season', 0):.2f}
-
-Consistency Summary:
-{cons_summary}
-"""
+            # 4. Generate the Text Preview for the GUI window
+            career = player_data["career"]
+            text = f"PLAYER SPOTLIGHT: {selected_name}\n"
+            text += f"Team: {match_p.get('team', 'Unknown')}\n"
+            text += f"-----------------------------------\n\n"
+            text += f"CAREER STATS:\n"
+            text += f"Kills:  {int(career['kills']):,}\n"
+            text += f"Maps:   {int(career['maps'])}\n"
+            text += f"KD:     {career['KD']:.2f}\n\n"
+            
+            text += f"TAG PERCENTILES:\n"
+            for tag in ["slayer", "sharpshooter", "consistency", "clutch", "anchor"]:
+                t_obj = player_data.get(tag, {})
+                text += f"{tag.title():<14}: {t_obj.get('tier', 'D')} ({t_obj.get('pct', 0):.0f}%)\n"
 
             output.delete("1.0", tk.END)
             output.insert(tk.END, text)
-        def export():
-            content = output.get("1.0", tk.END).strip()
-            if not content:
-                messagebox.showerror("Error", "No spotlight text to export.")
-                return
-            path = export_to_obs("spotlight.txt", content)
-            messagebox.showinfo("Exported", f"Spotlight exported to:\n{path}")
 
-        ttk.Button(win, text="Show Spotlight", command=show).pack(pady=5)
-        ttk.Button(win, text="Export to OBS", command=export).pack(pady=5)
+        ttk.Button(win, text="Generate 4K Graphic", command=show).pack(pady=10)
 
     def on_team_identity(self):
         team = self.team_a_var.get()
@@ -932,7 +937,7 @@ Consistency Summary:
         # Domination Objective Specialist (match-based)
         # ---------------------------------------------------------
         if map_type == "Domination":
-            dom_info = player_entry.get("objective_domination_components", {})
+            dom_info = player_entry.get("objective_domination", {})
             dom_score = dom_info.get("raw", 0.0)
             tags_out.append(f"ObjDOM {dom_score:.2f}")
 
@@ -1075,6 +1080,15 @@ Consistency Summary:
             tag = combo.get()
             if not tag:
                 return
+                
+            from match_engine import load_career_db, attach_career_tags_to_match_player
+            career_db = load_career_db()
+            if career_db:
+                for p in self.current_match_players:
+                    cid = p.get("canonical")
+                    if cid and cid in career_db["players"]:
+                        attach_career_tags_to_match_player(p, career_db["players"][cid]) 
+                
 
             team_a = self.team_a_var.get()
             team_b = self.team_b_var.get()
@@ -1284,9 +1298,6 @@ Consistency Summary:
                 text += "- KillsNorm = Kills per map normalized against league average\n"
                 text += "Breaker measures disruptive offensive pressure through high damage output and aggressive fragging.\n"
                 
-                
-                
-
             output.delete("1.0", tk.END)
             output.insert(tk.END, text)
 
@@ -1303,36 +1314,42 @@ Consistency Summary:
         ttk.Button(win, text="Show Rankings", command=show).pack(pady=5)
    
 
+    # dashleague_cast_tool.py -> on_rookie_leaderboard()
+
     def on_rookie_leaderboard(self):
         from analysis.rookie_leaderboard import rank_rookies_by_tag
-
         season = self.current_season
-        tag = "slayer"   # default tag for rookie leaderboard
+        tag = "slayer" 
 
         rookies = rank_rookies_by_tag(season, tag)
 
-        # Build text output
         lines = []
-        lines.append(f"ROOKIE LEADERBOARD — {tag.upper()} — Season {season}")
+        lines.append(f"ROOKIE LEADERBOARD — Season {season}")
+        lines.append("Rookies: < 50 maps and < 1000 kills.")
         lines.append("")
-        lines.append(f"{'Rank':<5} {'Name':<18} {'Team':<8} {'Tier':<6} {'Pct':<6} {'Raw':<6}")
-        lines.append("-" * 60)
+        # Updated Header
+        lines.append(f"{'Rank':<5} {'Name':<18} {'Team':<12} {'Score':<10} {'KD':<6} {'Maps':<6} {'Kills':<8}")
+        lines.append("-" * 75)
 
         for r in rookies:
-            pct = f"{r['pct']:.0f}%" if r["pct"] is not None else "-"
-            raw = f"{r['raw']:.2f}"
-            lines.append(f"{r['rank']:<5} {r['name']:<18} {r['team']:<8} {r['tier']:<6} {pct:<6} {raw:<6}")
+            # Format thousands for score (e.g. 96,107)
+            score_str = f"{int(r['score']):,}" 
+            kd_str = f"{r['kd']:.2f}"
+            maps_str = f"{int(r['maps'])}"
+            kills_str = f"{int(r['kills'])}"
+            
+            lines.append(f"{r['rank']:<5} {r['name']:<18} {r['team']:<12} {score_str:<10} {kd_str:<6} {maps_str:<6} {kills_str:<8}")
 
         text = "\n".join(lines)
 
-        # Popup window
         win = tk.Toplevel(self.root)
-        win.title("Rookie Leaderboard")
-        win.geometry("600x500")
+        win.title("Rookie Standings")
+        win.geometry("800x550")
 
-        output = tk.Text(win, wrap="word")
+        output = tk.Text(win, wrap="none", font=("Courier", 10))
         output.pack(expand=True, fill="both", padx=10, pady=10)
         output.insert(tk.END, text)
+        output.config(state="disabled")
 
         
     def export_all_obs_files(self):

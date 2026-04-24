@@ -116,6 +116,9 @@ def compute_league_metrics(all_players):
         # Domination
         dist["domination"].append(compute_dom_raw(p))
         
+        # Collect the raw consistency score we will calculate in the next step
+        dist["consistency"].append(p.get("consistency_raw", 0.0)) 
+        
         from tags.anchor import compute_anchor_raw
 
         # Consistency raw score for distribution building

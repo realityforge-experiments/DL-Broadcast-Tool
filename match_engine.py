@@ -176,13 +176,13 @@ def rank_match_players_sharpshooter(match_players):
 def rank_match_players_objpl(match_players):
     return _add_score_fields(rank_match_players_by_tag(match_players, "objective_payload"))
 
-
 def rank_match_players_objdom(match_players):
     ranked = []
 
     for p in match_players:
-        comp = p.get("objective_domination_components", {})
-        raw = comp.get("raw", 0.0)
+        # CHANGE: Look for "objective_domination" instead of "_components"
+        dom_data = p.get("objective_domination", {})
+        raw = dom_data.get("raw", 0.0)
 
         ranked.append({
             "id": p.get("id"),

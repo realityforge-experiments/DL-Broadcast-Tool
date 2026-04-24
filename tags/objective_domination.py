@@ -22,49 +22,27 @@ def dom_summary(tier, pct):
 # ---------------------------------------------------------
 
 def compute_dom_raw(pdata):
-    """
-    Computes a normalized 0–1 Domination Objective Specialist score.
-    Uses ONLY Domination stats:
-        - captures
-        - counters
-    """
+    # Try career totals first
+    caps = pdata.get("career", {}).get("DOM_Captures") or pdata.get("DOM_Captures") or 0
+    counters = pdata.get("career", {}).get("DOM_Counters") or pdata.get("DOM_Counters") or 0
+    maps = max(1, pdata.get("career", {}).get("maps") or 1)
 
-    matches = pdata.get("matches", [])
-    if not matches:
-        return 0.05  # minimum floor
+    # If no career totals, try matches
+    if caps == 0 and counters == 0:
+        matches = pdata.get("matches", [])
+        for m in matches:
+            caps += m.get("DOM_Captures", 0) or m.get("DOM_captures", 0)
+            counters += m.get("DOM_Counters", 0) or m.get("DOM_counters", 0)
+    
+    avg_caps = caps / maps
+    avg_counters = counters / maps
 
-    dom_matches = 0
-    total_caps = 0
-    total_counters = 0
+    # Use a lower log base to make small numbers more visible to the score
+    cap_rate = math.log1p(avg_caps) / math.log1p(10.0) 
+    counter_rate = math.log1p(avg_counters) / math.log1p(10.0)
 
-    for m in matches:
-        caps = m.get("DOM_Captures", 0) or 0
-        counters = m.get("DOM_Counters", 0) or 0
-
-        # Skip matches with no DOM stats
-        if caps == 0 and counters == 0:
-            continue
-
-        dom_matches += 1
-        total_caps += caps
-        total_counters += counters
-
-    if dom_matches == 0:
-        return 0.05  # minimum floor
-
-    avg_caps = total_caps / dom_matches
-    avg_counters = total_counters / dom_matches
-
-    # Log-scaled normalization (smooth extremes, expand mid-range)
-    cap_rate = math.log1p(avg_caps) / math.log1p(15.0)
-    counter_rate = math.log1p(avg_counters) / math.log1p(15.0)
-
-    # Counters weighted more heavily (deny enemy scoring)
     raw = (0.40 * cap_rate) + (0.60 * counter_rate)
-
-    # Soft clamp
-    raw = max(0.05, min(raw, 1.0))
-    return raw
+    return max(0.05, min(raw, 1.0))
 
 
 # ---------------------------------------------------------
