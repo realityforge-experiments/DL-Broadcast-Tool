@@ -1417,36 +1417,133 @@ class DashLeagueGUI:
         from analysis.rookie_leaderboard import rank_rookies_by_tag
         season = self.current_season
         tag = "slayer" 
-
+        
         rookies = rank_rookies_by_tag(season, tag)
 
+        # 1. Text display for the GUI window
         lines = []
         lines.append(f"ROOKIE LEADERBOARD — Season {season}")
         lines.append("Rookies: < 50 maps and < 1000 kills.")
         lines.append("")
-        # Updated Header
         lines.append(f"{'Rank':<5} {'Name':<18} {'Team':<12} {'Score':<10} {'KD':<6} {'Maps':<6} {'Kills':<8}")
         lines.append("-" * 75)
 
         for r in rookies:
-            # Format thousands for score (e.g. 96,107)
             score_str = f"{int(r['score']):,}" 
             kd_str = f"{r['kd']:.2f}"
             maps_str = f"{int(r['maps'])}"
             kills_str = f"{int(r['kills'])}"
-            
             lines.append(f"{r['rank']:<5} {r['name']:<18} {r['team']:<12} {score_str:<10} {kd_str:<6} {maps_str:<6} {kills_str:<8}")
 
         text = "\n".join(lines)
 
         win = tk.Toplevel(self.root)
         win.title("Rookie Standings")
-        win.geometry("800x550")
+        win.geometry("800x600")
 
         output = tk.Text(win, wrap="none", font=("Courier", 10))
         output.pack(expand=True, fill="both", padx=10, pady=10)
         output.insert(tk.END, text)
         output.config(state="disabled")
+
+        # 2. HTML Export function for OBS Browser Source
+        def export_html():
+            html_rows = ""
+            for r in rookies:
+                html_rows += f"""
+                <tr>
+                    <td class="rank">#{r['rank']}</td>
+                    <td class="name">{r['name']}</td>
+                    <td class="team">{r['team']}</td>
+                    <td class="score">{int(r['score']):,}</td>
+                    <td class="kd">{r['kd']:.2f}</td>
+                    <td class="kills">{int(r['kills'])}</td>
+                    <td class="maps">{int(r['maps'])}</td>
+                </tr>
+                """
+
+            html_content = f"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <style>
+                body {{
+                    background-color: rgba(10, 10, 15, 0.95);
+                    color: #ffffff;
+                    font-family: 'Segoe UI', Arial, sans-serif;
+                    margin: 30px;
+                    padding: 20px;
+                    border-radius: 12px;
+                    border: 2px solid #0d86f4;
+                }}
+                h1 {{
+                    text-align: center;
+                    color: #0d86f4;
+                    font-size: 32px;
+                    margin-bottom: 5px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                }}
+                .subtitle {{
+                    text-align: center;
+                    color: #aaaaaa;
+                    font-size: 16px;
+                    margin-bottom: 30px;
+                }}
+                table {{
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-size: 20px;
+                }}
+                th {{
+                    border-bottom: 4px solid #f40d35;
+                    padding: 15px;
+                    text-align: left;
+                    color: #aaaaaa;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }}
+                td {{
+                    padding: 15px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                }}
+                .rank {{ font-weight: bold; color: #0d86f4; width: 8%; }}
+                .name {{ font-weight: bold; width: 25%; }}
+                .team {{ color: #aaaaaa; width: 17%; }}
+                .score {{ text-align: right; width: 15%; font-family: monospace; font-weight: bold; }}
+                .kd {{ text-align: right; width: 10%; font-family: monospace; }}
+                .kills {{ text-align: right; width: 10%; font-family: monospace; color: #f40d35; }}
+                .maps {{ text-align: right; width: 15%; font-family: monospace; }}
+            </style>
+            </head>
+            <body>
+                <h1>Rookie Leaderboard</h1>
+                <div class="subtitle">Season {season} | &lt; 50 maps and &lt; 1000 kills</div>
+                <table>
+                    <tr>
+                        <th class="rank">Rank</th>
+                        <th class="name">Name</th>
+                        <th class="team">Team</th>
+                        <th class="score">Score</th>
+                        <th class="kd">KD</th>
+                        <th class="kills">Kills</th>
+                        <th class="maps">Maps</th>
+                    </tr>
+                    {html_rows}
+                </table>
+            </body>
+            </html>
+            """
+            # Save to exports folder
+            html_path = os.path.join(OBS_EXPORT_DIR, "rookie_leaderboard.html")
+            with open(html_path, "w", encoding="utf-8") as f:
+                f.write(html_content)
+                
+            self.set_status("Exported Rookie HTML (incl. Kills)")
+            messagebox.showinfo("Exported", f"HTML updated\nLocation: {html_path}")
+
+        # Add button to pop-up window
+        ttk.Button(win, text="Export HTML for OBS Browser Source", command=export_html).pack(pady=10)
 
         
     def export_all_obs_files(self):

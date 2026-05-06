@@ -163,7 +163,7 @@ def generate_team_dna(rosterA, rosterB, nameA, nameB):
     img.save(DNA_PATH)
 
 def draw_vs_donut(draw, center, radius, valA, valB, colorA, colorB, label):
-    """Draws a split donut showing relative strength between two teams."""
+    """Draws a split donut showing relative strength, matching screen sides perfectly."""
     cx, cy = center
     width = 35
     total = valA + valB
@@ -171,23 +171,27 @@ def draw_vs_donut(draw, center, radius, valA, valB, colorA, colorB, label):
         valA, valB = 50, 50
         total = 100
         
-    # Percentages of the circle
     pctA = valA / total
     
-    # Background circle
+    # Draw background circle
     draw.ellipse([cx-radius, cy-radius, cx+radius, cy+radius], outline=(40, 40, 45), width=width)
     
-    # Arcs
-    start_angle = -90
-    split_angle = start_angle + (360 * pctA)
+    # --- SWAP CORRECTION ---
+    # We start at 90 degrees (6 o'clock) and draw clockwise. 
+    # This aligns Team A (Blue, Left) with the Left Side of the donut, 
+    # and Team B (Red, Right) with the Right Side.
+    startA = 90
+    endA = startA + (360 * pctA)
     
-    # Blue Arc (Team A)
-    draw.arc([cx-radius, cy-radius, cx+radius, cy+radius], start=start_angle, end=split_angle, fill=colorA, width=width)
-    # Red Arc (Team B)
-    draw.arc([cx-radius, cy-radius, cx+radius, cy+radius], start=split_angle, end=start_angle + 360, fill=colorB, width=width)
+    # Blue Arc (Team A - Left side)
+    draw.arc([cx-radius, cy-radius, cx+radius, cy+radius], start=startA, end=endA, fill=colorA, width=width)
+    # Red Arc (Team B - Right side)
+    draw.arc([cx-radius, cy-radius, cx+radius, cy+radius], start=endA, end=startA + 360, fill=colorB, width=width)
     
     # Center Text
-    draw.text((cx, cy), f"{int((valA/total)*100)}% | {int((valB/total)*100)}%", font=get_font(45), fill=(255, 255, 255), anchor="mm")
+    pctA_display = int((valA/total)*100)
+    pctB_display = 100 - pctA_display
+    draw.text((cx, cy), f"{pctA_display}% | {pctB_display}%", font=get_font(45), fill=(255, 255, 255), anchor="mm")
     draw.text((cx, cy + radius + 60), label, font=get_font(40), fill=(180, 180, 180), anchor="mm")
 
 def generate_win_probability(rosterA, rosterB, nameA, nameB):
