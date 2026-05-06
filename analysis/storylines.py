@@ -43,7 +43,8 @@ def summarize_team_tags(team_players):
         # FIX: safe top-tier calculation
         # -----------------------------
         valid_tiers = [t for t in tiers if t in "SABCD"]
-        top_tier = max(valid_tiers, key=lambda t: "SABCD".index(t)) if valid_tiers else "-"
+        from data.tag_framework import tier_from_percentile
+        top_tier = tier_from_percentile(safe_avg(pcts)) # Map the average pct to a tier
 
         summary[tag] = {
             "avg_pct": safe_avg(pcts),

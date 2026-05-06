@@ -1772,7 +1772,8 @@
         "0e7eb1b9-03c7-41a6-b211-3ada1d85935c"
       ],
       "names": [
-        "Spaghetti"
+        "Spaghetti",
+        "Spaghetti CLNM"
       ],
       "team_history": [
         "ZTi"
@@ -1820,7 +1821,9 @@
       "names": [
         "Toga280"
       ],
-      "team_history": [],
+      "team_history": [
+        "F1R3"
+      ],
       "first_season": 1,
       "last_season": 10
     },
@@ -7797,7 +7800,9 @@
       "names": [
         "Java"
       ],
-      "team_history": [],
+      "team_history": [
+        "RVNG"
+      ],
       "first_season": 27,
       "last_season": 10
     },
@@ -9293,7 +9298,9 @@
       "names": [
         "XyLo"
       ],
-      "team_history": [],
+      "team_history": [
+        "AGGG"
+      ],
       "first_season": 48,
       "last_season": 10
     },

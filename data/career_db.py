@@ -197,7 +197,29 @@ def build_career_database(output_path):
 
         # --- Advanced Tags ---
         pdata["anchor"] = compute_anchor_for_career_player(pdata, league_averages, distributions["anchor"], raw_cons)
+        
+        # FIX: Ensure we use the pre-calculated clutch_distribution
         pdata["clutch"] = compute_clutch(pdata, league_averages, clutch_distribution)
+
+        # --- Breaker Tag (Ensure distribution is full) ---
+        # Calculate raw for everyone to build a proper distribution
+        all_breaker_raws = []
+        for inner_p in all_players:
+            ic = inner_p["career"]
+            all_breaker_raws.append(compute_breaker_raw(ic["damage"]/max(1,ic["maps"]), ic["kills"]/max(1,ic["maps"])))
+        all_breaker_raws.sort()
+
+        dmg_map = career["damage"] / max(1, career["maps"])
+        kills_map = career["kills"] / max(1, career["maps"])
+        raw_breaker = compute_breaker_raw(dmg_map, kills_map)
+        break_pct = percentile_rank(raw_breaker, all_breaker_raws)
+        
+        pdata["breaker"] = {
+            "raw": raw_breaker,
+            "pct": break_pct,
+            "tier": tier_from_percentile(break_pct),
+            "summary": f"{tier_from_percentile(break_pct)} Tier Offensive Disruptor"
+        }
 
         # --- Breaker Tag ---
         dmg_map = career["damage"] / max(1, career["maps"])

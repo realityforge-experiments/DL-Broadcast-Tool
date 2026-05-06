@@ -89,3 +89,18 @@ def get_player_match_history(player_uuid):
     """
     rows = query(sql, (player_uuid,))
     return aggregate_rounds_into_matches(rows)
+    
+    
+def get_team_history_stats(team_uuid):
+    sql = """
+        SELECT 
+            COUNT(DISTINCT MatchID) as total_matches,
+            SUM(Kills) as total_kills,
+            SUM(Score) as total_score,
+            MIN(CycleID) as first_season
+        FROM aggregate_stats_table -- Adjust name based on your schema
+        WHERE TeamUUID = ?
+    """
+    # Note: If your schema doesn't have a direct team stats table, 
+    # we would aggregate the 'stats' table joined with 'matches'.
+    return query_one(sql, (team_uuid,))

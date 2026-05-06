@@ -226,20 +226,17 @@ class DashLeagueGUI:
         self.sync_button = ttk.Button(top_frame, text="Sync Stats", command=self.on_sync_stats)
         self.sync_button.grid(row=0, column=1, padx=(0, 10))
 
-        self.spotlight_button = ttk.Button(top_frame, text="Player Spotlight", command=self.on_player_spotlight)
-        self.spotlight_button.grid(row=0, column=2, padx=(0, 10))
-
         self.team_id_button = ttk.Button(top_frame, text="Team Identity", command=self.on_team_identity)
-        self.team_id_button.grid(row=0, column=3, padx=(0, 10))
+        self.team_id_button.grid(row=0, column=2, padx=(0, 10))
 
         self.storyline_button = ttk.Button(top_frame, text="Match Storyline", command=self.on_match_storyline)
-        self.storyline_button.grid(row=0, column=4, padx=(0, 10))
+        self.storyline_button.grid(row=0, column=3, padx=(0, 10))
 
         self.rankings_button = ttk.Button(top_frame, text="Rankings", command=self.on_rankings)
-        self.rankings_button.grid(row=0, column=5, padx=(0, 10))
+        self.rankings_button.grid(row=0, column=4, padx=(0, 10))
         
         self.rookie_button = ttk.Button(top_frame, text="Rookie Leaderboard", command=self.on_rookie_leaderboard)
-        self.rookie_button.grid(row=0, column=6, padx=(0, 10))
+        self.rookie_button.grid(row=0, column=5, padx=(0, 10))
         
         self.output_folder_button = ttk.Button(
             top_frame,
@@ -289,6 +286,16 @@ class DashLeagueGUI:
         
         ttk.Label(bottom_frame, text="Map:").grid(row=0, column=1, padx=(10, 5))
         ttk.OptionMenu(bottom_frame, self.map_var, "Payload", "Payload", "Domination").grid(row=0, column=2)
+        
+        # Create a specific section for the 4K Graphics
+        broadcast_frame = ttk.LabelFrame(main_frame, text="4K Broadcast Graphics", padding=10)
+        broadcast_frame.grid(row=3, column=0, columnspan=2, sticky="ew", pady=(10, 0))
+
+        ttk.Button(broadcast_frame, text="Player Spotlight", command=self.on_player_spotlight).grid(row=0, column=0, padx=5)
+        ttk.Button(broadcast_frame, text="Tale of the Tape (PvP)", command=self.on_tale_of_the_tape).grid(row=0, column=1, padx=5)
+        ttk.Button(broadcast_frame, text="Team vs Team (DNA)", command=self.on_team_comparison).grid(row=0, column=2, padx=5)
+        ttk.Button(broadcast_frame, text="Win Probability", command=self.on_win_probability).grid(row=0, column=3, padx=5)
+        
 
         status_frame = ttk.Frame(self.root)
         status_frame.grid(row=1, column=0, sticky="ew")
@@ -299,6 +306,86 @@ class DashLeagueGUI:
     def set_status(self, text):
         self.status_var.set(text)
         self.root.update_idletasks()
+        
+        
+    # Add these methods inside the DashLeagueGUI class
+
+    def get_team_roster_data(self, team_name):
+        """Helper to get full career data for the current 5-man roster."""
+        career_path = os.path.join(BASE_DIR, "career_stats.json")
+        with open(career_path, "r", encoding="utf-8") as f:
+            db = json.load(f)
+        
+        roster_data = []
+        # Filter match players for this specific team
+        team_players = [p for p in self.current_match_players if p.get("team") == team_name]
+        
+        for p in team_players:
+            cid = p.get("canonical")
+            if cid in db["players"]:
+                # Merge match team info with career stats
+                p_data = db["players"][cid]
+                p_data["current_team"] = team_name
+                roster_data.append(p_data)
+        return roster_data
+
+    def on_tale_of_the_tape(self):
+        if not self.current_match_players:
+            messagebox.showerror("Error", "Generate Player Slots first.")
+            return
+
+        team_a = self.team_a_var.get()
+        team_b = self.team_b_var.get()
+
+        roster_a = self.get_team_roster_data(team_a)
+        roster_b = self.get_team_roster_data(team_b)
+
+        from utils.graphics_engine import generate_tale_of_the_tape
+        try:
+            generate_tale_of_the_tape(roster_a, roster_b, team_a, team_b)
+            self.set_status("Generated 4K Tale of the Tape (PvP)")
+            messagebox.showinfo("Success", "PvP Graphic generated in obs_exports.")
+        except Exception as e:
+            messagebox.showerror("Graphics Error", str(e))
+
+    def on_team_comparison(self):
+        if not self.current_match_players:
+            messagebox.showerror("Error", "Generate Player Slots first.")
+            return
+
+        team_a = self.team_a_var.get()
+        team_b = self.team_b_var.get()
+
+        roster_a = self.get_team_roster_data(team_a)
+        roster_b = self.get_team_roster_data(team_b)
+
+        from utils.graphics_engine import generate_team_dna
+        try:
+            generate_team_dna(roster_a, roster_b, team_a, team_b)
+            self.set_status("Generated 4K Team DNA Graphic")
+            messagebox.showinfo("Success", "Team DNA Graphic generated in obs_exports.")
+        except Exception as e:
+            messagebox.showerror("Graphics Error", str(e))    
+
+            
+    def on_win_probability(self):
+        if not self.current_match_players:
+            messagebox.showerror("Error", "Generate Player Slots first.")
+            return
+
+        team_a = self.team_a_var.get()
+        team_b = self.team_b_var.get()
+        roster_a = self.get_team_roster_data(team_a)
+        roster_b = self.get_team_roster_data(team_b)
+
+        from utils.graphics_engine import generate_win_probability
+        try:
+            generate_win_probability(roster_a, roster_b, team_a, team_b)
+            self.set_status("Generated 4K Win Probability Graphic")
+            messagebox.showinfo("Success", "Win Probability Graphic generated in obs_exports.")
+        except Exception as e:
+            messagebox.showerror("Graphics Error", str(e))   
+            
 
     def on_sync_stats(self):
         try:
@@ -793,82 +880,92 @@ class DashLeagueGUI:
                 
                 
     def on_player_spotlight(self):
-        # 1. Check if players are actually selected for a match
         if not self.current_match_players:
-            messagebox.showerror("Error", "Please select teams and click 'Generate Player Slots' first.")
+            messagebox.showerror("Error", "Please generate player slots first.")
             return
 
-        # 2. Get names ONLY from the 10 players in the current match
-        names = [p["name"] for p in self.current_match_players]
-        names.sort()
+        # Prepare the list of players and names
+        players = self.current_match_players
+        names = [p["name"] for p in players]
+        self.spotlight_idx = 0 
 
-        # Load the career DB once so the 'show' function can pull match history for trends
+        # Load the career DB for Trend/Tag data
         career_path = os.path.join(BASE_DIR, "career_stats.json")
         with open(career_path, "r", encoding="utf-8") as f:
             db = json.load(f)
 
         win = tk.Toplevel(self.root)
-        win.title("Match Player Spotlight")
-        win.geometry("450x550")
+        win.title("Spotlight Operator")
+        win.geometry("500x700")
 
-        ttk.Label(win, text="Select a Player from this Match:").pack(anchor="w", padx=10, pady=5)
-        combo = ttk.Combobox(win, values=names, state="readonly")
-        combo.pack(fill="x", padx=10)
+        ttk.Label(win, text="Active Spotlight Player:").pack(pady=5)
+        
+        # Dropdown selection
+        combo_var = tk.StringVar()
+        combo = ttk.Combobox(win, textvariable=combo_var, values=names, state="readonly")
+        combo.pack(fill="x", padx=20)
 
-        output = tk.Text(win, wrap="word", font=("Courier", 10))
-        output.pack(expand=True, fill="both", padx=10, pady=10)
+        output = tk.Text(win, wrap="word", font=("Courier", 10), height=20)
+        output.pack(expand=True, fill="both", padx=20, pady=10)
 
-        def show():
-            selected_name = combo.get()
-            if not selected_name:
-                return
+        def update_spotlight(idx):
+            self.spotlight_idx = idx % len(players)
+            p_match = players[self.spotlight_idx]
+            selected_name = p_match["name"]
+            combo_var.set(selected_name)
 
-            # Find the match player object (this has the current team/side info)
-            match_p = next((p for p in self.current_match_players if p["name"] == selected_name), None)
-            
-            # Find the full career object (this has the history/matches for the graphics engine)
-            cid = match_p.get("canonical")
+            # Get full career data
+            cid = p_match.get("canonical")
             player_data = db["players"].get(cid)
 
             if not player_data:
                 output.delete("1.0", tk.END)
-                output.insert(tk.END, "Error: Player data not found in career database.")
+                output.insert(tk.END, f"Data missing for {selected_name}")
                 return
 
-            # Determine Team Side for Colors
-            # If the player is in the Team B listbox, they are 'Red'
-            side = "Blue"
+            # Determine Side
             team_b_names = [self.team_b_listbox.get(i) for i in range(self.team_b_listbox.size())]
-            if selected_name in team_b_names:
-                side = "Red"
+            side = "Red" if selected_name in team_b_names else "Blue"
 
-            # 3. Trigger the 4K Graphic
+            # Generate 4K PNG
             from utils.graphics_engine import generate_player_card
             try:
-                img_path = generate_player_card(player_data, team_side=side)
-                self.set_status(f"Generated 4K Spotlight: {selected_name}")
+                generate_player_card(player_data, team_side=side)
+                self.set_status(f"Updated 4K Graphic: {selected_name}")
             except Exception as e:
                 print(f"Graphics Error: {e}")
 
-            # 4. Generate the Text Preview for the GUI window
+            # Update Text Preview
             career = player_data["career"]
-            text = f"PLAYER SPOTLIGHT: {selected_name}\n"
-            text += f"Team: {match_p.get('team', 'Unknown')}\n"
-            text += f"-----------------------------------\n\n"
-            text += f"CAREER STATS:\n"
-            text += f"Kills:  {int(career['kills']):,}\n"
-            text += f"Maps:   {int(career['maps'])}\n"
-            text += f"KD:     {career['KD']:.2f}\n\n"
-            
-            text += f"TAG PERCENTILES:\n"
+            text = f"PLAYER: {selected_name}\n"
+            text += f"Team:   {p_match.get('team', 'Unknown')}\n"
+            text += f"Side:   {side}\n"
+            text += "-"*30 + "\n"
+            text += f"Kills:  {int(career.get('kills',0)):,}\n"
+            text += f"Maps:   {int(career.get('maps',0))}\n"
+            text += f"KD:     {career.get('KD',0):.2f}\n\n"
+            text += "SKILL PERCENTILES:\n"
             for tag in ["slayer", "sharpshooter", "consistency", "clutch", "anchor"]:
                 t_obj = player_data.get(tag, {})
-                text += f"{tag.title():<14}: {t_obj.get('tier', 'D')} ({t_obj.get('pct', 0):.0f}%)\n"
+                text += f"{tag.title():<14}: {t_obj.get('pct',0):.0f}%\n"
 
             output.delete("1.0", tk.END)
             output.insert(tk.END, text)
 
-        ttk.Button(win, text="Generate 4K Graphic", command=show).pack(pady=10)
+        # Button logic
+        btn_frame = ttk.Frame(win)
+        btn_frame.pack(pady=10)
+
+        ttk.Button(btn_frame, text="<< Prev", 
+                   command=lambda: update_spotlight(self.spotlight_idx - 1)).grid(row=0, column=0, padx=5)
+        ttk.Button(btn_frame, text="Next >>", 
+                   command=lambda: update_spotlight(self.spotlight_idx + 1)).grid(row=0, column=1, padx=5)
+
+        # Sync dropdown selection to buttons
+        combo.bind("<<ComboboxSelected>>", lambda e: update_spotlight(names.index(combo.get())))
+
+        # Initialize first player
+        update_spotlight(0)
 
     def on_team_identity(self):
         team = self.team_a_var.get()
