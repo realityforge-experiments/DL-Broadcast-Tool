@@ -1,12 +1,6 @@
 def build_player_summary(player):
     """
     Builds a caster-ready summary block for a single player.
-    Uses:
-        - Slayer
-        - Payload Objective
-        - Sharpshooter
-        - Consistency
-        - Clutch
     """
 
     def safe_pct(value):
@@ -20,11 +14,13 @@ def build_player_summary(player):
 
     name = player.get("name", "Unknown Player")
 
+    # --- DEFINE ALL TAGS HERE ---
     slayer = player.get("slayer", {})
     payload = player.get("objective_payload", {})
     sharp = player.get("sharpshooter", {})
     consistency = player.get("consistency", {})
     clutch = player.get("clutch", {})
+    breaker = player.get("breaker", {}) # <--- FIXED: Added this line
 
     lines = []
     lines.append(f"{name}\n")
