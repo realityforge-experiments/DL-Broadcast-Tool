@@ -6,6 +6,14 @@ import math
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CAREER_DB_PATH = os.path.join(BASE_DIR, "final_db.json")
+CAREER_STATS_PATH = os.path.join(BASE_DIR, "career_stats.json")
+
+
+def load_career_stats_db():
+    if not os.path.exists(CAREER_STATS_PATH):
+        return None
+    with open(CAREER_STATS_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 # ---------------------------------------------------------
@@ -117,25 +125,14 @@ def rank_match_players_consistency(match_players):
 # ---------------------------------------------------------
 
 def rank_match_players_clutch(match_players):
-    ranked = []
-
-    for p in match_players:
-        tag = p.get("clutch", {})
-        raw = tag.get("raw", 0.0)
-
-        ranked.append({
-            "name": p.get("name", "Unknown"),
-            "team": p.get("team", ""),
-            "score_raw": raw,
-            "score_display": f"{raw:.2f}",
-        })
-
-    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
-
-    for i, r in enumerate(ranked, 1):
-        r["rank"] = i
-
-    return ranked
+    """
+    Uses the same attached-tag pattern as Slayer/Sharpshooter/Payload.
+    The previous version of this function only ever returned name/team/
+    score_raw/score_display — it never included "pct" at all, so no
+    amount of fixing the underlying data could have made a percentile
+    show up here; the field simply wasn't being read/returned.
+    """
+    return _add_score_fields(_rank_by_attached_tag(match_players, "clutch"))
 
 
 # ---------------------------------------------------------
@@ -153,6 +150,44 @@ def split_two_columns(ranked_players, team_a_name, team_b_name):
     return left, right
 
 
+def _rank_by_attached_tag(match_players, tag_name):
+    """
+    Ranks using whatever's already attached to each player object
+    (p[tag_name]) — the same career_stats.json-sourced data
+    on_generate_slots already attached — instead of
+    rank_match_players_by_tag()'s independent final_db.json lookup by
+    raw UUID. That lookup was a completely separate, stale data source
+    from career_stats.json, keyed differently, and any player missing
+    from final_db.json was silently dropped from the ranking entirely.
+
+    "has_data" marks whether this player actually HAS a real tag
+    entry, vs an empty/missing one defaulting to 0. Without this
+    distinction, a player with no career data (e.g. not yet present in
+    the local match-history cache used to build career_stats.json)
+    looks identical to a player who genuinely scored the worst possible
+    result — which silently drags their team's average down in every
+    prediction, exactly as if they were a liability rather than simply
+    unmeasured.
+    """
+    ranked = []
+    for p in match_players:
+        tag = p.get(tag_name) or {}
+        ranked.append({
+            "id": p.get("id"),
+            "name": p.get("name", "Unknown"),
+            "team": p.get("team", "Unknown"),
+            "pct": tag.get("pct", 0),
+            "raw": tag.get("raw", 0.0),
+            "tier": tag.get("tier", "D"),
+            "summary": tag.get("summary", ""),
+            "has_data": tag.get("has_data", bool(tag)),
+        })
+    ranked.sort(key=lambda x: x["pct"], reverse=True)
+    for i, r in enumerate(ranked, 1):
+        r["rank"] = i
+    return ranked
+
+
 # ---------------------------------------------------------
 # Legacy-Compatible Wrappers (GUI expects these)
 # ---------------------------------------------------------
@@ -166,15 +201,15 @@ def _add_score_fields(ranked):
 
 
 def rank_match_players_slayer(match_players):
-    return _add_score_fields(rank_match_players_by_tag(match_players, "slayer"))
+    return _add_score_fields(_rank_by_attached_tag(match_players, "slayer"))
 
 
 def rank_match_players_sharpshooter(match_players):
-    return _add_score_fields(rank_match_players_by_tag(match_players, "sharpshooter"))
+    return _add_score_fields(_rank_by_attached_tag(match_players, "sharpshooter"))
 
 
 def rank_match_players_objpl(match_players):
-    return _add_score_fields(rank_match_players_by_tag(match_players, "objective_payload"))
+    return _add_score_fields(_rank_by_attached_tag(match_players, "objective_payload"))
 
 def rank_match_players_objdom(match_players):
     ranked = []
@@ -190,6 +225,7 @@ def rank_match_players_objdom(match_players):
             "team": p.get("team"),
             "score_raw": raw,
             "score_display": f"{raw:.2f}",
+            "has_data": bool(dom_data),
         })
 
     ranked.sort(key=lambda x: x["score_raw"], reverse=True)
@@ -202,21 +238,36 @@ def rank_match_players_objdom(match_players):
     
 def rank_match_players_consistency_career(match_players):
     """
-    Wraps rank_match_players_by_tag('consistency') so the output matches
-    the expected structure for the rankings UI.
+    Ranks by each player's career-level Consistency tag, read directly
+    from career_stats.json BY CANONICAL ID — not the old final_db.json,
+    a separate stale file keyed by raw UUID that many current players
+    (and anyone resolved/merged since it was last built) simply aren't
+    in, silently scoring them 0.
     """
-    ranked = rank_match_players_by_tag(match_players, "consistency")
-    out = []
-    for i, p in enumerate(ranked, 1):
-        out.append({
-            "rank": i,
-            "id": p["id"],
-            "name": p["name"],
+    career_db = load_career_stats_db()
+    players_db = career_db.get("players", {}) if career_db else {}
+
+    ranked = []
+    for p in match_players:
+        cid = p.get("canonical")
+        pdata = players_db.get(cid, {}) if cid else {}
+        tag = pdata.get("consistency", {})
+        raw = tag.get("raw", 0.0)
+        ranked.append({
+            "id": p.get("id"),
+            "name": p.get("name", "Unknown"),
             "team": p.get("team", "Unknown"),
-            "score_raw": p["raw"],
-            "score_display": f"{p['raw']:.2f}",
+            "score_raw": raw,
+            "score_display": f"{raw:.2f}",
+            "pct": tag.get("pct"),
+            "tier": tag.get("tier"),
+            "has_data": bool(tag),
         })
-    return out
+
+    ranked.sort(key=lambda x: x["score_raw"], reverse=True)
+    for i, r in enumerate(ranked, 1):
+        r["rank"] = i
+    return ranked
 
 # ---------------------------------------------------------
 # Legacy Slayer Prediction Wrapper
@@ -225,11 +276,22 @@ def rank_match_players_consistency_career(match_players):
 def compute_slayer_prediction(team_a_players, team_b_players):
     """
     Legacy wrapper for GUI compatibility.
-    Uses modern slayer.raw values instead of legacy slayer_score_raw.
+
+    IMPORTANT: team_a_players/team_b_players here are the RANKED ROW
+    dicts produced by rank_match_players_slayer() (id/name/team/pct/
+    raw/tier/...), not the original match player objects — "raw" is a
+    TOP-LEVEL key on these rows, not nested under a "slayer" key. This
+    previously read p.get("slayer", {}).get("raw", 0.0), which doesn't
+    exist on these rows and always silently returned 0.0 for every
+    player on both teams — making the win prediction always compute to
+    a flat, meaningless 50/50 regardless of the real data, while the
+    Relative Advantage shown alongside it (computed correctly elsewhere
+    from the same rows' real score_raw) told a completely different,
+    accurate story. Reading "raw" directly fixes that mismatch.
     """
 
-    A = [p.get("slayer", {}).get("raw", 0.0) for p in team_a_players]
-    B = [p.get("slayer", {}).get("raw", 0.0) for p in team_b_players]
+    A = [p.get("raw", 0.0) for p in team_a_players]
+    B = [p.get("raw", 0.0) for p in team_b_players]
 
     teamA_avg = sum(A) / max(1, len(A))
     teamB_avg = sum(B) / max(1, len(B))

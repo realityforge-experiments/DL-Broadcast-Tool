@@ -3,7 +3,7 @@
 from analysis.team_identity_v2 import generate_team_identity_block
 from analysis.team_identity_v2 import summarize_team_tags
 
-__all__ = ["matchup_storyline", "generate_storyline"]
+__all__ = ["matchup_storyline", "generate_storyline", "matchup_narrative"]
 
 
 # ---------------------------------------------------------
@@ -12,15 +12,19 @@ __all__ = ["matchup_storyline", "generate_storyline"]
 
 from utils.safe_tag import safe_pct, safe_tier, safe_avg
 
-def summarize_team_tags(team_players):
+def summarize_team_tags(team_players, map_type="Payload"):
     """
-    Aggregates tag tiers + percentiles for a team.
+    Aggregates tag tiers + percentiles for a team. Only includes the
+    objective tag for whichever mode is actually being played
+    (map_type), not both Payload and Domination — the other one isn't
+    relevant to this match and would just be a wasted/misleading line.
     """
+
+    objective_tag = "objective_domination" if map_type == "Domination" else "objective_payload"
 
     tags = [
         "slayer",
-        "objective_payload",
-        "objective_domination",
+        objective_tag,
         "sharpshooter",
         "consistency",
         "clutch",
@@ -63,17 +67,19 @@ def summarize_team_tags(team_players):
 # Team Strength Comparison
 # ---------------------------------------------------------
 
-def compare_team_strengths(teamA, teamB, team_a_name, team_b_name):
+def compare_team_strengths(teamA, teamB, team_a_name, team_b_name, map_type="Payload"):
     """
     Compares two team tag summaries and returns storyline points.
     """
 
     storyline = []
 
+    objective_tag = "objective_domination" if map_type == "Domination" else "objective_payload"
+    objective_label = "Domination Objective" if map_type == "Domination" else "Payload Objective"
+
     tags = {
         "slayer": "Slayer (Elimination Pressure)",
-        "objective_payload": "Payload Objective",
-        "objective_domination": "Domination Objective",
+        objective_tag: objective_label,
         "sharpshooter": "Sharpshooter (Accuracy)",
         "consistency": "Consistency (Stability)",
         "clutch": "Clutch (High-Pressure Performance)",
@@ -113,7 +119,7 @@ def compare_team_strengths(teamA, teamB, team_a_name, team_b_name):
 # Main Storyline Generator
 # ---------------------------------------------------------
 
-def generate_storyline(teamA_players, teamB_players):
+def generate_storyline(teamA_players, teamB_players, map_type="Payload"):
     """
     Generates a full caster-ready storyline block.
     """
@@ -123,11 +129,11 @@ def generate_storyline(teamA_players, teamB_players):
     team_b_name = teamB_players[0].get("team", "Team B")
 
     # 1. Summaries
-    A = summarize_team_tags(teamA_players)
-    B = summarize_team_tags(teamB_players)
+    A = summarize_team_tags(teamA_players, map_type)
+    B = summarize_team_tags(teamB_players, map_type)
 
     # 2. Strength comparison
-    matchup_points = compare_team_strengths(A, B, team_a_name, team_b_name)
+    matchup_points = compare_team_strengths(A, B, team_a_name, team_b_name, map_type)
 
     # 3. Identify elite players
     elite_A = [p["name"] for p in teamA_players if p.get("slayer", {}).get("tier") == "S"]
@@ -178,8 +184,44 @@ def generate_storyline(teamA_players, teamB_players):
 # Legacy Wrapper (GUI expects this exact name)
 # ---------------------------------------------------------
 
-def matchup_storyline(teamA_players, teamB_players):
+def matchup_storyline(teamA_players, teamB_players, map_type="Payload"):
     """
     Legacy wrapper for GUI compatibility.
     """
-    return generate_storyline(teamA_players, teamB_players)
+    return generate_storyline(teamA_players, teamB_players, map_type)
+
+
+def matchup_narrative(teamA_players, teamB_players, map_type="Payload"):
+    """
+    Just the narrative parts of the storyline — Elite Players and
+    Matchup Breakdown — WITHOUT the title line or the per-team tag
+    identity dump that generate_storyline() includes. Used for the HTML
+    export, where the title is already rendered once as a page header
+    and the team identities are already shown as their own side-by-side
+    cards; repeating both inside the narrative text just wastes space
+    and forces unnecessary scrolling. Only the currently-played mode's
+    objective tag is considered, not both.
+    """
+    team_a_name = teamA_players[0].get("team", "Team A")
+    team_b_name = teamB_players[0].get("team", "Team B")
+
+    A = summarize_team_tags(teamA_players, map_type)
+    B = summarize_team_tags(teamB_players, map_type)
+    matchup_points = compare_team_strengths(A, B, team_a_name, team_b_name, map_type)
+
+    elite_A = [p["name"] for p in teamA_players if p.get("slayer", {}).get("tier") == "S"]
+    elite_B = [p["name"] for p in teamB_players if p.get("slayer", {}).get("tier") == "S"]
+
+    lines = []
+    if elite_A:
+        lines.append(f"{team_a_name} Elite Players: {', '.join(elite_A)}")
+    if elite_B:
+        lines.append(f"{team_b_name} Elite Players: {', '.join(elite_B)}")
+    if elite_A or elite_B:
+        lines.append("")
+
+    lines.append("Matchup Breakdown:")
+    for point in matchup_points:
+        lines.append(f"  - {point}")
+
+    return "\n".join(lines)

@@ -6,13 +6,19 @@ import bisect
 
 def percentile_rank(value, distribution):
     """
-    Returns percentile rank (0–100) of value within a sorted distribution list.
+    Returns percentile rank (0–100) of value within a distribution list.
+    Does NOT need to be pre-sorted — bisect requires sorted input to work
+    correctly, and callers were passing values in original (unsorted)
+    order, silently producing wrong indices. Sorting defensively here
+    fixes every caller at once. (Kept in sync with the identical fix in
+    data/tag_framework.py — this is a duplicate module, unfortunately.)
     """
     if not distribution:
         return 0.0
 
-    idx = bisect.bisect_left(distribution, value)
-    pct = (idx / len(distribution)) * 100
+    sorted_distribution = sorted(distribution)
+    idx = bisect.bisect_left(sorted_distribution, value)
+    pct = (idx / len(sorted_distribution)) * 100
     return round(pct, 1)
 
 

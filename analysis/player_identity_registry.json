@@ -860,7 +860,121 @@
     "55c50681-dc1f-4809-bfd4-0ae3672fb248": "player_858",
     "abf1d828-c736-4bba-ab9b-551492d81b72": "player_859",
     "37b3406e-fd71-4a13-aa87-64e0af342f14": "player_860",
-    "d2d2a84a-e89b-409d-80fe-55ab58f8bea8": "player_861"
+    "d2d2a84a-e89b-409d-80fe-55ab58f8bea8": "player_861",
+    "81a89ded-59fc-4b18-91d0-f457897ff65b": "player_862",
+    "19ae1c7e-7fab-418e-862c-c24a7aa3ba5a": "player_863",
+    "67829939-56cc-4673-92ee-4e6a62e09d86": "player_864",
+    "be3a408f-6e14-47f8-a006-3c59a13e1563": "player_865",
+    "47ab1463-8ba7-4126-8095-c2dae23572f1": "player_866",
+    "bace8a2b-22ea-417b-8608-bc1f16e612cc": "player_867",
+    "497c105e-9371-4fb9-896d-4be3fa67f139": "player_868",
+    "bbded3ea-d429-46ad-8432-8a9ba35aac73": "player_869",
+    "e8010aa7-602b-4e83-bc8f-d1cc49e47877": "player_870",
+    "ed239e37-7e8b-4ecf-9c26-be834585409a": "player_871",
+    "06a523fe-696d-4014-b442-bbc760c6dce1": "player_872",
+    "8e124a10-6e65-44ef-90c8-a568f314cbca": "player_873",
+    "778f594c-b59d-4541-9143-8bed49ff0be9": "player_874",
+    "ba788266-de08-416d-914a-b2933b7a174a": "player_875",
+    "831102c9-67d3-4790-a6b0-624c568dd1df": "player_876",
+    "4af4694f-4db5-4975-8260-9afeb9914f90": "player_877",
+    "590503e8-a081-40a6-89d5-2c2a5ec5f6b6": "player_878",
+    "2d79cd34-d377-4559-8251-2f2a625d3975": "player_879",
+    "1cd846dd-33a6-4397-8cc8-edfb8c085bc3": "player_880",
+    "a8084a85-7555-4c0c-bd43-c97852ae20a3": "player_881",
+    "51510108-8b25-4426-9ac8-d0e082b949d8": "player_882",
+    "fd2ed669-2ed1-415e-89a6-a82fe2be36e7": "player_883",
+    "b0c60974-d14a-4bb3-a5f2-843b85fcc15d": "player_884",
+    "cb93d1e9-b10f-4e9c-80a6-503c96080b8d": "player_885",
+    "53fb16db-58af-451b-8753-024658731b9e": "player_886",
+    "65f2d4fe-62b1-4811-b960-93dea326ee9e": "player_887",
+    "cea37306-6d36-4e94-ba5f-8ea4a9918588": "player_888",
+    "cf0da90e-fc60-4c5e-b5d4-f45566afe55c": "player_889",
+    "412f4d54-f9e2-49b4-867b-40ab93025cc0": "player_890",
+    "875a0454-96c5-4228-ad66-9e8a69a8936d": "player_891",
+    "088d5d0c-a902-4b08-b870-771550b4dedc": "player_892",
+    "10aa58de-7de7-4820-9b75-02bab1faee06": "player_893",
+    "d516ef54-bd53-4523-93c5-a96b81d1afde": "player_894",
+    "d87178ae-029f-4ace-9265-d5f74bae8608": "player_895",
+    "02104945-ff20-43ad-a963-24c78621ce5c": "player_896",
+    "8c4fbdfb-18ae-4444-aaf9-62bacfccaf08": "player_897",
+    "ad809f50-4e59-43e6-b782-9db9a4c26781": "player_898",
+    "31e9ee35-14a4-4d16-8751-a1ad4face8cb": "player_899",
+    "7851ddd8-1a88-49e1-a72b-558e099b95b8": "player_900",
+    "25aee442-f50b-462a-9ee4-5fc266e2c20e": "player_901",
+    "da0181d3-3f6f-4107-bb34-d1314160d5ff": "player_902",
+    "acb04f6a-7327-41b1-9ae5-ac173a30196d": "player_903",
+    "150944d8-2cf2-4582-8d5c-5b73a82a0cfd": "player_904",
+    "b16748a0-b424-4bd5-a5dd-7108b606c0ca": "player_905",
+    "adb99037-e7f9-4449-b722-2e3d417b018f": "player_906",
+    "50f399fc-faf2-44f9-817b-d3f7bb6b9251": "player_907",
+    "86b55ab3-7856-4d8a-ba87-9808b87ebbba": "player_908",
+    "e1807d28-19ae-42bd-ad4a-f3d7d53ac557": "player_909",
+    "1c41ac3d-5fd1-432f-a532-f383b64c9b4f": "player_910",
+    "e7408bc3-348d-4f9f-8550-d295897fdc3b": "player_911",
+    "b055115c-b5b2-4ccc-a308-ce18a3914b3f": "player_912",
+    "bf7a5291-4550-4115-8846-fa9fd38793f8": "player_913",
+    "86336506-938d-4982-a9fb-a08ebccd1002": "player_914",
+    "ce20db0b-e134-4b66-b083-1b0491fe17cf": "player_915",
+    "2159cb89-781a-40b1-9127-f3393d81e37f": "player_916",
+    "2e06a259-b1c0-4e34-8ce9-cd9f9f3d2196": "player_917",
+    "16fc0940-e7e6-47b4-aa62-617bed290b18": "player_918",
+    "75fec692-3115-4f23-a618-8b7df0390823": "player_919",
+    "player_801": "player_920",
+    "player_809": "player_921",
+    "player_896": "player_922",
+    "player_897": "player_923",
+    "player_904": "player_924",
+    "player_800": "player_925",
+    "player_805": "player_926",
+    "player_849": "player_927",
+    "player_879": "player_928",
+    "player_882": "player_929",
+    "player_219": "player_930",
+    "player_215": "player_931",
+    "player_303": "player_932",
+    "player_509": "player_933",
+    "player_656": "player_934",
+    "player_692": "player_935",
+    "player_103": "player_936",
+    "player_519": "player_937",
+    "player_653": "player_938",
+    "player_704": "player_939",
+    "player_735": "player_940",
+    "player_823": "player_941",
+    "419e6245-bdcf-42a4-8f5d-951daaaa22af": "player_942",
+    "ae957262-4911-4168-ae5d-b043d8a60c92": "player_943",
+    "a7441f0a-656d-4d5e-8bc8-387b4c748879": "player_944",
+    "3bed2d0d-66ab-4030-96a8-2c940c058e6b": "player_945",
+    "b1cdb97f-6fab-46b6-ad0e-ff63bb35d015": "player_946",
+    "9d00acfc-fdf7-4891-9fbf-8cf66c381788": "player_947",
+    "46802bed-03f8-4031-858f-c67f8f48da47": "player_948",
+    "20a7557d-25bf-4148-92b6-c549726f6f52": "player_949",
+    "180fda42-1065-41bd-8dd5-5d418931052c": "player_950",
+    "e4568532-8ec7-490d-8280-52ed0e967e23": "player_951",
+    "cddfd55d-5b27-4789-ac8e-92dfbe634a2e": "player_952",
+    "f8c5d574-b9ea-41e3-8d71-a833103c6667": "player_953",
+    "97af26d6-f323-4e9e-aa58-46f167eacc43": "player_954",
+    "b5da652e-eb5c-4c16-ac86-96e1ea2db487": "player_955",
+    "105ca45e-6340-42bf-9ba3-5b1e39b3d75a": "player_956",
+    "15a0f792-7fc0-45df-a445-b578a47e77a7": "player_957",
+    "5508293c-74d3-40ca-9cd2-0c5f1043f791": "player_958",
+    "0331bdb5-66dc-4a80-8091-56d87cf169bf": "player_959",
+    "83082757-5a42-4143-9f20-d364db735c44": "player_960",
+    "766359a6-9b86-40ab-b931-b50e70ed28c0": "player_961",
+    "eea29027-c072-4088-98b0-c41710de60f9": "player_962",
+    "a8e6bda2-d8bc-4873-b3ae-53859a120662": "player_963",
+    "e12120bd-3cd1-4af5-a38c-51b012e1b0d8": "player_964",
+    "2a88f2dc-6690-41c2-bfd6-4a9ba2ae0174": "player_965",
+    "cfa8b43d-a0aa-449f-b085-ba3065058e6a": "player_966",
+    "f1e15836-f718-4c38-b875-6c60d5cb1fd7": "player_967",
+    "140f25c9-b821-45ba-a66e-17a90433a1a4": "player_968",
+    "78b8c2e1-0f02-4de9-aba4-647f67f0d5b3": "player_969",
+    "8bfc6f9b-16f8-479e-9fcd-04616e16c2db": "player_970",
+    "54ed6996-a898-4367-aba6-46a482c89207": "player_971",
+    "82c73e4f-505d-451c-8e5a-12a31716a47c": "player_972",
+    "73ec552f-33ce-4bfb-8d11-efdd565344cf": "player_973",
+    "6670edc8-058b-415d-8f90-a397371727b1": "player_974",
+    "0dfdb9a8-0c3f-49e6-aa6f-ba7c27f888a1": "player_975"
   },
   "canonical": {
     "player_1": {
@@ -872,7 +986,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_2": {
       "uuids": [
@@ -883,7 +997,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_3": {
       "uuids": [
@@ -896,7 +1010,7 @@
         "SKY"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_4": {
       "uuids": [
@@ -907,7 +1021,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_5": {
       "uuids": [
@@ -916,9 +1030,11 @@
       "names": [
         "Laggy"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_6": {
       "uuids": [
@@ -931,7 +1047,7 @@
         "TBDi"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_7": {
       "uuids": [
@@ -942,7 +1058,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_8": {
       "uuids": [
@@ -953,7 +1069,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_9": {
       "uuids": [
@@ -964,7 +1080,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_10": {
       "uuids": [
@@ -975,7 +1091,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_11": {
       "uuids": [
@@ -986,7 +1102,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_12": {
       "uuids": [
@@ -997,7 +1113,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_13": {
       "uuids": [
@@ -1008,7 +1124,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_14": {
       "uuids": [
@@ -1019,7 +1135,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_15": {
       "uuids": [
@@ -1030,7 +1146,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_16": {
       "uuids": [
@@ -1041,7 +1157,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_17": {
       "uuids": [
@@ -1052,7 +1168,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_18": {
       "uuids": [
@@ -1063,7 +1179,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_19": {
       "uuids": [
@@ -1074,7 +1190,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_20": {
       "uuids": [
@@ -1085,7 +1201,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_21": {
       "uuids": [
@@ -1096,7 +1212,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_22": {
       "uuids": [
@@ -1107,7 +1223,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_23": {
       "uuids": [
@@ -1117,10 +1233,11 @@
         "QuessX"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_24": {
       "uuids": [
@@ -1131,7 +1248,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_25": {
       "uuids": [
@@ -1142,7 +1259,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_26": {
       "uuids": [
@@ -1153,7 +1270,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_27": {
       "uuids": [
@@ -1164,7 +1281,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_28": {
       "uuids": [
@@ -1175,7 +1292,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_29": {
       "uuids": [
@@ -1186,7 +1303,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_30": {
       "uuids": [
@@ -1197,7 +1314,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_31": {
       "uuids": [
@@ -1208,7 +1325,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_32": {
       "uuids": [
@@ -1219,7 +1336,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_33": {
       "uuids": [
@@ -1230,7 +1347,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_34": {
       "uuids": [
@@ -1241,7 +1358,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_35": {
       "uuids": [
@@ -1252,7 +1369,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_36": {
       "uuids": [
@@ -1265,7 +1382,7 @@
         "STHX"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_37": {
       "uuids": [
@@ -1278,7 +1395,7 @@
         "TBDi"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_38": {
       "uuids": [
@@ -1287,9 +1404,11 @@
       "names": [
         "DarkGhost"
       ],
-      "team_history": [],
+      "team_history": [
+        "RAZA"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_39": {
       "uuids": [
@@ -1300,7 +1419,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_40": {
       "uuids": [
@@ -1311,7 +1430,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_41": {
       "uuids": [
@@ -1322,7 +1441,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_42": {
       "uuids": [
@@ -1333,7 +1452,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_43": {
       "uuids": [
@@ -1344,7 +1463,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_44": {
       "uuids": [
@@ -1355,7 +1474,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_45": {
       "uuids": [
@@ -1364,9 +1483,11 @@
       "names": [
         "Rembrandt"
       ],
-      "team_history": [],
+      "team_history": [
+        "STHX"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_46": {
       "uuids": [
@@ -1376,10 +1497,12 @@
         "Universal"
       ],
       "team_history": [
-        "STHX"
+        "STHX",
+        "oo",
+        "RVNG"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_47": {
       "uuids": [
@@ -1390,7 +1513,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_48": {
       "uuids": [
@@ -1401,7 +1524,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_49": {
       "uuids": [
@@ -1414,7 +1537,7 @@
         "STHX"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_50": {
       "uuids": [
@@ -1425,7 +1548,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_51": {
       "uuids": [
@@ -1436,7 +1559,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_52": {
       "uuids": [
@@ -1447,7 +1570,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_53": {
       "uuids": [
@@ -1460,7 +1583,7 @@
         "SKY"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_54": {
       "uuids": [
@@ -1471,7 +1594,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_55": {
       "uuids": [
@@ -1482,7 +1605,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_56": {
       "uuids": [
@@ -1495,7 +1618,7 @@
         "REKT"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_57": {
       "uuids": [
@@ -1506,7 +1629,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_58": {
       "uuids": [
@@ -1517,7 +1640,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_59": {
       "uuids": [
@@ -1528,7 +1651,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_60": {
       "uuids": [
@@ -1539,7 +1662,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_61": {
       "uuids": [
@@ -1550,7 +1673,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_62": {
       "uuids": [
@@ -1563,7 +1686,7 @@
         "REKT"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_63": {
       "uuids": [
@@ -1573,10 +1696,11 @@
         "destroyer"
       ],
       "team_history": [
-        "TANK"
+        "TANK",
+        "just"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_64": {
       "uuids": [
@@ -1587,7 +1711,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_65": {
       "uuids": [
@@ -1598,7 +1722,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_66": {
       "uuids": [
@@ -1609,7 +1733,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_67": {
       "uuids": [
@@ -1620,7 +1744,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_68": {
       "uuids": [
@@ -1631,7 +1755,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_69": {
       "uuids": [
@@ -1642,18 +1766,21 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_70": {
       "uuids": [
         "74bed1c5-1fea-4883-98b6-f1f0557ca70d"
       ],
       "names": [
-        "D!TZ"
+        "D!TZ",
+        "DITZ"
       ],
-      "team_history": [],
+      "team_history": [
+        "FAM!"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_71": {
       "uuids": [
@@ -1664,7 +1791,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_72": {
       "uuids": [
@@ -1675,7 +1802,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_73": {
       "uuids": [
@@ -1684,9 +1811,11 @@
       "names": [
         "Coltin000"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_74": {
       "uuids": [
@@ -1697,7 +1826,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_75": {
       "uuids": [
@@ -1708,7 +1837,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_76": {
       "uuids": [
@@ -1719,7 +1848,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_77": {
       "uuids": [
@@ -1730,7 +1859,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_78": {
       "uuids": [
@@ -1740,10 +1869,11 @@
         "firehorse"
       ],
       "team_history": [
-        "EMU"
+        "EMU",
+        "STHX"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_79": {
       "uuids": [
@@ -1752,9 +1882,11 @@
       "names": [
         "Nogl"
       ],
-      "team_history": [],
+      "team_history": [
+        "just"
+      ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_80": {
       "uuids": [
@@ -1765,7 +1897,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_81": {
       "uuids": [
@@ -1776,10 +1908,11 @@
         "Spaghetti CLNM"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_82": {
       "uuids": [
@@ -1790,7 +1923,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_83": {
       "uuids": [
@@ -1801,7 +1934,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_84": {
       "uuids": [
@@ -1812,7 +1945,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_85": {
       "uuids": [
@@ -1825,7 +1958,7 @@
         "F1R3"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_86": {
       "uuids": [
@@ -1836,7 +1969,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_87": {
       "uuids": [
@@ -1847,7 +1980,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_88": {
       "uuids": [
@@ -1858,7 +1991,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_89": {
       "uuids": [
@@ -1869,7 +2002,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_90": {
       "uuids": [
@@ -1878,9 +2011,11 @@
       "names": [
         "Stubz"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_91": {
       "uuids": [
@@ -1891,7 +2026,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_92": {
       "uuids": [
@@ -1902,7 +2037,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_93": {
       "uuids": [
@@ -1913,7 +2048,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_94": {
       "uuids": [
@@ -1924,7 +2059,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_95": {
       "uuids": [
@@ -1935,7 +2070,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_96": {
       "uuids": [
@@ -1946,7 +2081,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_97": {
       "uuids": [
@@ -1957,7 +2092,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_98": {
       "uuids": [
@@ -1968,7 +2103,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_99": {
       "uuids": [
@@ -1979,7 +2114,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_100": {
       "uuids": [
@@ -1992,7 +2127,7 @@
         "VRUS"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_101": {
       "uuids": [
@@ -2003,7 +2138,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_102": {
       "uuids": [
@@ -2014,7 +2149,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_103": {
       "uuids": [
@@ -2024,10 +2159,12 @@
         "AdoptionPapers"
       ],
       "team_history": [
-        "STHX"
+        "STHX",
+        "DMND",
+        "SKY"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_104": {
       "uuids": [
@@ -2038,7 +2175,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_105": {
       "uuids": [
@@ -2049,7 +2186,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_106": {
       "uuids": [
@@ -2060,7 +2197,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_107": {
       "uuids": [
@@ -2071,7 +2208,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_108": {
       "uuids": [
@@ -2082,7 +2219,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_109": {
       "uuids": [
@@ -2093,7 +2230,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_110": {
       "uuids": [
@@ -2104,7 +2241,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_111": {
       "uuids": [
@@ -2113,9 +2250,11 @@
       "names": [
         "Frozengalaxy"
       ],
-      "team_history": [],
+      "team_history": [
+        "FAM!"
+      ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_112": {
       "uuids": [
@@ -2126,7 +2265,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_113": {
       "uuids": [
@@ -2137,7 +2276,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_114": {
       "uuids": [
@@ -2148,7 +2287,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_115": {
       "uuids": [
@@ -2159,7 +2298,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_116": {
       "uuids": [
@@ -2170,7 +2309,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_117": {
       "uuids": [
@@ -2181,7 +2320,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_118": {
       "uuids": [
@@ -2192,7 +2331,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_119": {
       "uuids": [
@@ -2203,7 +2342,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_120": {
       "uuids": [
@@ -2214,7 +2353,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_121": {
       "uuids": [
@@ -2225,7 +2364,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_122": {
       "uuids": [
@@ -2236,7 +2375,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_123": {
       "uuids": [
@@ -2247,7 +2386,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_124": {
       "uuids": [
@@ -2258,7 +2397,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_125": {
       "uuids": [
@@ -2269,7 +2408,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_126": {
       "uuids": [
@@ -2280,7 +2419,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_127": {
       "uuids": [
@@ -2291,7 +2430,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_128": {
       "uuids": [
@@ -2302,7 +2441,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_129": {
       "uuids": [
@@ -2313,7 +2452,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_130": {
       "uuids": [
@@ -2324,7 +2463,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_131": {
       "uuids": [
@@ -2335,7 +2474,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_132": {
       "uuids": [
@@ -2346,7 +2485,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_133": {
       "uuids": [
@@ -2357,7 +2496,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_134": {
       "uuids": [
@@ -2368,7 +2507,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_135": {
       "uuids": [
@@ -2379,7 +2518,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_136": {
       "uuids": [
@@ -2392,7 +2531,7 @@
         "LMB0"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_137": {
       "uuids": [
@@ -2403,7 +2542,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_138": {
       "uuids": [
@@ -2414,7 +2553,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_139": {
       "uuids": [
@@ -2425,7 +2564,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_140": {
       "uuids": [
@@ -2436,7 +2575,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_141": {
       "uuids": [
@@ -2447,7 +2586,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_142": {
       "uuids": [
@@ -2458,7 +2597,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_143": {
       "uuids": [
@@ -2469,7 +2608,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_144": {
       "uuids": [
@@ -2480,7 +2619,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_145": {
       "uuids": [
@@ -2491,7 +2630,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_146": {
       "uuids": [
@@ -2502,7 +2641,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_147": {
       "uuids": [
@@ -2513,7 +2652,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_148": {
       "uuids": [
@@ -2524,7 +2663,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_149": {
       "uuids": [
@@ -2535,7 +2674,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_150": {
       "uuids": [
@@ -2546,7 +2685,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_151": {
       "uuids": [
@@ -2557,7 +2696,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_152": {
       "uuids": [
@@ -2566,22 +2705,25 @@
       "names": [
         "FutureChain"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_153": {
       "uuids": [
         "23894346-a051-4a96-a2dc-8903d07a5a41"
       ],
       "names": [
-        ".com"
+        ".com",
+        "Calvin"
       ],
       "team_history": [
         "REKT"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_154": {
       "uuids": [
@@ -2592,7 +2734,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_155": {
       "uuids": [
@@ -2603,7 +2745,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_156": {
       "uuids": [
@@ -2614,7 +2756,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_157": {
       "uuids": [
@@ -2625,7 +2767,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_158": {
       "uuids": [
@@ -2638,7 +2780,7 @@
         "VRUS"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_159": {
       "uuids": [
@@ -2648,10 +2790,11 @@
         "F2P"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_160": {
       "uuids": [
@@ -2662,7 +2805,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_161": {
       "uuids": [
@@ -2673,7 +2816,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_162": {
       "uuids": [
@@ -2684,7 +2827,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_163": {
       "uuids": [
@@ -2695,7 +2838,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_164": {
       "uuids": [
@@ -2708,7 +2851,7 @@
         "REKT"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_165": {
       "uuids": [
@@ -2719,7 +2862,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_166": {
       "uuids": [
@@ -2730,7 +2873,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_167": {
       "uuids": [
@@ -2741,7 +2884,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_168": {
       "uuids": [
@@ -2752,7 +2895,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_169": {
       "uuids": [
@@ -2763,7 +2906,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_170": {
       "uuids": [
@@ -2774,7 +2917,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_171": {
       "uuids": [
@@ -2785,7 +2928,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_172": {
       "uuids": [
@@ -2798,7 +2941,7 @@
         "EMU"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_173": {
       "uuids": [
@@ -2811,7 +2954,7 @@
         "DRGN"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_174": {
       "uuids": [
@@ -2822,7 +2965,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_175": {
       "uuids": [
@@ -2833,7 +2976,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_176": {
       "uuids": [
@@ -2844,7 +2987,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_177": {
       "uuids": [
@@ -2855,7 +2998,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_178": {
       "uuids": [
@@ -2866,7 +3009,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_179": {
       "uuids": [
@@ -2877,7 +3020,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_180": {
       "uuids": [
@@ -2888,7 +3031,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_181": {
       "uuids": [
@@ -2899,7 +3042,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_182": {
       "uuids": [
@@ -2910,7 +3053,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_183": {
       "uuids": [
@@ -2921,7 +3064,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_184": {
       "uuids": [
@@ -2932,7 +3075,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_185": {
       "uuids": [
@@ -2943,7 +3086,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_186": {
       "uuids": [
@@ -2954,7 +3097,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_187": {
       "uuids": [
@@ -2965,7 +3108,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_188": {
       "uuids": [
@@ -2976,7 +3119,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_189": {
       "uuids": [
@@ -2987,7 +3130,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_190": {
       "uuids": [
@@ -2998,7 +3141,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_191": {
       "uuids": [
@@ -3009,7 +3152,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_192": {
       "uuids": [
@@ -3020,7 +3163,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_193": {
       "uuids": [
@@ -3031,7 +3174,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_194": {
       "uuids": [
@@ -3042,7 +3185,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_195": {
       "uuids": [
@@ -3053,7 +3196,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_196": {
       "uuids": [
@@ -3064,7 +3207,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_197": {
       "uuids": [
@@ -3075,7 +3218,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_198": {
       "uuids": [
@@ -3086,7 +3229,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_199": {
       "uuids": [
@@ -3097,7 +3240,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_200": {
       "uuids": [
@@ -3108,7 +3251,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_201": {
       "uuids": [
@@ -3119,7 +3262,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_202": {
       "uuids": [
@@ -3130,7 +3273,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_203": {
       "uuids": [
@@ -3141,7 +3284,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_204": {
       "uuids": [
@@ -3152,7 +3295,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_205": {
       "uuids": [
@@ -3163,7 +3306,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_206": {
       "uuids": [
@@ -3174,7 +3317,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_207": {
       "uuids": [
@@ -3185,7 +3328,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_208": {
       "uuids": [
@@ -3196,7 +3339,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_209": {
       "uuids": [
@@ -3207,7 +3350,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_210": {
       "uuids": [
@@ -3218,7 +3361,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_211": {
       "uuids": [
@@ -3229,7 +3372,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_212": {
       "uuids": [
@@ -3240,7 +3383,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_213": {
       "uuids": [
@@ -3251,7 +3394,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_214": {
       "uuids": [
@@ -3262,7 +3405,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_215": {
       "uuids": [
@@ -3275,7 +3418,7 @@
         "F1R3"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_216": {
       "uuids": [
@@ -3286,7 +3429,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_217": {
       "uuids": [
@@ -3297,7 +3440,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_218": {
       "uuids": [
@@ -3308,7 +3451,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_219": {
       "uuids": [
@@ -3321,7 +3464,7 @@
         "AGGG"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_220": {
       "uuids": [
@@ -3334,7 +3477,7 @@
         "TBDi"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_221": {
       "uuids": [
@@ -3345,7 +3488,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_222": {
       "uuids": [
@@ -3356,7 +3499,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_223": {
       "uuids": [
@@ -3367,7 +3510,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_224": {
       "uuids": [
@@ -3377,10 +3520,11 @@
         "Fractor"
       ],
       "team_history": [
-        "TANK"
+        "TANK",
+        "just"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_225": {
       "uuids": [
@@ -3391,7 +3535,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_226": {
       "uuids": [
@@ -3402,7 +3546,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_227": {
       "uuids": [
@@ -3413,7 +3557,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_228": {
       "uuids": [
@@ -3424,7 +3568,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_229": {
       "uuids": [
@@ -3435,7 +3579,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_230": {
       "uuids": [
@@ -3446,7 +3590,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_231": {
       "uuids": [
@@ -3457,7 +3601,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_232": {
       "uuids": [
@@ -3468,7 +3612,7 @@
       ],
       "team_history": [],
       "first_season": 1,
-      "last_season": 1
+      "last_season": 11
     },
     "player_233": {
       "uuids": [
@@ -3479,7 +3623,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_234": {
       "uuids": [
@@ -3490,7 +3634,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_235": {
       "uuids": [
@@ -3501,7 +3645,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_236": {
       "uuids": [
@@ -3512,7 +3656,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_237": {
       "uuids": [
@@ -3523,7 +3667,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_238": {
       "uuids": [
@@ -3536,7 +3680,7 @@
         "STHX"
       ],
       "first_season": 1,
-      "last_season": 10
+      "last_season": 11
     },
     "player_239": {
       "uuids": [
@@ -3547,7 +3691,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_240": {
       "uuids": [
@@ -3558,7 +3702,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_241": {
       "uuids": [
@@ -3567,9 +3711,11 @@
       "names": [
         "Bu11D0g"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_242": {
       "uuids": [
@@ -3580,7 +3726,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_243": {
       "uuids": [
@@ -3591,7 +3737,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_244": {
       "uuids": [
@@ -3602,7 +3748,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_245": {
       "uuids": [
@@ -3613,7 +3759,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_246": {
       "uuids": [
@@ -3624,7 +3770,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_247": {
       "uuids": [
@@ -3635,7 +3781,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_248": {
       "uuids": [
@@ -3644,9 +3790,11 @@
       "names": [
         "rafiki"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_249": {
       "uuids": [
@@ -3657,7 +3805,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_250": {
       "uuids": [
@@ -3666,9 +3814,11 @@
       "names": [
         "LuckyCharms"
       ],
-      "team_history": [],
+      "team_history": [
+        "ZT"
+      ],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_251": {
       "uuids": [
@@ -3679,7 +3829,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_252": {
       "uuids": [
@@ -3690,7 +3840,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_253": {
       "uuids": [
@@ -3701,7 +3851,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_254": {
       "uuids": [
@@ -3712,7 +3862,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_255": {
       "uuids": [
@@ -3723,7 +3873,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_256": {
       "uuids": [
@@ -3734,7 +3884,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_257": {
       "uuids": [
@@ -3745,7 +3895,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_258": {
       "uuids": [
@@ -3754,9 +3904,11 @@
       "names": [
         "SatanSlayer"
       ],
-      "team_history": [],
+      "team_history": [
+        "AGGG"
+      ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_259": {
       "uuids": [
@@ -3767,7 +3919,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_260": {
       "uuids": [
@@ -3778,7 +3930,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_261": {
       "uuids": [
@@ -3789,7 +3941,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_262": {
       "uuids": [
@@ -3800,7 +3952,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_263": {
       "uuids": [
@@ -3811,7 +3963,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_264": {
       "uuids": [
@@ -3822,7 +3974,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_265": {
       "uuids": [
@@ -3833,7 +3985,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_266": {
       "uuids": [
@@ -3844,7 +3996,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_267": {
       "uuids": [
@@ -3855,7 +4007,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_268": {
       "uuids": [
@@ -3866,7 +4018,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_269": {
       "uuids": [
@@ -3877,7 +4029,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_270": {
       "uuids": [
@@ -3890,7 +4042,7 @@
         "TBDi"
       ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_271": {
       "uuids": [
@@ -3901,7 +4053,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_272": {
       "uuids": [
@@ -3912,7 +4064,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_273": {
       "uuids": [
@@ -3923,7 +4075,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_274": {
       "uuids": [
@@ -3934,7 +4086,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_275": {
       "uuids": [
@@ -3947,7 +4099,7 @@
         "STHX"
       ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_276": {
       "uuids": [
@@ -3957,10 +4109,11 @@
         "sirvoid"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT"
       ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_277": {
       "uuids": [
@@ -3971,7 +4124,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_278": {
       "uuids": [
@@ -3982,7 +4135,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_279": {
       "uuids": [
@@ -3993,7 +4146,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_280": {
       "uuids": [
@@ -4004,7 +4157,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_281": {
       "uuids": [
@@ -4015,7 +4168,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_282": {
       "uuids": [
@@ -4026,7 +4179,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_283": {
       "uuids": [
@@ -4039,7 +4192,7 @@
         "STHX"
       ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_284": {
       "uuids": [
@@ -4050,7 +4203,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_285": {
       "uuids": [
@@ -4061,7 +4214,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_286": {
       "uuids": [
@@ -4072,7 +4225,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_287": {
       "uuids": [
@@ -4083,7 +4236,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_288": {
       "uuids": [
@@ -4094,7 +4247,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_289": {
       "uuids": [
@@ -4105,7 +4258,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_290": {
       "uuids": [
@@ -4116,7 +4269,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_291": {
       "uuids": [
@@ -4127,7 +4280,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_292": {
       "uuids": [
@@ -4138,7 +4291,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_293": {
       "uuids": [
@@ -4151,7 +4304,7 @@
         "FAM!"
       ],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_294": {
       "uuids": [
@@ -4162,7 +4315,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_295": {
       "uuids": [
@@ -4173,7 +4326,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 10
+      "last_season": 11
     },
     "player_296": {
       "uuids": [
@@ -4184,7 +4337,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_297": {
       "uuids": [
@@ -4195,7 +4348,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_298": {
       "uuids": [
@@ -4206,7 +4359,7 @@
       ],
       "team_history": [],
       "first_season": 2,
-      "last_season": 2
+      "last_season": 11
     },
     "player_299": {
       "uuids": [
@@ -4217,7 +4370,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_300": {
       "uuids": [
@@ -4228,7 +4381,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_301": {
       "uuids": [
@@ -4239,7 +4392,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_302": {
       "uuids": [
@@ -4250,7 +4403,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_303": {
       "uuids": [
@@ -4263,7 +4416,7 @@
         "F1R3"
       ],
       "first_season": 3,
-      "last_season": 10
+      "last_season": 11
     },
     "player_304": {
       "uuids": [
@@ -4274,7 +4427,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_305": {
       "uuids": [
@@ -4285,7 +4438,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_306": {
       "uuids": [
@@ -4296,7 +4449,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_307": {
       "uuids": [
@@ -4306,10 +4459,11 @@
         "DarkMoonRDF"
       ],
       "team_history": [
-        "AGGG"
+        "AGGG",
+        "REKT"
       ],
       "first_season": 3,
-      "last_season": 10
+      "last_season": 11
     },
     "player_308": {
       "uuids": [
@@ -4322,7 +4476,7 @@
         "TBDi"
       ],
       "first_season": 3,
-      "last_season": 10
+      "last_season": 11
     },
     "player_309": {
       "uuids": [
@@ -4333,7 +4487,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_310": {
       "uuids": [
@@ -4344,7 +4498,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_311": {
       "uuids": [
@@ -4355,7 +4509,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_312": {
       "uuids": [
@@ -4366,7 +4520,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_313": {
       "uuids": [
@@ -4375,9 +4529,11 @@
       "names": [
         "Takito"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_314": {
       "uuids": [
@@ -4388,7 +4544,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_315": {
       "uuids": [
@@ -4399,7 +4555,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_316": {
       "uuids": [
@@ -4410,7 +4566,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_317": {
       "uuids": [
@@ -4421,7 +4577,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_318": {
       "uuids": [
@@ -4432,7 +4588,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_319": {
       "uuids": [
@@ -4443,7 +4599,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_320": {
       "uuids": [
@@ -4454,7 +4610,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_321": {
       "uuids": [
@@ -4465,7 +4621,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_322": {
       "uuids": [
@@ -4476,7 +4632,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_323": {
       "uuids": [
@@ -4487,7 +4643,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_324": {
       "uuids": [
@@ -4498,7 +4654,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_325": {
       "uuids": [
@@ -4509,7 +4665,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_326": {
       "uuids": [
@@ -4520,7 +4676,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_327": {
       "uuids": [
@@ -4531,7 +4687,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_328": {
       "uuids": [
@@ -4542,7 +4698,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_329": {
       "uuids": [
@@ -4553,7 +4709,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_330": {
       "uuids": [
@@ -4564,7 +4720,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_331": {
       "uuids": [
@@ -4575,7 +4731,7 @@
       ],
       "team_history": [],
       "first_season": 3,
-      "last_season": 3
+      "last_season": 11
     },
     "player_332": {
       "uuids": [
@@ -4586,7 +4742,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_333": {
       "uuids": [
@@ -4597,7 +4753,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 10
+      "last_season": 11
     },
     "player_334": {
       "uuids": [
@@ -4608,7 +4764,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_335": {
       "uuids": [
@@ -4619,7 +4775,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_336": {
       "uuids": [
@@ -4630,7 +4786,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_337": {
       "uuids": [
@@ -4641,7 +4797,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_338": {
       "uuids": [
@@ -4652,7 +4808,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_339": {
       "uuids": [
@@ -4663,7 +4819,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_340": {
       "uuids": [
@@ -4674,7 +4830,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_341": {
       "uuids": [
@@ -4685,7 +4841,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_342": {
       "uuids": [
@@ -4698,7 +4854,7 @@
         "STHX"
       ],
       "first_season": 4,
-      "last_season": 10
+      "last_season": 11
     },
     "player_343": {
       "uuids": [
@@ -4709,7 +4865,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_344": {
       "uuids": [
@@ -4720,7 +4876,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_345": {
       "uuids": [
@@ -4731,7 +4887,7 @@
       ],
       "team_history": [],
       "first_season": 4,
-      "last_season": 4
+      "last_season": 11
     },
     "player_346": {
       "uuids": [
@@ -4742,7 +4898,7 @@
       ],
       "team_history": [],
       "first_season": 5,
-      "last_season": 5
+      "last_season": 11
     },
     "player_347": {
       "uuids": [
@@ -4753,7 +4909,7 @@
       ],
       "team_history": [],
       "first_season": 5,
-      "last_season": 5
+      "last_season": 11
     },
     "player_348": {
       "uuids": [
@@ -4764,7 +4920,7 @@
       ],
       "team_history": [],
       "first_season": 5,
-      "last_season": 5
+      "last_season": 11
     },
     "player_349": {
       "uuids": [
@@ -4775,7 +4931,7 @@
       ],
       "team_history": [],
       "first_season": 5,
-      "last_season": 5
+      "last_season": 11
     },
     "player_350": {
       "uuids": [
@@ -4786,7 +4942,7 @@
       ],
       "team_history": [],
       "first_season": 6,
-      "last_season": 6
+      "last_season": 11
     },
     "player_351": {
       "uuids": [
@@ -4797,7 +4953,7 @@
       ],
       "team_history": [],
       "first_season": 6,
-      "last_season": 6
+      "last_season": 11
     },
     "player_352": {
       "uuids": [
@@ -4806,9 +4962,11 @@
       "names": [
         "cream"
       ],
-      "team_history": [],
+      "team_history": [
+        "SKY"
+      ],
       "first_season": 6,
-      "last_season": 6
+      "last_season": 11
     },
     "player_353": {
       "uuids": [
@@ -4819,7 +4977,7 @@
       ],
       "team_history": [],
       "first_season": 6,
-      "last_season": 6
+      "last_season": 11
     },
     "player_354": {
       "uuids": [
@@ -4830,7 +4988,7 @@
       ],
       "team_history": [],
       "first_season": 6,
-      "last_season": 6
+      "last_season": 11
     },
     "player_355": {
       "uuids": [
@@ -4841,7 +4999,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_356": {
       "uuids": [
@@ -4852,7 +5010,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_357": {
       "uuids": [
@@ -4863,7 +5021,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_358": {
       "uuids": [
@@ -4874,7 +5032,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_359": {
       "uuids": [
@@ -4885,7 +5043,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_360": {
       "uuids": [
@@ -4898,7 +5056,7 @@
         "HAXX"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_361": {
       "uuids": [
@@ -4909,7 +5067,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_362": {
       "uuids": [
@@ -4922,7 +5080,7 @@
         "HAXX"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_363": {
       "uuids": [
@@ -4932,10 +5090,11 @@
         "Emperor Kars"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_364": {
       "uuids": [
@@ -4945,10 +5104,11 @@
         "the.suit.maker"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_365": {
       "uuids": [
@@ -4959,7 +5119,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_366": {
       "uuids": [
@@ -4970,7 +5130,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_367": {
       "uuids": [
@@ -4981,7 +5141,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_368": {
       "uuids": [
@@ -4992,7 +5152,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_369": {
       "uuids": [
@@ -5003,7 +5163,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_370": {
       "uuids": [
@@ -5014,7 +5174,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_371": {
       "uuids": [
@@ -5027,7 +5187,7 @@
         "TANK"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_372": {
       "uuids": [
@@ -5038,7 +5198,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_373": {
       "uuids": [
@@ -5051,7 +5211,7 @@
         "LMB0"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_374": {
       "uuids": [
@@ -5062,7 +5222,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_375": {
       "uuids": [
@@ -5073,7 +5233,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_376": {
       "uuids": [
@@ -5082,9 +5242,11 @@
       "names": [
         "Brontosaurus"
       ],
-      "team_history": [],
+      "team_history": [
+        "LMB0"
+      ],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_377": {
       "uuids": [
@@ -5095,7 +5257,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_378": {
       "uuids": [
@@ -5106,7 +5268,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_379": {
       "uuids": [
@@ -5117,7 +5279,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_380": {
       "uuids": [
@@ -5128,7 +5290,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_381": {
       "uuids": [
@@ -5141,7 +5303,7 @@
         "just"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_382": {
       "uuids": [
@@ -5152,7 +5314,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_383": {
       "uuids": [
@@ -5163,7 +5325,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_384": {
       "uuids": [
@@ -5176,7 +5338,7 @@
         "SKY"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_385": {
       "uuids": [
@@ -5189,7 +5351,7 @@
         "SKY"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_386": {
       "uuids": [
@@ -5200,7 +5362,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_387": {
       "uuids": [
@@ -5211,7 +5373,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_388": {
       "uuids": [
@@ -5222,7 +5384,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_389": {
       "uuids": [
@@ -5233,7 +5395,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_390": {
       "uuids": [
@@ -5244,7 +5406,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_391": {
       "uuids": [
@@ -5255,7 +5417,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_392": {
       "uuids": [
@@ -5268,7 +5430,7 @@
         "DRGN"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_393": {
       "uuids": [
@@ -5279,7 +5441,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_394": {
       "uuids": [
@@ -5290,7 +5452,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_395": {
       "uuids": [
@@ -5301,7 +5463,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_396": {
       "uuids": [
@@ -5312,7 +5474,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_397": {
       "uuids": [
@@ -5323,7 +5485,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_398": {
       "uuids": [
@@ -5334,7 +5496,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_399": {
       "uuids": [
@@ -5345,7 +5507,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_400": {
       "uuids": [
@@ -5356,7 +5518,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_401": {
       "uuids": [
@@ -5367,7 +5529,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_402": {
       "uuids": [
@@ -5378,7 +5540,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_403": {
       "uuids": [
@@ -5389,7 +5551,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_404": {
       "uuids": [
@@ -5400,7 +5562,7 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_405": {
       "uuids": [
@@ -5411,20 +5573,21 @@
       ],
       "team_history": [],
       "first_season": 7,
-      "last_season": 7
+      "last_season": 11
     },
     "player_406": {
       "uuids": [
         "c83cc1fb-68c5-4210-b49a-2c7b3857854c"
       ],
       "names": [
-        "vewn"
+        "vewn",
+        "OG vewnunoby"
       ],
       "team_history": [
         "AK47"
       ],
       "first_season": 7,
-      "last_season": 10
+      "last_season": 11
     },
     "player_407": {
       "uuids": [
@@ -5435,7 +5598,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_408": {
       "uuids": [
@@ -5446,7 +5609,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_409": {
       "uuids": [
@@ -5457,7 +5620,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_410": {
       "uuids": [
@@ -5470,7 +5633,7 @@
         "LMB0"
       ],
       "first_season": 8,
-      "last_season": 10
+      "last_season": 11
     },
     "player_411": {
       "uuids": [
@@ -5481,7 +5644,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_412": {
       "uuids": [
@@ -5492,7 +5655,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_413": {
       "uuids": [
@@ -5503,7 +5666,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_414": {
       "uuids": [
@@ -5514,7 +5677,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_415": {
       "uuids": [
@@ -5525,7 +5688,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_416": {
       "uuids": [
@@ -5536,7 +5699,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_417": {
       "uuids": [
@@ -5545,9 +5708,11 @@
       "names": [
         "oogie boogie"
       ],
-      "team_history": [],
+      "team_history": [
+        "just"
+      ],
       "first_season": 8,
-      "last_season": 10
+      "last_season": 11
     },
     "player_418": {
       "uuids": [
@@ -5558,7 +5723,7 @@
       ],
       "team_history": [],
       "first_season": 8,
-      "last_season": 8
+      "last_season": 11
     },
     "player_419": {
       "uuids": [
@@ -5569,7 +5734,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_420": {
       "uuids": [
@@ -5580,7 +5745,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_421": {
       "uuids": [
@@ -5593,7 +5758,7 @@
         "HAXX"
       ],
       "first_season": 9,
-      "last_season": 10
+      "last_season": 11
     },
     "player_422": {
       "uuids": [
@@ -5604,7 +5769,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_423": {
       "uuids": [
@@ -5615,7 +5780,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_424": {
       "uuids": [
@@ -5624,9 +5789,11 @@
       "names": [
         "mr pump"
       ],
-      "team_history": [],
+      "team_history": [
+        "AK47"
+      ],
       "first_season": 9,
-      "last_season": 10
+      "last_season": 11
     },
     "player_425": {
       "uuids": [
@@ -5637,7 +5804,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_426": {
       "uuids": [
@@ -5648,7 +5815,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_427": {
       "uuids": [
@@ -5659,7 +5826,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_428": {
       "uuids": [
@@ -5670,7 +5837,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_429": {
       "uuids": [
@@ -5681,7 +5848,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_430": {
       "uuids": [
@@ -5692,7 +5859,7 @@
       ],
       "team_history": [],
       "first_season": 9,
-      "last_season": 9
+      "last_season": 11
     },
     "player_431": {
       "uuids": [
@@ -5703,7 +5870,7 @@
       ],
       "team_history": [],
       "first_season": 10,
-      "last_season": 10
+      "last_season": 11
     },
     "player_432": {
       "uuids": [
@@ -5714,7 +5881,7 @@
       ],
       "team_history": [],
       "first_season": 10,
-      "last_season": 10
+      "last_season": 11
     },
     "player_433": {
       "uuids": [
@@ -5725,7 +5892,7 @@
       ],
       "team_history": [],
       "first_season": 10,
-      "last_season": 10
+      "last_season": 11
     },
     "player_434": {
       "uuids": [
@@ -5804,7 +5971,7 @@
         "FAM!"
       ],
       "first_season": 13,
-      "last_season": 10
+      "last_season": 11
     },
     "player_441": {
       "uuids": [
@@ -5883,7 +6050,7 @@
         "SKY"
       ],
       "first_season": 13,
-      "last_season": 10
+      "last_season": 11
     },
     "player_448": {
       "uuids": [
@@ -5947,9 +6114,11 @@
       "names": [
         "RaptorRyan"
       ],
-      "team_history": [],
+      "team_history": [
+        "SKY"
+      ],
       "first_season": 13,
-      "last_season": 13
+      "last_season": 11
     },
     "player_454": {
       "uuids": [
@@ -5958,9 +6127,11 @@
       "names": [
         "anonomous"
       ],
-      "team_history": [],
+      "team_history": [
+        "oo"
+      ],
       "first_season": 13,
-      "last_season": 10
+      "last_season": 11
     },
     "player_455": {
       "uuids": [
@@ -5970,10 +6141,11 @@
         "Xyota"
       ],
       "team_history": [
-        "DRGN"
+        "DRGN",
+        "AK47"
       ],
       "first_season": 13,
-      "last_season": 10
+      "last_season": 13
     },
     "player_456": {
       "uuids": [
@@ -6019,7 +6191,7 @@
         "REKT"
       ],
       "first_season": 13,
-      "last_season": 10
+      "last_season": 13
     },
     "player_460": {
       "uuids": [
@@ -6202,9 +6374,12 @@
         "0793b51a-e3b5-423b-bd94-2ae412765637"
       ],
       "names": [
-        "Eminem"
+        "Eminem",
+        "Eminem2"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 13,
       "last_season": 13
     },
@@ -6216,10 +6391,12 @@
         "Joneas Jostar"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo",
+        "AK47"
       ],
       "first_season": 13,
-      "last_season": 10
+      "last_season": 11
     },
     "player_478": {
       "uuids": [
@@ -6228,9 +6405,12 @@
       "names": [
         "Vesper"
       ],
-      "team_history": [],
+      "team_history": [
+        "RIFT",
+        "RVNG"
+      ],
       "first_season": 13,
-      "last_season": 13
+      "last_season": 11
     },
     "player_479": {
       "uuids": [
@@ -6274,7 +6454,7 @@
       ],
       "team_history": [],
       "first_season": 14,
-      "last_season": 10
+      "last_season": 14
     },
     "player_483": {
       "uuids": [
@@ -6295,10 +6475,11 @@
         "Grim!"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 14,
-      "last_season": 10
+      "last_season": 11
     },
     "player_485": {
       "uuids": [
@@ -6355,7 +6536,7 @@
         "SKY"
       ],
       "first_season": 14,
-      "last_season": 10
+      "last_season": 11
     },
     "player_490": {
       "uuids": [
@@ -6373,13 +6554,16 @@
         "9631b03a-82b9-4614-abaf-13d4ad34649f"
       ],
       "names": [
-        "Clairvoyance"
+        "Clairvoyance",
+        "Jaded"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT",
+        "SWUA"
       ],
       "first_season": 14,
-      "last_season": 10
+      "last_season": 11
     },
     "player_492": {
       "uuids": [
@@ -6388,7 +6572,9 @@
       "names": [
         "Jason Bourne"
       ],
-      "team_history": [],
+      "team_history": [
+        "FAM!"
+      ],
       "first_season": 14,
       "last_season": 14
     },
@@ -6397,13 +6583,14 @@
         "d6e6877c-3c30-4d49-a120-445ec4b35564"
       ],
       "names": [
-        "JohnWilksBoothNickle_Monster"
+        "JohnWilksBoothNickle_Monster",
+        "Tylenol"
       ],
       "team_history": [
         "AK47"
       ],
       "first_season": 14,
-      "last_season": 10
+      "last_season": 11
     },
     "player_494": {
       "uuids": [
@@ -6457,10 +6644,11 @@
         "Speed"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT"
       ],
       "first_season": 15,
-      "last_season": 10
+      "last_season": 11
     },
     "player_499": {
       "uuids": [
@@ -6484,7 +6672,7 @@
         "AK47"
       ],
       "first_season": 15,
-      "last_season": 10
+      "last_season": 15
     },
     "player_501": {
       "uuids": [
@@ -6550,7 +6738,7 @@
       ],
       "team_history": [],
       "first_season": 16,
-      "last_season": 10
+      "last_season": 16
     },
     "player_507": {
       "uuids": [
@@ -6574,7 +6762,7 @@
         "REKT"
       ],
       "first_season": 16,
-      "last_season": 10
+      "last_season": 11
     },
     "player_509": {
       "uuids": [
@@ -6587,7 +6775,7 @@
         "F1R3"
       ],
       "first_season": 16,
-      "last_season": 10
+      "last_season": 16
     },
     "player_510": {
       "uuids": [
@@ -6696,10 +6884,11 @@
         "SmolQuadd"
       ],
       "team_history": [
-        "DMND"
+        "DMND",
+        "SKY"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 19
     },
     "player_520": {
       "uuids": [
@@ -6709,10 +6898,11 @@
         "Greedy"
       ],
       "team_history": [
-        "SLNT"
+        "SLNT",
+        "ISLD"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 19
     },
     "player_521": {
       "uuids": [
@@ -6781,7 +6971,7 @@
         "SKY"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 11
     },
     "player_527": {
       "uuids": [
@@ -6845,9 +7035,11 @@
       "names": [
         "Tyfood"
       ],
-      "team_history": [],
+      "team_history": [
+        "AK47"
+      ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 19
     },
     "player_533": {
       "uuids": [
@@ -6856,9 +7048,11 @@
       "names": [
         "SirFries"
       ],
-      "team_history": [],
+      "team_history": [
+        "VRUS"
+      ],
       "first_season": 19,
-      "last_season": 19
+      "last_season": 11
     },
     "player_534": {
       "uuids": [
@@ -6878,9 +7072,12 @@
       "names": [
         "Calamity"
       ],
-      "team_history": [],
+      "team_history": [
+        "FACE",
+        "ZT"
+      ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 11
     },
     "player_536": {
       "uuids": [
@@ -6900,9 +7097,11 @@
       "names": [
         "Spud"
       ],
-      "team_history": [],
+      "team_history": [
+        "AK47"
+      ],
       "first_season": 19,
-      "last_season": 19
+      "last_season": 11
     },
     "player_538": {
       "uuids": [
@@ -6926,7 +7125,7 @@
         "just"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 11
     },
     "player_540": {
       "uuids": [
@@ -6961,7 +7160,7 @@
         "HAXX"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 11
     },
     "player_543": {
       "uuids": [
@@ -6985,7 +7184,7 @@
         "HAXX"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 11
     },
     "player_545": {
       "uuids": [
@@ -6995,10 +7194,11 @@
         "Romeo"
       ],
       "team_history": [
-        "DRGN"
+        "DRGN",
+        "HAXX"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 11
     },
     "player_546": {
       "uuids": [
@@ -7022,7 +7222,7 @@
         "EMU"
       ],
       "first_season": 19,
-      "last_season": 10
+      "last_season": 19
     },
     "player_548": {
       "uuids": [
@@ -7086,9 +7286,11 @@
       "names": [
         "Aluno"
       ],
-      "team_history": [],
+      "team_history": [
+        "just"
+      ],
       "first_season": 20,
-      "last_season": 10
+      "last_season": 11
     },
     "player_554": {
       "uuids": [
@@ -7167,7 +7369,7 @@
         "HAXX"
       ],
       "first_season": 20,
-      "last_season": 10
+      "last_season": 20
     },
     "player_561": {
       "uuids": [
@@ -7199,10 +7401,11 @@
         "Mig"
       ],
       "team_history": [
-        "EMU"
+        "EMU",
+        "STHX"
       ],
       "first_season": 21,
-      "last_season": 10
+      "last_season": 11
     },
     "player_564": {
       "uuids": [
@@ -7237,7 +7440,7 @@
         "SKY"
       ],
       "first_season": 22,
-      "last_season": 10
+      "last_season": 22
     },
     "player_567": {
       "uuids": [
@@ -7246,9 +7449,11 @@
       "names": [
         "bread"
       ],
-      "team_history": [],
+      "team_history": [
+        "REKT"
+      ],
       "first_season": 22,
-      "last_season": 22
+      "last_season": 11
     },
     "player_568": {
       "uuids": [
@@ -7266,11 +7471,14 @@
         "5b9e8a72-4cb6-49f5-9e2b-a2372ccbebf1"
       ],
       "names": [
-        "Ecureuil"
+        "Ecureuil",
+        "MaelstromOmega"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 23,
-      "last_season": 10
+      "last_season": 11
     },
     "player_570": {
       "uuids": [
@@ -7294,7 +7502,7 @@
         "REKT"
       ],
       "first_season": 25,
-      "last_season": 10
+      "last_season": 11
     },
     "player_572": {
       "uuids": [
@@ -7307,7 +7515,7 @@
         "LMB0"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 26
     },
     "player_573": {
       "uuids": [
@@ -7350,10 +7558,11 @@
         "Whopper"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 11
     },
     "player_577": {
       "uuids": [
@@ -7393,11 +7602,14 @@
         "8281ce2b-07ce-410c-8943-517ed6d76703"
       ],
       "names": [
-        "Ghost rider"
+        "Ghost rider",
+        "Ghost_rider"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 26,
-      "last_season": 26
+      "last_season": 11
     },
     "player_581": {
       "uuids": [
@@ -7410,7 +7622,7 @@
         "MEX"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 26
     },
     "player_582": {
       "uuids": [
@@ -7420,10 +7632,11 @@
         "Lazy boy"
       ],
       "team_history": [
-        "MEX"
+        "MEX",
+        "RAZA"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 11
     },
     "player_583": {
       "uuids": [
@@ -7436,7 +7649,7 @@
         "MEX"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 26
     },
     "player_584": {
       "uuids": [
@@ -7449,7 +7662,7 @@
         "MEX"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 26
     },
     "player_585": {
       "uuids": [
@@ -7462,18 +7675,21 @@
         "RAZA"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 11
     },
     "player_586": {
       "uuids": [
         "e621f6cb-cae4-4a2f-973a-93e8a8dd7b8a"
       ],
       "names": [
-        "Captaine Plasma"
+        "Captaine Plasma",
+        "Captain Plasma"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 26,
-      "last_season": 26
+      "last_season": 11
     },
     "player_587": {
       "uuids": [
@@ -7541,7 +7757,7 @@
         "RAZA"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 11
     },
     "player_593": {
       "uuids": [
@@ -7673,7 +7889,7 @@
       ],
       "team_history": [],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 26
     },
     "player_605": {
       "uuids": [
@@ -7697,7 +7913,7 @@
         "SKY"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 26
     },
     "player_607": {
       "uuids": [
@@ -7706,9 +7922,11 @@
       "names": [
         "Kossine"
       ],
-      "team_history": [],
+      "team_history": [
+        "AGGG"
+      ],
       "first_season": 26,
-      "last_season": 26
+      "last_season": 11
     },
     "player_608": {
       "uuids": [
@@ -7732,7 +7950,7 @@
         "REKT"
       ],
       "first_season": 26,
-      "last_season": 10
+      "last_season": 11
     },
     "player_610": {
       "uuids": [
@@ -7754,7 +7972,7 @@
       ],
       "team_history": [],
       "first_season": 27,
-      "last_season": 10
+      "last_season": 27
     },
     "player_612": {
       "uuids": [
@@ -7778,7 +7996,7 @@
         "SKY"
       ],
       "first_season": 27,
-      "last_season": 10
+      "last_season": 27
     },
     "player_614": {
       "uuids": [
@@ -7791,7 +8009,7 @@
         "LMB0"
       ],
       "first_season": 27,
-      "last_season": 10
+      "last_season": 11
     },
     "player_615": {
       "uuids": [
@@ -7804,7 +8022,7 @@
         "RVNG"
       ],
       "first_season": 27,
-      "last_season": 10
+      "last_season": 27
     },
     "player_616": {
       "uuids": [
@@ -7825,10 +8043,11 @@
         "Huqo.suave"
       ],
       "team_history": [
-        "SLNT"
+        "SLNT",
+        "TX"
       ],
       "first_season": 27,
-      "last_season": 10
+      "last_season": 27
     },
     "player_618": {
       "uuids": [
@@ -7838,10 +8057,11 @@
         "Lullaby"
       ],
       "team_history": [
-        "AGGG"
+        "AGGG",
+        "Doc!"
       ],
       "first_season": 27,
-      "last_season": 10
+      "last_season": 11
     },
     "player_619": {
       "uuids": [
@@ -7854,7 +8074,7 @@
         "EMRD"
       ],
       "first_season": 28,
-      "last_season": 10
+      "last_season": 11
     },
     "player_620": {
       "uuids": [
@@ -7933,7 +8153,7 @@
         "LMB0"
       ],
       "first_season": 28,
-      "last_season": 10
+      "last_season": 11
     },
     "player_627": {
       "uuids": [
@@ -7944,7 +8164,7 @@
       ],
       "team_history": [],
       "first_season": 28,
-      "last_season": 10
+      "last_season": 28
     },
     "player_628": {
       "uuids": [
@@ -7979,7 +8199,7 @@
         "MEX"
       ],
       "first_season": 29,
-      "last_season": 10
+      "last_season": 29
     },
     "player_631": {
       "uuids": [
@@ -7992,7 +8212,7 @@
         "just"
       ],
       "first_season": 29,
-      "last_season": 10
+      "last_season": 29
     },
     "player_632": {
       "uuids": [
@@ -8023,7 +8243,9 @@
       "names": [
         "Vinco_king"
       ],
-      "team_history": [],
+      "team_history": [
+        "Doc!"
+      ],
       "first_season": 30,
       "last_season": 30
     },
@@ -8047,7 +8269,7 @@
       ],
       "team_history": [],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_637": {
       "uuids": [
@@ -8057,10 +8279,11 @@
         "Arcane!"
       ],
       "team_history": [
-        "EMU"
+        "EMU",
+        "STHX"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_638": {
       "uuids": [
@@ -8082,7 +8305,7 @@
       ],
       "team_history": [],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_640": {
       "uuids": [
@@ -8100,13 +8323,15 @@
         "eda088ee-63c2-405c-8c73-f76573047e49"
       ],
       "names": [
-        "god dream"
+        "god dream",
+        "god UvU"
       ],
       "team_history": [
-        "DRGN"
+        "DRGN",
+        "DMND"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_642": {
       "uuids": [
@@ -8150,7 +8375,7 @@
       ],
       "team_history": [],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_646": {
       "uuids": [
@@ -8163,7 +8388,7 @@
         "SKY"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_647": {
       "uuids": [
@@ -8187,7 +8412,7 @@
         "F1R3"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_649": {
       "uuids": [
@@ -8200,7 +8425,7 @@
         "F1R3"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_650": {
       "uuids": [
@@ -8209,7 +8434,9 @@
       "names": [
         "bobtheduck"
       ],
-      "team_history": [],
+      "team_history": [
+        "ISLD"
+      ],
       "first_season": 32,
       "last_season": 32
     },
@@ -8221,10 +8448,11 @@
         "echo"
       ],
       "team_history": [
-        "ZTi"
+        "ZTi",
+        "ZT"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_652": {
       "uuids": [
@@ -8235,7 +8463,7 @@
       ],
       "team_history": [],
       "first_season": 33,
-      "last_season": 10
+      "last_season": 33
     },
     "player_653": {
       "uuids": [
@@ -8248,7 +8476,7 @@
         "DMND"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_654": {
       "uuids": [
@@ -8283,7 +8511,7 @@
         "F1R3"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_657": {
       "uuids": [
@@ -8296,7 +8524,7 @@
         "EMU"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_658": {
       "uuids": [
@@ -8331,20 +8559,23 @@
         "HAXX"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_661": {
       "uuids": [
         "91a0833c-110e-4d0d-ba1f-7791232cb227"
       ],
       "names": [
-        "Blolbfish"
+        "Blolbfish",
+        "LordOfLaughter"
       ],
       "team_history": [
-        "TANK"
+        "TANK",
+        "LMB0",
+        "AK47"
       ],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 11
     },
     "player_662": {
       "uuids": [
@@ -8365,10 +8596,12 @@
         "Luketimusprime"
       ],
       "team_history": [
-        "DMND"
+        "DMND",
+        "AK47",
+        "LMB0"
       ],
       "first_season": 33,
-      "last_season": 10
+      "last_season": 11
     },
     "player_664": {
       "uuids": [
@@ -8377,9 +8610,11 @@
       "names": [
         "Radiation "
       ],
-      "team_history": [],
+      "team_history": [
+        "FACE"
+      ],
       "first_season": 33,
-      "last_season": 10
+      "last_season": 33
     },
     "player_665": {
       "uuids": [
@@ -8390,7 +8625,7 @@
       ],
       "team_history": [],
       "first_season": 32,
-      "last_season": 10
+      "last_season": 32
     },
     "player_666": {
       "uuids": [
@@ -8399,9 +8634,11 @@
       "names": [
         "Darkstar"
       ],
-      "team_history": [],
+      "team_history": [
+        "RIFT"
+      ],
       "first_season": 33,
-      "last_season": 10
+      "last_season": 11
     },
     "player_667": {
       "uuids": [
@@ -8414,7 +8651,7 @@
         "HAXX"
       ],
       "first_season": 33,
-      "last_season": 10
+      "last_season": 11
     },
     "player_668": {
       "uuids": [
@@ -8434,7 +8671,9 @@
       "names": [
         "iceillusion"
       ],
-      "team_history": [],
+      "team_history": [
+        "ISLD"
+      ],
       "first_season": 35,
       "last_season": 35
     },
@@ -8449,7 +8688,7 @@
         "EMRD"
       ],
       "first_season": 35,
-      "last_season": 10
+      "last_season": 11
     },
     "player_671": {
       "uuids": [
@@ -8491,18 +8730,24 @@
       "names": [
         "@-TACK!"
       ],
-      "team_history": [],
+      "team_history": [
+        "ISLD",
+        "STHX"
+      ],
       "first_season": 35,
-      "last_season": 35
+      "last_season": 11
     },
     "player_675": {
       "uuids": [
         "cd6b9f5a-2f2f-48f1-a221-8c584353134e"
       ],
       "names": [
-        "immuneImmune"
+        "immuneImmune",
+        "immune"
       ],
-      "team_history": [],
+      "team_history": [
+        "DMND"
+      ],
       "first_season": 35,
       "last_season": 35
     },
@@ -8517,7 +8762,7 @@
         "EMRD"
       ],
       "first_season": 35,
-      "last_season": 10
+      "last_season": 11
     },
     "player_677": {
       "uuids": [
@@ -8535,13 +8780,15 @@
         "a5120f97-e7fa-4826-9577-b2ec7660fae3"
       ],
       "names": [
-        "SavitarXI"
+        "SavitarXI",
+        "Savitar"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 35,
-      "last_season": 10
+      "last_season": 11
     },
     "player_679": {
       "uuids": [
@@ -8550,9 +8797,11 @@
       "names": [
         "Poseidon"
       ],
-      "team_history": [],
+      "team_history": [
+        "just"
+      ],
       "first_season": 35,
-      "last_season": 10
+      "last_season": 11
     },
     "player_680": {
       "uuids": [
@@ -8562,10 +8811,11 @@
         "Gladiator"
       ],
       "team_history": [
-        "AGGG"
+        "AGGG",
+        "LMB0"
       ],
       "first_season": 35,
-      "last_season": 10
+      "last_season": 35
     },
     "player_681": {
       "uuids": [
@@ -8574,9 +8824,11 @@
       "names": [
         "rukn"
       ],
-      "team_history": [],
+      "team_history": [
+        "ZT"
+      ],
       "first_season": 35,
-      "last_season": 35
+      "last_season": 11
     },
     "player_682": {
       "uuids": [
@@ -8586,10 +8838,11 @@
         "K0d14c"
       ],
       "team_history": [
-        "EMU"
+        "EMU",
+        "STHX"
       ],
       "first_season": 35,
-      "last_season": 10
+      "last_season": 11
     },
     "player_683": {
       "uuids": [
@@ -8607,13 +8860,15 @@
         "c541a1ae-f6b7-4ef0-b62f-0c635e01a9af"
       ],
       "names": [
-        "SilentKiller_09"
+        "SilentKiller_09",
+        "SilentKiller09"
       ],
       "team_history": [
-        "SLNT"
+        "SLNT",
+        "RIFT"
       ],
       "first_season": 36,
-      "last_season": 10
+      "last_season": 36
     },
     "player_685": {
       "uuids": [
@@ -8622,9 +8877,11 @@
       "names": [
         "ROADRUNNER"
       ],
-      "team_history": [],
+      "team_history": [
+        "LMB0"
+      ],
       "first_season": 36,
-      "last_season": 10
+      "last_season": 36
     },
     "player_686": {
       "uuids": [
@@ -8655,9 +8912,11 @@
       "names": [
         "Chrome Heart"
       ],
-      "team_history": [],
+      "team_history": [
+        "just"
+      ],
       "first_season": 36,
-      "last_season": 10
+      "last_season": 11
     },
     "player_689": {
       "uuids": [
@@ -8681,7 +8940,7 @@
         "F1R3"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_691": {
       "uuids": [
@@ -8692,7 +8951,7 @@
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_692": {
       "uuids": [
@@ -8705,7 +8964,7 @@
         "F1R3"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_693": {
       "uuids": [
@@ -8723,11 +8982,12 @@
         "153b2dfb-ed47-4715-8b2b-90479e6f5980"
       ],
       "names": [
-        "USIChe.S.ehCUSIhe.S.ehCEHCEHCSISU"
+        "USIChe.S.ehCUSIhe.S.ehCEHCEHCSISU",
+        "USIChe.S.eh"
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_695": {
       "uuids": [
@@ -8758,9 +9018,11 @@
       "names": [
         "UltraViolet"
       ],
-      "team_history": [],
+      "team_history": [
+        "RVNG"
+      ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_698": {
       "uuids": [
@@ -8773,7 +9035,7 @@
         "AGGG"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_699": {
       "uuids": [
@@ -8786,7 +9048,7 @@
         "EMRD"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_700": {
       "uuids": [
@@ -8810,7 +9072,7 @@
         "RAZA"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_702": {
       "uuids": [
@@ -8841,9 +9103,11 @@
       "names": [
         "Fish"
       ],
-      "team_history": [],
+      "team_history": [
+        "DMND"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_705": {
       "uuids": [
@@ -8854,7 +9118,7 @@
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_706": {
       "uuids": [
@@ -8865,7 +9129,7 @@
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_707": {
       "uuids": [
@@ -8889,7 +9153,7 @@
         "SWUA"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_709": {
       "uuids": [
@@ -8902,7 +9166,7 @@
         "F1R3"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_710": {
       "uuids": [
@@ -8937,7 +9201,7 @@
         "SWUA"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_713": {
       "uuids": [
@@ -8946,9 +9210,11 @@
       "names": [
         "titi"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_714": {
       "uuids": [
@@ -8957,18 +9223,23 @@
       "names": [
         "Eremat "
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_715": {
       "uuids": [
         "321eebf0-78f0-4e0a-b0a5-e48d781cbf37"
       ],
       "names": [
-        " COBRA BG StyL3!"
+        " COBRA BG StyL3!",
+        "COBRA"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 48,
       "last_season": 48
     },
@@ -8990,22 +9261,26 @@
       "names": [
         "Solgamon"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_718": {
       "uuids": [
         "ded0f10d-aec5-4447-9b4f-3c5694501aaf"
       ],
       "names": [
-        "!PIKATHUNDER!"
+        "!PIKATHUNDER!",
+        "Magnemite"
       ],
       "team_history": [
-        "Doc!"
+        "Doc!",
+        "ISLD"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_719": {
       "uuids": [
@@ -9029,7 +9304,7 @@
         "VRUS"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_721": {
       "uuids": [
@@ -9042,7 +9317,7 @@
         "FAM!"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_722": {
       "uuids": [
@@ -9055,7 +9330,7 @@
         "FAM!"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_723": {
       "uuids": [
@@ -9068,7 +9343,7 @@
         "VRUS"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_724": {
       "uuids": [
@@ -9081,7 +9356,7 @@
         "FAM!"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_725": {
       "uuids": [
@@ -9101,9 +9376,11 @@
       "names": [
         "GER\u2026zero"
       ],
-      "team_history": [],
+      "team_history": [
+        "HAXX"
+      ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_727": {
       "uuids": [
@@ -9114,7 +9391,7 @@
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_728": {
       "uuids": [
@@ -9143,13 +9420,14 @@
         "5462f068-127b-49af-a1b5-3053437d7214"
       ],
       "names": [
-        "Lainey"
+        "Lainey",
+        "Lainey123456"
       ],
       "team_history": [
         "FAM!"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_731": {
       "uuids": [
@@ -9206,7 +9484,7 @@
         "DMND"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_736": {
       "uuids": [
@@ -9219,7 +9497,7 @@
         "EMRD"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_737": {
       "uuids": [
@@ -9237,11 +9515,14 @@
         "15eb8804-579a-4f4b-aa9c-caee8c37ea6a"
       ],
       "names": [
-        "Aaron.I.Am"
+        "Aaron.I.Am",
+        "Aaron"
       ],
-      "team_history": [],
+      "team_history": [
+        "RVNG"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_739": {
       "uuids": [
@@ -9254,7 +9535,7 @@
         "AGGG"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_740": {
       "uuids": [
@@ -9267,7 +9548,7 @@
         "DRGN"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_741": {
       "uuids": [
@@ -9287,22 +9568,26 @@
       "names": [
         "bababou3"
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_743": {
       "uuids": [
         "e2522fde-3b86-49ef-9714-17783218153f"
       ],
       "names": [
-        "XyLo"
+        "XyLo",
+        "Ryzeal"
       ],
       "team_history": [
-        "AGGG"
+        "AGGG",
+        "AK47"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_744": {
       "uuids": [
@@ -9313,7 +9598,7 @@
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_745": {
       "uuids": [
@@ -9322,9 +9607,13 @@
       "names": [
         "Frank The 3rd"
       ],
-      "team_history": [],
+      "team_history": [
+        "FACE",
+        "RIFT",
+        "ISLD"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_746": {
       "uuids": [
@@ -9344,9 +9633,11 @@
       "names": [
         "Nala"
       ],
-      "team_history": [],
+      "team_history": [
+        "HAXX"
+      ],
       "first_season": 48,
-      "last_season": 48
+      "last_season": 11
     },
     "player_748": {
       "uuids": [
@@ -9392,7 +9683,7 @@
         "SWUA"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_752": {
       "uuids": [
@@ -9403,7 +9694,7 @@
       ],
       "team_history": [],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 48
     },
     "player_753": {
       "uuids": [
@@ -9416,7 +9707,7 @@
         "AK47"
       ],
       "first_season": 48,
-      "last_season": 10
+      "last_season": 11
     },
     "player_754": {
       "uuids": [
@@ -9436,9 +9727,11 @@
       "names": [
         "Croissant "
       ],
-      "team_history": [],
+      "team_history": [
+        "BOND"
+      ],
       "first_season": 49,
-      "last_season": 49
+      "last_season": 11
     },
     "player_756": {
       "uuids": [
@@ -9462,7 +9755,7 @@
         "VRUS"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 11
     },
     "player_758": {
       "uuids": [
@@ -9473,7 +9766,7 @@
       ],
       "team_history": [],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 49
     },
     "player_759": {
       "uuids": [
@@ -9497,7 +9790,7 @@
         "AK47"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 49
     },
     "player_761": {
       "uuids": [
@@ -9510,7 +9803,7 @@
         "FAM!"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 11
     },
     "player_762": {
       "uuids": [
@@ -9541,7 +9834,9 @@
       "names": [
         "Richie_Rebel"
       ],
-      "team_history": [],
+      "team_history": [
+        "RAZA"
+      ],
       "first_season": 49,
       "last_season": 49
     },
@@ -9567,20 +9862,22 @@
         "SWUA"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 11
     },
     "player_767": {
       "uuids": [
         "f0c8c1f9-3326-4856-8ab0-b8a85ce021b3"
       ],
       "names": [
-        "da-san-man1"
+        "da-san-man1",
+        "Shift"
       ],
       "team_history": [
-        "AK47"
+        "AK47",
+        "RIFT"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 49
     },
     "player_768": {
       "uuids": [
@@ -9590,10 +9887,11 @@
         "Quendi"
       ],
       "team_history": [
-        "VRUS"
+        "VRUS",
+        "SWUA"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 49
     },
     "player_769": {
       "uuids": [
@@ -9617,20 +9915,21 @@
         "RVNG"
       ],
       "first_season": 49,
-      "last_season": 10
+      "last_season": 11
     },
     "player_771": {
       "uuids": [
         "c1a5096a-88a2-4968-99e5-70e91886d79d"
       ],
       "names": [
-        "Fluffy Bastard"
+        "Fluffy Bastard",
+        "Dr Marshmallow"
       ],
       "team_history": [
         "EMRD"
       ],
       "first_season": 50,
-      "last_season": 10
+      "last_season": 11
     },
     "player_772": {
       "uuids": [
@@ -9643,7 +9942,7 @@
         "HAXX"
       ],
       "first_season": 50,
-      "last_season": 10
+      "last_season": 50
     },
     "player_773": {
       "uuids": [
@@ -9654,7 +9953,7 @@
       ],
       "team_history": [],
       "first_season": 50,
-      "last_season": 10
+      "last_season": 50
     },
     "player_774": {
       "uuids": [
@@ -9799,7 +10098,7 @@
         "LMB0"
       ],
       "first_season": 51,
-      "last_season": 10
+      "last_season": 51
     },
     "player_787": {
       "uuids": [
@@ -9821,7 +10120,7 @@
       ],
       "team_history": [],
       "first_season": 51,
-      "last_season": 10
+      "last_season": 51
     },
     "player_789": {
       "uuids": [
@@ -9845,7 +10144,7 @@
         "LMB0"
       ],
       "first_season": 51,
-      "last_season": 10
+      "last_season": 51
     },
     "player_791": {
       "uuids": [
@@ -9869,7 +10168,7 @@
         "LMB0"
       ],
       "first_season": 52,
-      "last_season": 10
+      "last_season": 11
     },
     "player_793": {
       "uuids": [
@@ -9909,13 +10208,15 @@
         "68948c55-c50b-46c0-a6bd-695588113a32"
       ],
       "names": [
-        "Cake"
+        "Cake",
+        "Jake"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 53,
-      "last_season": 10
+      "last_season": 11
     },
     "player_797": {
       "uuids": [
@@ -9939,7 +10240,7 @@
         "VRUS"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_799": {
       "uuids": [
@@ -9952,7 +10253,7 @@
         "VRUS"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_800": {
       "uuids": [
@@ -9962,34 +10263,40 @@
         "Delusional"
       ],
       "team_history": [
-        "RIPR"
+        "RIPR",
+        "ISLD"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_801": {
       "uuids": [
         "6e32866b-b554-4f85-ad74-0e37f7f3c47e"
       ],
       "names": [
-        "postdashshadow"
+        "postdashshadow",
+        "Viltrumite"
       ],
-      "team_history": [],
+      "team_history": [
+        "TX"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_802": {
       "uuids": [
         "0dd39320-8345-449c-8546-9bb660f71da8"
       ],
       "names": [
-        "Golden Drgn"
+        "Golden Drgn",
+        "G.L.D.N."
       ],
       "team_history": [
-        "HOBO"
+        "HOBO",
+        "EMRD"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_803": {
       "uuids": [
@@ -9999,10 +10306,11 @@
         "ICE TEA "
       ],
       "team_history": [
-        "HOBO"
+        "HOBO",
+        "RIFT"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_804": {
       "uuids": [
@@ -10013,18 +10321,21 @@
       ],
       "team_history": [],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_805": {
       "uuids": [
         "3b59efa2-1323-4ec9-a660-d1e18b17cc2d"
       ],
       "names": [
-        "Russian King"
+        "Russian King",
+        "aloxa_def"
       ],
-      "team_history": [],
+      "team_history": [
+        "ISLD"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_806": {
       "uuids": [
@@ -10035,7 +10346,7 @@
       ],
       "team_history": [],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_807": {
       "uuids": [
@@ -10046,46 +10357,53 @@
       ],
       "team_history": [],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_808": {
       "uuids": [
         "17be1d9f-2f91-48d1-9745-2b238b4047a8"
       ],
       "names": [
-        "Dark Angel"
+        "Dark Angel",
+        "Huayra"
       ],
       "team_history": [
         "Doc!"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_809": {
       "uuids": [
         "0bba8173-6784-4795-96fd-88dedfe2b21f"
       ],
       "names": [
-        "| @L!3N R3@P3R |"
+        "| @L!3N R3@P3R |",
+        "| @L!3N R3@P3R"
       ],
       "team_history": [
-        "SLNT"
+        "SLNT",
+        "FACE",
+        "TX"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_810": {
       "uuids": [
         "c25c54ee-48b3-4f9c-b9ce-08df3576ca85"
       ],
       "names": [
-        "HATE"
+        "HATE",
+        "Creeps"
       ],
       "team_history": [
+        "SWUA",
+        "FACE",
         "SWUA"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_811": {
       "uuids": [
@@ -10095,10 +10413,11 @@
         "RIP"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_812": {
       "uuids": [
@@ -10107,9 +10426,11 @@
       "names": [
         "Outcast"
       ],
-      "team_history": [],
+      "team_history": [
+        "RIFT"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_813": {
       "uuids": [
@@ -10122,7 +10443,7 @@
         "EMRD"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_814": {
       "uuids": [
@@ -10131,9 +10452,11 @@
       "names": [
         "Fire_Spirit123"
       ],
-      "team_history": [],
+      "team_history": [
+        "DMND"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_815": {
       "uuids": [
@@ -10146,7 +10469,7 @@
         "DRGN"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_816": {
       "uuids": [
@@ -10159,18 +10482,23 @@
         "F1R3"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_817": {
       "uuids": [
         "96cd35ba-126b-43df-b42f-a1ee9e2a93b2"
       ],
       "names": [
-        "Zenith"
+        "Zenith",
+        "Timeless"
       ],
-      "team_history": [],
+      "team_history": [
+        "FACE",
+        "RIFT",
+        "SWUA"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_818": {
       "uuids": [
@@ -10183,7 +10511,7 @@
         "LMB0"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_819": {
       "uuids": [
@@ -10196,7 +10524,7 @@
         "RVNG"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_820": {
       "uuids": [
@@ -10207,7 +10535,7 @@
       ],
       "team_history": [],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_821": {
       "uuids": [
@@ -10216,9 +10544,11 @@
       "names": [
         "Apocalypse"
       ],
-      "team_history": [],
+      "team_history": [
+        "FACE"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_822": {
       "uuids": [
@@ -10231,7 +10561,7 @@
         "FAM!"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_823": {
       "uuids": [
@@ -10244,7 +10574,7 @@
         "DMND"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_824": {
       "uuids": [
@@ -10257,7 +10587,7 @@
         "F1R3"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_825": {
       "uuids": [
@@ -10270,20 +10600,21 @@
         "EMRD"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_826": {
       "uuids": [
         "07800c5d-324c-4c57-9745-711a67f1c300"
       ],
       "names": [
-        "(**)reSonance"
+        "(**)reSonance",
+        "RES (jb)"
       ],
       "team_history": [
         "DMND"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_827": {
       "uuids": [
@@ -10296,7 +10627,7 @@
         "SWUA"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_828": {
       "uuids": [
@@ -10306,10 +10637,11 @@
         "Legoman021"
       ],
       "team_history": [
-        "FAM!"
+        "FAM!",
+        "RVNG"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_829": {
       "uuids": [
@@ -10317,13 +10649,16 @@
       ],
       "names": [
         "Venyum jbVenyum jbVenyum",
-        "Venyum jb"
+        "Venyum jb",
+        "Pestilence jb",
+        "Venyum"
       ],
       "team_history": [
-        "DMND"
+        "DMND",
+        "LMB0"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_830": {
       "uuids": [
@@ -10332,9 +10667,11 @@
       "names": [
         "RIP"
       ],
-      "team_history": [],
+      "team_history": [
+        "DMND"
+      ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 11
     },
     "player_831": {
       "uuids": [
@@ -10347,7 +10684,7 @@
         "RVNG"
       ],
       "first_season": 59,
-      "last_season": 10
+      "last_season": 59
     },
     "player_832": {
       "uuids": [
@@ -10358,7 +10695,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_833": {
       "uuids": [
@@ -10369,7 +10706,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_834": {
       "uuids": [
@@ -10380,7 +10717,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_835": {
       "uuids": [
@@ -10393,7 +10730,7 @@
         "just"
       ],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_836": {
       "uuids": [
@@ -10406,7 +10743,7 @@
         "STHX"
       ],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_837": {
       "uuids": [
@@ -10419,7 +10756,7 @@
         "VRUS"
       ],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 11
     },
     "player_838": {
       "uuids": [
@@ -10430,7 +10767,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_839": {
       "uuids": [
@@ -10441,7 +10778,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 11
     },
     "player_840": {
       "uuids": [
@@ -10452,7 +10789,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_841": {
       "uuids": [
@@ -10463,7 +10800,7 @@
       ],
       "team_history": [],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_842": {
       "uuids": [
@@ -10472,9 +10809,11 @@
       "names": [
         "pika"
       ],
-      "team_history": [],
+      "team_history": [
+        "REKT"
+      ],
       "first_season": 60,
-      "last_season": 10
+      "last_season": 60
     },
     "player_843": {
       "uuids": [
@@ -10487,20 +10826,21 @@
         "EMRD"
       ],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 11
     },
     "player_844": {
       "uuids": [
         "8de63df1-c92e-4429-b79e-2f496e6479e0"
       ],
       "names": [
-        "retsiniSIM WATCHING U"
+        "retsiniSIM WATCHING U",
+        "Sinister"
       ],
       "team_history": [
         "DMND"
       ],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 11
     },
     "player_845": {
       "uuids": [
@@ -10511,7 +10851,7 @@
       ],
       "team_history": [],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 61
     },
     "player_846": {
       "uuids": [
@@ -10522,7 +10862,7 @@
       ],
       "team_history": [],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 61
     },
     "player_847": {
       "uuids": [
@@ -10533,7 +10873,7 @@
       ],
       "team_history": [],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 61
     },
     "player_848": {
       "uuids": [
@@ -10544,31 +10884,36 @@
       ],
       "team_history": [],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 61
     },
     "player_849": {
       "uuids": [
         "029ae638-aeb8-4c42-93f3-daf54deaec15"
       ],
       "names": [
-        "kingc_1234"
+        "kingc_1234",
+        "kingc.1234"
       ],
-      "team_history": [],
+      "team_history": [
+        "ISLD"
+      ],
       "first_season": 61,
-      "last_season": 10
+      "last_season": 11
     },
     "player_850": {
       "uuids": [
         "ff60f0b6-85e2-4f52-9a4c-9a75738c839d"
       ],
       "names": [
-        "Candyyy"
+        "Candyyy",
+        "Canddy"
       ],
       "team_history": [
-        "Doc!"
+        "Doc!",
+        "RIFT"
       ],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 62
     },
     "player_851": {
       "uuids": [
@@ -10581,7 +10926,7 @@
         "SWUA"
       ],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 62
     },
     "player_852": {
       "uuids": [
@@ -10594,7 +10939,7 @@
         "AK47"
       ],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 11
     },
     "player_853": {
       "uuids": [
@@ -10604,10 +10949,11 @@
         "Shameless"
       ],
       "team_history": [
-        "FAM!"
+        "FAM!",
+        "AGGG"
       ],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 11
     },
     "player_854": {
       "uuids": [
@@ -10618,7 +10964,7 @@
       ],
       "team_history": [],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 62
     },
     "player_855": {
       "uuids": [
@@ -10626,11 +10972,12 @@
       ],
       "names": [
         "CRAZY TOILET OG67",
-        "idkCRAZY KILLER"
+        "idkCRAZY KILLER",
+        "idkCRAZY KILLE"
       ],
       "team_history": [],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 62
     },
     "player_856": {
       "uuids": [
@@ -10640,10 +10987,11 @@
         "Lelu"
       ],
       "team_history": [
-        "Infi"
+        "Infi",
+        "oo"
       ],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 11
     },
     "player_857": {
       "uuids": [
@@ -10654,7 +11002,7 @@
       ],
       "team_history": [],
       "first_season": 62,
-      "last_season": 10
+      "last_season": 62
     },
     "player_858": {
       "uuids": [
@@ -10665,7 +11013,7 @@
       ],
       "team_history": [],
       "first_season": 63,
-      "last_season": 10
+      "last_season": 11
     },
     "player_859": {
       "uuids": [
@@ -10676,20 +11024,21 @@
       ],
       "team_history": [],
       "first_season": 63,
-      "last_season": 10
+      "last_season": 63
     },
     "player_860": {
       "uuids": [
         "37b3406e-fd71-4a13-aa87-64e0af342f14"
       ],
       "names": [
-        "Ignite '-'"
+        "Ignite '-'",
+        "Ignite Memory"
       ],
       "team_history": [
         "SWUA"
       ],
       "first_season": 64,
-      "last_season": 10
+      "last_season": 11
     },
     "player_861": {
       "uuids": [
@@ -10698,9 +11047,1387 @@
       "names": [
         "Graston"
       ],
-      "team_history": [],
+      "team_history": [
+        "FAM!"
+      ],
       "first_season": 65,
-      "last_season": 65
+      "last_season": 11
+    },
+    "player_862": {
+      "uuids": [
+        "81a89ded-59fc-4b18-91d0-f457897ff65b"
+      ],
+      "names": [
+        "123"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_863": {
+      "uuids": [
+        "19ae1c7e-7fab-418e-862c-c24a7aa3ba5a"
+      ],
+      "names": [
+        "420Angela"
+      ],
+      "team_history": [
+        "RVNG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_864": {
+      "uuids": [
+        "67829939-56cc-4673-92ee-4e6a62e09d86"
+      ],
+      "names": [
+        "ABTeam jb"
+      ],
+      "team_history": [
+        "AK47"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_865": {
+      "uuids": [
+        "be3a408f-6e14-47f8-a006-3c59a13e1563"
+      ],
+      "names": [
+        "Anmisu"
+      ],
+      "team_history": [
+        "DMND"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_866": {
+      "uuids": [
+        "47ab1463-8ba7-4126-8095-c2dae23572f1"
+      ],
+      "names": [
+        "BUZZWOLE"
+      ],
+      "team_history": [
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_867": {
+      "uuids": [
+        "bace8a2b-22ea-417b-8608-bc1f16e612cc"
+      ],
+      "names": [
+        "Darkstar"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_868": {
+      "uuids": [
+        "497c105e-9371-4fb9-896d-4be3fa67f139"
+      ],
+      "names": [
+        "DragonJedi10"
+      ],
+      "team_history": [
+        "RIFT"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_869": {
+      "uuids": [
+        "bbded3ea-d429-46ad-8432-8a9ba35aac73"
+      ],
+      "names": [
+        "Dw1"
+      ],
+      "team_history": [
+        "RIFT",
+        "RVNG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_870": {
+      "uuids": [
+        "e8010aa7-602b-4e83-bc8f-d1cc49e47877"
+      ],
+      "names": [
+        "EDGY!"
+      ],
+      "team_history": [
+        "Doc!"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_871": {
+      "uuids": [
+        "ed239e37-7e8b-4ecf-9c26-be834585409a"
+      ],
+      "names": [
+        "EMO"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_872": {
+      "uuids": [
+        "06a523fe-696d-4014-b442-bbc760c6dce1"
+      ],
+      "names": [
+        "First Order"
+      ],
+      "team_history": [
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_873": {
+      "uuids": [
+        "8e124a10-6e65-44ef-90c8-a568f314cbca"
+      ],
+      "names": [
+        "GOAT"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_874": {
+      "uuids": [
+        "778f594c-b59d-4541-9143-8bed49ff0be9"
+      ],
+      "names": [
+        "Greedy"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_875": {
+      "uuids": [
+        "ba788266-de08-416d-914a-b2933b7a174a"
+      ],
+      "names": [
+        "Hooter"
+      ],
+      "team_history": [
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_876": {
+      "uuids": [
+        "831102c9-67d3-4790-a6b0-624c568dd1df"
+      ],
+      "names": [
+        "idk17"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_877": {
+      "uuids": [
+        "4af4694f-4db5-4975-8260-9afeb9914f90"
+      ],
+      "names": [
+        "Jane Juliet"
+      ],
+      "team_history": [
+        "RVNG",
+        "RIFT"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_878": {
+      "uuids": [
+        "590503e8-a081-40a6-89d5-2c2a5ec5f6b6"
+      ],
+      "names": [
+        "Jayu_91",
+        "Jayu 91"
+      ],
+      "team_history": [
+        "AGGG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_879": {
+      "uuids": [
+        "2d79cd34-d377-4559-8251-2f2a625d3975"
+      ],
+      "names": [
+        "KingSm8rt"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_880": {
+      "uuids": [
+        "1cd846dd-33a6-4397-8cc8-edfb8c085bc3"
+      ],
+      "names": [
+        "Kratos "
+      ],
+      "team_history": [
+        "TX",
+        "RVNG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_881": {
+      "uuids": [
+        "a8084a85-7555-4c0c-bd43-c97852ae20a3"
+      ],
+      "names": [
+        "lbdua"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_882": {
+      "uuids": [
+        "51510108-8b25-4426-9ac8-d0e082b949d8"
+      ],
+      "names": [
+        "lil bob"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_883": {
+      "uuids": [
+        "fd2ed669-2ed1-415e-89a6-a82fe2be36e7"
+      ],
+      "names": [
+        "Maddog2734"
+      ],
+      "team_history": [
+        "DMND"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_884": {
+      "uuids": [
+        "b0c60974-d14a-4bb3-a5f2-843b85fcc15d"
+      ],
+      "names": [
+        "mechamaru",
+        "pochita"
+      ],
+      "team_history": [
+        "FACE",
+        "DMND"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_885": {
+      "uuids": [
+        "cb93d1e9-b10f-4e9c-80a6-503c96080b8d"
+      ],
+      "names": [
+        "noob"
+      ],
+      "team_history": [
+        "Doc!"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_886": {
+      "uuids": [
+        "53fb16db-58af-451b-8753-024658731b9e"
+      ],
+      "names": [
+        "pew-pew"
+      ],
+      "team_history": [
+        "RIFT"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_887": {
+      "uuids": [
+        "65f2d4fe-62b1-4811-b960-93dea326ee9e"
+      ],
+      "names": [
+        "Pizzasss"
+      ],
+      "team_history": [
+        "FACE",
+        "oo"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_888": {
+      "uuids": [
+        "cea37306-6d36-4e94-ba5f-8ea4a9918588"
+      ],
+      "names": [
+        "radiation"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_889": {
+      "uuids": [
+        "cf0da90e-fc60-4c5e-b5d4-f45566afe55c"
+      ],
+      "names": [
+        "Shocker"
+      ],
+      "team_history": [
+        "FAM!"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_890": {
+      "uuids": [
+        "412f4d54-f9e2-49b4-867b-40ab93025cc0"
+      ],
+      "names": [
+        "smarties"
+      ],
+      "team_history": [
+        "FACE",
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_891": {
+      "uuids": [
+        "875a0454-96c5-4228-ad66-9e8a69a8936d"
+      ],
+      "names": [
+        "Standuplizard"
+      ],
+      "team_history": [
+        "DMND"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_892": {
+      "uuids": [
+        "088d5d0c-a902-4b08-b870-771550b4dedc"
+      ],
+      "names": [
+        "Suyan"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_893": {
+      "uuids": [
+        "10aa58de-7de7-4820-9b75-02bab1faee06"
+      ],
+      "names": [
+        "TheGouthros"
+      ],
+      "team_history": [
+        "RVNG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_894": {
+      "uuids": [
+        "d516ef54-bd53-4523-93c5-a96b81d1afde"
+      ],
+      "names": [
+        "tianqi"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_895": {
+      "uuids": [
+        "d87178ae-029f-4ace-9265-d5f74bae8608"
+      ],
+      "names": [
+        "Timeless"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_896": {
+      "uuids": [
+        "02104945-ff20-43ad-a963-24c78621ce5c"
+      ],
+      "names": [
+        "Tx MJC-USA"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_897": {
+      "uuids": [
+        "8c4fbdfb-18ae-4444-aaf9-62bacfccaf08"
+      ],
+      "names": [
+        "tx_tay26"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_898": {
+      "uuids": [
+        "ad809f50-4e59-43e6-b782-9db9a4c26781"
+      ],
+      "names": [
+        "Tyfood"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_899": {
+      "uuids": [
+        "31e9ee35-14a4-4d16-8751-a1ad4face8cb"
+      ],
+      "names": [
+        "WitoBaby"
+      ],
+      "team_history": [
+        "TX",
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_900": {
+      "uuids": [
+        "7851ddd8-1a88-49e1-a72b-558e099b95b8"
+      ],
+      "names": [
+        "wr"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_901": {
+      "uuids": [
+        "25aee442-f50b-462a-9ee4-5fc266e2c20e"
+      ],
+      "names": [
+        "xcooooob"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_902": {
+      "uuids": [
+        "da0181d3-3f6f-4107-bb34-d1314160d5ff"
+      ],
+      "names": [
+        "xyz"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_903": {
+      "uuids": [
+        "acb04f6a-7327-41b1-9ae5-ac173a30196d"
+      ],
+      "names": [
+        "Yachiyo"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_904": {
+      "uuids": [
+        "150944d8-2cf2-4582-8d5c-5b73a82a0cfd"
+      ],
+      "names": [
+        "ZZ5000"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_905": {
+      "uuids": [
+        "b16748a0-b424-4bd5-a5dd-7108b606c0ca"
+      ],
+      "names": [
+        "CESARRU3075"
+      ],
+      "team_history": [
+        "RAZA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_906": {
+      "uuids": [
+        "adb99037-e7f9-4449-b722-2e3d417b018f"
+      ],
+      "names": [
+        "Dark Clouds "
+      ],
+      "team_history": [
+        "RIFT"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_907": {
+      "uuids": [
+        "50f399fc-faf2-44f9-817b-d3f7bb6b9251"
+      ],
+      "names": [
+        "eeee"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_908": {
+      "uuids": [
+        "86b55ab3-7856-4d8a-ba87-9808b87ebbba"
+      ],
+      "names": [
+        "Eku-01"
+      ],
+      "team_history": [
+        "EMRD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_909": {
+      "uuids": [
+        "e1807d28-19ae-42bd-ad4a-f3d7d53ac557"
+      ],
+      "names": [
+        "False"
+      ],
+      "team_history": [
+        "AGGG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_910": {
+      "uuids": [
+        "1c41ac3d-5fd1-432f-a532-f383b64c9b4f"
+      ],
+      "names": [
+        "Frok4856"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_911": {
+      "uuids": [
+        "e7408bc3-348d-4f9f-8550-d295897fdc3b"
+      ],
+      "names": [
+        "Gabriel Mexica"
+      ],
+      "team_history": [
+        "RAZA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_912": {
+      "uuids": [
+        "b055115c-b5b2-4ccc-a308-ce18a3914b3f"
+      ],
+      "names": [
+        "Icepenguin1 "
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_913": {
+      "uuids": [
+        "bf7a5291-4550-4115-8846-fa9fd38793f8"
+      ],
+      "names": [
+        "Peanutburke"
+      ],
+      "team_history": [
+        "FAM!"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_914": {
+      "uuids": [
+        "86336506-938d-4982-a9fb-a08ebccd1002"
+      ],
+      "names": [
+        "PURPLEGUY"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_915": {
+      "uuids": [
+        "ce20db0b-e134-4b66-b083-1b0491fe17cf"
+      ],
+      "names": [
+        "RARE_Faction"
+      ],
+      "team_history": [
+        "AGGG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_916": {
+      "uuids": [
+        "2159cb89-781a-40b1-9127-f3393d81e37f"
+      ],
+      "names": [
+        "Rick Prime"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_917": {
+      "uuids": [
+        "2e06a259-b1c0-4e34-8ce9-cd9f9f3d2196"
+      ],
+      "names": [
+        "SISU"
+      ],
+      "team_history": [
+        "RAZA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_918": {
+      "uuids": [
+        "16fc0940-e7e6-47b4-aa62-617bed290b18"
+      ],
+      "names": [
+        "Sunshine"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_919": {
+      "uuids": [
+        "75fec692-3115-4f23-a618-8b7df0390823"
+      ],
+      "names": [
+        "ZMAN"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_920": {
+      "uuids": [
+        "player_801"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_921": {
+      "uuids": [
+        "player_809"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_922": {
+      "uuids": [
+        "player_896"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_923": {
+      "uuids": [
+        "player_897"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_924": {
+      "uuids": [
+        "player_904"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_925": {
+      "uuids": [
+        "player_800"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_926": {
+      "uuids": [
+        "player_805"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_927": {
+      "uuids": [
+        "player_849"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_928": {
+      "uuids": [
+        "player_879"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_929": {
+      "uuids": [
+        "player_882"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_930": {
+      "uuids": [
+        "player_219"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_931": {
+      "uuids": [
+        "player_215"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_932": {
+      "uuids": [
+        "player_303"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_933": {
+      "uuids": [
+        "player_509"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_934": {
+      "uuids": [
+        "player_656"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_935": {
+      "uuids": [
+        "player_692"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_936": {
+      "uuids": [
+        "player_103"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_937": {
+      "uuids": [
+        "player_519"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_938": {
+      "uuids": [
+        "player_653"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_939": {
+      "uuids": [
+        "player_704"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_940": {
+      "uuids": [
+        "player_735"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_941": {
+      "uuids": [
+        "player_823"
+      ],
+      "names": [],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_942": {
+      "uuids": [
+        "419e6245-bdcf-42a4-8f5d-951daaaa22af"
+      ],
+      "names": [
+        "Asesino"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_943": {
+      "uuids": [
+        "ae957262-4911-4168-ae5d-b043d8a60c92"
+      ],
+      "names": [
+        "EGER"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_944": {
+      "uuids": [
+        "a7441f0a-656d-4d5e-8bc8-387b4c748879"
+      ],
+      "names": [
+        "i am swaggerjb"
+      ],
+      "team_history": [
+        "RVNG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_945": {
+      "uuids": [
+        "3bed2d0d-66ab-4030-96a8-2c940c058e6b"
+      ],
+      "names": [
+        "KILLS *_*"
+      ],
+      "team_history": [
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_946": {
+      "uuids": [
+        "b1cdb97f-6fab-46b6-ad0e-ff63bb35d015"
+      ],
+      "names": [
+        "Recollect"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_947": {
+      "uuids": [
+        "9d00acfc-fdf7-4891-9fbf-8cf66c381788"
+      ],
+      "names": [
+        "Whopper"
+      ],
+      "team_history": [
+        "oo",
+        "Doc!"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_948": {
+      "uuids": [
+        "46802bed-03f8-4031-858f-c67f8f48da47"
+      ],
+      "names": [
+        "albeeno"
+      ],
+      "team_history": [
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_949": {
+      "uuids": [
+        "20a7557d-25bf-4148-92b6-c549726f6f52"
+      ],
+      "names": [
+        "Amaan"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_950": {
+      "uuids": [
+        "180fda42-1065-41bd-8dd5-5d418931052c"
+      ],
+      "names": [
+        "brigglybear"
+      ],
+      "team_history": [
+        "HAXX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_951": {
+      "uuids": [
+        "e4568532-8ec7-490d-8280-52ed0e967e23"
+      ],
+      "names": [
+        "H0MIEJ83"
+      ],
+      "team_history": [
+        "AGGG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_952": {
+      "uuids": [
+        "cddfd55d-5b27-4789-ac8e-92dfbe634a2e"
+      ],
+      "names": [
+        "imneeto1"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_953": {
+      "uuids": [
+        "f8c5d574-b9ea-41e3-8d71-a833103c6667"
+      ],
+      "names": [
+        "origin"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_954": {
+      "uuids": [
+        "97af26d6-f323-4e9e-aa58-46f167eacc43"
+      ],
+      "names": [
+        "REIIIIIIII200"
+      ],
+      "team_history": [
+        "RVNG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_955": {
+      "uuids": [
+        "b5da652e-eb5c-4c16-ac86-96e1ea2db487"
+      ],
+      "names": [
+        "SRC Nukehead"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_956": {
+      "uuids": [
+        "105ca45e-6340-42bf-9ba3-5b1e39b3d75a"
+      ],
+      "names": [
+        "Stone"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_957": {
+      "uuids": [
+        "15a0f792-7fc0-45df-a445-b578a47e77a7"
+      ],
+      "names": [
+        "486"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_958": {
+      "uuids": [
+        "5508293c-74d3-40ca-9cd2-0c5f1043f791"
+      ],
+      "names": [
+        "ashology"
+      ],
+      "team_history": [
+        "EMRD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_959": {
+      "uuids": [
+        "0331bdb5-66dc-4a80-8091-56d87cf169bf"
+      ],
+      "names": [
+        "Dark Angel '-'"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_960": {
+      "uuids": [
+        "83082757-5a42-4143-9f20-d364db735c44"
+      ],
+      "names": [
+        "DodgeSrt8"
+      ],
+      "team_history": [
+        "TX"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_961": {
+      "uuids": [
+        "766359a6-9b86-40ab-b931-b50e70ed28c0"
+      ],
+      "names": [
+        "Fearless"
+      ],
+      "team_history": [
+        "SWUA"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_962": {
+      "uuids": [
+        "eea29027-c072-4088-98b0-c41710de60f9"
+      ],
+      "names": [
+        "Mark12345"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_963": {
+      "uuids": [
+        "a8e6bda2-d8bc-4873-b3ae-53859a120662"
+      ],
+      "names": [
+        "NexuZ"
+      ],
+      "team_history": [
+        "SF"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_964": {
+      "uuids": [
+        "e12120bd-3cd1-4af5-a38c-51b012e1b0d8"
+      ],
+      "names": [
+        "tomat0"
+      ],
+      "team_history": [
+        "RIFT"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_965": {
+      "uuids": [
+        "2a88f2dc-6690-41c2-bfd6-4a9ba2ae0174"
+      ],
+      "names": [
+        "Tred"
+      ],
+      "team_history": [
+        "Doc!"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_966": {
+      "uuids": [
+        "cfa8b43d-a0aa-449f-b085-ba3065058e6a"
+      ],
+      "names": [
+        "1985"
+      ],
+      "team_history": [
+        "AGGG"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_967": {
+      "uuids": [
+        "f1e15836-f718-4c38-b875-6c60d5cb1fd7"
+      ],
+      "names": [
+        "pochita"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_968": {
+      "uuids": [
+        "140f25c9-b821-45ba-a66e-17a90433a1a4"
+      ],
+      "names": [
+        "Savitar"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_969": {
+      "uuids": [
+        "78b8c2e1-0f02-4de9-aba4-647f67f0d5b3"
+      ],
+      "names": [
+        "Smarties"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_970": {
+      "uuids": [
+        "8bfc6f9b-16f8-479e-9fcd-04616e16c2db"
+      ],
+      "names": [
+        "HEDADI"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_971": {
+      "uuids": [
+        "54ed6996-a898-4367-aba6-46a482c89207"
+      ],
+      "names": [
+        "EMlly"
+      ],
+      "team_history": [
+        "'-'"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_972": {
+      "uuids": [
+        "82c73e4f-505d-451c-8e5a-12a31716a47c"
+      ],
+      "names": [
+        "SAH"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_973": {
+      "uuids": [
+        "73ec552f-33ce-4bfb-8d11-efdd565344cf"
+      ],
+      "names": [
+        "SubHelpme"
+      ],
+      "team_history": [
+        "ISLD"
+      ],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_974": {
+      "uuids": [
+        "6670edc8-058b-415d-8f90-a397371727b1"
+      ],
+      "names": [
+        "Vinco"
+      ],
+      "team_history": [],
+      "first_season": 11,
+      "last_season": 11
+    },
+    "player_975": {
+      "uuids": [
+        "0dfdb9a8-0c3f-49e6-aa6f-ba7c27f888a1"
+      ],
+      "names": [
+        "Bilou-59"
+      ],
+      "team_history": [
+        "BOND"
+      ],
+      "first_season": 11,
+      "last_season": 11
     }
   }
 }

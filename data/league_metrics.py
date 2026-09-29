@@ -121,9 +121,15 @@ def compute_league_metrics(all_players):
         
         from tags.anchor import compute_anchor_raw
 
-        # Consistency raw score for distribution building
-        # (You already compute consistency later, but for distributions we only need the raw normalized score)
-        consistency_norm = p.get("consistency", {}).get("raw", 0.5)
+        # Consistency raw score for distribution building. Read the
+        # FLAT "consistency_raw" key — the nested "consistency"/"raw"
+        # dict doesn't exist yet at this point in the pipeline, so that
+        # lookup always fell back to the 0.5 default for every player,
+        # corrupting the Anchor distribution the same way it was
+        # corrupting Clutch's (see tags/clutch.py for the full
+        # explanation). The flat key is already correctly computed by
+        # this point.
+        consistency_norm = p.get("consistency_raw", 0.5)
 
         dist["anchor"].append(
             compute_anchor_raw(p, league_averages, consistency_norm)

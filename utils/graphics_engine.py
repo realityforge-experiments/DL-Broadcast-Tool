@@ -48,55 +48,82 @@ def draw_radar_chart(draw, center, radius, params, color):
                 draw.text((center[0] + (radius + 80) * math.cos(angle), center[1] + (radius + 40) * math.sin(angle)), label, font=get_font(50), fill=(255, 255, 255), anchor="mm")
     draw.polygon(points, fill=color + (80,), outline=color + (255,))
 
-def generate_player_card(player_data, team_side="Blue"):
+def generate_player_card(player_data, team_side="Blue", export_dir=None):
     img = load_bg("spotlight")
     draw = ImageDraw.Draw(img, 'RGBA')
     accent_color = COLOR_BLUE if team_side == "Blue" else COLOR_RED
 
     name = player_data.get("name", "Unknown").upper()
     draw.text((200, 150), name, font=get_font(220), fill=(255, 255, 255))
-    
-    matches = player_data.get("matches", [])
-    career_kd = player_data.get("career", {}).get("KD", 1.0)
-    last_5 = matches[-5:] if len(matches) >= 5 else matches
-    recent_kd = (sum(m.get("Kills",0) for m in last_5)/sum(m.get("Deaths",1) for m in last_5)) if last_5 else career_kd
-    diff = recent_kd - career_kd
-    draw.rounded_rectangle([200, 400, 950, 500], radius=20, fill=(50, 255, 50) if diff >= 0 else (255, 50, 50))
-    draw.text((230, 415), f"{'HOT FORM' if diff >=0 else 'COOLING'} ({'+' if diff >=0 else ''}{diff:.2f} KD)", font=get_font(45), fill=(0,0,0))
 
-    career = player_data.get("career", {})
-    stats = [("TOTAL KILLS", f"{int(career.get('kills', 0)):,}"), ("TOTAL SCORE", f"{int(career.get('score', 0)):,}"), ("MAPS PLAYED", f"{int(career.get('maps', 0))}"), ("CAREER KD", f"{career.get('KD', 0):.2f}")]
+    has_career = bool(player_data.get("career")) and not player_data.get("stats_estimated") and not player_data.get("is_season_only")
+    is_season_only = bool(player_data.get("is_season_only")) and not player_data.get("stats_estimated")
+
+    if has_career:
+        matches = player_data.get("matches", [])
+        career_kd = player_data.get("career", {}).get("KD", 1.0)
+        last_5 = matches[-5:] if len(matches) >= 5 else matches
+        recent_kd = (sum(m.get("Kills",0) for m in last_5)/sum(m.get("Deaths",1) for m in last_5)) if last_5 else career_kd
+        diff = recent_kd - career_kd
+        draw.rounded_rectangle([200, 400, 950, 500], radius=20, fill=(50, 255, 50) if diff >= 0 else (255, 50, 50))
+        draw.text((230, 415), f"{'HOT FORM' if diff >=0 else 'COOLING'} ({'+' if diff >=0 else ''}{diff:.2f} KD)", font=get_font(45), fill=(0,0,0))
+
+        career = player_data.get("career", {})
+        stats = [("TOTAL KILLS", f"{int(career.get('kills', 0)):,}"), ("TOTAL SCORE", f"{int(career.get('score', 0)):,}"), ("MAPS PLAYED", f"{int(career.get('maps', 0))}"), ("CAREER KD", f"{career.get('KD', 0):.2f}")]
+    elif is_season_only:
+        # Real numbers, just not a full multi-season career yet —
+        # distinct from "no data at all" below. No HOT FORM/COOLING
+        # badge since that needs a real match-by-match history we
+        # don't have for these players.
+        draw.rounded_rectangle([200, 400, 950, 500], radius=20, fill=(120, 200, 255))
+        draw.text((230, 415), "NEW THIS SEASON", font=get_font(45), fill=(0,0,0))
+
+        career = player_data.get("career", {})
+        stats = [("SEASON KILLS", f"{int(career.get('kills', 0)):,}"), ("SEASON SCORE", f"{int(career.get('score', 0)):,}"), ("MAPS PLAYED", f"{int(career.get('maps', 0))}"), ("SEASON KD", f"{career.get('KD', 0):.2f}")]
+    else:
+        draw.rounded_rectangle([200, 400, 950, 500], radius=20, fill=(255, 200, 50))
+        draw.text((230, 415), "NEW PLAYER", font=get_font(45), fill=(0,0,0))
+        stats = [("TOTAL KILLS", "—"), ("TOTAL SCORE", "—"), ("MAPS PLAYED", "—"), ("CAREER KD", "—")]
+
     y = 650
     for label, value in stats:
         draw.text((200, y), label, font=get_font(70), fill=(180, 180, 180))
         draw.text((200, y + 80), value, font=get_font(130), fill=(255, 255, 255))
         y += 280
 
-    radar_params = [("SLY", player_data.get('slayer', {}).get('pct', 0)), ("AIM", player_data.get('sharpshooter', {}).get('pct', 0)), ("STA", player_data.get('consistency', {}).get('pct', 0)), ("CLU", player_data.get('clutch', {}).get('pct', 0)), ("ANC", player_data.get('anchor', {}).get('pct', 0))]
+    radar_params = [("SLY", player_data.get('slayer', {}).get('pct') or 0), ("AIM", player_data.get('sharpshooter', {}).get('pct') or 0), ("STA", player_data.get('consistency', {}).get('pct') or 0), ("CLU", player_data.get('clutch', {}).get('pct') or 0), ("ANC", player_data.get('anchor', {}).get('pct') or 0)]
     draw_radar_chart(draw, (1850, 1150), 450, radar_params, accent_color)
 
     draw.text((2700, 550), "SKILL PROFILE", font=get_font(70), fill=accent_color)
     by = 680
     for label_long, key in [("SLAYING", "slayer"), ("MARKSMAN", "sharpshooter"), ("STABILITY", "consistency"), ("PRESSURE", "clutch"), ("DEFENSIVE", "anchor")]:
-        pct = player_data.get(key, {}).get("pct", 0)
+        pct = player_data.get(key, {}).get("pct") or 0
         draw.text((2700, by), label_long, font=get_font(45), fill=(200, 200, 200))
         draw.rectangle([2700, by+60, 3600, by+90], fill=(40, 40, 45))
         draw.rectangle([2700, by+60, 2700 + (900 * (pct/100)), by+90], fill=accent_color)
         draw.text((3610, by+45), f"{int(pct)}%", font=get_font(40), fill=(255,255,255), anchor="lm")
         by += 180
 
-    best_tag = max(["slayer", "sharpshooter", "consistency", "clutch", "anchor"], key=lambda k: player_data.get(k, {}).get("pct", 0))
-    intel = player_data.get(best_tag, {}).get("summary", "Reliable team player.")
+    if not has_career:
+        if is_season_only:
+            intel = "NEW THIS SEASON — percentiles above are based on this season's real stats only, not a full career. One to watch!"
+        else:
+            intel = "NEW PLAYER — no career stats recorded yet. One to watch!"
+    else:
+        best_tag = max(["slayer", "sharpshooter", "consistency", "clutch", "anchor"], key=lambda k: player_data.get(k, {}).get("pct") or 0)
+        intel = player_data.get(best_tag, {}).get("summary", "Reliable team player.")
     draw.rectangle([150, 1850, 3690, 2080], fill=(20, 20, 25))
     draw.text((200, 1880), "SCOUTING REPORT", font=get_font(70), fill=accent_color)
     draw.text((200, 1960), intel, font=get_font(60), fill=(230, 230, 230))
-    img.save(SPOTLIGHT_PATH)
+    save_path = os.path.join(export_dir, "spotlight_card.png") if export_dir else SPOTLIGHT_PATH
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    img.save(save_path)
 
-def generate_tale_of_the_tape(rosterA, rosterB, nameA, nameB):
+def generate_tale_of_the_tape(rosterA, rosterB, nameA, nameB, export_dir=None):
     img = load_bg("tape")
     draw = ImageDraw.Draw(img, 'RGBA')
-    rosterA.sort(key=lambda p: p['career'].get('KD', 0), reverse=True)
-    rosterB.sort(key=lambda p: p['career'].get('KD', 0), reverse=True)
+    rosterA.sort(key=lambda p: p.get('career', {}).get('KD', 0), reverse=True)
+    rosterB.sort(key=lambda p: p.get('career', {}).get('KD', 0), reverse=True)
 
     draw.text((960, 150), nameA, font=get_font(150), fill=COLOR_BLUE, anchor="mm")
     draw.text((2880, 150), nameB, font=get_font(150), fill=COLOR_RED, anchor="mm")
@@ -109,12 +136,14 @@ def generate_tale_of_the_tape(rosterA, rosterB, nameA, nameB):
     for i in range(5):
         pA = rosterA[i] if i < len(rosterA) else {"name": "---"}
         pB = rosterB[i] if i < len(rosterB) else {"name": "---"}
-        draw.text((250, y+100), pA['name'].upper(), font=get_font(90), fill=(255,255,255))
-        draw.text((3590, y+100), pB['name'].upper(), font=get_font(90), fill=(255,255,255), anchor="ra")
+        nameA_display = pA['name'].upper() + (" (NEW)" if pA.get("stats_estimated") else "")
+        nameB_display = pB['name'].upper() + (" (NEW)" if pB.get("stats_estimated") else "")
+        draw.text((250, y+100), nameA_display, font=get_font(90), fill=(255,255,255))
+        draw.text((3590, y+100), nameB_display, font=get_font(90), fill=(255,255,255), anchor="ra")
         
         sub_y = y + 10
         for label, key in tags:
-            pctA, pctB = pA.get(key, {}).get("pct", 0), pB.get(key, {}).get("pct", 0)
+            pctA, pctB = pA.get(key, {}).get("pct") or 0, pB.get(key, {}).get("pct") or 0
             draw.text((1920, sub_y), label, font=get_font(25), fill=(150,150,150), anchor="mm")
             draw.rectangle([1450, sub_y-10, 1850, sub_y+10], fill=(30,30,35))
             draw.rectangle([1850 - (400 * (pctA/100)), sub_y-10, 1850, sub_y+10], fill=COLOR_BLUE)
@@ -125,25 +154,40 @@ def generate_tale_of_the_tape(rosterA, rosterB, nameA, nameB):
         draw.line([200, y+280, 3640, y+280], fill=(255,255,255, 15), width=2)
         y += 310
 
-    avgA = sum(p.get('slayer', {}).get('pct', 0) for p in rosterA) / 5
-    avgB = sum(p.get('slayer', {}).get('pct', 0) for p in rosterB) / 5
+    avgA = sum((p.get('slayer', {}).get('pct') or 0) for p in rosterA) / 5
+    avgB = sum((p.get('slayer', {}).get('pct') or 0) for p in rosterB) / 5
     draw.rectangle([0, 1950, 3840, 2160], fill=(15, 15, 20))
     draw.text((400, 2055), f"SQUAD SLAYER POWER: {avgA:.1f}%", font=get_font(60), fill=COLOR_BLUE, anchor="lm")
     draw.text((3440, 2055), f"SQUAD SLAYER POWER: {avgB:.1f}%", font=get_font(60), fill=COLOR_RED, anchor="rm")
-    img.save(TAPE_PATH)
+    save_path = os.path.join(export_dir, "tale_of_the_tape.png") if export_dir else TAPE_PATH
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    img.save(save_path)
 
-def generate_team_dna(rosterA, rosterB, nameA, nameB):
+def generate_team_dna(rosterA, rosterB, nameA, nameB, export_dir=None):
     img = load_bg("dna")
     draw = ImageDraw.Draw(img, 'RGBA')
     draw.text((200, 100), nameA, font=get_font(140), fill=COLOR_BLUE)
     draw.text((3640, 100), nameB, font=get_font(140), fill=COLOR_RED, anchor="ra")
     draw.text((1920, 150), "STRATEGY DNA", font=get_font(100), fill=(255,255,255), anchor="mm")
 
+    # Flag rosters that include a player with no real data at all (not
+    # even a verified current-season fetch or a teammate average to
+    # fall back on) — otherwise their silent zero drags the team-wide
+    # averages below down with no visual explanation, since this
+    # graphic (unlike Tale of the Tape) only shows aggregates, not
+    # individual player rows where a "(NEW)" tag could be shown.
+    unreliableA = sum(1 for p in rosterA if p.get("stats_estimated") and not p.get("career", {}).get("kills"))
+    unreliableB = sum(1 for p in rosterB if p.get("stats_estimated") and not p.get("career", {}).get("kills"))
+    if unreliableA:
+        draw.text((200, 260), f"* {unreliableA} player(s) with no data — averages affected", font=get_font(35), fill=(255, 200, 50))
+    if unreliableB:
+        draw.text((3640, 260), f"* {unreliableB} player(s) with no data — averages affected", font=get_font(35), fill=(255, 200, 50), anchor="ra")
+
     tags = ["slayer", "sharpshooter", "consistency", "clutch", "objective_payload", "objective_domination", "anchor"]
     y = 450
     for tag in tags:
-        avgA = sum(p.get(tag, {}).get("pct", 0) for p in rosterA) / max(1, len(rosterA))
-        avgB = sum(p.get(tag, {}).get("pct", 0) for p in rosterB) / max(1, len(rosterB))
+        avgA = sum((p.get(tag, {}).get("pct") or 0) for p in rosterA) / max(1, len(rosterA))
+        avgB = sum((p.get(tag, {}).get("pct") or 0) for p in rosterB) / max(1, len(rosterB))
         draw.text((1920, y - 40), tag.replace("_", " ").upper(), font=get_font(55), fill=(160,160,160), anchor="mm")
         draw.rectangle([600, y, 1850, y+70], fill=(30, 30, 35))
         draw.rectangle([1850 - (1250 * (avgA/100)), y, 1850, y+70], fill=COLOR_BLUE)
@@ -152,7 +196,7 @@ def generate_team_dna(rosterA, rosterB, nameA, nameB):
         y += 200
 
     draw.rectangle([0, 1850, 3840, 2160], fill=(15, 15, 20)) 
-    vitals = [("TOTAL KILLS", lambda r: sum(p['career'].get('kills', 0) for p in r)), ("AVG KD", lambda r: sum(p['career'].get('KD', 0) for p in r) / len(r)), ("TOTAL MAPS", lambda r: sum(p['career'].get('maps', 0) for p in r))]
+    vitals = [("TOTAL KILLS", lambda r: sum((p.get('career', {}).get('kills') or 0) for p in r)), ("AVG KD", lambda r: sum((p.get('career', {}).get('KD') or 0) for p in r) / len(r)), ("TOTAL MAPS", lambda r: sum((p.get('career', {}).get('maps') or 0) for p in r))]
     vx_pos = [450, 1100, 1750] # Increased spacing to fix overlap
     for i, (label, func) in enumerate(vitals):
         valA, valB = func(rosterA), func(rosterB)
@@ -160,7 +204,9 @@ def generate_team_dna(rosterA, rosterB, nameA, nameB):
         draw.text((vx_pos[i], 2020), f"{valA:,.1f}" if isinstance(valA, float) else f"{valA:,}", font=get_font(90), fill=COLOR_BLUE, anchor="mm")
         draw.text((3840 - vx_pos[i], 1920), label, font=get_font(45), fill=(150, 150, 150), anchor="mm")
         draw.text((3840 - vx_pos[i], 2020), f"{valB:,.1f}" if isinstance(valB, float) else f"{valB:,}", font=get_font(90), fill=COLOR_RED, anchor="mm")
-    img.save(DNA_PATH)
+    save_path = os.path.join(export_dir, "team_dna.png") if export_dir else DNA_PATH
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    img.save(save_path)
 
 def draw_vs_donut(draw, center, radius, valA, valB, colorA, colorB, label):
     """Draws a split donut showing relative strength, matching screen sides perfectly."""
@@ -194,7 +240,7 @@ def draw_vs_donut(draw, center, radius, valA, valB, colorA, colorB, label):
     draw.text((cx, cy), f"{pctA_display}% | {pctB_display}%", font=get_font(45), fill=(255, 255, 255), anchor="mm")
     draw.text((cx, cy + radius + 60), label, font=get_font(40), fill=(180, 180, 180), anchor="mm")
 
-def generate_win_probability(rosterA, rosterB, nameA, nameB):
+def generate_win_probability(rosterA, rosterB, nameA, nameB, export_dir=None):
     img = load_bg("win")
     draw = ImageDraw.Draw(img, 'RGBA')
     
@@ -242,8 +288,8 @@ def generate_win_probability(rosterA, rosterB, nameA, nameB):
         gx += 600
 
     # 6th Gauge: EXPERIENCE (Maps Played)
-    mapsA = sum(p['career'].get('maps', 0) for p in rosterA)
-    mapsB = sum(p['career'].get('maps', 0) for p in rosterB)
+    mapsA = sum((p.get('career', {}).get('maps') or 0) for p in rosterA)
+    mapsB = sum((p.get('career', {}).get('maps') or 0) for p in rosterB)
     draw_vs_donut(draw, (gx, 1150), 120, mapsA, mapsB, COLOR_BLUE, COLOR_RED, "EXPERIENCE")
 
     # 5. MATCH KEY FACTOR
@@ -275,4 +321,6 @@ def generate_win_probability(rosterA, rosterB, nameA, nameB):
     draw_intel(draw, 960, nameA, strengthsA, COLOR_BLUE)
     draw_intel(draw, 2880, nameB, strengthsB, COLOR_RED)
 
-    img.save(WIN_PATH)
+    save_path = os.path.join(export_dir, "win_probability.png") if export_dir else WIN_PATH
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    img.save(save_path)

@@ -18,7 +18,7 @@ from data.tag_framework import percentile_rank, tier_from_percentile
     
 
 
-def build_career_database(output_path):
+def build_career_database(output_path, current_season=None):
     
     #print("USING DB:", db_access.DB_PATH)
 
@@ -57,11 +57,22 @@ def build_career_database(output_path):
         if not matches:
             continue
 
-        # Infer "season" from earliest CycleID
+        # Infer "first season" from earliest CycleID — this is on a
+        # completely different numbering scale than the caster's own
+        # "current_season" (e.g. 11), it's the raw API cycle counter, so
+        # it's kept ONLY as an informational/display value below. It is
+        # NOT used to stamp the identity registry's season tracking
+        # (that's what caused last_season to be unusable for recency
+        # checks elsewhere in the app — mixing two incompatible scales).
         first_cycle = min(m.get("CycleID", 0) for m in matches) or 0
 
-        # Resolve canonical identity
-        canonical_id = pir.resolve(raw_uuid, season=first_cycle)
+        # Resolve canonical identity. If the caller passed the caster's
+        # current_season (the GUI always does), use that consistently
+        # with on_sync_stats so last_season stays on one comparable
+        # scale across the whole app. Only fall back to the raw CycleID
+        # scale if this is being run standalone with no season context.
+        season_for_resolve = current_season if current_season is not None else first_cycle
+        canonical_id = pir.resolve(raw_uuid, season=season_for_resolve)
         pir.add_name(canonical_id, name)
         pid = canonical_id
 
@@ -71,6 +82,13 @@ def build_career_database(output_path):
         # LOOKUP CLEAN NAMES FROM REGISTRY
         reg_entry = pir.data["canonical"].get(pid, {})
         reg_teams = reg_entry.get("team_history", [])
+
+        # Prefer the identity registry's LATEST name over the static
+        # SQL-sourced one. Without this, rebuilding would silently
+        # revert any rename applied via Manage Roster back to whatever
+        # name was in the local database at the time it was imported —
+        # a rebuild should never undo a caster's rename.
+        display_name = reg_entry["names"][-1] if reg_entry.get("names") else name
 
         for m in matches:
             # 1. Handle Team Names
@@ -108,7 +126,7 @@ def build_career_database(output_path):
         }
 
         final_db["players"][pid] = {
-            "name": name,
+            "name": display_name,
             "first_season": pir.get_first_season(canonical_id), 
             "team_history": teams_seen, 
             "career": {
@@ -175,6 +193,19 @@ def build_career_database(output_path):
     # ---------------------------------------------------------
     # 5. Finalize Tag Calculation (Percentiles & Tiers)
     # ---------------------------------------------------------
+    # ---------------------------------------------------------
+    # Breaker distribution — computed ONCE, outside the per-player
+    # loop below. This used to be recomputed from scratch for every
+    # single player inside the loop (twice, in two redundant blocks),
+    # making this O(n²) instead of O(n) for no reason — harmless to
+    # correctness but very wasteful for a large league.
+    # ---------------------------------------------------------
+    breaker_dist = sorted(
+        (p["career"]["damage"] / max(1, p["career"]["maps"])) * 0.6
+        + (p["career"]["kills"] / max(1, p["career"]["maps"])) * 0.4
+        for p in all_players
+    )
+
     for pid, pdata in final_db["players"].items():
         career = pdata["career"]
 
@@ -197,40 +228,17 @@ def build_career_database(output_path):
 
         # --- Advanced Tags ---
         pdata["anchor"] = compute_anchor_for_career_player(pdata, league_averages, distributions["anchor"], raw_cons)
-        
+
         # FIX: Ensure we use the pre-calculated clutch_distribution
         pdata["clutch"] = compute_clutch(pdata, league_averages, clutch_distribution)
-
-        # --- Breaker Tag (Ensure distribution is full) ---
-        # Calculate raw for everyone to build a proper distribution
-        all_breaker_raws = []
-        for inner_p in all_players:
-            ic = inner_p["career"]
-            all_breaker_raws.append(compute_breaker_raw(ic["damage"]/max(1,ic["maps"]), ic["kills"]/max(1,ic["maps"])))
-        all_breaker_raws.sort()
-
-        dmg_map = career["damage"] / max(1, career["maps"])
-        kills_map = career["kills"] / max(1, career["maps"])
-        raw_breaker = compute_breaker_raw(dmg_map, kills_map)
-        break_pct = percentile_rank(raw_breaker, all_breaker_raws)
-        
-        pdata["breaker"] = {
-            "raw": raw_breaker,
-            "pct": break_pct,
-            "tier": tier_from_percentile(break_pct),
-            "summary": f"{tier_from_percentile(break_pct)} Tier Offensive Disruptor"
-        }
 
         # --- Breaker Tag ---
         dmg_map = career["damage"] / max(1, career["maps"])
         kills_map = career["kills"] / max(1, career["maps"])
         raw_breaker = compute_breaker_raw(dmg_map, kills_map)
-        
-        # We handle breaker distribution locally for simplicity
-        breaker_dist = sorted([ (p["career"]["damage"]/max(1,p["career"]["maps"])*0.6 + p["career"]["kills"]/max(1,p["career"]["maps"])*0.4) for p in all_players])
         break_pct = percentile_rank(raw_breaker, breaker_dist)
         break_tier = tier_from_percentile(break_pct)
-        
+
         pdata["breaker"] = {
             "raw": raw_breaker,
             "pct": break_pct,
@@ -241,6 +249,26 @@ def build_career_database(output_path):
     # ---------------------------------------------------------
     # 6. Save and Finish
     # ---------------------------------------------------------
+    # Save the full league-wide raw-score distribution for every tag.
+    # This lets fallback/estimated players (missing from this database
+    # entirely, handled elsewhere via resolve_tag_career_first) be
+    # percentile-ranked against the SAME real population career players
+    # use, instead of only against each other in a single match — which
+    # was producing misleading percentiles (a higher raw score could
+    # show a LOWER percentile than a lower raw score from a different
+    # player, because they were being measured against two completely
+    # different, tiny vs. league-wide, populations).
+    final_db["distributions"] = {
+        "slayer": distributions.get("slayer", []),
+        "sharpshooter": distributions.get("sharpshooter", []),
+        "objective_payload": distributions.get("payload", []),
+        "objective_domination": distributions.get("domination", []),
+        "consistency": distributions.get("consistency", []),
+        "anchor": distributions.get("anchor", []),
+        "clutch": clutch_distribution,
+        "breaker": breaker_dist,
+    }
+
     pir.save()
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(final_db, f, indent=2)

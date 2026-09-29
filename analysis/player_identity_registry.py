@@ -30,7 +30,12 @@ class PlayerIdentityRegistry:
             cid = self.data["uuid_to_canonical"][uuid]
             entry = self.data["canonical"][cid]
             if season is not None:
-                entry["last_season"] = season
+                # Never let last_season regress — protects against an
+                # out-of-order or differently-scaled call (e.g. an older
+                # rebuild) accidentally making a still-active player look
+                # stale to any recency check elsewhere in the app.
+                prev = entry.get("last_season")
+                entry["last_season"] = season if prev is None else max(prev, season)
             return cid
 
         # New UUID → new canonical ID
@@ -91,3 +96,34 @@ class PlayerIdentityRegistry:
         if not entry:
             return None
         return entry.get("first_season")
+
+    # ---------------------------------------------------------
+    # One-time cleanup: remove phantom canonical entries created by a
+    # since-fixed bug where a canonical ID string (e.g. "player_519")
+    # was mistakenly passed into resolve() as if it were a raw UUID,
+    # minting a bogus new canonical entry with that string recorded as
+    # its "uuid". These are always empty shells: no real names, no
+    # team history, and their sole "uuid" looks like "player_N" rather
+    # than a genuine UUID. Real UUIDs always contain hyphens and don't
+    # start with "player_".
+    # ---------------------------------------------------------
+    def remove_phantom_entries(self, dry_run=True):
+        removed = []
+        for cid, entry in list(self.data["canonical"].items()):
+            uuids = entry.get("uuids", [])
+            is_phantom = (
+                len(uuids) == 1
+                and uuids[0].startswith("player_")
+                and "-" not in uuids[0]
+                and not entry.get("names")
+                and not entry.get("team_history")
+            )
+            if is_phantom:
+                removed.append(cid)
+                if not dry_run:
+                    del self.data["canonical"][cid]
+                    self.data["uuid_to_canonical"].pop(uuids[0], None)
+
+        if removed and not dry_run:
+            self.save()
+        return removed

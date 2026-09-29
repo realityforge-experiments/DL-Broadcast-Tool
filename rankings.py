@@ -137,6 +137,12 @@ def rank_match_players_by_tag(players, tag):
             "score_display": f"{raw:.2f}",
             "pct": pct,
             "tier": tier,
+            # Prefer the tag's OWN explicit has_data flag (set by
+            # resolve_tag_career_first / the Consistency step in
+            # on_generate_slots) — those dicts are always non-empty even
+            # for a "no career data" fallback estimate, so bool(tag_data)
+            # alone can't tell the two cases apart.
+            "has_data": tag_data.get("has_data", bool(tag_data)),
         })
 
     rows.sort(key=lambda x: x["score_raw"], reverse=True)

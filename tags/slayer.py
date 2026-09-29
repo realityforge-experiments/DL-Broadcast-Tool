@@ -32,13 +32,24 @@ def compute_slayer_raw(pdata, league_averages):
     kd = kills / deaths if deaths > 0 else kills
     dmg_per_map = damage / maps
 
-    # Normalize against league averages
+    # Normalize against league averages. These ratios are CENTERED AT
+    # 1.0 (an exactly-average player scores 1.0 on each), so clamping
+    # the combined score to a hard ceiling of 1.0 flattened every
+    # at-or-above-average player — roughly half the league — to the
+    # identical score, destroying all differentiation between "average"
+    # and "elite". Soft-clamp with headroom (like Sharpshooter/Anchor
+    # already do) then rescale, so above-average players still spread
+    # out properly.
     kd_norm = kd / max(1e-6, league_averages.get("KD", 1))
     dmg_norm = dmg_per_map / max(1e-6, league_averages.get("damage", 1))
 
     # Weighted slayer score
     raw = (kd_norm * 0.60) + (dmg_norm * 0.40)
-    return max(0.0, min(1.0, raw))
+
+    # Soft clamp with headroom (elite players can reach ~2x league
+    # average on this blend), then rescale into 0–1
+    raw = max(0.05, min(raw, 2.0))
+    return raw / 2.0
 
 
 # ---------------------------------------------------------

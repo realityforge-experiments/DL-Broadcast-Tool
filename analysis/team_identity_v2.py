@@ -4,6 +4,7 @@ from utils.safe_tag import safe_pct, safe_tier, safe_avg
 DISPLAY_NAMES = {
     "slayer": "Slayer",
     "objective_payload": "Payload Specialist",
+    "objective_domination": "Domination Specialist",
     "sharpshooter": "Sharpshooter",
     "consistency": "Consistency",
     "clutch": "Clutch",
@@ -12,16 +13,21 @@ DISPLAY_NAMES = {
 }
 
 
-def summarize_team_tags(team_players):
+def summarize_team_tags(team_players, map_type="Payload"):
     """
     Aggregates tag tiers + percentiles for a team.
+    Only the objective tag for the mode actually being played (map_type)
+    is included — not both Payload and Domination — since the other one
+    isn't relevant to this match.
     Returns a dict with:
         - avg_pct
         - top_tier
         - tier counts
     """
 
-    tags = ["slayer", "objective_payload", "sharpshooter",
+    objective_tag = "objective_domination" if map_type == "Domination" else "objective_payload"
+
+    tags = ["slayer", objective_tag, "sharpshooter",
             "consistency", "clutch", "anchor", "breaker"]
 
     summary = {}
@@ -48,13 +54,16 @@ def summarize_team_tags(team_players):
     return summary
 
 
-def classify_team_style(summary):
+def classify_team_style(summary, map_type="Payload"):
     """
     Produces a high-level team style classification based on tag strengths.
     """
 
+    objective_tag = "objective_domination" if map_type == "Domination" else "objective_payload"
+    objective_label = "Objective-focused"
+
     slayer = summary["slayer"]["avg_pct"]
-    payload = summary["objective_payload"]["avg_pct"]
+    objective = summary[objective_tag]["avg_pct"]
     sharpshooter = summary["sharpshooter"]["avg_pct"]
     consistency = summary["consistency"]["avg_pct"]
     clutch = summary["clutch"]["avg_pct"]
@@ -64,7 +73,7 @@ def classify_team_style(summary):
     primary = max(
         {
             "Slayer-heavy": slayer,
-            "Objective-focused": payload,
+            objective_label: objective,
             "Precision/Sharpshooter": sharpshooter,
             "Stable/Consistent": consistency,
             "High-pressure/Clutch": clutch,
@@ -77,7 +86,7 @@ def classify_team_style(summary):
     weaknesses = []
     if slayer < 40:
         weaknesses.append("low elimination pressure")
-    if payload < 40:
+    if objective < 40:
         weaknesses.append("weak objective presence")
     if sharpshooter < 40:
         weaknesses.append("below-average accuracy")
@@ -91,14 +100,14 @@ def classify_team_style(summary):
     return primary, weaknesses
 
 
-def generate_team_identity_block(team_players, team_name="Team"):
+def generate_team_identity_block(team_players, team_name="Team", map_type="Payload"):
     """
     Returns a structured identity block dict for a team.
     GUI or OBS formatter will convert this into text.
     """
 
-    summary = summarize_team_tags(team_players)
-    primary_style, weaknesses = classify_team_style(summary)
+    summary = summarize_team_tags(team_players, map_type)
+    primary_style, weaknesses = classify_team_style(summary, map_type)
 
     # Strengths list
     strengths = []

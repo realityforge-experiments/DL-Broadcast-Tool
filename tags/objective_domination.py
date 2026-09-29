@@ -52,19 +52,37 @@ def compute_dom_raw(pdata):
 def compute_dom_objective_for_career_player(pdata, league_averages, dom_distribution):
     """
     Career Domination Objective Specialist tag.
-    Uses DOM_Captures and DOM_Counters from career totals.
-    Log-scaled normalization + weighted scoring.
+    Uses DOM_Captures and DOM_Counters from career totals, normalized
+    PER MAP — matching every other tag's convention, and matching how
+    league_averages["dom_actions"] is itself computed (per-map). This
+    used to compare raw CUMULATIVE career totals against a per-map-based
+    ceiling — a genuine scale mismatch that made the ceiling far too
+    easy to cross for anyone with more than a handful of maps played,
+    clustering most established players at the 1.00 maximum regardless
+    of actual skill.
     """
+
+    career = pdata.get("career", {})
+    maps = max(1, career.get("maps") or pdata.get("maps") or 1)
 
     caps = pdata.get("DOM_Captures", 0) or 0
     counters = pdata.get("DOM_Counters", 0) or 0
+    caps_per_map = caps / maps
+    counters_per_map = counters / maps
 
-    # Log-scaled normalization (smooths extremes)
-    cap_rate = math.log1p(caps) / math.log1p(20)
-    counter_rate = math.log1p(counters) / math.log1p(20)
+    # Log-scaled normalization (smooths extremes). Ceiling based on real
+    # league per-map DOM activity with headroom (3x average) — same
+    # principle used for Slayer/Sharpshooter/Anchor, now correctly on
+    # the same per-map scale as the values it's measuring.
+    league_avg_dom = (league_averages or {}).get("dom_actions", 1) or 1
+    ceiling = max(1.0, league_avg_dom * 3)
+
+    cap_rate = math.log1p(caps_per_map) / math.log1p(1 + ceiling)
+    counter_rate = math.log1p(counters_per_map) / math.log1p(1 + ceiling)
 
     # Weighted score (counters matter more)
     raw = (0.40 * cap_rate) + (0.60 * counter_rate)
+    raw = max(0.0, min(1.0, raw))
 
     # Convert to percentile + tier
     return build_tag_output(raw, dom_distribution, dom_summary)
